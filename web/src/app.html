@@ -4,6 +4,14 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="color-scheme" content="dark" />
+		<!-- JS çalışıyorsa belirme hareketi için içerik gizlenebilir; JS yoksa her şey görünür kalır. -->
+		<script>
+			document.documentElement.classList.add('js');
+			// Güvence: uygulama 2,5 sn içinde belirme gözlemcisini kurmazsa gizleme kalkar.
+			setTimeout(function () {
+				if (!document.documentElement.classList.contains('hazir')) document.documentElement.classList.remove('js');
+			}, 2500);
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

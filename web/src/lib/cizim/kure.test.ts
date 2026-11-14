@@ -17,6 +17,16 @@ describe('küre izdüşümü', () => {
 		expect(izdus(90, 0, -25).gorunur).toBe(false);
 	});
 
+	it('kayma meridyenleri döndürür, kutup yerinde kalır', () => {
+		const a = kafes(100, 100, 80, -25, 30, 0);
+		const b = kafes(100, 100, 80, -25, 30, 10);
+		expect(b.meridyenler[0]).not.toBe(a.meridyenler[0]);
+		expect(b.kutup.x).toBeCloseTo(a.kutup.x);
+		expect(b.kutup.y).toBeCloseTo(a.kutup.y);
+		// 30° adımlı kafes 30° dönünce kendisiyle çakışır.
+		expect(kafes(100, 100, 80, -25, 30, 30).meridyenler).toEqual(expect.arrayContaining([a.meridyenler[1]]));
+	});
+
 	it('kafes görünen yolları ve kutbu verir', () => {
 		const k = kafes(100, 100, 80, -25);
 		expect(k.meridyenler).toHaveLength(12);

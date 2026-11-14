@@ -53,12 +53,18 @@
 
 			<fieldset class="flex flex-col gap-2">
 				<legend class="mb-2 text-sm font-medium text-metin">{c.t('planla.yol')}</legend>
-				<div class="grid grid-cols-3 gap-1 rounded-kutu border border-cizgi bg-zemin/40 p-1">
+				<div class="relative grid grid-cols-3 gap-1 rounded-kutu border border-cizgi bg-zemin/40 p-1">
+					<!-- Seçim göstergesi seçilen yola kayar (animasyonlar H10). -->
+					<span
+						class="absolute inset-y-1 left-1 w-[calc((100%-1rem)/3)] rounded-kutu bg-yuzey-2 transition-transform duration-300 ease-egri"
+						style:transform={`translateX(calc(${YOLLAR.indexOf(yol)} * (100% + 0.25rem)))`}
+						aria-hidden="true"
+					></span>
 					{#each YOLLAR as y (y)}
 						<label
-							class="flex min-h-9 cursor-pointer items-center justify-center rounded-kutu px-2 text-center text-xs font-medium transition-colors has-checked:bg-yuzey-2 has-checked:text-metin has-focus-visible:outline-2 has-focus-visible:outline-vurgu {yol ===
+							class="relative flex min-h-9 cursor-pointer items-center justify-center rounded-kutu px-2 text-center text-xs font-medium transition-colors duration-200 has-focus-visible:outline-2 has-focus-visible:outline-vurgu {yol ===
 							y
-								? ''
+								? 'text-metin'
 								: 'text-metin-ikincil hover:text-metin'}"
 						>
 							<input class="sr-only" type="radio" name="yol" value={y} bind:group={yol} />

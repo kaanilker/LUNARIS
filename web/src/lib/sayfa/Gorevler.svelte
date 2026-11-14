@@ -23,7 +23,7 @@
 <div class="kap grid grid-cols-12 items-start gap-6" data-izgara>
 	<Panel baslik={c.t('gorevler.kure')} bekliyor sinif="col-span-12 lg:col-span-5 lg:sticky lg:top-24">
 		<YerTutucu metin={c.t('gorevler.kure_not')} girdi="G1">
-			<KureCizim kutupEtiketi={c.t('ana.kutup_isaret')} />
+			<KureCizim kutupEtiketi={c.t('ana.kutup_isaret')} donsun />
 		</YerTutucu>
 	</Panel>
 
@@ -31,7 +31,7 @@
 		<YerTutucu satir metin={c.t('gorevler.liste_bekliyor')} girdi="B14" />
 		<ul class="flex flex-col divide-y divide-cizgi border-y border-cizgi">
 			{#each yuvalar as gorev, i (i)}
-				<li class="flex flex-col gap-1 px-4 py-4">
+				<li class="flex flex-col gap-1 px-4 py-4" data-belir>
 					{#if gorev}
 						<h3 class="font-semibold text-metin">{gorev.ad}</h3>
 						<p class="text-sm text-metin-ikincil">

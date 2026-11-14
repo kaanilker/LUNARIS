@@ -21,8 +21,8 @@
 </svelte:head>
 
 <header class="kap flex flex-col gap-4 pt-12 pb-10 sm:pt-16">
-	<h1 class="text-4xl font-semibold text-metin sm:text-5xl">{baslik}</h1>
-	{#if giris}<p class="max-w-2xl text-lg text-metin-ikincil">{giris}</p>{/if}
+	<h1 class="acilis text-4xl font-semibold text-metin sm:text-5xl">{baslik}</h1>
+	{#if giris}<p class="acilis max-w-2xl text-lg text-metin-ikincil [--sira:1]">{giris}</p>{/if}
 	{#if children}{@render children()}{/if}
-	<div class="mt-6"><UfukCizgisi /></div>
+	<div class="mt-6"><UfukCizgisi gecikme={140} /></div>
 </header>

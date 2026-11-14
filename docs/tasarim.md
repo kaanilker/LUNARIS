@@ -92,7 +92,8 @@ aracı sertliği; her öğede aynı yuvarlak köşe olmasın diye kademeli. Hare
 
 **Okuma şeridi.** Yan yana aynı göstergeler üç ayrı kart değil, tek panelde dikey çizgilerle bölünmüş bir konsol
 okuma şerididir. Simge yalnız işlevi olan yerde (oynat, yazdır, dış bağlantı, dil) ve anlam taşıyan Güneş ve
-Dünya işaretinde; menüde ve panel başlıklarında simge yok.
+Dünya işaretinde ve menüde (menü simgeleri kullanıcı isteğiyle geri geldi, 2026-11-14); panel başlıklarında simge yok.
+Hareket kuralları `docs/animasyonlar.md` §1a.
 
 **Yer tutucu.** Kesikli kenarlı "Yer tutucu" rozeti ve kısa açıklama; beklenen girdiler virgülle yazılır. Panel
 içinde ikinci bir çerçeve çizilmez (kart içinde kart); kesikli çerçeve yalnız panel dışındaki boş görsel yerinde.
@@ -112,7 +113,7 @@ anti-pattern kataloğu, 925studios "AI slop design tells", Fountain Institute "7
 | Yan yana üç eşit kart, simge kutulu özellik kartı | okuma şeridi; simge kutusu yalnız Güneş ve Dünya |
 | Her öğede aynı 12 px köşe | 6, 4 px ve rozet |
 | Kart içinde kart | panel içi yer tutucu çerçevesiz |
-| Lucide simgeleri her yerde | yalnız işlevli düğmelerde |
+| Lucide simgeleri her yerde | işlevli düğmelerde ve menüde (menü: kullanıcı kararı, 2026-11-14); panel başlıklarında yok |
 | Bölüm başına büyük harfli üst etiket, orta nokta, ok | kaldırıldı (üçüncü tur), test ölçüyor |
 | Sırası anlamsız numaralı liste (01, 02) | Görevler'den kaldırıldı; anlatıda kaldı (gerçek sıra) |
 | Her kelimesi büyük harfle başlayan başlık | İngilizce başlıklar cümle düzeninde |

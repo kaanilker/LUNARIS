@@ -12,7 +12,7 @@
 			<span class="mr-3 font-baslik font-semibold text-metin [font-stretch:118%]">{c.t('marka.ad')}</span>{c.t('alt.metin')}
 		</p>
 		<p class="flex items-center gap-4">
-			<a href={REPO} rel="noopener" class="inline-flex h-9 items-center gap-2 transition-colors hover:text-metin">
+			<a href={REPO} rel="noopener" class="simgeli inline-flex h-9 items-center gap-2 transition-colors duration-150 hover:text-metin">
 				<CodeXml class="size-4" aria-hidden="true" />{c.t('alt.kaynak')}
 			</a>
 			<span>{c.t('alt.lisans')}</span>

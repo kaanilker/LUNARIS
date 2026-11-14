@@ -116,9 +116,12 @@
 							href={arac.url}
 							rel="noopener"
 							target="_blank"
-							class="flex h-11 items-center justify-between px-4 text-sm text-metin transition-colors hover:bg-yuzey-2"
+							class="group flex h-11 items-center justify-between px-4 text-sm text-metin transition-colors duration-150 hover:bg-yuzey-2"
 						>
-							{arac.ad}<ExternalLink class="size-3.5 text-metin-ikincil" aria-hidden="true" />
+							{arac.ad}<ExternalLink
+								class="size-3.5 text-metin-ikincil transition-transform duration-200 ease-egri group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-metin"
+								aria-hidden="true"
+							/>
 						</a>
 					</li>
 				{/each}

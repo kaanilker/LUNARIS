@@ -39,16 +39,17 @@ function yol(noktalar: Nokta[], cx: number, cy: number, r: number): string {
 
 export type Kafes = { paraleller: string[]; meridyenler: string[]; kutup: { x: number; y: number } };
 
-export function kafes(cx: number, cy: number, r: number, egim: number, adim = 30): Kafes {
+/** kayma: boylam ekseninde dönüş (derece); dönen küre bunu her karede artırır. */
+export function kafes(cx: number, cy: number, r: number, egim: number, adim = 30, kayma = 0): Kafes {
 	const ornek = Array.from({ length: 121 }, (_, i) => i * 3);
 	const paraleller: string[] = [];
 	for (let enlem = -60; enlem <= 60; enlem += adim) {
-		paraleller.push(yol(ornek.map((b) => izdus(enlem, b, egim)), cx, cy, r));
+		paraleller.push(yol(ornek.map((b) => izdus(enlem, b + kayma, egim)), cx, cy, r));
 	}
 	const meridyenler: string[] = [];
 	const enlemler = Array.from({ length: 61 }, (_, i) => -90 + i * 3);
 	for (let boylam = 0; boylam < 360; boylam += adim) {
-		meridyenler.push(yol(enlemler.map((e) => izdus(e, boylam, egim)), cx, cy, r));
+		meridyenler.push(yol(enlemler.map((e) => izdus(e, boylam + kayma, egim)), cx, cy, r));
 	}
 	const k = izdus(-90, 0, egim);
 	return { paraleller, meridyenler, kutup: { x: cx + k.x * r, y: cy + k.y * r } };

@@ -41,7 +41,10 @@
 						class="group grid grid-cols-12 items-baseline gap-x-6 gap-y-1 py-4 transition-colors hover:bg-yuzey"
 					>
 						<span class="col-span-12 flex items-center gap-2 font-semibold text-metin sm:col-span-4">
-							{k.ad}<ExternalLink class="size-3.5 text-metin-ikincil group-hover:text-metin" aria-hidden="true" />
+							{k.ad}<ExternalLink
+								class="size-3.5 text-metin-ikincil transition-transform duration-200 ease-egri group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-metin"
+								aria-hidden="true"
+							/>
 						</span>
 						<span class="col-span-12 text-sm text-metin-ikincil sm:col-span-8">{c.t(`hakkinda.${k.anahtar}`)}</span>
 					</a>

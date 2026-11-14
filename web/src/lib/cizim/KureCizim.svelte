@@ -1,11 +1,31 @@
-<!-- Ay küresinin tel kafes çizimi; A1 sahnesi gelene kadar yerini tutar. Işık ve evre bilerek yok. -->
+<!--
+	Ay küresinin tel kafes çizimi; A1 sahnesi gelene kadar yerini tutar. Işık ve evre bilerek yok.
+	donsun: A1'deki "sürekli yavaş dönüş" (kullanıcı kararı); hareketi azalt açıkken ve sekme gizliyken durur.
+-->
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { hareketAzaltildi } from '$lib/hareket';
 	import { kafes } from './kure';
 
-	let { kutupEtiketi }: { kutupEtiketi: string } = $props();
+	let { kutupEtiketi, donsun = false }: { kutupEtiketi: string; donsun?: boolean } = $props();
 
 	const R = 120;
-	const k = kafes(160, 150, R, -28);
+	const DERECE_SANIYE = 6;
+	let kayma = $state(0);
+	const k = $derived(kafes(160, 150, R, -28, 30, kayma));
+
+	onMount(() => {
+		if (!donsun || hareketAzaltildi()) return;
+		let kare = 0;
+		let onceki = performance.now();
+		const adim = (simdi: number) => {
+			if (!document.hidden) kayma = (kayma + ((simdi - onceki) / 1000) * DERECE_SANIYE) % 360;
+			onceki = simdi;
+			kare = requestAnimationFrame(adim);
+		};
+		kare = requestAnimationFrame(adim);
+		return () => cancelAnimationFrame(kare);
+	});
 </script>
 
 <svg viewBox="0 0 320 320" class="h-auto w-full max-w-sm" role="img" aria-label={kutupEtiketi}>

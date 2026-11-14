@@ -17,6 +17,32 @@
    tablolarda yazan durağan bir karşılığı vardır. Bilgi hiçbir zaman yalnız hareketle verilmez.
 6. **Mobil:** 3B sahneler düşük ayrıntı moduna geçer; düşük güç durumunda durağan kareye düşer.
 
+### 1a. Arayüz hareketi her yerde (KARAR, kullanıcı, 2026-11-14)
+
+Kullanıcı: "site statik olmamalı, simgelerden sayfa açılışlarına hep bir hareket olmalı, site canlı hissettirmeli."
+Bu karar ilke 1'i (dekor hareketi yok) **arayüz katmanında** genişletir; veri sahneleri (panorama, izler, grafikler)
+yine yalnız veriyle hareket eder. Sınırlar (KARAR, ajan, yetkiyle):
+
+- **Hareketi azalt** açıkken bütün arayüz hareketi durur, içerik anında görünür (ilke 5 değişmedi).
+- Süreler: dokunma ve üzerine gelme tepkisi 150–200 ms; tek öğenin belirmesi en çok 500 ms; sayfa açılış dizisi
+  toplam en çok 900 ms; sayfa geçişi en çok 350 ms. Eğri hep aynı yavaşlayan eğri (`--egri`), doğrusal ya da
+  zıplayan eğri yok.
+- Yalnız `transform` ve `opacity` hareket eder; yerleşim kaymaz.
+- Sürekli hareket iki yerde: dönen Ay küresi (A1, kullanıcı kararı) ve yer tutucu rozetindeki "bekliyor" noktasının
+  yavaş nabzı (durum bildirir). Başka sürekli dönen ya da parlayan öğe yok.
+
+| # | Hareket | Nerede | Tür |
+|---|---|---|---|
+| H2 | Sayfa geçişi: eski sayfa kısa solar, yeni sayfa hafif yukarı kayarak gelir; üst çubuk yerinde kalır | her sayfa | View Transitions API |
+| H4 | Etkin sekme çizgisi bir sekmeden ötekine kayar | üst çubuk | View Transitions API |
+| H5 | Açılış dizisi: başlık, giriş, düğmeler sırayla belirir; ufuk çizgisi soldan sağa çizilir, çentikler sırayla gelir | her sayfa başı | CSS |
+| H6 | Paneller görünüme girince belirir; aynı satırdakiler kısa aralıkla | her sayfa | IntersectionObserver + CSS |
+| H7 | Simge tepkisi: menü ve düğme simgeleri üzerine gelince kıpırdar, dış bağlantı oku sağ üste kayar | her sayfa | CSS |
+| H8 | Düğmeye basınca hafif iner | her sayfa | CSS |
+| H9 | Mobil menü ve tur bildirimi kayarak açılır | üst çubuk | Svelte geçişi |
+| H10 | Planlayıcı yol seçicisinde seçim göstergesi kayar | Planlayıcı | CSS |
+| A1' | Tel kafes Ay küresi yavaş döner (A1 sahnesi gelene kadar) | Ana Sayfa, Görevler | requestAnimationFrame |
+
 ## 2. Üç animasyon türü ve sahipleri
 
 | Tür | Ne | Yapan | Teknik |
@@ -96,7 +122,7 @@ dikkat dağıtmamalı.
 | # | Animasyon | Ne | Tür |
 |---|---|---|---|
 | H1 | **Rehberli tur vurgusu** | Turun her adımında ilgili öğenin etrafında vurgu halkası, sayfalar arası yumuşak geçiş | Arayüz |
-| H2 | Sayfa geçişi | Kısa solma | Arayüz |
+| H2 | Sayfa geçişi | Kısa solma ve kayma (§1a) | Arayüz |
 | H3 | Bekleme | Yok: veri önceden hazır (ilke 1, hız). Parça yüklenirken iskelet görünümü gösterilir, "Analyzing..." yazmaz | Arayüz |
 
 ## 4. Animasyon ekibinin teslim edeceği sahneler

@@ -83,7 +83,7 @@
 }
 
 @utility dugme {
-	@apply inline-flex h-10 items-center justify-center gap-2 rounded-kutu px-4 text-sm font-medium whitespace-nowrap transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-50;
+	@apply simgeli inline-flex h-10 items-center justify-center gap-2 rounded-kutu px-4 text-sm font-medium whitespace-nowrap transition-[color,background-color,border-color,transform] duration-150 ease-egri disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 @utility dugme-birincil {
@@ -95,11 +95,132 @@
 }
 
 
+/* ---------- Hareket (docs/animasyonlar.md §1a) ---------- */
+
+@theme {
+	--ease-egri: cubic-bezier(0.22, 0.75, 0.2, 1);
+	--animate-nabiz: nabiz 2.4s var(--ease-egri) infinite;
+}
+
+@keyframes belir {
+	from {
+		opacity: 0;
+		transform: translateY(14px);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes nabiz {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.3;
+	}
+}
+
+@keyframes cizil {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes centik {
+	from {
+		opacity: 0;
+		transform: scaleY(0);
+	}
+	to {
+		opacity: 1;
+		transform: scaleY(1);
+	}
+}
+
+/* Açılış dizisi: --sira ile sıralı belirme (adım 70 ms, öğe 480 ms; dizi en çok 900 ms). */
+@utility acilis {
+	animation: belir 480ms var(--ease-egri) both;
+	animation-delay: calc(var(--sira, 0) * 70ms);
+}
+
+/* Görünüme girince belirme: [dil] düzenindeki gözlemci .belirdi sınıfını ekler. */
+@media (prefers-reduced-motion: no-preference) {
+	html.js [data-panel],
+	html.js [data-belir] {
+		opacity: 0;
+		transform: translateY(16px);
+		transition:
+			opacity 480ms var(--ease-egri),
+			transform 480ms var(--ease-egri);
+		transition-delay: var(--gecikme, 0ms);
+	}
+
+	html.js [data-panel].belirdi,
+	html.js [data-belir].belirdi {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/* Simge tepkisi: işaretçi üzerindeyken simge kıpırdar, basınca düğme iner. */
+@utility simgeli {
+	& svg {
+		transition: transform 180ms var(--ease-egri);
+	}
+	&:hover svg {
+		transform: translateY(-1px) scale(1.12);
+	}
+	&:active {
+		transform: translateY(1px);
+	}
+}
+
+/* Sayfa geçişi: eski sayfa söner, yeni sayfa yukarı kayarak gelir; üst çubuk yerinde kalır. */
+::view-transition-old(root) {
+	animation: 160ms var(--ease-egri) both gecis-cik;
+}
+
+::view-transition-new(root) {
+	animation: 320ms var(--ease-egri) 40ms both gecis-gir;
+}
+
+::view-transition-group(etkin-sekme) {
+	animation-duration: 300ms;
+	animation-timing-function: var(--ease-egri);
+}
+
+@keyframes gecis-cik {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes gecis-gir {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
 	*::after {
 		transition-duration: 0ms !important;
 		animation-duration: 0ms !important;
+		animation-delay: 0ms !important;
+		animation-iteration-count: 1 !important;
+	}
+
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
 	}
 }

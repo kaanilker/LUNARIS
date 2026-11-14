@@ -18,7 +18,7 @@
 	]}"
 >
 	{#if tur === 'yer'}
-		<span class="size-1.5 rounded-full border border-current" aria-hidden="true"></span>
+		<span class="size-1.5 animate-nabiz rounded-full border border-current" aria-hidden="true"></span>
 	{:else if tur === 'ai'}
 		<Sparkles class="size-3" aria-hidden="true" />
 	{/if}

@@ -30,3 +30,23 @@ Tablo tabanlı kalkış modeli Planlayıcı'nın sorusunu yeterince cevaplıyors
 
 ## Karar bekleyen
 Bilim ekibinin yöntemi geldiğinde birlikte değerlendirilecek.
+
+## Ek: optimum iddiasını makine öğrenmesiyle test etmek (kullanıcı, 2026-11-14)
+
+**Fikir:** "En uygun rota" iddiasını simülasyonda eğitilmiş bir modelle sınamak.
+
+**Değerlendirme: önerilmiyor, çünkü döngüsel.** Model bizim simülasyonumuzun çıktısıyla eğitilirse bizim
+hesabımızı öğrenir. Aynı sonucu bulması kanıt değildir; farklı bulması büyük olasılıkla modelin hatasıdır.
+Test, iddiayı üreten sistemden bağımsız bir kaynağa karşı yapılmalı.
+
+**Önerilen yerine (ÖNERİ):**
+1. **Tam tarama:** bütün parsel × tarih × profil seçenekleri denenir; sonuç seçilen ölçütlere göre kesin
+   olarak en iyisidir. İddia "ölçütlerimize göre en iyi" diye yazılır.
+2. **Dış doğrulama:** Horizons (gök tarafı); literatür değerleri (parametre seti B11: Gläser CR1 %92,27,
+   Fincannon A1 73–117 saat, Wueller 2031/2032 saha sayıları).
+3. **Monte Carlo sağlamlık testi:** her koşuda belirsiz girdiler örneklenir (DEM yükseklik hatası 0,30–0,50 m,
+   iniş sapması 100 m elips, fırlatma gecikmesi, ağırlıklarda küçük oynama), sıralama yeniden hesaplanır.
+   Çıktı: "önerilen parsel N senaryonun %X'inde ilk 5'te". Sabit tohumla yeniden üretilebilir; sonuç koşu
+   kimliğiyle sonuç dosyasına yazılır. Uzman sayfasındaki iniş belirsizliğine bağlanır.
+
+Örnekleme dağılımları ve N bilim ekibinden gelir; değerler parametre setinde yoksa yer tutucu.

@@ -50,3 +50,26 @@ Test, iddiayı üreten sistemden bağımsız bir kaynağa karşı yapılmalı.
    kimliğiyle sonuç dosyasına yazılır. Uzman sayfasındaki iniş belirsizliğine bağlanır.
 
 Örnekleme dağılımları ve N bilim ekibinden gelir; değerler parametre setinde yoksa yer tutucu.
+
+## Ek 2: gerçek görev verisini sentetik veriyle çoğaltmak (kullanıcı açıklaması, 2026-11-14)
+
+**Fikrin netleşmiş hâli:** NASA ve diğer ajansların Ay'da (özellikle güney kutbunda) topladığı gerçek veriler
+kullanılacak; sentetik veri bu kısıtlı veriyi çoğaltmak için.
+
+**Değerlendirme (ajan, ÖNERİ):**
+- **Aydınlanma ve görünürlük hesabı veri kıtlığı yaşamıyor.** LOLA ve SPICE çok büyük gerçek veri
+  kaynakları; sonuç bunlardan fizikle tam hesaplanıyor. Burada çoğaltmanın ve modelin katkısı yok.
+- **Kıt olan veri iniş sonuçları.** Kutup bölgesinde birkaç deneme var (IM-1, IM-2, Luna-25; Chandrayaan-3
+  başarılı ama 69°G). Bu sayıyla model eğitilmez. Sentetik çoğaltma bilgi eklemez: sentetik etiket yine
+  bizim hesabımızdan gelir (döngüsellik). Ayrıca bu sonuçlarda belirleyici olan iniş sistemi ve navigasyon;
+  bizim hesapladığımız ışık ve iletişim değil (çıkarım; görev raporlarıyla teyit edilmeli).
+
+**Gerçek verinin değer kattığı yerler (ÖNERİ):**
+1. **Gözlenmiş aydınlanmayla doğrulama:** LRO kamera görüntülerinde (LROC) görülen aydınlık ve gölge ile
+   bizim hesabımızın karşılaştırılması. Literatürde örnek: Speyerer ve Robinson 2013 (LROC ile kutup
+   aydınlanması). Hangi ürünlerin indirilebilir olduğu araştırılacak.
+2. **Kaya ve krater katmanı:** LROC NAC görüntülerinden makine öğrenmesiyle yapılmış yayımlanmış tespit
+   ürünleri kullanılabilir; Modül 1'in "varsayımsal" katmanını gerçek veriye çevirir. Kendi modelimizi
+   eğitmek hackathon için ağır.
+
+**Sıralama ve en uygun seçim** fizik hesabı ve tam taramayla kalır.

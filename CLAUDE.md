@@ -39,6 +39,19 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 ## Komutlar
 Henüz kod yok. Yığın seçilince buraya ve `.ajan/test-komutu`'na yazılır.
 
+## Git ve push
+Uzak: `origin` = https://github.com/kaanilker/LUNARIS (herkese açık, GPL-2.0). Dal: `main`.
+
+**KARAR (kullanıcı, 2026-11-14):** Bu projede push ajana açık; global "push kullanıcıda" kuralının
+istisnası. Kullanıcının koşulu "bazı şeyler kesin bitince". Ajanın bu koşuldan çıkardığı ölçütler
+(kullanıcı düzeltebilir):
+- Bir iş bitti: `.ajan/aktif-is.md` içindeki KABUL karşılandı ya da kendi başına tamamlanmış bir parça var.
+  Yarım iş (WIP) push edilmez.
+- Doğrulama komutu borusuz koşuldu ve yeşil; çalışma ağacı temiz (K1).
+- Repo herkese açık: push öncesi diff'te sır, `.env`, ham veri ya da bilim ekibinin yayımlanmamış verisi yok.
+- `--force` yok, push edilmiş geçmiş yeniden yazılmaz.
+- Push başarısızsa açıkça söylenir; sonucu `durum.md`'ye yazılır.
+
 ## Ortam
 - Canlı ortam: yok. Sırlar (AI API anahtarı) `.env`'de, `.env` `.gitignore`'da.
 - Ham veri (SPICE çekirdekleri, LOLA DEM) ve üretilmiş paket git'e girmez.

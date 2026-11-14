@@ -33,6 +33,9 @@
 		"baslik": "Yorum",
 		"yedek": "Yorum, değerler hesaplandığında burada görünecek. Yorum yalnız sitenin hesapladığı sonucu anlatır, kendi sayısını üretmez."
 	},
+	"ufuk": {
+		"etiket": "Ufuk, 0° yükseklik"
+	},
 	"yon": {
 		"kuzey": "K",
 		"dogu": "D",
@@ -64,7 +67,6 @@
 		"hakkinda": "Veri kaynakları, yöntem, doğrulama ve sınırlamalar."
 	},
 	"ana": {
-		"ust": "Ay güney kutbu · iniş planlama",
 		"soru": "Hangi gün, hangi noktaya inmeli?",
 		"alt": "Kutupta Güneş ve Dünya ufkun hemen üstünde gezer. Küçük bir konum ya da tarih farkı güç ve iletişimi tamamen değiştirir.",
 		"planla": "Planlamaya başla",

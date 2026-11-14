@@ -23,7 +23,7 @@
 	<p class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-metin-ikincil" data-yer-tutucu={girdi ?? ''}>
 		<Rozet tur="yer">{c.t('yer_tutucu.etiket')}</Rozet>
 		<span>{metin}</span>
-		{#if girdi}<span class="font-kod">{girdi}</span>{/if}
+		{#if girdi}<span class="tabular-nums">{girdi}</span>{/if}
 	</p>
 {:else}
 	<div
@@ -34,7 +34,7 @@
 		<Rozet tur="yer">{c.t('yer_tutucu.etiket')}</Rozet>
 		<p class="max-w-sm text-sm text-metin-ikincil">{metin}</p>
 		{#if girdi}
-			<p class="font-kod text-xs text-metin-ikincil">{c.t('yer_tutucu.girdi')}: {girdi}</p>
+			<p class="text-xs text-metin-ikincil">{c.t('yer_tutucu.girdi')}: {girdi}</p>
 		{/if}
 	</div>
 {/if}

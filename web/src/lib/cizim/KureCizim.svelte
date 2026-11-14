@@ -17,5 +17,5 @@
 	<circle cx={k.kutup.x} cy={k.kutup.y} r="9" class="fill-none stroke-vurgu/60" stroke-width="1" />
 	<circle cx={k.kutup.x} cy={k.kutup.y} r="3.5" class="fill-vurgu" />
 	<line x1={k.kutup.x} y1={k.kutup.y + 10} x2={k.kutup.x} y2="296" class="stroke-cizgi-guclu" stroke-dasharray="2 3" />
-	<text x={k.kutup.x} y="312" text-anchor="middle" class="fill-metin-ikincil font-kod text-[11px]">{kutupEtiketi}</text>
+	<text x={k.kutup.x} y="312" text-anchor="middle" class="fill-metin-ikincil text-[11px]">{kutupEtiketi}</text>
 </svg>

@@ -5,7 +5,6 @@
 	import { ceviri } from '$lib/i18n/baglam';
 	import { koordinat } from '$lib/bicim';
 	import { BILINEN_GOREVLER, GOREV_SAYISI } from '$lib/veri/gorevler';
-	import { SAYFA_SIMGESI } from '$lib/simgeler';
 	import SayfaBasi from '$lib/bilesenler/SayfaBasi.svelte';
 	import Panel from '$lib/bilesenler/Panel.svelte';
 	import YerTutucu from '$lib/bilesenler/YerTutucu.svelte';
@@ -21,7 +20,7 @@
 	const yuvalar = Array.from({ length: GOREV_SAYISI }, (_, i) => BILINEN_GOREVLER[i]);
 </script>
 
-<SayfaBasi sayfa="gorevler" simge={SAYFA_SIMGESI.gorevler} baslik={c.t('gorevler.baslik')} giris={c.t('gorevler.giris')} />
+<SayfaBasi sayfa="gorevler" baslik={c.t('gorevler.baslik')} giris={c.t('gorevler.giris')} />
 
 <div class="kap grid grid-cols-12 items-start gap-6" data-izgara>
 	<Panel baslik={c.t('gorevler.kure')} simge={Orbit} bekliyor sinif="col-span-12 lg:col-span-5 lg:sticky lg:top-24">
@@ -36,7 +35,7 @@
 			{#each yuvalar as gorev, i (i)}
 				<li class="flex items-start gap-4 p-4">
 					<span
-						class="grid size-8 shrink-0 place-items-center rounded-kutu font-kod text-xs {gorev
+						class="grid size-8 shrink-0 place-items-center rounded-kutu text-xs {gorev
 							? 'bg-yuzey-2 text-metin'
 							: 'border border-dashed border-cizgi-guclu text-metin-ikincil'}">{String(i + 1).padStart(2, '0')}</span
 					>
@@ -46,7 +45,7 @@
 							<p class="text-sm text-metin-ikincil">
 								{c.t('gorevler.inis_noktasi')}: <span class="text-metin tabular-nums">{koordinat(gorev.enlem, gorev.boylam, c.dil, yon)}</span>
 							</p>
-							<p class="text-xs break-all text-metin-ikincil">{c.t('gorevler.kaynak')}: <span class="font-kod">{gorev.kaynak}</span></p>
+							<p class="text-xs break-all text-metin-ikincil">{c.t('gorevler.kaynak')}: <span class="tabular-nums">{gorev.kaynak}</span></p>
 						</div>
 					{:else}
 						<p class="self-center text-sm text-metin-ikincil">{c.t('gorevler.gorev_bekliyor')}</p>

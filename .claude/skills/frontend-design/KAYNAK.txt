@@ -1,0 +1,3 @@
+Kaynak: https://github.com/anthropics/skills/tree/2c5958ecac7cee2b583967a2c4981d0f4a75c579/skills/frontend-design
+Sabitlenen commit: 2c5958ecac7cee2b583967a2c4981d0f4a75c579 (2026-11-06)
+İçerik okundu 2026-11-14: yalnız SKILL.md ve LICENSE.txt (Apache 2.0); betik ya da hook yok.

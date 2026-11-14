@@ -2,7 +2,6 @@
 <script lang="ts">
 	import Scale from '@lucide/svelte/icons/scale';
 	import { ceviri } from '$lib/i18n/baglam';
-	import { SAYFA_SIMGESI } from '$lib/simgeler';
 	import SayfaBasi from '$lib/bilesenler/SayfaBasi.svelte';
 	import Panel from '$lib/bilesenler/Panel.svelte';
 	import YerTutucu from '$lib/bilesenler/YerTutucu.svelte';
@@ -11,7 +10,7 @@
 	const METRIKLER = ['sutun_gunes', 'sutun_iletisim', 'sutun_karanlik'];
 </script>
 
-<SayfaBasi sayfa="karsilastir" simge={SAYFA_SIMGESI.karsilastir} baslik={c.t('karsilastir.baslik')} giris={c.t('karsilastir.giris')} />
+<SayfaBasi sayfa="karsilastir" baslik={c.t('karsilastir.baslik')} giris={c.t('karsilastir.giris')} />
 
 <div class="kap grid grid-cols-12 gap-6" data-izgara>
 	{#each ['A', 'B'] as taraf (taraf)}
@@ -47,6 +46,6 @@
 				</tbody>
 			</table>
 		</div>
-		<YerTutucu satir metin={c.t('karsilastir.ozet_bekliyor')} girdi="B9 · 7.1 · K2" />
+		<YerTutucu satir metin={c.t('karsilastir.ozet_bekliyor')} girdi="B9, 7.1, K2" />
 	</Panel>
 </div>

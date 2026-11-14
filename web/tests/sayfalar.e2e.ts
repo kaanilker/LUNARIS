@@ -1,5 +1,5 @@
 // Kabul (.ajan/aktif-is.md): 7 sayfa /tr/ ve /en/ önekleriyle açılıyor, 375 px'te yatay kaydırma yok.
-// docs/tasarim.md §4 ölçüt 1, 3, 7, 8, 11 ve 12 burada ölçülür.
+// docs/tasarim.md §4 ölçüt 1, 3, 7, 8, 11, 12 ve 13 burada ölçülür.
 import { expect, test, type Page } from '@playwright/test';
 
 const SAYFALAR: Record<'tr' | 'en', string[]> = {
@@ -58,7 +58,7 @@ test('dil değiştirince aynı sayfa öbür dilde açılır', async ({ page }) =
 test('parsel adresi istemci yedeğiyle açılır (.htaccess)', async ({ page }) => {
 	const yanit = await page.goto('/tr/site/P-0042/');
 	expect(yanit?.status()).toBe(200);
-	await expect(page.getByText('Parsel · P-0042')).toBeVisible();
+	await expect(page.locator('h1')).toHaveText('Parsel P-0042');
 	await expect(page.locator('html')).toHaveAttribute('lang', 'tr');
 });
 
@@ -159,3 +159,20 @@ test('üst çubuk içerik kabının içinde kalıyor (1280 px, Türkçe)', async
 	});
 	expect(sag).toBeLessThanOrEqual(0.5);
 });
+
+// Ölçüt 13: frontend-design skill'inin saydığı şablon işaretleri görünen sayfada yok.
+for (const yollar of Object.values(SAYFALAR)) {
+	for (const yol of yollar) {
+		test(`${yol} şablon işareti yok (ölçüt 13)`, async ({ page }) => {
+			await page.goto(yol);
+			const bulgu = await page.evaluate(() => {
+				const metin = document.body.innerText;
+				const buyukHarf = [...document.querySelectorAll<HTMLElement>('body *')].filter(
+					(o) => o.offsetParent !== null && getComputedStyle(o).textTransform === 'uppercase'
+				).length;
+				return { ortaNokta: metin.includes(' · '), ok: metin.includes('→'), buyukHarf };
+			});
+			expect(bulgu).toEqual({ ortaNokta: false, ok: false, buyukHarf: 0 });
+		});
+	}
+}

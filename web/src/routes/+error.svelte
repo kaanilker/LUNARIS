@@ -15,7 +15,7 @@
 
 <main class="kap grid min-h-dvh place-items-center" lang={dil}>
 	<div class="flex max-w-md flex-col items-center gap-4 rounded-kart border border-cizgi bg-yuzey p-10 text-center">
-		<p class="rounded-full border border-cizgi bg-yuzey-2 px-3 py-1 font-kod text-xs text-metin-ikincil">{page.status}</p>
+		<p class="rounded-full border border-cizgi bg-yuzey-2 px-3 py-1 text-xs text-metin-ikincil">{page.status}</p>
 		<h1 class="text-3xl font-semibold text-metin">{t('hata.baslik')}</h1>
 		<p class="text-metin-ikincil">{t('hata.metin')}</p>
 		<a class="dugme-birincil mt-2" href={adres(dil, 'ana')}><ArrowLeft class="size-4" aria-hidden="true" />{t('hata.don')}</a>

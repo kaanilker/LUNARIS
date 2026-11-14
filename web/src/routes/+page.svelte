@@ -20,7 +20,7 @@
 	<div class="flex flex-col items-center gap-6 rounded-kart border border-cizgi bg-yuzey p-10 text-center">
 		<Logo />
 		<h1 class="text-3xl font-semibold text-metin">{cevirmen(VARSAYILAN_DIL)('marka.ad')}</h1>
-		<p class="text-sm text-metin-ikincil">{cevirmen('tr')('kok.sec')} · {cevirmen('en')('kok.sec')}</p>
+		<p class="text-sm text-metin-ikincil"><span lang="tr">{cevirmen('tr')('kok.sec')}</span><br /><span lang="en">{cevirmen('en')('kok.sec')}</span></p>
 		<ul class="flex flex-wrap justify-center gap-3">
 			{#each DILLER as dil (dil)}
 				<li lang={dil}><a class="dugme-ikincil" href={adres(dil, 'ana')}>{cevirmen(dil)('kok.dil_adi')}</a></li>

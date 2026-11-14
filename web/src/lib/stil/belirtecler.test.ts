@@ -70,11 +70,14 @@ describe('tasarım belirteçleri', () => {
 		expect(kullanan.sort()).toEqual([...ANLAM_RENGI_KULLANABILIR].sort());
 	});
 
-	it('katmanlar ayrışır, zemin saf siyah değil (ölçüt 10)', () => {
+	it('zemin laciverde çalan siyah, katmanlar ayrışır (ölçüt 10)', () => {
 		const b = belirtecler();
 		const zemin = lYildiz(b['zemin']);
-		expect(zemin).toBeGreaterThanOrEqual(7);
-		expect(zemin).toBeLessThanOrEqual(12);
+		expect(zemin).toBeGreaterThanOrEqual(1);
+		expect(zemin).toBeLessThanOrEqual(4);
+		// Lacivert: mavi kanal kırmızı ve yeşilden baskın.
+		const [r, g, bl] = [1, 3, 5].map((i) => parseInt(b['zemin'].slice(i, i + 2), 16));
+		expect(bl).toBeGreaterThan(Math.max(r, g));
 		expect(lYildiz(b['yuzey']) - zemin).toBeGreaterThanOrEqual(3);
 		expect(lYildiz(b['yuzey-2']) - lYildiz(b['yuzey'])).toBeGreaterThanOrEqual(3);
 	});

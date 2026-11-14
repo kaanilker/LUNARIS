@@ -9,34 +9,33 @@
 	--color-*: initial;
 	--radius-*: initial;
 
-	/* Katmanlar: laciverde çalan koyu arduvaz. Zemin L* 9,7; kart ve girdi birer kat açık. */
-	--color-zemin: #161a2b;
-	--color-yuzey: #1f2438;
-	--color-yuzey-2: #2a3049;
-	--color-cizgi: #343b56;
-	--color-cizgi-guclu: #717b9d;
+	/* Katmanlar: laciverde çalan siyah zemin (L* 1,7), gece laciverti panel, bir kat açık girdi. */
+	--color-zemin: #04060d;
+	--color-yuzey: #0b1122;
+	--color-yuzey-2: #141d36;
+	--color-cizgi: #1f2b4a;
+	--color-cizgi-guclu: #5d6b8f;
 
-	/* Metin */
-	--color-metin: #e2e8f0;
-	--color-metin-ikincil: #a3afc4;
+	/* Metin: ay ışığı beyazı ve soğuk gri */
+	--color-metin: #e8ecf5;
+	--color-metin-ikincil: #93a0bb;
 
 	/* Anlam renkleri */
 	--color-gunes: #fbbf24;
 	--color-dunya: #38bdf8;
 
 	/* Arayüz vurgusu: yalnız birincil düğme, etkin menü, odak halkası */
-	--color-vurgu: #a78bfa;
-	--color-vurgu-uzerine: #17132b;
+	--color-vurgu: #b3a4ff;
+	--color-vurgu-uzerine: #120d2b;
 
 	/* Durum */
 	--color-uyari: #f472b6;
 	--color-hata: #f87171;
 	--color-basari: #34d399;
 
-	/* Yazı tipleri */
-	--font-baslik: 'Outfit Variable', 'Inter Variable', system-ui, sans-serif;
-	--font-govde: 'Inter Variable', system-ui, sans-serif;
-	--font-kod: 'IBM Plex Mono', ui-monospace, monospace;
+	/* Yazı: tek aile, iki rol. Başlık genişlik ekseninde açık (app.css), gövde normal. */
+	--font-baslik: 'Archivo Variable', system-ui, sans-serif;
+	--font-govde: 'Archivo Variable', system-ui, sans-serif;
 
 	/* Köşeler: kart 12 px, iç kutu 8 px; rozetler rounded-full */
 	--radius-kutu: 8px;

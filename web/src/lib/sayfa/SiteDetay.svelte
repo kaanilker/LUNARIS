@@ -14,7 +14,6 @@
 	import Plus from '@lucide/svelte/icons/plus';
 	import Printer from '@lucide/svelte/icons/printer';
 	import { ceviri } from '$lib/i18n/baglam';
-	import { SAYFA_SIMGESI } from '$lib/simgeler';
 	import SayfaBasi from '$lib/bilesenler/SayfaBasi.svelte';
 	import Panel from '$lib/bilesenler/Panel.svelte';
 	import YerTutucu from '$lib/bilesenler/YerTutucu.svelte';
@@ -43,10 +42,8 @@
 
 <SayfaBasi
 	sayfa="site"
-	simge={SAYFA_SIMGESI.site}
-	ust={parsel ? `${c.t('site.parsel')} · ${parsel}` : c.t('site.parsel_yok')}
-	baslik={c.t('site.baslik')}
-	giris={parsel ? undefined : c.t('site.parsel_yok_metin')}
+	baslik={parsel ? `${c.t('site.parsel')} ${parsel}` : c.t('site.baslik')}
+	giris={parsel ? c.t('site.baslik') : `${c.t('site.parsel_yok')}. ${c.t('site.parsel_yok_metin')}`}
 />
 
 <div class="kap grid grid-cols-12 items-start gap-6" data-izgara>
@@ -68,13 +65,13 @@
 					<line x1={x(i * 30)} y1="110" x2={x(i * 30)} y2={i % 3 === 0 ? 120 : 116} class="stroke-cizgi-guclu" />
 				{/each}
 			</svg>
-			<ol class="absolute inset-x-4 bottom-2 h-5 font-kod text-xs text-metin-ikincil" aria-hidden="true">
+			<ol class="absolute inset-x-4 bottom-2 h-5 text-xs text-metin-ikincil" aria-hidden="true">
 				{#each YONLER as y, i (i)}
 					<li class="absolute -translate-x-1/2" style:left={`${(y.az / 360) * 100}%`}>{c.t(`yon.${y.anahtar}`)}</li>
 				{/each}
 			</ol>
 		</div>
-		<YerTutucu satir metin={c.t('site.panorama_not')} girdi="B2 · B6 · 0.3 · 0.1 · 0.4 · S1" />
+		<YerTutucu satir metin={c.t('site.panorama_not')} girdi="B2, B6, 0.3, 0.1, 0.4, S1" />
 	</Panel>
 
 	<Gosterge sinif="col-span-12 md:col-span-4" etiket={c.t('site.gun_batimi')} formul="0.5" anlam="gunes" />
@@ -83,7 +80,7 @@
 
 	<Panel baslik={c.t('site.cizelge')} simge={Clock} bekliyor sinif="col-span-12">
 		<p class="-mt-2 text-sm text-metin-ikincil">{c.t('site.cizelge_metin')}</p>
-		<YerTutucu metin={c.t('site.oynatici_bekliyor')} girdi="S.3 · S.4 · S.5 · S3" sinif="min-h-32" />
+		<YerTutucu metin={c.t('site.oynatici_bekliyor')} girdi="S.3, S.4, S.5, S3" sinif="min-h-32" />
 		<div class="flex flex-wrap items-center gap-3" role="group" aria-label={c.t('site.oynatici')}>
 			<button class="dugme-ikincil w-10 px-0" disabled aria-label={c.t('site.geri')}><SkipBack class="size-4" /></button>
 			<button class="dugme-ikincil" disabled><Play class="size-4" aria-hidden="true" />{c.t('site.oynat')}</button>
@@ -107,7 +104,7 @@
 				>
 				<button class="dugme-birincil col-span-2" disabled>{c.t('site.hesapla')}</button>
 			</form>
-			<YerTutucu satir metin={c.t('site.koordinat_not')} girdi="S.1 · S.9" />
+			<YerTutucu satir metin={c.t('site.koordinat_not')} girdi="S.1, S.9" />
 		</Panel>
 
 		<Panel baslik={c.t('site.dis')} simge={ExternalLink}>

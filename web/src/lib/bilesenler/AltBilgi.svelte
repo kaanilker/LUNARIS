@@ -9,8 +9,7 @@
 <footer class="mt-20 border-t border-cizgi">
 	<div class="kap flex flex-col items-center justify-between gap-3 py-8 text-sm text-metin-ikincil sm:flex-row">
 		<p>
-			<span class="font-baslik font-semibold tracking-wide text-metin">{c.t('marka.ad')}</span>
-			<span class="mx-2" aria-hidden="true">·</span>{c.t('alt.metin')}
+			<span class="mr-3 font-baslik font-semibold text-metin [font-stretch:118%]">{c.t('marka.ad')}</span>{c.t('alt.metin')}
 		</p>
 		<p class="flex items-center gap-4">
 			<a href={REPO} rel="noopener" class="inline-flex h-9 items-center gap-2 transition-colors hover:text-metin">

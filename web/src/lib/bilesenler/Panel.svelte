@@ -20,7 +20,7 @@
 		children
 	}: {
 		baslik?: string;
-		simge?: Component<{ class?: string }>;
+		simge?: Component<{ class?: string; "aria-hidden"?: boolean | "true" }>;
 		ton?: Ton;
 		bekliyor?: boolean;
 		sinif?: string;
@@ -42,9 +42,14 @@
 		<header class="flex flex-wrap items-center gap-3">
 			{#if simge}
 				{@const Simge = simge}
-				<span class="grid size-8 shrink-0 place-items-center rounded-kutu {TON[ton]}" aria-hidden="true">
-					<Simge class="size-4" />
-				</span>
+				{#if ton === 'gunes' || ton === 'dunya'}
+					<!-- Renkli kutu yalnız anlam taşıdığı yerde: Güneş ve Dünya. -->
+					<span class="grid size-8 shrink-0 place-items-center rounded-kutu {TON[ton]}" aria-hidden="true">
+						<Simge class="size-4" />
+					</span>
+				{:else}
+					<Simge class="size-4 shrink-0 {ton === 'vurgu' ? 'text-vurgu' : 'text-metin-ikincil'}" aria-hidden="true" />
+				{/if}
 			{/if}
 			<h2 class="text-base font-semibold text-metin">{baslik}</h2>
 			{#if bekliyor || sag}

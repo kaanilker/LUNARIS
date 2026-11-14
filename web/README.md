@@ -1,7 +1,7 @@
 # LUNARIS web
 
 SvelteKit + TypeScript + Tailwind CSS 4, statik çıktı (`adapter-static`). Mimari: `../docs/mimari.md` §7. Sayfalar ve adresler:
-`../docs/sayfalar.md` (tek kaynak kodda `src/lib/sayfalar.ts`). Tasarım belirteçleri: `src/lib/stil/belirtecler.css` (Tailwind `@theme`; hazır renk paleti kapalı, yalnız `bg-yuzey`, `text-gunes` gibi adlar geçer). Kurallar ve ölçütler: `../docs/tasarim.md`.
+`../docs/sayfalar.md` (tek kaynak kodda `src/lib/sayfalar.ts`). Tasarım planı `../docs/tasarim.md` §3 (frontend-design skill sürecinden). Belirteçler: `src/lib/stil/belirtecler.css` (Tailwind `@theme`; hazır renk paleti kapalı, yalnız `bg-yuzey`, `text-gunes` gibi adlar geçer). Kurallar ve ölçütler: `../docs/tasarim.md`.
 
 ```
 npx npm@11.6.2 install     # npm 10.9 bu ağaçta düşüyor (../docs/dersler.md)

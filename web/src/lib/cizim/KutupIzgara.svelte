@@ -14,7 +14,7 @@
 	</g>
 	<circle cx="150" cy="150" r="108" class="fill-none stroke-cizgi-guclu" stroke-width="1.25" />
 	<circle cx="150" cy="150" r="3" class="fill-metin-ikincil" />
-	<g class="fill-metin-ikincil font-kod text-[11px]" text-anchor="middle">
+	<g class="fill-metin-ikincil text-[11px]" text-anchor="middle">
 		<text x="150" y="30">{etiketler[0]}</text>
 		<text x="276" y="154">{etiketler[1]}</text>
 		<text x="150" y="282">{etiketler[2]}</text>

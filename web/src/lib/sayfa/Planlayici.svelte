@@ -9,7 +9,6 @@
 	import ListOrdered from '@lucide/svelte/icons/list-ordered';
 	import Share2 from '@lucide/svelte/icons/share-2';
 	import { ceviri } from '$lib/i18n/baglam';
-	import { SAYFA_SIMGESI } from '$lib/simgeler';
 	import SayfaBasi from '$lib/bilesenler/SayfaBasi.svelte';
 	import Panel from '$lib/bilesenler/Panel.svelte';
 	import YerTutucu from '$lib/bilesenler/YerTutucu.svelte';
@@ -36,7 +35,7 @@
 	] as [string, string, string, string]);
 </script>
 
-<SayfaBasi sayfa="planla" simge={SAYFA_SIMGESI.planla} baslik={c.t('planla.baslik')} giris={c.t('planla.giris')} />
+<SayfaBasi sayfa="planla" baslik={c.t('planla.baslik')} giris={c.t('planla.giris')} />
 
 <div class="kap grid grid-cols-12 items-start gap-6" data-izgara>
 	<!-- Senaryo -->
@@ -80,7 +79,7 @@
 					<input type="range" disabled />
 				</label>
 				<p class="text-xs text-metin-ikincil">{c.t('planla.gecikme_soru')}</p>
-				<YerTutucu satir metin={c.t('planla.gecikme_bekliyor')} girdi="S.7 · 3.2" />
+				<YerTutucu satir metin={c.t('planla.gecikme_bekliyor')} girdi="S.7, 3.2" />
 			</div>
 		</form>
 	</Panel>
@@ -102,11 +101,11 @@
 					<dd class="font-baslik text-lg font-semibold text-metin-ikincil">—</dd>
 				</div>
 			</dl>
-			<YerTutucu satir metin={c.t('planla.tarih_hesap')} girdi="B3 · B18" />
+			<YerTutucu satir metin={c.t('planla.tarih_hesap')} girdi="B3, B18" />
 		</Panel>
 
 		<Panel baslik={c.t('planla.harita')} simge={MapIcon} bekliyor>
-			<YerTutucu metin={c.t('planla.harita_not')} girdi="B4 · P1 · 7.1">
+			<YerTutucu metin={c.t('planla.harita_not')} girdi="B4, P1, 7.1">
 				<KutupIzgara etiketler={yonler} />
 			</YerTutucu>
 		</Panel>
@@ -136,7 +135,7 @@
 								<td class="px-4 py-3">
 									<span class="flex gap-1">
 										{#each ['T1', 'T2', 'T3', 'T4'] as test (test)}
-											<span class="rounded-full border border-dashed border-cizgi-guclu px-2 py-0.5 font-kod text-[11px]">{test}</span>
+											<span class="rounded-full border border-dashed border-cizgi-guclu px-2 py-0.5 text-[11px]">{test}</span>
 										{/each}
 									</span>
 								</td>
@@ -145,7 +144,7 @@
 					</tbody>
 				</table>
 			</div>
-			<YerTutucu satir metin={c.t('planla.sonuc_bekliyor')} girdi="B9 · B20 · 7.1" />
+			<YerTutucu satir metin={c.t('planla.sonuc_bekliyor')} girdi="B9, B20, 7.1" />
 		</Panel>
 
 		<AiYorum />

@@ -33,6 +33,9 @@
 		"baslik": "Commentary",
 		"yedek": "Commentary will appear here once values are computed. It only describes results the site has computed and never produces numbers of its own."
 	},
+	"ufuk": {
+		"etiket": "Horizon, 0° elevation"
+	},
 	"yon": {
 		"kuzey": "N",
 		"dogu": "E",
@@ -64,7 +67,6 @@
 		"hakkinda": "Data sources, method, validation and limitations."
 	},
 	"ana": {
-		"ust": "Lunar south pole · landing planning",
 		"soru": "Which day, which spot to land?",
 		"alt": "At the pole the Sun and Earth move just above the horizon. A small change in place or date can completely change power and communication.",
 		"planla": "Start planning",

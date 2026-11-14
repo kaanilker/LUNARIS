@@ -74,7 +74,7 @@
 	<div class="kap flex h-16 items-center justify-between gap-4">
 		<a href={adres(c.dil, 'ana')} class="flex items-center gap-2.5" aria-label={c.t('marka.ad')}>
 			<Logo />
-			<span class="font-baslik text-lg font-semibold tracking-wide text-metin">{c.t('marka.ad')}</span>
+			<span class="font-baslik text-lg font-semibold text-metin [font-stretch:125%]">{c.t('marka.ad')}</span>
 		</a>
 
 		<nav class="hidden xl:block" aria-label={c.t('menu.ana_menu')}>{@render baglantilar(false)}</nav>

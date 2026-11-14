@@ -49,6 +49,6 @@
 			{deger ?? '—'}{#if deger && birim}<span class="ml-1 text-sm font-normal text-metin-ikincil">{birim}</span>{/if}
 		</p>
 		<p class="text-sm text-metin">{etiket}</p>
-		{#if formul}<p class="font-kod text-xs text-metin-ikincil">{c.t('yer_tutucu.formul')} {formul}</p>{/if}
+		{#if formul}<p class="text-xs text-metin-ikincil">{c.t('yer_tutucu.formul')} {formul}</p>{/if}
 	</div>
 </div>

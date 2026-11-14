@@ -1,17 +1,10 @@
-<!-- Hakkında (docs/sayfalar.md §7). Animasyon yok (docs/animasyonlar.md "Hakkında"). -->
+<!-- Hakkında (docs/sayfalar.md §7). Animasyon yok (docs/animasyonlar.md "Hakkında"). Teknik rapor düzeni. -->
 <script lang="ts">
-	import Database from '@lucide/svelte/icons/database';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
-	import FlaskConical from '@lucide/svelte/icons/flask-conical';
-	import ShieldCheck from '@lucide/svelte/icons/shield-check';
-	import BookOpen from '@lucide/svelte/icons/book-open';
-	import Users from '@lucide/svelte/icons/users';
 	import CodeXml from '@lucide/svelte/icons/code-xml';
-	import Video from '@lucide/svelte/icons/video';
 	import { ceviri } from '$lib/i18n/baglam';
-	import { SAYFA_SIMGESI } from '$lib/simgeler';
 	import SayfaBasi from '$lib/bilesenler/SayfaBasi.svelte';
-	import Panel from '$lib/bilesenler/Panel.svelte';
+	import Bolum from '$lib/bilesenler/Bolum.svelte';
 	import YerTutucu from '$lib/bilesenler/YerTutucu.svelte';
 
 	const c = ceviri();
@@ -34,40 +27,37 @@
 	const HALKALAR = ['gok', 'ufuk', 'gozlem', 'inis'];
 </script>
 
-<SayfaBasi sayfa="hakkinda" simge={SAYFA_SIMGESI.hakkinda} baslik={c.t('hakkinda.baslik')} giris={c.t('hakkinda.giris')} />
+<SayfaBasi sayfa="hakkinda" baslik={c.t('hakkinda.baslik')} giris={c.t('hakkinda.giris')} />
 
-<div class="kap grid grid-cols-12 gap-6" data-izgara>
-	<header class="col-span-12 flex items-center gap-3">
-		<span class="grid size-8 place-items-center rounded-kutu bg-yuzey-2 text-metin-ikincil" aria-hidden="true"><Database class="size-4" /></span>
-		<h2 class="text-xl font-semibold text-metin">{c.t('hakkinda.kaynaklar')}</h2>
-	</header>
-	{#each KAYNAKLAR as k (k.ad)}
-		<a
-			data-panel
-			href={k.url}
-			rel="noopener"
-			target="_blank"
-			class="group col-span-12 flex flex-col gap-2 rounded-kart border border-cizgi bg-yuzey p-5 transition-colors hover:border-cizgi-guclu hover:bg-yuzey-2 md:col-span-6 lg:col-span-4"
-		>
-			<span class="flex items-center justify-between font-semibold text-metin">
-				{k.ad}<ExternalLink class="size-4 text-metin-ikincil group-hover:text-metin" aria-hidden="true" />
-			</span>
-			<span class="text-sm text-metin-ikincil">{c.t(`hakkinda.${k.anahtar}`)}</span>
-		</a>
-	{/each}
+<div class="kap grid grid-cols-12 gap-y-16">
+	<Bolum baslik={c.t('hakkinda.kaynaklar')}>
+		<ul class="col-span-12 divide-y divide-cizgi border-y border-cizgi">
+			{#each KAYNAKLAR as k (k.ad)}
+				<li>
+					<a
+						href={k.url}
+						rel="noopener"
+						target="_blank"
+						class="group grid grid-cols-12 items-baseline gap-x-6 gap-y-1 py-4 transition-colors hover:bg-yuzey"
+					>
+						<span class="col-span-12 flex items-center gap-2 font-semibold text-metin sm:col-span-4">
+							{k.ad}<ExternalLink class="size-3.5 text-metin-ikincil group-hover:text-metin" aria-hidden="true" />
+						</span>
+						<span class="col-span-12 text-sm text-metin-ikincil sm:col-span-8">{c.t(`hakkinda.${k.anahtar}`)}</span>
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</Bolum>
 
-	<Panel baslik={c.t('hakkinda.yontem')} simge={FlaskConical} bekliyor sinif="col-span-12 md:col-span-6">
-		<YerTutucu metin={c.t('hakkinda.yontem_bekliyor')} girdi="B17" sinif="min-h-40" />
-	</Panel>
-	<Panel baslik={c.t('hakkinda.sinirlamalar')} simge={BookOpen} bekliyor sinif="col-span-12 md:col-span-6">
-		<YerTutucu metin={c.t('hakkinda.sinirlamalar_bekliyor')} girdi="B17" sinif="min-h-40" />
-	</Panel>
+	<Bolum baslik={c.t('hakkinda.yontem')}>
+		<div class="col-span-12"><YerTutucu metin={c.t('hakkinda.yontem_bekliyor')} girdi="B17" sinif="min-h-36" /></div>
+	</Bolum>
 
-	<Panel baslik={c.t('hakkinda.dogrulama')} simge={ShieldCheck} bekliyor sinif="col-span-12">
-		<p class="-mt-2 text-sm text-metin-ikincil">{c.t('hakkinda.dogrulama_metin')}</p>
-		<div class="overflow-x-auto rounded-kutu border border-cizgi">
+	<Bolum baslik={c.t('hakkinda.dogrulama')} aciklama={c.t('hakkinda.dogrulama_metin')}>
+		<div class="col-span-12 overflow-x-auto rounded-kutu border border-cizgi" data-panel>
 			<table class="text-sm">
-				<thead class="bg-yuzey-2 text-left text-xs text-metin-ikincil">
+				<thead class="bg-yuzey text-left text-xs text-metin-ikincil">
 					<tr>
 						<th class="px-4 py-3 font-medium">{c.t('hakkinda.sutun_ne')}</th>
 						<th class="px-4 py-3 font-medium">{c.t('hakkinda.sutun_karsi')}</th>
@@ -85,14 +75,21 @@
 				</tbody>
 			</table>
 		</div>
-		<YerTutucu satir metin={c.t('hakkinda.dogrulama_bekliyor')} girdi="B11 · B12" />
-	</Panel>
+		<div class="col-span-12"><YerTutucu satir metin={c.t('hakkinda.dogrulama_bekliyor')} girdi="B11, B12" /></div>
+	</Bolum>
 
-	<Panel baslik={c.t('hakkinda.ekip')} simge={Users} sinif="col-span-12 md:col-span-6">
-		<p class="text-sm leading-relaxed text-metin-ikincil">{c.t('hakkinda.ekip_metin')}</p>
-		<a href={REPO} rel="noopener" class="dugme-ikincil w-fit"><CodeXml class="size-4" aria-hidden="true" />{c.t('alt.kaynak')}</a>
-	</Panel>
-	<Panel baslik={c.t('hakkinda.video')} simge={Video} bekliyor sinif="col-span-12 md:col-span-6">
-		<YerTutucu metin={c.t('hakkinda.video_bekliyor')} sinif="min-h-32" />
-	</Panel>
+	<Bolum baslik={c.t('hakkinda.sinirlamalar')}>
+		<div class="col-span-12"><YerTutucu metin={c.t('hakkinda.sinirlamalar_bekliyor')} girdi="B17" sinif="min-h-36" /></div>
+	</Bolum>
+
+	<Bolum baslik={c.t('hakkinda.ekip')}>
+		<div class="col-span-12 flex flex-col items-start gap-5">
+			<p class="max-w-2xl leading-relaxed text-metin-ikincil">{c.t('hakkinda.ekip_metin')}</p>
+			<a href={REPO} rel="noopener" class="dugme-ikincil"><CodeXml class="size-4" aria-hidden="true" />{c.t('alt.kaynak')}</a>
+		</div>
+	</Bolum>
+
+	<Bolum baslik={c.t('hakkinda.video')}>
+		<div class="col-span-12"><YerTutucu metin={c.t('hakkinda.video_bekliyor')} sinif="min-h-32" /></div>
+	</Bolum>
 </div>

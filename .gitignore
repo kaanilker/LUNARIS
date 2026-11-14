@@ -1,0 +1,10 @@
+Claude-Sistem/
+.env
+.env.*
+hat/ham/
+veri/*/*
+!veri/*/manifest.json
+node_modules/
+__pycache__/
+.venv/
+dist/

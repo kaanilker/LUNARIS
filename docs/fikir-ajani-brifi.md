@@ -80,32 +80,23 @@ yaz. Bilimsel girdilerin listesi ve durumu: `docs/bilim-girdileri.md`.
 
 ## 6. Zaten planlananlar (tekrar önerme; geliştirmek serbest)
 
-- **Rehberli tur:** problem, yöntem, doğrulama, öneri; 60 saniyede 4 adım.
-- **Ana sayfa:** canlı güney kutbu sahnesi ve "Hangi gün, hangi noktaya inmeli?" sorusu. Yanında
-  "Ay şu an" bölümü ve scroll anlatısı.
-- **Hızlı Planlayıcı:**
-  - Tarih ve bölge seçilir, puanlanmış harita ve en iyi 5–10 site listelenir.
-  - Gecikme kaydırıcısı ile fırlatma kayınca sıralama canlı değişir.
-  - Senaryo link olarak paylaşılır.
-- **Gelişmiş Analiz:**
-  - Eşik süzgeçleri.
-  - Güç ve iletişim dengesi Pareto grafiğiyle gösterilir.
-  - Panel ve batarya modeli.
-  - DSN istasyonları.
-  - İniş belirsizliği.
-  - Benzer site önerisi.
-  - Aylık görünüm ve uzman modu.
-- **Site Detay:**
-  - 360° ufuk panoraması.
-  - Gün batımı, Dünya batımı ve sonraki iletişim penceresi için geri sayımlar.
-  - Zaman çizelgesi ve zaman oynatıcı.
-  - Astronot görünümü.
-  - A/B karşılaştırma.
-  - Tek sayfalık rapor ve özel koordinat girişi.
-- **Tarihteki Ay görevleri:** "LUNARIS o gün ne derdi?" sorusu, doğrulama bölümünü de besler.
-- **Hakkında / Yöntem:** veri kaynakları ve sınırlamalar.
+Sayfa yapısının sahibi `docs/sayfalar.md` (7 sayfa). Kısaca:
 
-Güncel kapsam ve demo akışı: `SPEC.md`.
+1. **Ana Sayfa:** dönen tam Ay küresi; "güney kutbu şu an" göstergeleri (enerji, inişe elverişlilik);
+   kısa anlatı; ağırlık AI yorumunda.
+2. **Planlayıcı:** fırlatma tarihi ve Dünya'daki kalkış noktası girilir. Sistem en uygun 5–10 parseli
+   nedenleri ve verileriyle verir. AI yorumu parselleri karşılaştırır. Gecikme kaydırıcısı ve "en uygun
+   tarih".
+3. **Uzman Analiz:** eşik süzgeçleri, Pareto, panel ve batarya, DSN, iniş belirsizliği, benzer parsel,
+   aylık görünüm.
+4. **Site Detay:** seçilen noktanın 360° ufku, Güneş ve Dünya izleri, geri sayımlar, zaman çizelgesi,
+   zaman oynatıcı, astronot görünümü, dış bağlantılar.
+5. **Karşılaştır:** iki parsel ya da iki tarih yan yana, rapor.
+6. **Görevler:** yalnız görsel; tarihteki en önemli 10 Ay iniş görevi.
+7. **Hakkında:** yöntem, doğrulama tablosu, sınırlamalar, ekip.
+
+Her sayfada rehberli tur. Güney kutbu **parsellere** ayrılır, veri parsel başına tutulur
+(`docs/mimari.md` §3b). Güncel kapsam ve demo akışı: `SPEC.md`.
 
 ## 7. Fikir dosyası biçimi
 

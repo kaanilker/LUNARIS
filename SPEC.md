@@ -12,24 +12,27 @@ anında karşılaştıran, takvim kaymasını canlı gösteren iki dilli web ara
 **Neden biz:** SOLARIS deneyimi (benzerlik motoru, dürüstlük dersi), ayrı bilim ve animasyon ekipleri.
 
 ## Demo akışı (ÖNERİ, jürinin göreceği sırayla)
-1. Açılış: güney kutbu sahnesi ve tek soru, "Hangi gün, hangi noktaya inmeli?" (10 saniyede problem).
-2. Planlayıcı: tarih ve bölge seç, sıralı siteler gelir.
-3. Gecikme kaydırıcısı: fırlatma kayınca sıralama canlı değişir (takvim kayması senaryosu).
-4. Site Detay: ufuk panoraması, Güneş ve Dünya izleri, gün batımı ve Dünya batımı geri sayımı.
-5. A/B karşılaştırma: iki site ya da iki tarih yan yana.
-6. Doğrulama: Horizons ve literatür farkı açıkça gösterilir (60 saniyede güven).
+1. Açılış: dönen tam Ay, "güney kutbu şu an" göstergeleri ve AI yorumu (10 saniyede problem).
+2. Planlayıcı: fırlatma tarihi ve Dünya'daki kalkış noktası seçilir; sistem en uygun 5–10 parseli nedenleriyle verir.
+3. Gecikme kaydırıcısı: fırlatma kayınca sıralama canlı değişir, sistem en uygun tarihi söyler.
+4. Site Detay: seçilen noktanın 360° ufku, Güneş ve Dünya izleri, gün batımı ve Dünya batımı geri sayımı.
+5. Karşılaştır: iki parsel ya da iki tarih yan yana.
+6. Hakkında: Horizons ve literatür farkı açıkça gösterilir (60 saniyede güven).
+
+Sayfa yapısı: `docs/sayfalar.md` (7 sayfa, KARAR 2026-11-14).
 
 ## Kapsam içi (MVP, ÖNERİ)
 - Veri hattı: efemeris, ufuk, metrik, doğrulama, sürümlü paket (`docs/mimari.md`)
-- Planlayıcı + gecikme kaydırıcısı + paylaşım linki
-- Site Detay: panorama, zaman çizelgesi, geri sayım, zaman oynatıcı, A/B
-- Hazır site listesi ve özel koordinat
-- Doğrulama sayfası, Yöntem/Sınırlamalar
+- Ana Sayfa: tam Ay, güney kutbu göstergeleri, AI yorumu
+- Planlayıcı (tarih + kalkış noktası) + gecikme kaydırıcısı + en uygun tarih + paylaşım linki
+- Site Detay: 360° ufuk, zaman çizelgesi, geri sayım, zaman oynatıcı; Karşılaştır
+- Özel koordinat
+- Hakkında: yöntem, doğrulama tablosu, sınırlamalar
 - TR/EN, mobilde açılır, koyu tema
 
 ## Sonraya (demo akışında yoksa sona kalır)
-- Gelişmiş Analiz'in tamamı (Pareto, batarya, DSN, belirsizlik, benzer site, aylık görünüm)
-- Astronot görünümü, Görevler scroll anlatısı, rehberli tur, rapor çıktısı, canlı AI yorumu
+- Uzman Analiz sayfasının tamamı (Pareto, batarya, DSN, belirsizlik, benzer parsel, aylık görünüm)
+- Astronot görünümü, Görevler sayfası (görsel), rehberli tur, rapor çıktısı
 
 Bu ayrım kullanıcı onayı bekliyor; brifte hepsi var, öncelik sırası henüz verilmedi.
 

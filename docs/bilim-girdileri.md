@@ -12,20 +12,23 @@
 | B1 | SPICE çekirdek listesi (gezegen efemerisi, Ay yönelimi PCK, Ay çerçeve FK, LSK) ve sürümleri | Gök tarafı ve libration (`docs/mimari.md` §3) | BEKLENİYOR |
 | B2 | LOLA DEM ürünü (ad, çözünürlük, kapsama enlemi, referans yüzey) | Ufuk profili, eğim | BEKLENİYOR |
 | B3 | Zaman aralığı (başlangıç, bitiş) ve zaman adımı | Paket boyutu, gecikme kaydırıcısının menzili | BEKLENİYOR |
-| B4 | Planlayıcı ızgarası: bölge sınırı ve nokta aralığı | Planlayıcı, özel koordinat | BEKLENİYOR |
+| B4 | Parsel ağı: kapsanan bölge sınırı, parsel boyutu, izdüşüm (`docs/mimari.md` §3b) | Planlayıcı, Uzman, özel koordinat | BEKLENİYOR |
 | B5 | Aydınlanma tanımı: Güneş diski kesri mi merkez mi; "kısmi" eşiği | Zaman çizelgesi (güneşli/kısmi/karanlık) | BEKLENİYOR |
 | B6 | Ufuk hesabı: tarama yarıçapı, azimut adımı, Ay eğriliği yöntemi | Ufuk doğruluğu ve süresi | BEKLENİYOR |
 | B7 | Dünya görünürlüğü tanımı: disk merkezi mi kenarı mı; anten maskesi var mı | İletişim penceresi | BEKLENİYOR |
 | B8 | DSN istasyon koordinatları ve en düşük yükseklik maskesi, kaynağıyla | Gerçek iletişim penceresi | BEKLENİYOR |
-| B9 | Metrik tanımları: güneş oranı, iletişim süresi, en uzun karanlık, eğim, buz bölgesine uzaklık (buz verisinin kaynağı) | Planlayıcı özeti, Gelişmiş süzgeçler | BEKLENİYOR |
+| B9 | Metrik tanımları: güneş oranı, iletişim süresi, en uzun karanlık, eğim, buz bölgesine uzaklık (buz verisinin kaynağı) | Planlayıcı özeti, Uzman süzgeçleri | BEKLENİYOR |
 | B10 | Panel ve batarya modeli denklemleri, varsayılan değerler | "Karanlığı atlatır mı?" | BEKLENİYOR |
 | B11 | Doğrulama vakaları: Horizons'ta denenecek site/zamanlar; Quickmap'te karşılaştırılacak katmanlar; literatür çalışmaları ve karşılaştırılacak değerler | Doğrulama bölümü | BEKLENİYOR |
 | B12 | Kabul toleransları: azimut/yükseklik farkı, aydınlanma oranı farkı | Altın dosya testi (`docs/mimari.md` §8) | BEKLENİYOR |
 | B13 | Hazır site listesi: ad, enlem, boylam, yükseklik referansı, kaynak, görev durumu | Site seçimi | BEKLENİYOR |
-| B14 | Tarihteki 10 Ay görevi: iniş tarihi ve saati (UTC), konum, sonuç (başarılı/kısmi/başarısız), kaynak (CSA Moon Exploration kullanılabilir) | Görevler ve doğrulama | BEKLENİYOR |
+| B14 | Tarihteki en önemli 10 Ay **iniş** görevi (Görevler sayfası, yalnız görsel): iniş tarihi ve saati (UTC), konum, sonuç (başarılı/kısmi/başarısız), kaynak (CSA Moon Exploration kullanılabilir) | Görevler ve doğrulama | BEKLENİYOR |
 | B15 | İniş belirsizliği yarıçapı (görev tipine göre) | Belirsizlik analizi | BEKLENİYOR |
 | B16 | Benzer site ölçütü: hangi metrikler, hangi uzaklık | Benzer site önerisi | BEKLENİYOR |
-| B17 | Eğitim, yöntem ve sınırlama metinleri (TR ve EN) | Ana sayfa anlatısı, Yöntem | BEKLENİYOR |
+| B17 | Eğitim, yöntem ve sınırlama metinleri (TR ve EN) | Ana Sayfa anlatısı, Hakkında | BEKLENİYOR |
+| B18 | Kalkış modeli: Dünya'daki kalkış noktası ve fırlatma tarihi Ay'a varış zamanını ve iniş koşullarını nasıl belirliyor (yörünge türü, yolculuk süresi, fırlatma pencereleri); hazır fırlatma üsleri listesi | Planlayıcı girdisi, gecikme kaydırıcısı, en uygun tarih | BEKLENİYOR |
+| B19 | Ana Sayfa göstergeleri: "güney kutbu şu an ne kadar enerji alıyor" ve "inişe ne kadar elverişli" tanımı ve hangi bölge üzerinden hesaplandığı | Ana Sayfa paneli | BEKLENİYOR |
+| B20 | Parsel sıralama yöntemi: hangi metrikler, hangi parsel değeri (merkez, ortalama, en iyi, en kötü), "en uygun tarih" ölçütü | Planlayıcı sıralaması | BEKLENİYOR |
 
 ## Teslim biçimi (ÖNERİ)
 

@@ -43,7 +43,7 @@ web/              Statik ön yüz (TR/EN). Paketi okur, süzer, sıralar, çizer
    │  durum        Tek zaman/senaryo deposu. URL ile eşlenir (paylaşım linki).
    │  motor        Saf TS: ufuk × efemeris geometrisi, süzgeç, sıralama. Arayüzden ayrı, test edilir.
    │  sahneler     Animasyon ekibinin 3B sahneleri. Veriyi yalnız "sahne arayüzü"nden alır (§5).
-   │  sayfalar     Ana sayfa, Planlayıcı, Gelişmiş, Site Detay, Görevler, Yöntem, Tur
+   │  sayfalar     7 sayfa ve Tur katmanı (`docs/sayfalar.md`)
    ▼
 api/              Yalnız AI yorumu için küçük PHP ucu, Groq'a vekil (§6). Site onsuz da tam çalışır.
 ```
@@ -64,6 +64,28 @@ api/              Yalnız AI yorumu için küçük PHP ucu, Groq'a vekil (§6). 
   istasyonu Ay'ı kendi maske açısının üstünde görüyor mu. Gerçek iletişim penceresi (a) ve (b)'nin
   kesişimidir (B7, B8).
 
+## 3b. Parsel yöntemi
+
+**ÖNERİ (kullanıcı, 2026-11-14):** güney kutbu parsellere ayrılır, her parsel için veri tutulur, iniş
+bölgesi parseller arasından seçilir. Yöntemin ayrıntısı sonra kararlaştırılacak. Mimarideki "ızgara"
+bu parsellerdir; paket dosyalarında `izgara/` adı korunur.
+
+Ajanın değerlendirmesi (çıkarım, bilim ekibiyle konuşulacak):
+
+- **Uyuyor:** §1'deki bölünmeyle örtüşür. Ufuk profili parsel başına bir kez çıkar, günlük metrikler
+  parsel × gün tablosu olur. Planlayıcı sıralaması bu tablodan anında yapılır.
+- **Parseller enlem-boylam karesi olmamalı.** Kutba yaklaştıkça boylam çizgileri birleşir, kareler
+  daralır ve tam kutupta tanımsız olur. Öneri: kutup stereografik izdüşümünde metre cinsinden eşit
+  kareler. LOLA'nın kutup yükseklik ürünleri de bu izdüşümde dağıtılır (B2 ile birlikte doğrulanacak).
+- **Parsel tek sayıya indirgenmemeli.** Kutupta birkaç yüz metre içinde aydınlanma çok değişir. Parselin
+  ortalaması içindeki iyi bir tepeyi gizler, en iyi noktası ise iniş sapmasını yok sayar. Öneri: her
+  parsel için birkaç değer tutulur: merkez, ortalama, en iyi nokta, en kötü nokta ve eşiği geçen alan
+  oranı. Hangisiyle sıralanacağı yöntem kararıdır. "İniş belirsizliği" bu yayılımdan doğal olarak çıkar.
+- **Parsel boyutu bir ödünleşimdir.** Küçük parsel daha doğru ama hesap süresi ve paket boyutu artar.
+  İki katman önerilir: sıralama için kaba parseller, Site Detay için parselin içinde ince noktalar.
+  Boyut (B4) pilot ölçümünden sonra seçilir; ölçmeden sayı yazılmaz.
+- **Eğim ve buz** parsel özelliği olarak aynı tabloya girer; Uzman süzgeçleri bunları okur.
+
 ## 4. Veri paketi (veri/<surum>/)
 
 ÖNERİ biçim; boyutlar ölçülmeden kesinleşmez.
@@ -75,7 +97,7 @@ api/              Yalnız AI yorumu için küçük PHP ucu, Groq'a vekil (§6). 
 | `siteler.json` | hazır siteler: ad, koordinat, kaynak, ufuk profili | Detay, Görevler |
 | `izgara/ufuk-<parca>.bin` | ızgara noktalarının ufuk profilleri, nicemlenmiş | özel koordinat, belirsizlik |
 | `izgara/ozet-<parca>.bin` | nokta × gün metrikleri | Planlayıcı, gecikme, aylık |
-| `dsn.bin` | zaman adımı başına istasyon görünürlüğü | Gelişmiş, Detay |
+| `dsn.bin` | zaman adımı başına istasyon görünürlüğü | Uzman Analiz, Detay |
 | `dogrulama.json` | Horizons/literatür karşılaştırması, fark ve kaynak | Görevler, Yöntem |
 
 Parçalı yükleme: Planlayıcı yalnız seçilen bölgenin parçalarını ister. Paket sürümü URL'de taşınır;
@@ -147,7 +169,6 @@ derleme düşer.
   hesaplamaz; bu karşılaştırma yalnız gök tarafını doğrular.
 - **Arazi tarafı:** literatürdeki kutup aydınlanma çalışmalarıyla karşılaştırılır. Hangi çalışmalar ve
   hangi değerler, bilim ekibinden gelir (B11).
-- **Görevler bölümü:** her görevin tarihi ve konumu aynı hattan geçer; sonuç `dogrulama.json`'a girer.
 - Her karşılaştırma satırı neye karşı ölçüldüğünü taşır (Horizons, makale, simülasyon).
 
 ## 10. Test ve kabul (ilk sürüm hedefi)
@@ -169,10 +190,10 @@ kaynağın kendisinde denenmedi (çıkarım).
 
 | Kaynak | Rolü | Sitede nerede görünür |
 |---|---|---|
-| **JPL Horizons** | Gök tarafının bağımsız doğrulaması: seçilen site ve zamanlarda Güneş ve Dünya azimut/yüksekliği, bizim SPICE sonucumuzla fark (§9). Her site ve tarih için "Horizons'ta aç" bağlantısı, uzman tek tıkla kontrol edebilsin. Horizons API'nin Ay yüzeyinde kullanıcı koordinatıyla gözlemci kabul ettiği **doğrulanacak**. | Yöntem ve Doğrulama tablosu, Site Detay (uzman katmanı) |
-| **Quickmap** | Arazi tarafının görsel karşılaştırması: bizim ufuk ve aydınlanma sonucumuzla Quickmap'teki LRO/LOLA katmanları. DEM ürünü seçiminde (B2) başvuru. Her site için "Quickmap'te aç" bağlantısı. Kutup aydınlanma katmanı ve koordinatlı bağlantı biçimi **doğrulanacak**. | Yöntem ve Doğrulama, Site Detay |
+| **JPL Horizons** | Gök tarafının bağımsız doğrulaması: seçilen site ve zamanlarda Güneş ve Dünya azimut/yüksekliği, bizim SPICE sonucumuzla fark (§9). Her site ve tarih için "Horizons'ta aç" bağlantısı, uzman tek tıkla kontrol edebilsin. Horizons API'nin Ay yüzeyinde kullanıcı koordinatıyla gözlemci kabul ettiği **doğrulanacak**. | Hakkında (doğrulama tablosu), Site Detay |
+| **Quickmap** | Arazi tarafının görsel karşılaştırması: bizim ufuk ve aydınlanma sonucumuzla Quickmap'teki LRO/LOLA katmanları. DEM ürünü seçiminde (B2) başvuru. Her site için "Quickmap'te aç" bağlantısı. Kutup aydınlanma katmanı ve koordinatlı bağlantı biçimi **doğrulanacak**. | Hakkında (doğrulama tablosu), Site Detay |
 | **Moon Trek** | 3B bağlam: sitenin geniş arazi görünümü için "Moon Trek'te aç" bağlantısı. Animasyon ekibi için doku ya da yükseklik karosu kaynağı olabilir; karo servisi ve kullanım koşulları **doğrulanacak**. | Site Detay, Ana Sayfa sahnesi (karo kullanılırsa) |
-| **CSA Moon Exploration** | Eğitim içeriği: geçmiş ve gelecek görevler, Artemis'e katkılar. Görev listesine (B14) ve anlatıya kaynak. | Görevler, Ana Sayfa anlatısı, Yöntem (kaynakça) |
+| **CSA Moon Exploration** | Eğitim içeriği: geçmiş ve gelecek görevler, Artemis'e katkılar. Görev listesine (B14) ve anlatıya kaynak. | Görevler, Ana Sayfa anlatısı, Hakkında (kaynakça) |
 
 İlke: bu araçların yerini almıyoruz. Brif ve challenge onları "ayrıntılı analiz için" sayıyor. LUNARIS
 hızlı karşılaştırma yapar ve ayrıntı için kullanıcıyı doğru konum ve tarihle bu araçlara gönderir.

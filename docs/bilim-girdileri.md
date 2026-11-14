@@ -19,10 +19,10 @@
 | B8 | DSN istasyon koordinatları ve en düşük yükseklik maskesi, kaynağıyla | Gerçek iletişim penceresi | BEKLENİYOR |
 | B9 | Metrik tanımları: güneş oranı, iletişim süresi, en uzun karanlık, eğim, buz bölgesine uzaklık (buz verisinin kaynağı) | Planlayıcı özeti, Gelişmiş süzgeçler | BEKLENİYOR |
 | B10 | Panel ve batarya modeli denklemleri, varsayılan değerler | "Karanlığı atlatır mı?" | BEKLENİYOR |
-| B11 | Doğrulama vakaları: Horizons'ta denenecek site/zamanlar; literatür çalışmaları ve karşılaştırılacak değerler | Doğrulama bölümü | BEKLENİYOR |
+| B11 | Doğrulama vakaları: Horizons'ta denenecek site/zamanlar; Quickmap'te karşılaştırılacak katmanlar; literatür çalışmaları ve karşılaştırılacak değerler | Doğrulama bölümü | BEKLENİYOR |
 | B12 | Kabul toleransları: azimut/yükseklik farkı, aydınlanma oranı farkı | Altın dosya testi (`docs/mimari.md` §8) | BEKLENİYOR |
 | B13 | Hazır site listesi: ad, enlem, boylam, yükseklik referansı, kaynak, görev durumu | Site seçimi | BEKLENİYOR |
-| B14 | Tarihteki 10 Ay görevi: iniş tarihi ve saati (UTC), konum, sonuç (başarılı/kısmi/başarısız), kaynak | Görevler ve doğrulama | BEKLENİYOR |
+| B14 | Tarihteki 10 Ay görevi: iniş tarihi ve saati (UTC), konum, sonuç (başarılı/kısmi/başarısız), kaynak (CSA Moon Exploration kullanılabilir) | Görevler ve doğrulama | BEKLENİYOR |
 | B15 | İniş belirsizliği yarıçapı (görev tipine göre) | Belirsizlik analizi | BEKLENİYOR |
 | B16 | Benzer site ölçütü: hangi metrikler, hangi uzaklık | Benzer site önerisi | BEKLENİYOR |
 | B17 | Eğitim, yöntem ve sınırlama metinleri (TR ve EN) | Ana sayfa anlatısı, Yöntem | BEKLENİYOR |

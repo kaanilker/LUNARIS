@@ -161,7 +161,23 @@ derleme düşer.
 
 Hız hedefi (tarih değişince yeniden çizim süresi) ölçülmeden sayı yazılmaz; ilk iskelette ölçülür.
 
-## 11. Bilerek dışarıda bırakılanlar (ÖNERİ)
+## 11. Challenge kaynaklarının rolleri
+
+**KARAR (kullanıcı, 2026-11-14):** challenge'ın sunduğu dört kaynağın hepsi kullanılır
+(`docs/kaynak/nasa-kaynaklari.md`). Aşağıdaki roller **ÖNERİ**dir. "Doğrulanacak" yazan yetenekler henüz
+kaynağın kendisinde denenmedi (çıkarım).
+
+| Kaynak | Rolü | Sitede nerede görünür |
+|---|---|---|
+| **JPL Horizons** | Gök tarafının bağımsız doğrulaması: seçilen site ve zamanlarda Güneş ve Dünya azimut/yüksekliği, bizim SPICE sonucumuzla fark (§9). Her site ve tarih için "Horizons'ta aç" bağlantısı, uzman tek tıkla kontrol edebilsin. Horizons API'nin Ay yüzeyinde kullanıcı koordinatıyla gözlemci kabul ettiği **doğrulanacak**. | Yöntem ve Doğrulama tablosu, Site Detay (uzman katmanı) |
+| **Quickmap** | Arazi tarafının görsel karşılaştırması: bizim ufuk ve aydınlanma sonucumuzla Quickmap'teki LRO/LOLA katmanları. DEM ürünü seçiminde (B2) başvuru. Her site için "Quickmap'te aç" bağlantısı. Kutup aydınlanma katmanı ve koordinatlı bağlantı biçimi **doğrulanacak**. | Yöntem ve Doğrulama, Site Detay |
+| **Moon Trek** | 3B bağlam: sitenin geniş arazi görünümü için "Moon Trek'te aç" bağlantısı. Animasyon ekibi için doku ya da yükseklik karosu kaynağı olabilir; karo servisi ve kullanım koşulları **doğrulanacak**. | Site Detay, Ana Sayfa sahnesi (karo kullanılırsa) |
+| **CSA Moon Exploration** | Eğitim içeriği: geçmiş ve gelecek görevler, Artemis'e katkılar. Görev listesine (B14) ve anlatıya kaynak. | Görevler, Ana Sayfa anlatısı, Yöntem (kaynakça) |
+
+İlke: bu araçların yerini almıyoruz. Brif ve challenge onları "ayrıntılı analiz için" sayıyor. LUNARIS
+hızlı karşılaştırma yapar ve ayrıntı için kullanıcıyı doğru konum ve tarihle bu araçlara gönderir.
+
+## 12. Bilerek dışarıda bırakılanlar (ÖNERİ)
 
 - Tarayıcıda SPICE çalıştırmak: paket boyutu ve karmaşıklık; tablo yeterli.
 - Kullanıcı hesabı, veritabanı: paylaşım URL ile çözülüyor.

@@ -17,7 +17,7 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 ## Belgeler ve sahipleri
 | Ne | Tek sahibi |
 |---|---|
-| Challenge ve brif metni (değişmez) | `docs/kaynak/` |
+| Challenge, brif ve NASA kaynak metni (değişmez) | `docs/kaynak/` |
 | Problem, demo akışı, kapsam | `SPEC.md` |
 | Mimari kararlar ve öneriler | `docs/mimari.md` |
 | Sayfa yapısı ve adresler | `docs/sayfalar.md` |

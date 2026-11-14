@@ -49,6 +49,8 @@ Dil değişince aynı senaryo öbür dilde açılır.
 - **İçerik:** 360° ufuk panoraması (Güneş ve Dünya izleriyle), gün batımı ve Dünya batımı geri sayımı,
   sonraki iletişim penceresi, zaman çizelgesi (güneşli, kısmi, karanlık; iletişim), zaman oynatıcı,
   astronot görünümü, "Karşılaştır'a ekle" düğmesi, rapor çıktısı.
+- **Dış bağlantılar:** aynı konum ve tarihle "Horizons'ta aç", "Quickmap'te aç", "Moon Trek'te aç"
+  (`docs/mimari.md` §11).
 - **Özel koordinat** buradan girilir: hazır site seçmek yerine enlem ve boylam yazılır.
 - **Veri:** efemeris tablosu ve tek bir ufuk profili. Hesap tarayıcıda anlık.
 
@@ -63,14 +65,15 @@ Dil değişince aynı senaryo öbür dilde açılır.
 - **Amaç:** eğitim. "Apollo neden ekvatora indi, şimdi neden herkes kutba gidiyor?"
 - **İçerik:** dönen Ay küresi üzerinde 10 görev (liste B14), scroll anlatısı. Her görevde "LUNARIS o gün
   ne derdi?" kartı; karta tıklayınca o görevin tarihiyle Site Detay açılır. AI yorumu.
-- Başarısız ve kısmen başarılı görevler de listede (brif).
+- Başarısız ve kısmen başarılı görevler de listede (brif). CSA Moon Exploration anlatıya kaynak.
 
 ### 6. Yöntem ve Doğrulama
 - **[brif farkı]** Brifte doğrulama Görevler bölümünde, yöntem ise Hakkında'da. Burada doğrulama
   tablosu Yöntem sayfasına taşınıyor, Görevler kartları ise bu tabloya bağlantı veriyor. Gerekçe:
   rehberli turun 3. adımı (doğrulama) teknik bir jüri üyesinin aradığı tek yere gitmeli. Horizons ile
   karşılaştırma eğitim anlatısının içinde kaybolmamalı.
-- **İçerik:** veri kaynakları, yöntemin sade anlatımı, Horizons ve literatür karşılaştırma tablosu
+- **İçerik:** veri kaynakları (challenge'ın dört kaynağı dahil, `docs/mimari.md` §11), yöntemin sade
+  anlatımı, Horizons, Quickmap ve literatür karşılaştırma tablosu
   (fark ve kaynak), varsayımlar, sınırlamalar, ekip, GitHub, demo videosu.
 - Metinler bilim ekibinden (B17).
 

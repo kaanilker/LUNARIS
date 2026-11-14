@@ -71,6 +71,10 @@ Ayrıntı: `docs/mimari.md` (şu an ÖNERİ aşamasında, kesinleşmedi).
 - **Sahneler** veriyi tek bir "sahne arayüzü"nden alır (zaman, site, Güneş/Dünya vektörü, ufuk profili,
   aydınlanma). Animasyon ekibi bu arayüze göre çalışır.
 
+- **Challenge'ın kaynakları kesin kullanılacak:** JPL Horizons, Quickmap, Moon Trek, CSA Moon
+  Exploration (`docs/kaynak/nasa-kaynaklari.md`, roller `docs/mimari.md` §11). Bunları kullanan
+  fikirler artı puan alır.
+
 Fikir bu verilerle yapılabiliyorsa ucuzdur. Yeni veri istiyorsa hangi veri, nereden, kim üretecek, bunu
 yaz. Bilimsel girdilerin listesi ve durumu: `docs/bilim-girdileri.md`.
 

@@ -23,6 +23,7 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 | Bilimsel parametre, site, görev, tolerans | `docs/bilim-girdileri.md` (B1…) |
 | Bilim dışı açık sorular | `docs/acik-sorular.md` (S1…) |
 | Teslim öncesi kontrol | `DEMO.md` |
+| Fikir ajanı brifi · onaylanmamış fikirler | `docs/fikir-ajani-brifi.md` · `docs/fikirler/` (ÖNERİ) |
 
 ## Bu projeye özgü kurallar
 - **Bilimsel sayı uydurulmaz.** Koordinat, tarih, eşik, tolerans yalnız `docs/bilim-girdileri.md`'den

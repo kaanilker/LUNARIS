@@ -25,6 +25,7 @@ Sıradaki işler veri hattı pilotu ve site iskeleti. Açık iş `.ajan/aktif-is
 | Sayfa yapısı ve adresler | `docs/sayfalar.md` |
 | Planlayıcı hesabı: aday doğrulama, en iyi tarih önerisi | `docs/oneri-ve-dogrulama.md` |
 | Görsel tasarım, belirteçler, kabul ölçütleri, tasarım skill'leri | `docs/tasarim.md` |
+| Hangi sayfada hangi animasyon, sahibi, durağan karşılığı | `docs/animasyonlar.md` |
 | Bilimsel parametre, formül, kriter (ana kaynak) | `docs/LUNARIS_bilim_parametre_seti.md` |
 | Bilim girdilerinin takibi (B1…B20) · doğrulama bulguları | `docs/bilim-girdileri.md` · `docs/parametre-seti-dogrulama.md` |
 | Bilim ekibine istek mektubu (durum tutmaz) | `docs/bilim-ekibine.md` |

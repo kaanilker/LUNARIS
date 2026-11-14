@@ -277,6 +277,7 @@ aynı anda yazmasın; mümkünse herkes kendi dalında çalışsın.
 | Mimari | `docs/mimari.md` |
 | Sayfalar | `docs/sayfalar.md` |
 | Tasarım sistemi ve tasarım skill'leri | `docs/tasarim.md` |
+| Animasyon planı | `docs/animasyonlar.md` |
 | Bilimsel parametreler ve formüller (ana kaynak) | `docs/LUNARIS_bilim_parametre_seti.md` |
 | Bilim girdileri durumu · doğrulama | `docs/bilim-girdileri.md` · `docs/parametre-seti-dogrulama.md` |
 | Bilim ekibine mektup | `docs/bilim-ekibine.md` |

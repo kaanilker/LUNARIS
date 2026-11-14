@@ -1,5 +1,5 @@
 // Kabul (.ajan/aktif-is.md): 7 sayfa /tr/ ve /en/ önekleriyle açılıyor, 375 px'te yatay kaydırma yok.
-// docs/tasarim.md §4 ölçüt 1, 3, 7 ve 8 burada ölçülür.
+// docs/tasarim.md §4 ölçüt 1, 3, 7, 8, 11 ve 12 burada ölçülür.
 import { expect, test, type Page } from '@playwright/test';
 
 const SAYFALAR: Record<'tr' | 'en', string[]> = {
@@ -80,10 +80,82 @@ test('dokunma hedefleri en az 24×24 px (ölçüt 3)', async ({ page }) => {
 		const kucukler = await page.evaluate(() =>
 			[...document.querySelectorAll('a, button, input, select')]
 				.filter((o) => (o as HTMLElement).offsetParent !== null)
+				// Görsel olarak gizli girdide dokunma hedefi onu saran etikettir.
+				.map((o) => (o.classList.contains('sr-only') && o.closest('label') ? o.closest('label')! : o))
 				.map((o) => ({ ad: o.textContent?.trim() || o.tagName, k: o.getBoundingClientRect() }))
 				.filter(({ k }) => k.width < 24 || k.height < 24)
 				.map(({ ad, k }) => `${ad} ${Math.round(k.width)}×${Math.round(k.height)}`)
 		);
 		expect(kucukler, yol).toEqual([]);
 	}
+});
+
+// Ölçüt 11: her panel en yakın 12 sütunlu ızgaranın sütun çizgilerine oturur.
+async function hizaHatalari(page: Page): Promise<string[]> {
+	return page.evaluate(() => {
+		const hatalar: string[] = [];
+		for (const panel of document.querySelectorAll<HTMLElement>('[data-panel]')) {
+			const izgara = panel.closest<HTMLElement>('[data-izgara]');
+			if (!izgara || panel.offsetParent === null) continue;
+			const stil = getComputedStyle(izgara);
+			const sutunlar = stil.gridTemplateColumns.split(' ').map(parseFloat);
+			const aralik = parseFloat(stil.columnGap);
+			const sol0 = izgara.getBoundingClientRect().left + parseFloat(stil.paddingLeft);
+			const baslar: number[] = [];
+			const bitisler: number[] = [];
+			let x = sol0;
+			for (const g of sutunlar) {
+				baslar.push(x);
+				bitisler.push(x + g);
+				x += g + aralik;
+			}
+			const k = panel.getBoundingClientRect();
+			const yakin = (d: number, l: number[]) => l.some((v) => Math.abs(v - d) <= 1);
+			if (!yakin(k.left, baslar) || !yakin(k.right, bitisler)) {
+				const ad = panel.querySelector('h2,h3')?.textContent?.trim() ?? panel.className.slice(0, 40);
+				hatalar.push(`${ad}: ${Math.round(k.left)}–${Math.round(k.right)}`);
+			}
+		}
+		return hatalar;
+	});
+}
+
+// Ölçüt 12: köşe yarıçapı yalnız 0, 8, 12 px ya da tam yuvarlak.
+async function koseHatalari(page: Page): Promise<string[]> {
+	return page.evaluate(() => {
+		const izinli = new Set(['0px', '8px', '12px']);
+		const hatalar = new Set<string>();
+		for (const o of document.querySelectorAll<HTMLElement>('body *')) {
+			if (o.offsetParent === null && getComputedStyle(o).position !== 'fixed') continue;
+			const r = getComputedStyle(o).borderTopLeftRadius;
+			const deger = parseFloat(r);
+			const k = o.getBoundingClientRect();
+			const tamYuvarlak = deger >= Math.min(k.width, k.height) / 2 - 0.5;
+			if (!izinli.has(r) && !tamYuvarlak) hatalar.add(`${o.tagName.toLowerCase()} ${r}`);
+		}
+		return [...hatalar];
+	});
+}
+
+for (const yollar of Object.values(SAYFALAR)) {
+	for (const yol of yollar) {
+		test(`${yol} paneller ızgaraya oturuyor, şekil dili tek (ölçüt 11, 12)`, async ({ page }) => {
+			await page.goto(yol);
+			expect(await page.locator('[data-panel]').count()).toBeGreaterThan(0);
+			expect(await hizaHatalari(page)).toEqual([]);
+			expect(await koseHatalari(page)).toEqual([]);
+		});
+	}
+}
+
+test('üst çubuk içerik kabının içinde kalıyor (1280 px, Türkçe)', async ({ page }) => {
+	test.skip(page.viewportSize()!.width < 1280, 'masaüstü menüsü yalnız 1280 px ve üstünde');
+	await page.goto('/tr/gorevler/');
+	const sag = await page.evaluate(() => {
+		const satir = document.querySelector('header .kap')!;
+		const sinir = satir.getBoundingClientRect().right - parseFloat(getComputedStyle(satir).paddingRight);
+		const enSag = Math.max(...[...satir.querySelectorAll('a, button')].map((o) => o.getBoundingClientRect().right));
+		return enSag - sinir;
+	});
+	expect(sag).toBeLessThanOrEqual(0.5);
 });

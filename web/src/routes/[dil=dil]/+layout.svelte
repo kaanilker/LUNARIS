@@ -22,13 +22,7 @@
 </svelte:head>
 
 <UstCubuk />
-<main id="icerik" tabindex="-1">
+<main id="icerik" tabindex="-1" class="outline-none">
 	{@render children()}
 </main>
 <AltBilgi />
-
-<style>
-	main:focus {
-		outline: none;
-	}
-</style>

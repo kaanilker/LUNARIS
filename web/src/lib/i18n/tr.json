@@ -25,7 +25,8 @@
 	},
 	"yer_tutucu": {
 		"etiket": "Yer tutucu",
-		"girdi": "Beklenen girdi"
+		"girdi": "Beklenen girdi",
+		"formul": "Formül"
 	},
 	"ai": {
 		"etiket": "AI üretimi",

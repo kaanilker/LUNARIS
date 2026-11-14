@@ -60,6 +60,7 @@ Bunlar brifte ekip tarafından konmuş ilkeler (`docs/kaynak/LUNARIS_AGENT_BRIEF
 | Parsel yöntemi | Güney kutbu eşit metrik parsellere bölünür, parsel başına birden çok değer tutulur | `docs/mimari.md` §3b |
 | Planlayıcı girdisi | Fırlatma tarihi ve Dünya'daki kalkış noktası; amaç görev süresini (fırlatmadan inişe) en aza indirmek | `docs/sayfalar.md` §2 |
 | Ön yüz | SvelteKit + TypeScript + Three.js, statik çıktı | `docs/mimari.md` §7 |
+| Stil | Tailwind CSS; palet ve şekil dili SOLARIS referanslı | `docs/tasarim.md` |
 | AI yorumu | Groq API (model sonra seçilecek) | `docs/mimari.md` §6 |
 | Barındırma | cPanel (PHP 8.4) | `docs/mimari.md` §7 |
 | NASA kaynakları | Horizons, Quickmap, Moon Trek, CSA Moon Exploration'ın hepsi kullanılır | `docs/mimari.md` §11 |
@@ -164,7 +165,7 @@ karşılaştırılır.
   test edilir. Ağır işler Web Worker'da, sayfa takılmaz.
 - **İki dil:** metinler `tr.json` ve `en.json` dosyalarında; kodda kullanıcıya görünen metin yok.
   Adresler `/tr/...` ve `/en/...` (ÖNERİ).
-- **Tasarım belirteçleri:** renkler CSS değişkenlerinde tek yerde; Güneş amber, Dünya mavi.
+- **Tasarım belirteçleri:** Tailwind `@theme` bloğunda tek yerde (`web/src/lib/stil/belirtecler.css`); Güneş amber, Dünya mavi.
 - **Rapor:** tarayıcının yazdırma görünümü; ayrı PDF sunucusu yok.
 
 ### 7.5 Sahne arayüzü (animasyon ekibiyle sözleşme)

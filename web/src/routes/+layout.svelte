@@ -1,11 +1,8 @@
 <script lang="ts">
-	import '@fontsource/ibm-plex-sans/400.css';
-	import '@fontsource/ibm-plex-sans/500.css';
-	import '@fontsource/ibm-plex-sans/600.css';
+	import '@fontsource-variable/inter';
+	import '@fontsource-variable/outfit';
 	import '@fontsource/ibm-plex-mono/400.css';
-	import '@fontsource/ibm-plex-mono/500.css';
-	import '$lib/stil/belirtecler.css';
-	import '$lib/stil/temel.css';
+	import '../app.css';
 
 	let { children } = $props();
 </script>

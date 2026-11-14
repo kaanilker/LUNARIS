@@ -1,7 +1,17 @@
 <!-- Hakkında (docs/sayfalar.md §7). Animasyon yok (docs/animasyonlar.md "Hakkında"). -->
 <script lang="ts">
+	import Database from '@lucide/svelte/icons/database';
+	import ExternalLink from '@lucide/svelte/icons/external-link';
+	import FlaskConical from '@lucide/svelte/icons/flask-conical';
+	import ShieldCheck from '@lucide/svelte/icons/shield-check';
+	import BookOpen from '@lucide/svelte/icons/book-open';
+	import Users from '@lucide/svelte/icons/users';
+	import CodeXml from '@lucide/svelte/icons/code-xml';
+	import Video from '@lucide/svelte/icons/video';
 	import { ceviri } from '$lib/i18n/baglam';
+	import { SAYFA_SIMGESI } from '$lib/simgeler';
 	import SayfaBasi from '$lib/bilesenler/SayfaBasi.svelte';
+	import Panel from '$lib/bilesenler/Panel.svelte';
 	import YerTutucu from '$lib/bilesenler/YerTutucu.svelte';
 
 	const c = ceviri();
@@ -24,81 +34,65 @@
 	const HALKALAR = ['gok', 'ufuk', 'gozlem', 'inis'];
 </script>
 
-<SayfaBasi sayfa="hakkinda" baslik={c.t('hakkinda.baslik')} giris={c.t('hakkinda.giris')} />
+<SayfaBasi sayfa="hakkinda" simge={SAYFA_SIMGESI.hakkinda} baslik={c.t('hakkinda.baslik')} giris={c.t('hakkinda.giris')} />
 
-<div class="kap">
-	<section class="bolum" aria-labelledby="kaynaklar">
-		<h2 id="kaynaklar">{c.t('hakkinda.kaynaklar')}</h2>
-		<ul class="izgara kaynaklar">
-			{#each KAYNAKLAR as k (k.ad)}
-				<li class="kart">
-					<a href={k.url} rel="noopener" target="_blank"><strong>{k.ad}</strong></a>
-					<p class="ikincil">{c.t(`hakkinda.${k.anahtar}`)}</p>
-				</li>
-			{/each}
-		</ul>
-	</section>
+<div class="kap grid grid-cols-12 gap-6" data-izgara>
+	<header class="col-span-12 flex items-center gap-3">
+		<span class="grid size-8 place-items-center rounded-kutu bg-yuzey-2 text-metin-ikincil" aria-hidden="true"><Database class="size-4" /></span>
+		<h2 class="text-xl font-semibold text-metin">{c.t('hakkinda.kaynaklar')}</h2>
+	</header>
+	{#each KAYNAKLAR as k (k.ad)}
+		<a
+			data-panel
+			href={k.url}
+			rel="noopener"
+			target="_blank"
+			class="group col-span-12 flex flex-col gap-2 rounded-kart border border-cizgi bg-yuzey p-5 transition-colors hover:border-cizgi-guclu hover:bg-yuzey-2 md:col-span-6 lg:col-span-4"
+		>
+			<span class="flex items-center justify-between font-semibold text-metin">
+				{k.ad}<ExternalLink class="size-4 text-metin-ikincil group-hover:text-metin" aria-hidden="true" />
+			</span>
+			<span class="text-sm text-metin-ikincil">{c.t(`hakkinda.${k.anahtar}`)}</span>
+		</a>
+	{/each}
 
-	<section class="bolum" aria-labelledby="yontem">
-		<h2 id="yontem">{c.t('hakkinda.yontem')}</h2>
-		<YerTutucu metin={c.t('hakkinda.yontem_bekliyor')} girdi="B17" kutu yukseklik="8rem" />
-	</section>
+	<Panel baslik={c.t('hakkinda.yontem')} simge={FlaskConical} bekliyor sinif="col-span-12 md:col-span-6">
+		<YerTutucu metin={c.t('hakkinda.yontem_bekliyor')} girdi="B17" sinif="min-h-40" />
+	</Panel>
+	<Panel baslik={c.t('hakkinda.sinirlamalar')} simge={BookOpen} bekliyor sinif="col-span-12 md:col-span-6">
+		<YerTutucu metin={c.t('hakkinda.sinirlamalar_bekliyor')} girdi="B17" sinif="min-h-40" />
+	</Panel>
 
-	<section class="bolum" aria-labelledby="dogrulama">
-		<div class="bolum-basi">
-			<h2 id="dogrulama">{c.t('hakkinda.dogrulama')}</h2>
-			<p class="ikincil">{c.t('hakkinda.dogrulama_metin')}</p>
-		</div>
-		<div class="tablo-kap">
-			<table>
-				<thead>
+	<Panel baslik={c.t('hakkinda.dogrulama')} simge={ShieldCheck} bekliyor sinif="col-span-12">
+		<p class="-mt-2 text-sm text-metin-ikincil">{c.t('hakkinda.dogrulama_metin')}</p>
+		<div class="overflow-x-auto rounded-kutu border border-cizgi">
+			<table class="text-sm">
+				<thead class="bg-yuzey-2 text-left text-xs text-metin-ikincil">
 					<tr>
-						<th>{c.t('hakkinda.sutun_ne')}</th>
-						<th>{c.t('hakkinda.sutun_karsi')}</th>
-						<th>{c.t('hakkinda.sutun_fark')}</th>
+						<th class="px-4 py-3 font-medium">{c.t('hakkinda.sutun_ne')}</th>
+						<th class="px-4 py-3 font-medium">{c.t('hakkinda.sutun_karsi')}</th>
+						<th class="px-4 py-3 font-medium">{c.t('hakkinda.sutun_fark')}</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody class="divide-y divide-cizgi">
 					{#each HALKALAR as h (h)}
 						<tr>
-							<td>{c.t(`hakkinda.halka_${h}`)}</td>
-							<td class="ikincil">{c.t(`hakkinda.halka_${h}_karsi`)}</td>
-							<td class="sayi ikincil">—</td>
+							<td class="px-4 py-3 text-metin">{c.t(`hakkinda.halka_${h}`)}</td>
+							<td class="px-4 py-3 text-metin-ikincil">{c.t(`hakkinda.halka_${h}_karsi`)}</td>
+							<td class="px-4 py-3 text-metin-ikincil">—</td>
 						</tr>
 					{/each}
 				</tbody>
 			</table>
 		</div>
-		<YerTutucu metin={c.t('hakkinda.dogrulama_bekliyor')} girdi="B11 · B12" />
-	</section>
+		<YerTutucu satir metin={c.t('hakkinda.dogrulama_bekliyor')} girdi="B11 · B12" />
+	</Panel>
 
-	<section class="bolum" aria-labelledby="sinirlamalar">
-		<h2 id="sinirlamalar">{c.t('hakkinda.sinirlamalar')}</h2>
-		<YerTutucu metin={c.t('hakkinda.sinirlamalar_bekliyor')} girdi="B17" kutu yukseklik="8rem" />
-	</section>
-
-	<section class="bolum" aria-labelledby="ekip">
-		<h2 id="ekip">{c.t('hakkinda.ekip')}</h2>
-		<p>{c.t('hakkinda.ekip_metin')}</p>
-		<p><a href={REPO} rel="noopener">{c.t('alt.kaynak')}: github.com/kaanilker/LUNARIS</a></p>
-		<h3>{c.t('hakkinda.video')}</h3>
-		<YerTutucu metin={c.t('hakkinda.video_bekliyor')} />
-	</section>
+	<Panel baslik={c.t('hakkinda.ekip')} simge={Users} sinif="col-span-12 md:col-span-6">
+		<p class="text-sm leading-relaxed text-metin-ikincil">{c.t('hakkinda.ekip_metin')}</p>
+		<a href={REPO} rel="noopener" class="dugme-ikincil w-fit"><CodeXml class="size-4" aria-hidden="true" />{c.t('alt.kaynak')}</a>
+	</Panel>
+	<Panel baslik={c.t('hakkinda.video')} simge={Video} bekliyor sinif="col-span-12 md:col-span-6">
+		<YerTutucu metin={c.t('hakkinda.video_bekliyor')} sinif="min-h-32" />
+	</Panel>
 </div>
-
-<style>
-	.kaynaklar {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	.kaynaklar a {
-		display: inline-block;
-		padding-block: var(--b1);
-	}
-
-	h3 {
-		margin-top: var(--b4);
-	}
-</style>

@@ -16,7 +16,9 @@
 | İki dil (TR/EN), mobilde açılır | **KARAR** (ekip brifi) |
 | Ana Sayfa'da tam Ay küresi; bilgi kısa, yorum ağırlıklı | **KARAR** (kullanıcı, 2026-11-14) |
 | Tasarım araçları (§5) | **KARAR** (kullanıcı onayı, 2026-11-14) |
-| Kesin renk değerleri, yazı tipleri, boşluk ölçeği | **KARAR** (ajan, yetkiyle, 2026-11-14; §3) |
+| Stil aracı: **Tailwind CSS** | **KARAR** (kullanıcı, 2026-11-14; önceki kayıtlarda yazılı değildi, bu turda yazıldı) |
+| Görsel referans: SOLARIS (solaris.quasacode.com) paleti ve şekil dili; zemin "siyah ama bu kadar koyu değil" | **KARAR** (kullanıcı, 2026-11-14) |
+| Kesin renk değerleri, yazı tipleri, boşluk ölçeği | **KARAR** (ajan, yetkiyle, 2026-11-14, ikinci tur; §3) |
 | Kabul ölçütleri (§4) | **ÖNERİ** |
 | Ürün metni kuralı: tireyle madde ve ara cümle dizilmez, düz cümle | **KARAR** (global kural) |
 
@@ -32,24 +34,31 @@ Kaynak: `docs/kaynak/LUNARIS_AGENT_BRIEF.md` "Tasarım yönü" ve "Bizim için �
 - Renk tek başına anlam taşımaz: güneşli, kısmi, karanlık durumları renk dışında desen, etiket ya da
   simgeyle de ayırt edilir (renk körlüğü).
 
-## 3. Tasarım belirteçleri (KARAR, ajan, yetkiyle, 2026-11-14)
+## 3. Tasarım belirteçleri (KARAR, ajan, yetkiyle, 2026-11-14, ikinci tur)
 
-Değerlerin tek yeri `web/src/lib/stil/belirtecler.css`; bu tablo değer kopyalamaz, seçimin gerekçesini tutar.
-Karşıtlık ölçütü (§4 madde 2) `web/src/lib/stil/belirtecler.test.ts` ile her test koşusunda ölçülür.
+Değerlerin tek yeri `web/src/lib/stil/belirtecler.css` içindeki Tailwind `@theme` bloğu. Tailwind'in hazır renk
+paleti kapalıdır (`--color-*: initial`); sınıflarda yalnız bu belirteçler geçer (`bg-yuzey`, `text-gunes`).
+Bu tablo değer kopyalamaz, seçimin gerekçesini tutar.
+
+**İlk turun sorunu (ölçüldü 2026-11-14 · ekran görüntüsü pikseli · CIELAB L\*):** LUNARIS zemini L\* 3,3,
+renksiz ve kartlar zeminden ayrılmıyordu. SOLARIS zemini L\* 5–9 ama mora çalan lacivert tonda ve hafif
+degradeli, kartları L\* yaklaşık 12. "Açık" hissi parlaklıktan çok ton ve katman farkından geliyor.
 
 | Belirteç | Seçim | Gerekçe |
 |---|---|---|
-| `--zemin`, `--yuzey`, `--yuzey-2`, `--cizgi` | renksiz koyu griler | koyu tema; mavi ya da amber eğilimi yok ki anlam renkleriyle karışmasın |
-| `--cizgi-guclu` | orta gri | form ve ikincil düğme kenarı; WCAG 1.4.11 için üç zeminde de en az 3:1 (ilk değer 2,27:1 çıkıp test düştü, yükseltildi) |
-| `--metin`, `--metin-ikincil` | kırık beyaz, açık gri | üç zeminde de en az 4,5:1 |
-| `--gunes` amber, `--dunya` mavi | | yalnız §2 anlamında; kullanan dosyalar testteki izin listesinde |
-| `--vurgu` | kırık beyaz (renksiz) | her renk tonu renk körlüğünde amber, mavi ya da uyarı macentasıyla karışabilir; renksiz vurgu hiçbiriyle karışmaz |
-| `--uyari` macenta, `--hata` açık kırmızı, `--basari` yeşil | | parametre setinin macenta önerisi; renk her zaman simgeyle birlikte |
-| Yazı tipleri | IBM Plex Sans (gövde, başlık), IBM Plex Mono (sayı, etiket) | Türkçe karakterli, eşit genişlikli rakam; yerel paket (`@fontsource`), internetsiz demoda da yüklenir |
-| Ölçekler | 4 px tabanlı boşluk (`--b1`…`--b9`), akışkan başlık boyutları, 6 px köşe, gölge yok | sade ve bilimsel görünüm |
-| Yer tutucu biçimi | kesikli çerçeve, ince çapraz tarama, "Yer tutucu" rozeti ve beklenen girdi kodu | eksik değer gerçek değerle karıştırılmaz (CLAUDE.md) |
+| `zemin`, `yuzey`, `yuzey-2`, `cizgi` | laciverde çalan koyu arduvaz (slate) katmanlar | SOLARIS'in kardeşi gibi durur; zemin, kart ve girdi katmanları arasında görünür fark (§4 ölçüt 10) |
+| `cizgi-guclu` | açık arduvaz | form ve ikincil düğme kenarı; WCAG 1.4.11 için en az 3:1 |
+| `metin`, `metin-ikincil` | slate-200 ve slate-400 tonları | her zeminde en az 4,5:1 |
+| `gunes` amber, `dunya` gök mavisi | | yalnız §2 anlamında; kullanan dosyalar testteki izin listesinde |
+| `vurgu` | menekşe | SOLARIS'in çivit vurgusuyla aile bağı; ton olarak amber ve gök mavisinden ayrı. Vurgu yalnız birincil düğme, etkin menü ve odak halkasında; mor degrade yazı ve parıltı yok (yapay zekâ görünümünün en tanıdık işareti) |
+| `uyari` pembe-macenta, `hata` kırmızı, `basari` zümrüt | | parametre setinin macenta önerisi; renk her zaman simgeyle birlikte |
+| Yazı tipleri | Outfit (başlık), Inter (gövde), IBM Plex Mono (kod ve girdi etiketi) | Outfit ve Inter SOLARIS'le aynı aile; sayılar Inter'in eşit genişlikli rakamlarıyla. Hepsi yerel paket, internetsiz demoda da yüklenir |
+| Şekil dili | kart 12 px köşe, iç kutu 8 px, rozet tam yuvarlak; 1 px kenar; gölge yok | SOLARIS'teki ölçülmüş köşe değerleri (12, 8, 9999 px) |
+| Simge | Lucide çizgi simgeleri, kart başında 32 px renkli kutu içinde | SOLARIS'in kart başı düzeni; renk anlamı simgeyle tekrarlanır |
+| Izgara | 12 sütun, 24 px aralık, en çok 1280 px içerik; her panel sütun çizgisine oturur | rastgele konum yok (§4 ölçüt 11) |
+| Yer tutucu biçimi | kart başında kesikli "Yer tutucu" rozeti, kartın içinde ortalanmış boş durum ve beklenen girdi kodu | eksik değer gerçek değerle karıştırılmaz (CLAUDE.md); notlar kartın dışına saçılmaz |
 
-## 4. Kabul ölçütleri (ÖNERİ)
+## 4. Kabul ölçütleri (ÖNERİ; 10–12 KARAR, ajan, yetkiyle, 2026-11-14)
 
 Bir tasarım işi bunlar sağlanmadan bitmiş sayılmaz. Her biri ölçülebilir.
 
@@ -62,6 +71,12 @@ Bir tasarım işi bunlar sağlanmadan bitmiş sayılmaz. Her biri ölçülebilir
 7. Ana Sayfa'da ana soru ve iki düğme ilk ekranda, kaydırmadan görünür (masaüstü ve 375 px).
 8. Her sayfa iki dilde taşma ve kesilme olmadan görünür (İngilizce ve Türkçe metin uzunlukları farklı).
 9. Arayüze dokunan iş gerçek tarayıcıda açılarak denetlenir (§5, görsel denetim).
+10. Katmanlar ayrışır: zemin L\* 7 ile 12 arası (saf siyah değil), kart zeminden en az 3 L\* açık, girdi
+    alanı karttan en az 3 L\* açık. `belirtecler.test.ts` ölçer.
+11. Rastgele konum yok: her panelin sol ve sağ kenarı 12 sütunlu ızgaranın bir sütun çizgisine ±1 px oturur
+    (masaüstü ve 375 px). `tests/sayfalar.e2e.ts` ölçer.
+12. Tek şekil dili: görünen öğelerin köşe yarıçapı yalnız 0, 8, 12 px ya da tam yuvarlak; renkler yalnız
+    belirteçlerden. Test ölçer.
 
 ## 5. Tasarım araçları (KARAR, 2026-11-14)
 

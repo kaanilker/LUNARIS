@@ -14,3 +14,9 @@ Nasıl anlaşıldı: hata yığını `@npmcli/arborist` `#loadPeerSet` içinde (
 Ne oldu: yerel Apache'yi `pkill -f "tests/apache"` ile kapatırken komut satırı aynı deseni taşıdığı için Bash
 çağrısı 144 koduyla öldü (ölçüldü 2026-11-14). Ne değişti: arka plan sunucusu `$!` ile alınan PID ya da
 `ss -ltnp` ile bulunan port sahibiyle kapatılır.
+
+## Tasarımı "açık" gösteren parlaklık değil, ton ve katman farkıydı
+Ne oldu: kullanıcı paleti "aşırı koyu" buldu, SOLARIS'i örnek gösterdi. Nasıl anlaşıldı: ekran görüntüsünden
+piksel ölçümü (ölçüldü 2026-11-14 · Chromium canvas · CIELAB L*): SOLARIS zemini L* 5–9, bizimki 3,3; asıl fark
+SOLARIS'in renkli zemini ve L* yaklaşık 12'lik kartlarıydı. Ne değişti: katman farkı ölçüt oldu (docs/tasarim.md
+§4 ölçüt 10) ve `belirtecler.test.ts` her koşuda ölçüyor.

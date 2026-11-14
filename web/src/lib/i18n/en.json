@@ -25,7 +25,8 @@
 	},
 	"yer_tutucu": {
 		"etiket": "Placeholder",
-		"girdi": "Awaiting input"
+		"girdi": "Awaiting input",
+		"formul": "Formula"
 	},
 	"ai": {
 		"etiket": "AI generated",

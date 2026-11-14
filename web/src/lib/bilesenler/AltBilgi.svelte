@@ -1,43 +1,22 @@
 <script lang="ts">
+	import CodeXml from '@lucide/svelte/icons/code-xml';
 	import { ceviri } from '$lib/i18n/baglam';
 
 	const c = ceviri();
 	const REPO = 'https://github.com/kaanilker/LUNARIS';
 </script>
 
-<footer class="alt">
-	<div class="kap satir">
+<footer class="mt-20 border-t border-cizgi">
+	<div class="kap flex flex-col items-center justify-between gap-3 py-8 text-sm text-metin-ikincil sm:flex-row">
 		<p>
-			<strong>{c.t('marka.ad')}</strong>
-			<span class="ikincil">{c.t('marka.acilim')}</span>
+			<span class="font-baslik font-semibold tracking-wide text-metin">{c.t('marka.ad')}</span>
+			<span class="mx-2" aria-hidden="true">·</span>{c.t('alt.metin')}
 		</p>
-		<p class="ikincil">{c.t('alt.metin')}</p>
-		<p class="ikincil">
-			<a href={REPO} rel="noopener">{c.t('alt.kaynak')}</a> · {c.t('alt.lisans')}
+		<p class="flex items-center gap-4">
+			<a href={REPO} rel="noopener" class="inline-flex h-9 items-center gap-2 transition-colors hover:text-metin">
+				<CodeXml class="size-4" aria-hidden="true" />{c.t('alt.kaynak')}
+			</a>
+			<span>{c.t('alt.lisans')}</span>
 		</p>
 	</div>
 </footer>
-
-<style>
-	.alt {
-		margin-top: var(--b9);
-		border-top: var(--cizgi-kalinlik) solid var(--cizgi);
-		padding-block: var(--b6);
-		font-size: var(--boyut-kucuk);
-	}
-
-	.satir {
-		display: grid;
-		gap: var(--b2);
-	}
-
-	strong {
-		letter-spacing: 0.12em;
-		margin-right: var(--b2);
-	}
-
-	a {
-		display: inline-block;
-		padding-block: var(--b1);
-	}
-</style>

@@ -1,92 +1,54 @@
 <!--
-	Tek sayılık gösterge kartı. anlam: 'gunes' ya da 'dunya' yalnız o gök cismine ait değerde verilir
-	(docs/tasarim.md §2); renk tek başına anlam taşımasın diye simge de değişir.
-	deger verilmezse boş değer işareti görünür; yer tutucu notu çağıran tarafın işidir.
+	Tek sayılık gösterge kartı (SOLARIS'in parametre kartı düzeni). anlam 'gunes' ya da 'dunya' yalnız o gök
+	cismine ait değerde verilir (docs/tasarim.md §2); renk tek başına anlam taşımasın diye simge de değişir.
+	deger verilmezse boş değer ve "Yer tutucu" rozeti görünür.
 -->
 <script lang="ts">
+	import Sun from '@lucide/svelte/icons/sun';
+	import Earth from '@lucide/svelte/icons/earth';
+	import Crosshair from '@lucide/svelte/icons/crosshair';
+	import { ceviri } from '$lib/i18n/baglam';
+	import Rozet from './Rozet.svelte';
+
 	let {
 		etiket,
+		formul,
 		deger,
 		birim,
-		anlam = 'notr'
-	}: { etiket: string; deger?: string; birim?: string; anlam?: 'gunes' | 'dunya' | 'notr' } =
-		$props();
+		anlam = 'notr',
+		sinif = ''
+	}: {
+		etiket: string;
+		/** Parametre setindeki formül numarası (S.6, 0.5); değer değil, kaynağı gösterir. */
+		formul?: string;
+		deger?: string;
+		birim?: string;
+		anlam?: 'gunes' | 'dunya' | 'notr';
+		sinif?: string;
+	} = $props();
+
+	const c = ceviri();
+	const SIMGE = { gunes: Sun, dunya: Earth, notr: Crosshair };
+	const KUTU = {
+		gunes: 'bg-gunes/15 text-gunes',
+		dunya: 'bg-dunya/15 text-dunya',
+		notr: 'bg-yuzey-2 text-metin-ikincil'
+	};
+	const Simge = $derived(SIMGE[anlam]);
 </script>
 
-<div class="gosterge {anlam}">
-	<span class="simge" aria-hidden="true">
-		{#if anlam === 'gunes'}
-			<svg viewBox="0 0 16 16" width="16" height="16"
-				><circle cx="8" cy="8" r="3.5" fill="currentColor" /><g
-					stroke="currentColor"
-					stroke-width="1.4"
-					stroke-linecap="round"
-					><path
-						d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6 13 13M3 13l1.4-1.4M11.6 4.4 13 3"
-					/></g
-				></svg
-			>
-		{:else if anlam === 'dunya'}
-			<svg viewBox="0 0 16 16" width="16" height="16"
-				><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.4" /><path
-					d="M2 8h12M8 2c2 2 2 10 0 12M8 2c-2 2-2 10 0 12"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.1"
-				/></svg
-			>
-		{:else}
-			<svg viewBox="0 0 16 16" width="16" height="16"
-				><circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="1.4" /><path
-					d="M8 1v4M8 11v4M1 8h4M11 8h4"
-					stroke="currentColor"
-					stroke-width="1.4"
-				/></svg
-			>
-		{/if}
-	</span>
-	<span class="etiket">{etiket}</span>
-	<span class="deger sayi">{deger ?? '—'}{#if deger && birim}<small>{birim}</small>{/if}</span>
+<div data-panel class="flex min-w-0 flex-col gap-5 rounded-kart border border-cizgi bg-yuzey p-5 {sinif}">
+	<div class="flex items-center justify-between gap-3">
+		<span class="grid size-8 place-items-center rounded-kutu {KUTU[anlam]}" aria-hidden="true">
+			<Simge class="size-4" />
+		</span>
+		{#if !deger}<Rozet tur="yer">{c.t('yer_tutucu.etiket')}</Rozet>{/if}
+	</div>
+	<div class="flex flex-col gap-1">
+		<p class="font-baslik text-3xl font-semibold text-metin tabular-nums">
+			{deger ?? '—'}{#if deger && birim}<span class="ml-1 text-sm font-normal text-metin-ikincil">{birim}</span>{/if}
+		</p>
+		<p class="text-sm text-metin">{etiket}</p>
+		{#if formul}<p class="font-kod text-xs text-metin-ikincil">{c.t('yer_tutucu.formul')} {formul}</p>{/if}
+	</div>
 </div>
-
-<style>
-	.gosterge {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		align-items: center;
-		gap: var(--b2) var(--b3);
-		padding: var(--b4) var(--b5);
-		background: var(--yuzey);
-		border: var(--cizgi-kalinlik) solid var(--cizgi);
-		border-radius: var(--yaricap);
-	}
-
-	.simge {
-		color: var(--metin-ikincil);
-	}
-
-	.gunes .simge {
-		color: var(--gunes);
-	}
-
-	.dunya .simge {
-		color: var(--dunya);
-	}
-
-	.etiket {
-		color: var(--metin-ikincil);
-		font-size: var(--boyut-kucuk);
-	}
-
-	.deger {
-		grid-column: 1 / -1;
-		font-size: 2rem;
-		line-height: 1;
-	}
-
-	small {
-		font-size: var(--boyut-kucuk);
-		margin-left: var(--b1);
-		color: var(--metin-ikincil);
-	}
-</style>

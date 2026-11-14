@@ -11,10 +11,10 @@
 - docs/mimari.md (ÖNERİ), docs/bilim-girdileri.md, docs/acik-sorular.md, SPEC.md yazıldı. Kod yok, test yok.
 ### Sıradakiler
 1. Kullanıcıyla docs/mimari.md üzerinden geçmek, maddeleri KARAR/ret yapmak.
-2. S2 cevaplanınca iskelet: hat/ için pilot (tek site efemeris + ufuk süresi ölçümü), web/ için sahne arayüzü taslağı.
+2. İskelet (S2 kapandı, SvelteKit): hat/ için pilot (tek site efemeris + ufuk süresi ölçümü), web/ için sahne arayüzü taslağı.
 3. bilim/ JSON şemalarını yer tutucu örneklerle hazırlamak.
 ### Bende bekleyen
-- Açık sorular (docs/acik-sorular.md), özellikle S2 ön yüz çatısı.
+- Açık sorular (docs/acik-sorular.md): S7 Groq modeli, S8 hosting, S9 görev süresi tanımı.
 - Bilim ekibine docs/bilim-girdileri.md listesinin iletilmesi.
 - Push: gh web tarayıcı girişiyle (gho_ jetonu, repo izni) çalışıyor; ilk push 2026-11-14 yapıldı.
 ### Bu oturumda ölçülen tuzaklar

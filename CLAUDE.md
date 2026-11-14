@@ -39,7 +39,8 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 - Her sayının yanında neye karşı ölçüldüğü yazar (Horizons, literatür, simülasyon).
 
 ## Komutlar
-Henüz kod yok. Yığın seçilince buraya ve `.ajan/test-komutu`'na yazılır.
+Henüz kod yok. Yığın: ön yüz SvelteKit + TypeScript + Three.js (statik), veri hattı Python, AI ucu PHP
+(`docs/mimari.md` §3, §6, §7). Komutlar iskelet kurulunca buraya ve `.ajan/test-komutu`'na yazılır.
 
 ## Git ve push
 Uzak: `origin` = https://github.com/kaanilker/LUNARIS (herkese açık, GPL-2.0). Dal: `main`.

@@ -153,7 +153,15 @@ eşleşmeyen sayı varsa yorum atılır ve yedek gösterilir.
 - **Renk sözleşmesi:** Güneş amber, Dünya mavi; bu iki renk başka anlamda kullanılmaz. Tasarım
   belirteçlerinde (CSS değişkenleri) tek yerde tanımlanır.
 - **Rapor:** tek sayfalık çıktı tarayıcının yazdırma görünümüyle üretilir (ayrı PDF sunucusu yok).
-- **Çatı:** açık soru (`docs/acik-sorular.md` S2). ÖNERİ: Vite + TypeScript + Three.js.
+- **Çatı: KARAR (2026-11-14, kullanıcı seçimi ajana bıraktı, koşulu "ekibi zorlamasın"):**
+  SvelteKit + TypeScript + Three.js, statik çıktı (`adapter-static`). Gerekçe:
+  - Svelte bileşeni HTML, CSS ve biraz koda benzer; React'e göre öğrenmesi ve okuması kolaydır.
+  - SvelteKit sayfa yönlendirmesini ve `/tr/`, `/en/` öneklerini hazır verir; ayrı kütüphane gerekmez.
+  - `adapter-static` her sayfayı düz HTML dosyası olarak üretir; cPanel'e kopyalamak yeter, sunucuda
+    Node gerekmez.
+  - 3B sahneler çatıdan bağımsız düz TypeScript modülleridir (§5). Animasyon ekibi Svelte öğrenmek
+    zorunda kalmaz.
+  Kesin sürümler kurulumda sabitlenir.
 
 ## 8. İki uygulama riski ve önlemi
 

@@ -41,8 +41,13 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 - Her sayının yanında neye karşı ölçüldüğü yazar (Horizons, literatür, simülasyon).
 
 ## Komutlar
-Henüz kod yok. Yığın: ön yüz SvelteKit + TypeScript + Three.js (statik), veri hattı Python, AI ucu PHP
-(`docs/mimari.md` §3, §6, §7). Komutlar iskelet kurulunca buraya ve `.ajan/test-komutu`'na yazılır.
+Yığın: ön yüz SvelteKit + TypeScript + Three.js (statik), veri hattı Python, AI ucu PHP
+(`docs/mimari.md` §3, §6, §7). Test komutu ilk testler yazılınca buraya ve `.ajan/test-komutu`'na yazılır.
+```
+python3 -m venv .venv && .venv/bin/python -m pip install -r hat/requirements.txt   # veri hattı ortamı
+.venv/bin/python ...                                                                # hep bu yorumlayıcı
+```
+Makinede Node 22 var (ön yüz için).
 
 ## Git ve push
 Uzak: `origin` = https://github.com/kaanilker/LUNARIS (herkese açık, GPL-2.0). Dal: `main`.

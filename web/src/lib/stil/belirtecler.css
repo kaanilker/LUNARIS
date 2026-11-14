@@ -1,0 +1,88 @@
+/*
+ * Tasarım belirteçleri: sitedeki her rengin tek tanım yeri.
+ * Sahip belge: docs/tasarim.md §3. Başka dosyada renk değeri yazılmaz (src/lib/stil/belirtecler.test.ts).
+ *
+ * --gunes yalnız Güneş anlamında, --dunya yalnız Dünya anlamında kullanılır (docs/tasarim.md §2).
+ * --vurgu bilerek renksizdir: her renk tonu amber, mavi ya da uyarı macentasıyla renk körlüğünde karışabilir.
+ */
+:root {
+	color-scheme: dark;
+
+	/* Koyu tema katmanları */
+	--zemin: #0b0c0f;
+	--yuzey: #13151a;
+	--yuzey-2: #1b1e25;
+	--cizgi: #2b2f38;
+	--cizgi-guclu: #6a707e;
+
+	/* Metin */
+	--metin: #ecebe6;
+	--metin-ikincil: #a6a8ae;
+
+	/* Anlam renkleri */
+	--gunes: #f5a524;
+	--gunes-soluk: #f5a52429;
+	--dunya: #4aa3ff;
+	--dunya-soluk: #4aa3ff29;
+
+	/* Arayüz etkileşimi */
+	--vurgu: #f4f1e8;
+	--vurgu-uzerine: #0b0c0f;
+
+	/* Durum */
+	--uyari: #e35bd0;
+	--hata: #ff7a7a;
+	--basari: #5fd18e;
+
+	/* Yazı tipleri */
+	--yazi-govde: 'IBM Plex Sans', system-ui, sans-serif;
+	--yazi-sayi: 'IBM Plex Mono', ui-monospace, monospace;
+
+	/* Yazı boyutu ölçeği */
+	--boyut-kucuk: 0.8125rem;
+	--boyut-govde: 1rem;
+	--boyut-orta: 1.25rem;
+	--boyut-baslik-3: 1.375rem;
+	--boyut-baslik-2: clamp(1.625rem, 1.2rem + 1.8vw, 2.25rem);
+	--boyut-baslik-1: clamp(2.25rem, 1.4rem + 4vw, 4.25rem);
+
+	/* Boşluk ölçeği (4 px taban) */
+	--b1: 0.25rem;
+	--b2: 0.5rem;
+	--b3: 0.75rem;
+	--b4: 1rem;
+	--b5: 1.5rem;
+	--b6: 2rem;
+	--b7: 3rem;
+	--b8: 4.5rem;
+	--b9: 7rem;
+
+	/* Biçim */
+	--yaricap: 6px;
+	--yaricap-kucuk: 3px;
+	--cizgi-kalinlik: 1px;
+	--icerik-genislik: 72rem;
+	--gecis: 200ms ease-out;
+}
+
+/* Rapor çıktısı: yazdırma görünümü açık zemin kullanır. */
+@media print {
+	:root {
+		color-scheme: light;
+		--zemin: #ffffff;
+		--yuzey: #ffffff;
+		--yuzey-2: #f3f3f1;
+		--cizgi: #c9c9c4;
+		--cizgi-guclu: #8a8a85;
+		--metin: #111111;
+		--metin-ikincil: #4a4a48;
+		--gunes: #a35f00;
+		--dunya: #0a5bb5;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--gecis: 0ms linear;
+	}
+}

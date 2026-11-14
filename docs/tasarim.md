@@ -16,7 +16,7 @@
 | İki dil (TR/EN), mobilde açılır | **KARAR** (ekip brifi) |
 | Ana Sayfa'da tam Ay küresi; bilgi kısa, yorum ağırlıklı | **KARAR** (kullanıcı, 2026-11-14) |
 | Tasarım araçları (§5) | **KARAR** (kullanıcı onayı, 2026-11-14) |
-| Kesin renk değerleri, yazı tipleri, boşluk ölçeği | **seçilmedi** (§3) |
+| Kesin renk değerleri, yazı tipleri, boşluk ölçeği | **KARAR** (ajan, yetkiyle, 2026-11-14; §3) |
 | Kabul ölçütleri (§4) | **ÖNERİ** |
 | Ürün metni kuralı: tireyle madde ve ara cümle dizilmez, düz cümle | **KARAR** (global kural) |
 
@@ -32,22 +32,22 @@ Kaynak: `docs/kaynak/LUNARIS_AGENT_BRIEF.md` "Tasarım yönü" ve "Bizim için �
 - Renk tek başına anlam taşımaz: güneşli, kısmi, karanlık durumları renk dışında desen, etiket ya da
   simgeyle de ayırt edilir (renk körlüğü).
 
-## 3. Tasarım belirteçleri (seçilecek)
+## 3. Tasarım belirteçleri (KARAR, ajan, yetkiyle, 2026-11-14)
 
-Değerler `web/` iskeletinde CSS değişkenleri olarak tek yerde tanımlanır. Henüz seçilmedi; seçimden önce
-§4'teki ölçütler sağlanmalı.
+Değerlerin tek yeri `web/src/lib/stil/belirtecler.css`; bu tablo değer kopyalamaz, seçimin gerekçesini tutar.
+Karşıtlık ölçütü (§4 madde 2) `web/src/lib/stil/belirtecler.test.ts` ile her test koşusunda ölçülür.
 
-| Belirteç | Değer | Not |
+| Belirteç | Seçim | Gerekçe |
 |---|---|---|
-| `--zemin`, `--yuzey`, `--yuzey-2` | seçilecek | koyu tema katmanları |
-| `--metin`, `--metin-ikincil` | seçilecek | zemine karşı karşıtlık §4 |
-| `--gunes` (amber), `--gunes-soluk` | seçilecek | yalnız Güneş anlamında |
-| `--dunya` (mavi), `--dunya-soluk` | seçilecek | yalnız Dünya anlamında |
-| `--vurgu` | seçilecek | arayüz etkileşimi; amber ve maviden ayrı |
-| `--uyari`, `--hata`, `--basari` | seçilecek | amber ve maviyle karışmayacak tonlar; parametre seti uyarı için macenta + ikon öneriyor |
-| Yazı tipleri (başlık, gövde, sayı) | seçilecek | sayılar için eşit genişlikli rakam |
-| Boşluk ve yazı boyutu ölçeği | seçilecek | |
-| Köşe yarıçapı, gölge, çizgi kalınlığı | seçilecek | |
+| `--zemin`, `--yuzey`, `--yuzey-2`, `--cizgi` | renksiz koyu griler | koyu tema; mavi ya da amber eğilimi yok ki anlam renkleriyle karışmasın |
+| `--cizgi-guclu` | orta gri | form ve ikincil düğme kenarı; WCAG 1.4.11 için üç zeminde de en az 3:1 (ilk değer 2,27:1 çıkıp test düştü, yükseltildi) |
+| `--metin`, `--metin-ikincil` | kırık beyaz, açık gri | üç zeminde de en az 4,5:1 |
+| `--gunes` amber, `--dunya` mavi | | yalnız §2 anlamında; kullanan dosyalar testteki izin listesinde |
+| `--vurgu` | kırık beyaz (renksiz) | her renk tonu renk körlüğünde amber, mavi ya da uyarı macentasıyla karışabilir; renksiz vurgu hiçbiriyle karışmaz |
+| `--uyari` macenta, `--hata` açık kırmızı, `--basari` yeşil | | parametre setinin macenta önerisi; renk her zaman simgeyle birlikte |
+| Yazı tipleri | IBM Plex Sans (gövde, başlık), IBM Plex Mono (sayı, etiket) | Türkçe karakterli, eşit genişlikli rakam; yerel paket (`@fontsource`), internetsiz demoda da yüklenir |
+| Ölçekler | 4 px tabanlı boşluk (`--b1`…`--b9`), akışkan başlık boyutları, 6 px köşe, gölge yok | sade ve bilimsel görünüm |
+| Yer tutucu biçimi | kesikli çerçeve, ince çapraz tarama, "Yer tutucu" rozeti ve beklenen girdi kodu | eksik değer gerçek değerle karıştırılmaz (CLAUDE.md) |
 
 ## 4. Kabul ölçütleri (ÖNERİ)
 

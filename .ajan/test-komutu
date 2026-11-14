@@ -1,1 +1,4 @@
-# henüz yok: yığın seçilince test komutu bu satırın yerine yazılır
+# web/ kabulü (borusuz koş; her biri kendi çıkış koduyla)
+cd web && npx vitest --run && npm run check
+cd web && npm run build
+cd web && npx playwright test    # build/ klasörünü yerel Apache'de (.htaccess açık) açar; httpd gerekir

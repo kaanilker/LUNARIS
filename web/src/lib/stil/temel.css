@@ -1,0 +1,254 @@
+/* Temel stil: sıfırlama, yazı, ortak sınıflar. Renkler yalnız belirteçlerden gelir. */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	min-height: 100dvh;
+	background: var(--zemin);
+	color: var(--metin);
+	font-family: var(--yazi-govde);
+	font-size: var(--boyut-govde);
+	line-height: 1.55;
+	overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	line-height: 1.1;
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	text-wrap: balance;
+}
+
+h1 {
+	font-size: var(--boyut-baslik-1);
+	letter-spacing: -0.03em;
+}
+
+h2 {
+	font-size: var(--boyut-baslik-2);
+}
+
+h3 {
+	font-size: var(--boyut-baslik-3);
+}
+
+p {
+	margin: 0;
+	max-width: 62ch;
+}
+
+a {
+	color: inherit;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+}
+
+a:hover {
+	text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+	outline: 2px solid var(--vurgu);
+	outline-offset: 3px;
+	border-radius: var(--yaricap-kucuk);
+}
+
+button,
+input,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.sayi {
+	font-family: var(--yazi-sayi);
+	font-variant-numeric: tabular-nums;
+}
+
+.ust-etiket {
+	font-family: var(--yazi-sayi);
+	font-size: var(--boyut-kucuk);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--metin-ikincil);
+}
+
+.ikincil {
+	color: var(--metin-ikincil);
+}
+
+.kap {
+	width: 100%;
+	max-width: var(--icerik-genislik);
+	margin-inline: auto;
+	padding-inline: var(--b4);
+}
+
+@media (min-width: 48rem) {
+	.kap {
+		padding-inline: var(--b6);
+	}
+}
+
+.dugme {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--b2);
+	min-height: 2.75rem;
+	padding: var(--b2) var(--b5);
+	border: var(--cizgi-kalinlik) solid var(--vurgu);
+	border-radius: var(--yaricap);
+	background: var(--vurgu);
+	color: var(--vurgu-uzerine);
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+	transition:
+		background var(--gecis),
+		color var(--gecis);
+}
+
+.dugme:hover {
+	background: transparent;
+	color: var(--vurgu);
+}
+
+.dugme.ikinci {
+	background: transparent;
+	color: var(--vurgu);
+	border-color: var(--cizgi-guclu);
+}
+
+.dugme.ikinci:hover {
+	border-color: var(--vurgu);
+}
+
+.dugme:disabled,
+.dugme[aria-disabled='true'] {
+	cursor: not-allowed;
+	opacity: 0.55;
+	background: transparent;
+	color: var(--metin-ikincil);
+	border-color: var(--cizgi);
+}
+
+.gorsel-gizli {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+/* Sayfa bölümü: büyük başlık, kısa cümle, bol boşluk (docs/tasarim.md §1). */
+.bolum {
+	display: grid;
+	gap: var(--b5);
+	padding-block: var(--b7);
+	border-top: var(--cizgi-kalinlik) solid var(--cizgi);
+}
+
+.bolum-basi {
+	display: grid;
+	gap: var(--b2);
+}
+
+.izgara {
+	display: grid;
+	gap: var(--b4);
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+.kart {
+	display: grid;
+	align-content: start;
+	gap: var(--b3);
+	padding: var(--b5);
+	background: var(--yuzey);
+	border: var(--cizgi-kalinlik) solid var(--cizgi);
+	border-radius: var(--yaricap);
+}
+
+.tablo-kap {
+	overflow-x: auto;
+	border: var(--cizgi-kalinlik) solid var(--cizgi);
+	border-radius: var(--yaricap);
+}
+
+th,
+td {
+	padding: var(--b3) var(--b4);
+	text-align: left;
+	border-bottom: var(--cizgi-kalinlik) solid var(--cizgi);
+	white-space: nowrap;
+}
+
+th {
+	font-weight: 500;
+	font-size: var(--boyut-kucuk);
+	color: var(--metin-ikincil);
+	background: var(--yuzey);
+}
+
+tr:last-child td {
+	border-bottom: 0;
+}
+
+.alan {
+	display: grid;
+	gap: var(--b2);
+}
+
+.alan > span,
+legend {
+	font-size: var(--boyut-kucuk);
+	color: var(--metin-ikincil);
+}
+
+input,
+select {
+	min-height: 2.75rem;
+	padding: var(--b2) var(--b3);
+	background: var(--yuzey-2);
+	border: var(--cizgi-kalinlik) solid var(--cizgi-guclu);
+	border-radius: var(--yaricap);
+}
+
+input:disabled,
+select:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	display: grid;
+	gap: var(--b2);
+}

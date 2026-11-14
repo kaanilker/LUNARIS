@@ -56,12 +56,15 @@ yöntem bilim ekibinden gelir (parametre seti).
 
 ## Komutlar
 Yığın: ön yüz SvelteKit + TypeScript + Three.js (statik), veri hattı Python, AI ucu PHP
-(`docs/mimari.md` §3, §6, §7). Test komutu ilk testler yazılınca buraya ve `.ajan/test-komutu`'na yazılır.
+(`docs/mimari.md` §3, §6, §7). Test komutu `.ajan/test-komutu`'nda (web: birim testi, derleme, gerçek tarayıcı testi).
 ```
 python3 -m venv .venv && .venv/bin/python -m pip install -r hat/requirements.txt   # veri hattı ortamı
 .venv/bin/python ...                                                                # hep bu yorumlayıcı
 ```
-Makinede Node 22 var (ön yüz için).
+Makinede Node 22 var (ön yüz için). Paket kurulumu `npx npm@11.6.2 install` ile (`docs/dersler.md`).
+```
+cd web && npx vitest --run && npm run build && npx playwright test   # web kabulü (Apache: httpd gerekir)
+```
 
 ## Git ve push
 Uzak: `origin` = https://github.com/kaanilker/LUNARIS (herkese açık, GPL-2.0). Dal: `main`.

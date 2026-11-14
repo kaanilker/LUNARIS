@@ -166,7 +166,12 @@ eşleşmeyen sayı varsa yorum atılır ve yedek gösterilir.
 
 - **Statik site.** Sunucu durumu yok; herhangi bir statik barındırıcıda çalışır.
   **KARAR (kullanıcı, 2026-11-14):** site bitince cPanel'e yüklenir (Apache). Derleme çıktısı
-  `public_html`'e kopyalanır. Temiz adresler için `.htaccess` yönlendirmesi gerekir (ÖNERİ).
+  `public_html`'e kopyalanır.
+  **KARAR (ajan, yetkiyle, 2026-11-14):** her sayfa klasör içinde `index.html` olarak üretilir
+  (`trailingSlash: 'always'`), Apache bunları kuralsız sunar. Önceden üretilemeyen parsel adresleri
+  (`/tr/site/<parsel>/`) `web/static/.htaccess` ile `200.html` istemci yedeğine düşer; bilinmeyen adres de aynı
+  dosyayla 404 durum koduyla açılır. Kurallar yerel Apache 2.4 üstünde Playwright testiyle sınanır
+  (`web/tests/apache/`).
   Veri paketinin boyutu barındırıcının disk ve bant sınırıyla karşılaştırılır (S8).
 - **Senaryo URL'de:** site(ler), tarih, gecikme, süzgeçler, dil. Paylaşım linki budur, veritabanı yok.
 - **Ağır iş Web Worker'da:** paket çözme ve sıralama ana iş parçacığını kilitlemez.

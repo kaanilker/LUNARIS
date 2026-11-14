@@ -4,3 +4,13 @@
 > Oturum başında yalnız `## ` başlıkları bağlama basılır; başlık dersi tek başına anlatmalı.
 
 _Henüz ders yok._
+
+## npm 10.9.7 SvelteKit iskeletinde `edgesOut` hatasıyla düşüyor, npm 11 kuruyor
+Ne oldu: `sv create` sonrası `npm install` iki kez "Cannot read properties of null (reading 'edgesOut')" ile düştü.
+Nasıl anlaşıldı: hata yığını `@npmcli/arborist` `#loadPeerSet` içinde (ölçüldü 2026-11-14 · ~/.npm/_logs); aynı
+`package.json` `npx npm@11.6.2 install` ile 25 saniyede kuruldu. Ne değişti: CLAUDE.md "Komutlar" npm 11 ile kurar.
+
+## `pkill -f <desen>` komutu kendi kabuğunu da öldürür
+Ne oldu: yerel Apache'yi `pkill -f "tests/apache"` ile kapatırken komut satırı aynı deseni taşıdığı için Bash
+çağrısı 144 koduyla öldü (ölçüldü 2026-11-14). Ne değişti: arka plan sunucusu `$!` ile alınan PID ya da
+`ss -ltnp` ile bulunan port sahibiyle kapatılır.

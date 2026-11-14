@@ -226,7 +226,7 @@ Bilim ekibinin literatür derlemesine dair okuma notları (yalnız bilgi): `docs
   şema reddinin, API kapalıyken yedek metnin testi.
 - Her sayının yanında neye karşı ölçüldüğü yazar (Horizons, literatür, simülasyon).
 
-## 11. Repo yapısı (ÖNERİ, henüz kurulmadı)
+## 11. Repo yapısı (ÖNERİ; `web/` iskeleti 2026-11-14'te kuruldu)
 
 ```
 bilim/           bilim ekibinin JSON girdileri (siteler, görevler, parametreler)

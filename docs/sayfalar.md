@@ -43,8 +43,7 @@ Karşılaştır sayfalarının yazdırma görünümü. Adreslerdeki dil öneki (
 **KARAR:** Kullanıcı tarih ve **Dünya'daki kalkış noktasını** seçer. Bölgeyi sistem seçer.
 **KARAR (amaç):** kalkış noktası görev süresini en aza indirmek için girilir. Sistem, bu kalkış
 noktasından bu tarihte fırlatılınca uygun koşullu bir parsele en kısa sürede inilecek seçenekleri öne
-çıkarır. "Görev süresi"nin tanımı (fırlatmadan inişe mi, inişten sonraki çalışma süresi dahil mi) açık:
-`docs/acik-sorular.md` S9.
+çıkarır. "Görev süresi" = fırlatmadan Ay'a inişe kadar geçen yolculuk süresi (KARAR, `docs/acik-sorular.md` S9).
 
 - **Girdiler:** fırlatma tarihi, Dünya'da kalkış noktası (hazır fırlatma üsleri listesi ya da harita).
 - **Sonuç:**

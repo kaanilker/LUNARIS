@@ -26,7 +26,7 @@
 | B15 | İniş belirsizliği yarıçapı (görev tipine göre) | Belirsizlik analizi | BEKLENİYOR |
 | B16 | Benzer site ölçütü: hangi metrikler, hangi uzaklık | Benzer site önerisi | BEKLENİYOR |
 | B17 | Eğitim, yöntem ve sınırlama metinleri (TR ve EN) | Ana Sayfa anlatısı, Hakkında | BEKLENİYOR |
-| B18 | Kalkış modeli (amaç: görev süresini en aza indirmek, KARAR 2026-11-14): Dünya'daki kalkış noktası ve fırlatma tarihi yolculuk süresini, Ay'a varış zamanını ve iniş koşullarını nasıl belirliyor (yörünge türü, yolculuk süresi, fırlatma pencereleri); hazır fırlatma üsleri listesi | Planlayıcı girdisi, gecikme kaydırıcısı, en uygun tarih | BEKLENİYOR |
+| B18 | Kalkış modeli (amaç: görev süresini en aza indirmek, KARAR 2026-11-14): Dünya'daki kalkış noktası ve fırlatma tarihi yolculuk süresini (görev süresi = fırlatmadan inişe kadar), Ay'a varış zamanını ve iniş koşullarını nasıl belirliyor; yanlış zamanda fırlatmanın rotayı ne kadar uzattığı (kullanıcı "~10 kat" diyor, ölçülmedi) (yörünge türü, yolculuk süresi, fırlatma pencereleri); hazır fırlatma üsleri listesi | Planlayıcı girdisi, gecikme kaydırıcısı, en uygun tarih | BEKLENİYOR |
 | B19 | Ana Sayfa göstergeleri: "güney kutbu şu an ne kadar enerji alıyor" ve "inişe ne kadar elverişli" tanımı ve hangi bölge üzerinden hesaplandığı | Ana Sayfa paneli | BEKLENİYOR |
 | B20 | Parsel sıralama yöntemi: hangi metrikler, hangi parsel değeri (merkez, ortalama, en iyi, en kötü), "en uygun tarih" ölçütü; görev süresinin sıralamaya nasıl girdiği | Planlayıcı sıralaması | BEKLENİYOR |
 

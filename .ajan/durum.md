@@ -14,7 +14,7 @@
 2. İskelet (S2 kapandı, SvelteKit): hat/ için pilot (tek site efemeris + ufuk süresi ölçümü), web/ için sahne arayüzü taslağı.
 3. bilim/ JSON şemalarını yer tutucu örneklerle hazırlamak.
 ### Bende bekleyen
-- Açık sorular (docs/acik-sorular.md): S7 Groq modeli, S8 hosting, S9 görev süresi tanımı.
+- Açık sorular (docs/acik-sorular.md): S7 Groq modeli (sonra), S8 hosting disk ve bant sınırı.
 - Bilim ekibine docs/bilim-girdileri.md listesinin iletilmesi.
 - Push: gh web tarayıcı girişiyle (gho_ jetonu, repo izni) çalışıyor; ilk push 2026-11-14 yapıldı.
 ### Bu oturumda ölçülen tuzaklar

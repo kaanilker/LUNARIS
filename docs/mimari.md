@@ -125,7 +125,7 @@ Kurallar brifte (yalnız hesaplanan sonucu yorumlar, boş kutu yok, "AI üretimi
 
 **KARAR (kullanıcı, 2026-11-14):** AI sağlayıcısı Groq API. Model ve bütçe açık (`docs/acik-sorular.md` S7).
 **ÖNERİ:** Uç cPanel'de PHP ile yazılır (`api/yorum.php`), çünkü cPanel'de PHP neredeyse her zaman vardır
-ve Node desteği barındırıcıya bağlıdır (çıkarım, S8 ile doğrulanacak). Groq anahtarı `public_html`
+ve Node desteği barındırıcıya bağlıdır (çıkarım). Barındırıcıda PHP 8.4 var (kullanıcı, 2026-11-14). Groq anahtarı `public_html`
 dışındaki bir dosyadan okunur, tarayıcıya hiç gitmez. İstek sınırı tek sunucuda dosya tabanlı tutulur.
 
 Mimari:

@@ -42,6 +42,7 @@ Henüz kod yok. Yığın seçilince buraya ve `.ajan/test-komutu`'na yazılır.
 
 ## Git ve push
 Uzak: `origin` = https://github.com/kaanilker/LUNARIS (herkese açık, GPL-2.0). Dal: `main`.
+**KARAR (kullanıcı, 2026-11-14):** repo herkese açık kalır; brif ve mimari belgeleri repoda yayımlanır.
 
 **KARAR (kullanıcı, 2026-11-14):** Bu projede push ajana açık; global "push kullanıcıda" kuralının
 istisnası. Kullanıcının koşulu "bazı şeyler kesin bitince". Ajanın bu koşuldan çıkardığı ölçütler

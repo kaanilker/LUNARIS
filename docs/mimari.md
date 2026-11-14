@@ -120,8 +120,7 @@ eşleşmeyen sayı varsa yorum atılır ve yedek gösterilir.
 - **Renk sözleşmesi:** Güneş amber, Dünya mavi; bu iki renk başka anlamda kullanılmaz. Tasarım
   belirteçlerinde (CSS değişkenleri) tek yerde tanımlanır.
 - **Rapor:** tek sayfalık çıktı tarayıcının yazdırma görünümüyle üretilir (ayrı PDF sunucusu yok).
-- **Çatı:** açık soru, yazılım ekibinin kararı (`docs/acik-sorular.md` S2). SOLARIS'in yığını
-  bilinirse onu yeniden kullanmak öğrenme maliyetini düşürür.
+- **Çatı:** açık soru (`docs/acik-sorular.md` S2). ÖNERİ: Vite + TypeScript + Three.js.
 
 ## 8. İki uygulama riski ve önlemi
 

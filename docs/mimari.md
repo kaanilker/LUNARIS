@@ -150,8 +150,7 @@ eşleşmeyen sayı varsa yorum atılır ve yedek gösterilir.
 - **Senaryo URL'de:** site(ler), tarih, gecikme, süzgeçler, dil. Paylaşım linki budur, veritabanı yok.
 - **Ağır iş Web Worker'da:** paket çözme ve sıralama ana iş parçacığını kilitlemez.
 - **İki dil:** metinler anahtar-değer dosyalarında (`tr.json`, `en.json`); kodda metin yok.
-- **Renk sözleşmesi:** Güneş amber, Dünya mavi; bu iki renk başka anlamda kullanılmaz. Tasarım
-  belirteçlerinde (CSS değişkenleri) tek yerde tanımlanır.
+- **Renk ve tasarım belirteçleri:** sahibi `docs/tasarim.md`; CSS değişkenlerinde tek yerde tanımlanır.
 - **Rapor:** tek sayfalık çıktı tarayıcının yazdırma görünümüyle üretilir (ayrı PDF sunucusu yok).
 - **Çatı: KARAR (2026-11-14, kullanıcı seçimi ajana bıraktı, koşulu "ekibi zorlamasın"):**
   SvelteKit + TypeScript + Three.js, statik çıktı (`adapter-static`). Gerekçe:

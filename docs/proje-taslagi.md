@@ -275,6 +275,7 @@ aynı anda yazmasın; mümkünse herkes kendi dalında çalışsın.
 | Problem, demo akışı, kapsam | `SPEC.md` |
 | Mimari | `docs/mimari.md` |
 | Sayfalar | `docs/sayfalar.md` |
+| Tasarım sistemi ve tasarım skill'leri | `docs/tasarim.md` |
 | Bilim girdileri ve durumu | `docs/bilim-girdileri.md` |
 | Bilim ekibine mektup | `docs/bilim-ekibine.md` |
 | Bilim dışı açık sorular | `docs/acik-sorular.md` |

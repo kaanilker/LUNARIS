@@ -22,6 +22,7 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 | Yazılım ekibi için projenin tamamının özeti (sahip belgelere bağlanır) | `docs/proje-taslagi.md` |
 | Mimari kararlar ve öneriler | `docs/mimari.md` |
 | Sayfa yapısı ve adresler | `docs/sayfalar.md` |
+| Görsel tasarım, belirteçler, kabul ölçütleri, tasarım skill'leri | `docs/tasarim.md` |
 | Bilimsel parametre, site, görev, tolerans | `docs/bilim-girdileri.md` (B1…) |
 | Bilim ekibine istek mektubu (durum tutmaz) | `docs/bilim-ekibine.md` |
 | Bilim dışı açık sorular | `docs/acik-sorular.md` (S1…) |
@@ -35,7 +36,7 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
   (SOLARIS'ten çıkan ders, brif.)
 - **Geometrinin başvurusu Python hattıdır.** TS motoru altın dosyaya karşı test edilir; iki yerde ayrı
   doğruluk yazılmaz (`docs/mimari.md` §8).
-- **Renk:** Güneş amber, Dünya mavi; bu iki renk başka anlamda kullanılmaz.
+- **Renk:** Güneş amber, Dünya mavi; bu iki renk başka anlamda kullanılmaz (`docs/tasarim.md` §2).
 - **İki dil:** kullanıcıya görünen her metin TR ve EN anahtar dosyasında; kodda düz metin yok.
 - **AI yorumu** yalnız hesaplanan sonucu yorumlar, "AI üretimi" etiketi taşır, yedek metni vardır.
 - Her sayının yanında neye karşı ölçüldüğü yazar (Horizons, literatür, simülasyon).

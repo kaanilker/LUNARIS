@@ -1,18 +1,10 @@
-İŞ: Siteye geçiş: SvelteKit iskeleti (Aşama 1b). 7 sayfanın boş hâli, TR/EN, koyu tema ve tasarım belirteçleri, `.htaccess`; bilinen eksiklerle başlanır, eksikler yer tutucu olarak görünür.
-SAHİP BELGE: docs/sayfalar.md (sayfalar, adresler), docs/tasarim.md (belirteçler, §4 kabul ölçütleri), docs/animasyonlar.md, docs/mimari.md §5 ve §7, docs/proje-taslagi.md §11 (repo yapısı)
-NEDEN BU İŞ: Kullanıcı kararı (2026-11-14): bazı eksiklerle siteye geçiliyor. İskelet tasarım denemelerinin, sahne arayüzünün ve cPanel denemesinin ön koşulu.
-KABUL: `web/` altında `npm run build` borusuz yeşil; 7 sayfa /tr/ ve /en/ önekleriyle gerçek tarayıcıda açılıyor ve 375 px'te yatay kaydırma yok; renk belirteçleri tek yerde; test komutu CLAUDE.md'ye ve .ajan/test-komutu'na yazıldı.
+İŞ: Veri kaynakları: veri hattının (Aşama 1a pilotu ve sonrası) ihtiyaç duyduğu her veri kaynağını bul, erişimini dene, `docs/veri-kaynaklari.md`'ye yaz.
+SAHİP BELGE: docs/veri-kaynaklari.md (yeni; kaynak listesinin tek sahibi), docs/bilim-girdileri.md (B eşlemesi), docs/mimari.md §3
+NEDEN BU İŞ: Kullanıcı kararı (2026-11-14): site iskeletinden sonra veri kaynaklarına bakılacak. Veri hattı pilotu, NASA bölgelerine benzerlik modeli ve sitedeki bütün gerçek değerler buna bağlı.
+KABUL (ÖNERİ, kullanıcı düzeltebilir): `docs/veri-kaynaklari.md` içinde her kaynak için adres, ürün ya da dosya adı, boyut, lisans ya da kullanım koşulu, erişim yolu (doğrudan, oturum, elle), hangi B girdisini ya da formülü beslediği ve erişimin denendiği tarih yazılı. En az şunlar: SPICE çekirdekleri (B1), LOLA güney kutup DEM'i (B2), JPL Horizons API (doğrulama), Wueller 2026 Zenodo verisi (§10), USGS 9 bölge sınırları (ScienceBase), PSR haritası (Modül 5). Erişim denenmemiş satır "denenmedi" diye işaretli.
 BAŞLANGIÇ: 2026-11-14
 
-Bilinen eksikler (iskeleti bekletmez): güncel parametre dosyası ve veri kaynakları listesi kullanıcıdan gelecek; renk ve yazı tipi değerleri seçilmedi (docs/tasarim.md §3, ajan yetkisiyle seçer); parametre setinin ek özellikleri kullanıcı onayında; veri hattı ve gerçek veri yok.
+Önceki iş (SvelteKit iskeleti) bitti: sonuç ve kanıt git geçmişinde (fb201d5 ve sonrası) ve docs/tasarim.md, docs/animasyonlar.md'de.
+Bilinen: kullanıcının daha önce "veri kaynakları listesi benden gelecek" dediği liste henüz gelmedi; bu işte birlikte bakılacak.
 
 Başka işe geçmek için önce bu dosyayı değiştir ve sebebini commit mesajına yaz.
-
-## Sonuç (2026-11-14)
-KABUL karşılandı. Kanıt (ölçüldü 2026-11-14 · yerel makine): `npx vitest --run` 13/13; `npm run build` çıkış 0;
-`npx playwright test` 40/40 (14 sayfa × masaüstü 1280 px ve 375 px, yerel Apache 2.4 + `.htaccess`): yatay taşma
-yok, `<html lang>` doğru, konsol hatası yok, dil değişimi, parsel adresi, 404, dokunma hedefi ≥ 24 px.
-Renkler tek dosyada (`web/src/lib/stil/belirtecler.css`), testle denetleniyor.
-Bilerek yapılmayanlar: cPanel'e deneme yüklemesi (dışa dönük adım, kullanıcıda), durum deposu ve URL senaryosu,
-sahne arayüzü (Aşama 1c), rehberli tur.
-Sıradaki iş için ÖNERİ: sahne arayüzü ve sahte abonelik (Aşama 1c), animasyon ekibinin önünü açar.

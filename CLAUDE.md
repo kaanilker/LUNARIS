@@ -13,7 +13,8 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 
 ## Aşama
 Bilim girdileri taslak olarak geldi (parametre seti, 2026-11-14; bilim ekibi onayı bekleniyor).
-Sıradaki işler veri hattı pilotu ve site iskeleti. Açık iş `.ajan/aktif-is.md`.
+Site iskeleti kuruldu (SvelteKit + Tailwind, yer tutuculu 7 sayfa). Sıradaki işler veri kaynakları ve veri hattı
+pilotu. Açık iş `.ajan/aktif-is.md`.
 
 ## Belgeler ve sahipleri
 | Ne | Tek sahibi |

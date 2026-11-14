@@ -45,7 +45,7 @@ web/              Statik ön yüz (TR/EN). Paketi okur, süzer, sıralar, çizer
    │  sahneler     Animasyon ekibinin 3B sahneleri. Veriyi yalnız "sahne arayüzü"nden alır (§5).
    │  sayfalar     Ana sayfa, Planlayıcı, Gelişmiş, Site Detay, Görevler, Yöntem, Tur
    ▼
-api/              Yalnız AI yorumu için küçük sunucusuz uç (§6). Site onsuz da tam çalışır.
+api/              Yalnız AI yorumu için küçük PHP ucu, Groq'a vekil (§6). Site onsuz da tam çalışır.
 ```
 
 ## 3. Veri hattı (hat/)
@@ -98,7 +98,14 @@ Ayrıntılı tip tanımı, ön yüz çatısı seçildikten sonra `web/src/sahnel
 
 ## 6. AI yorumları
 
-Kurallar brifte (yalnız hesaplanan sonucu yorumlar, boş kutu yok, "AI üretimi" etiketi). Mimari:
+Kurallar brifte (yalnız hesaplanan sonucu yorumlar, boş kutu yok, "AI üretimi" etiketi).
+
+**KARAR (kullanıcı, 2026-11-14):** AI sağlayıcısı Groq API. Model ve bütçe açık (`docs/acik-sorular.md` S7).
+**ÖNERİ:** Uç cPanel'de PHP ile yazılır (`api/yorum.php`), çünkü cPanel'de PHP neredeyse her zaman vardır
+ve Node desteği barındırıcıya bağlıdır (çıkarım, S8 ile doğrulanacak). Groq anahtarı `public_html`
+dışındaki bir dosyadan okunur, tarayıcıya hiç gitmez. İstek sınırı tek sunucuda dosya tabanlı tutulur.
+
+Mimari:
 
 1. **Önceden üretilmiş yorumlar** (varsayılan): hazır siteler ve demo senaryoları için yorumlar paket
    üretilirken bir kez oluşturulur, insan gözünden geçer, pakete girer. Demo internet ya da API'ye
@@ -113,7 +120,10 @@ eşleşmeyen sayı varsa yorum atılır ve yedek gösterilir.
 
 ## 7. Ön yüz
 
-- **Statik site.** Sunucu durumu yok, tek sunucu varsayımı yok; herhangi bir statik barındırıcıda çalışır.
+- **Statik site.** Sunucu durumu yok; herhangi bir statik barındırıcıda çalışır.
+  **KARAR (kullanıcı, 2026-11-14):** site bitince cPanel'e yüklenir (Apache). Derleme çıktısı
+  `public_html`'e kopyalanır. Temiz adresler için `.htaccess` yönlendirmesi gerekir (ÖNERİ).
+  Veri paketinin boyutu barındırıcının disk ve bant sınırıyla karşılaştırılır (S8).
 - **Senaryo URL'de:** site(ler), tarih, gecikme, süzgeçler, dil. Paylaşım linki budur, veritabanı yok.
 - **Ağır iş Web Worker'da:** paket çözme ve sıralama ana iş parçacığını kilitlemez.
 - **İki dil:** metinler anahtar-değer dosyalarında (`tr.json`, `en.json`); kodda metin yok.

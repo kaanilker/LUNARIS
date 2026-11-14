@@ -20,6 +20,7 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 | Challenge ve brif metni (değişmez) | `docs/kaynak/` |
 | Problem, demo akışı, kapsam | `SPEC.md` |
 | Mimari kararlar ve öneriler | `docs/mimari.md` |
+| Sayfa yapısı ve adresler | `docs/sayfalar.md` |
 | Bilimsel parametre, site, görev, tolerans | `docs/bilim-girdileri.md` (B1…) |
 | Bilim dışı açık sorular | `docs/acik-sorular.md` (S1…) |
 | Teslim öncesi kontrol | `DEMO.md` |
@@ -55,7 +56,8 @@ istisnası. Kullanıcının koşulu "bazı şeyler kesin bitince". Ajanın bu ko
 - Push başarısızsa açıkça söylenir; sonucu `durum.md`'ye yazılır.
 
 ## Ortam
-- Canlı ortam: yok. Sırlar (AI API anahtarı) `.env`'de, `.env` `.gitignore`'da.
+- Canlı ortam: henüz yok; site bitince cPanel'e yüklenecek. AI yorumu Groq API ile.
+- Sırlar (Groq anahtarı) yerelde `.env`'de, `.env` `.gitignore`'da; cPanel'de `public_html` dışında.
 - Ham veri (SPICE çekirdekleri, LOLA DEM) ve üretilmiş paket git'e girmez.
 
 ## Dosyalar

@@ -53,6 +53,9 @@ noktasından bu tarihte fırlatılınca uygun koşullu bir parsele en kısa sür
   - **AI yorumu:** seçilen parselleri birbiriyle karşılaştırarak yorumlar.
 - **Gecikme kaydırıcısı:** fırlatma kayarsa sıralama canlı değişir. Sistem ayrıca **en uygun tarihi**
   söyler: "Bu kalkış noktası için en uygun fırlatma tarihi şu, çünkü ..." (yöntem: açık).
+- **KARAR (2026-11-14):** önerilen parseller formül çıktısı olarak doğrudan gösterilmez; her biri dört
+  doğrulama testinden geçer ve rozet taşır. Sistem seçilen tarihin yanında en yakın uygun ve önerilen
+  tarihi gösterir. Algoritmalar: `docs/oneri-ve-dogrulama.md`.
 - Listedeki parsele tıklayınca Site Detay açılır. Senaryo link olarak paylaşılır.
 - **Açık bilimsel soru (B18):** kalkış noktası ve fırlatma tarihi yolculuk süresini ve Ay'a varış
   zamanını nasıl belirliyor? Işık ve iletişim koşullarını varış zamanı belirler; kalkış noktası buna

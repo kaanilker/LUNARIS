@@ -22,6 +22,7 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 | Mimari kararlar ve öneriler | `docs/mimari.md` |
 | Sayfa yapısı ve adresler | `docs/sayfalar.md` |
 | Bilimsel parametre, site, görev, tolerans | `docs/bilim-girdileri.md` (B1…) |
+| Bilim ekibine istek mektubu (durum tutmaz) | `docs/bilim-ekibine.md` |
 | Bilim dışı açık sorular | `docs/acik-sorular.md` (S1…) |
 | Teslim öncesi kontrol | `DEMO.md` |
 | Fikir ajanı brifi · onaylanmamış fikirler | `docs/fikir-ajani-brifi.md` · `docs/fikirler/` (ÖNERİ) |

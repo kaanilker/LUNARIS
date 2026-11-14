@@ -126,7 +126,13 @@ Ayrıntılı tip tanımı, ön yüz çatısı seçildikten sonra `web/src/sahnel
 
 Kurallar brifte (yalnız hesaplanan sonucu yorumlar, boş kutu yok, "AI üretimi" etiketi).
 
-**KARAR (kullanıcı, 2026-11-14):** AI sağlayıcısı Groq API. Model ve bütçe açık (`docs/acik-sorular.md` S7).
+**KARAR (kullanıcı, 2026-11-14):** AI sağlayıcısı Groq API.
+**KARAR (ajan, yetkiyle, 2026-11-14):** model `openai/gpt-oss-120b`, ulaşılamazsa `openai/gpt-oss-20b`.
+Gerekçe: Groq'un resmî model sayfasında (console.groq.com/docs/models, okundu 2026-11-14) fiyatı açık
+"Production" modeller bunlar: 120b girdi/çıktı 1M token başına $0,15 / $0,60, 20b $0,075 / $0,30. Llama
+modelleri "Contact Sales" görünüyor; Qwen 3.8 27B "Preview" (yalnız değerlendirme için). Model kimliği tek
+bir ayar sabitinde durur. API anahtarı gelince iki model, kendi istemimizle Türkçe kalite ve uydurma sayı
+kontrolüne (aşağıda) karşı denenir; sonuç kötüyse karar değişir.
 **ÖNERİ:** Uç cPanel'de PHP ile yazılır (`api/yorum.php`), çünkü cPanel'de PHP neredeyse her zaman vardır
 ve Node desteği barındırıcıya bağlıdır (çıkarım). Barındırıcıda PHP 8.4 var (kullanıcı, 2026-11-14). Groq anahtarı `public_html`
 dışındaki bir dosyadan okunur, tarayıcıya hiç gitmez. İstek sınırı tek sunucuda dosya tabanlı tutulur.

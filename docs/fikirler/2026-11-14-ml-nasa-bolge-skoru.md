@@ -1,6 +1,12 @@
 # NASA Artemis III bölgelerinden öğrenen iniş yeri skoru (PU öğrenme)
 
-Durum: ÖNERİ · Öneren: kullanıcı (plan belgesi, 2026-11-14), ajan (değerlendirme) · Karar: kullanıcı ve bilim ekibi
+Durum: kullanım biçimi **KARAR** (kullanıcı, 2026-11-14), uygulama ayrıntıları ÖNERİ · Öneren: kullanıcı (plan belgesi), ajan (değerlendirme)
+
+**KARAR (kullanıcı, 2026-11-14):** model seçilen parsellerin yanında yalnız bilgi olarak durur: "bu yerin NASA'nın
+seçtiği iniş bölgelerine benzerliği". Hesapta yeri yoktur; sıralamaya, elemeye ve en uygun tarih seçimine girmez.
+Plandaki "önce statik skora göre en iyi N nokta" akışı bu yüzden uygulanmaz.
+**KARAR (ajan, yetkiyle):** model, T4'teki elle kurulan Gauss benzerliğinin (sim) yerini alır
+(`docs/oneri-ve-dogrulama.md` §2.1); bölge uyum skoruyla (U, Wueller) birleştirme ayrıntısı uygulamada yazılır.
 
 **Tek cümle:** NASA'nın aday bölgelerini pozitif örnek, kalan kutup alanını etiketsiz sayan açıklanabilir bir
 model (lojistik regresyon, sığ ağaç, gradient boosting) eğitip her noktaya "NASA'nın seçimine benzerlik" skoru
@@ -52,9 +58,11 @@ yerleştiriyor; bu NASA'nın seçimine benzerliği ölçer, mutlak uygunluğu de
 Leave one group out sonucunda model, yalnız `illum_mean_pct` ile yapılan sıralamayı geçemiyorsa skor katmanı
 siteye eklenmez; bulgu Hakkında'da "basit aydınlanma oranı NASA'nın seçimini zaten açıklıyor" diye yazılır.
 
-## Karar bekleyen (kullanıcı)
-1. Model sıralamaya mı girsin, yoksa yalnız T4 benzerlik rozeti ve skor katmanı mı olsun (ajanın önerisi: T4)?
-2. Pozitifler: güncel 9 bölge mi, 2022'nin 13'ü mü?
+## Karar bekleyen
+1. ~~Sıralamaya mı girsin, yalnız bilgi mi olsun?~~ Yalnız bilgi (KARAR, kullanıcı, 2026-11-14).
+2. Pozitifler: güncel 9 bölge mi, 2022'nin 13'ü mü? Ajanın önerisi: 9 bölge ana koşu, 13 bölge duyarlılık koşusu
+   (bilim ekibi ya da kullanıcı onaylar).
+3. Zamanlama: özellikler veri hattına bağlı; model Aşama 2'den sonra eğitilir.
 
 ---
 

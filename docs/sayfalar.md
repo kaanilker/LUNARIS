@@ -94,6 +94,8 @@ noktasından bu tarihte fırlatılınca uygun koşullu bir parsele en kısa sür
 - **Dış bağlantılar:** aynı konum ve tarihle "Horizons'ta aç", "Quickmap'te aç", "Moon Trek'te aç"
   (`docs/mimari.md` §11).
 - Özel koordinat girişi, "Karşılaştır'a ekle", rapor çıktısı.
+- **NASA bölgelerine benzerlik** (KARAR, kullanıcı, 2026-11-14): seçilen parselin NASA'nın seçtiği iniş
+  bölgelerine benzerliği yalnız bilgi olarak gösterilir, hesaba girmez (T4, `docs/oneri-ve-dogrulama.md` §2.1).
 - **Zenginleştirme (ÖNERİ, sonra seçilecek):** parselin içindeki en iyi ve en kötü nokta farkı; eğim;
   en yakın buz bölgesi; bu parselin bir yıl boyunca aylık aydınlanması.
 

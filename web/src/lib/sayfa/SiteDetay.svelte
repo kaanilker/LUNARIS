@@ -95,6 +95,10 @@
 	</Panel>
 
 	<div class="col-span-12 flex flex-col gap-6 lg:col-span-4">
+		<Panel baslik={c.t('site.nasa')} bekliyor>
+			<p class="-mt-2 text-sm text-metin-ikincil">{c.t('site.nasa_metin')}</p>
+			<YerTutucu satir metin={c.t('site.nasa_bekliyor')} girdi="T4" />
+		</Panel>
 		<Panel baslik={c.t('site.koordinat')}>
 			<form class="grid grid-cols-2 gap-3" onsubmit={(e) => e.preventDefault()}>
 				<label class="flex flex-col gap-2 text-sm font-medium"

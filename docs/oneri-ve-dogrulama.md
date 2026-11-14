@@ -59,7 +59,7 @@ B(p, t) = max_j [ sim(p, j) · U_j(yıl(t)) ]        j = NASA'nın 9 bölgesi, B
 - **sim(p, j): benzerlik.** Parselin ve bölgenin aynı fiziksel özellik vektörü (normalize edilmiş:
   aydınlanma I, Dünya görünürlüğü D, etkin eğim, en uzun karanlık t_d, PSR uzaklığı) karşılaştırılır.
   Bölgenin vektörü, bölgedeki Wueller sahalarında bizim hesapladığımız değerlerin ortalaması.
-  **Gauss çekirdeği** `sim = exp(−‖a − b‖² / 2σ²)`: KARAR (ajan, yetkiyle). **ÖNERİ (2026-11-14):** bunun yerine NASA bölgelerinden öğrenen açıklanabilir model; değerlendirme `docs/fikirler/2026-11-14-ml-nasa-bolge-skoru.md`. Parametre setindeki kosinüs benzerliği (7.2)
+  **Gauss çekirdeği** `sim = exp(−‖a − b‖² / 2σ²)`: KARAR (ajan, yetkiyle). **KARAR (2026-11-14):** sim bileşeni NASA bölgelerinden öğrenen açıklanabilir modelle hesaplanır; T4 yine yalnız gösterilir (kullanıcı: "hesapta yeri yok"). Ayrıntı `docs/fikirler/2026-11-14-ml-nasa-bolge-skoru.md`. Parametre setindeki kosinüs benzerliği (7.2)
   büyüklüğe bakmaz: aydınlanması yarı yarıya olan bir parsel aynı oranlarla "çok benzer" çıkabilir
   (parametre seti 7.2 bu sınırı kendisi yazıyor). σ bilim ekibinden; yoksa yer tutucu.
 - **Kullanım (KARAR, kullanıcı 2026-11-14):** skor yalnız rozet olarak gösterilir, sıralamaya ve elemeye

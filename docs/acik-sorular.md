@@ -8,6 +8,7 @@
 | S2 | Ön yüz çatısı | yazılım ekibi | Vite + TypeScript + Three.js (SOLARIS yığını ölçüt değil, kullanıcı 2026-11-14) |
 | S6 | Veri paketi nerede barınacak (git dışı, boyutu ölçülünce) | yazılım ekibi | Boyut ölçülünce karar |
 | S7 | Groq'ta hangi model, aylık bütçe ya da istek sınırı | kullanıcı | Önceden üretilmiş yorum varsayılan, canlı uç isteğe bağlı |
+| S9 | "Görev süresi" neyi kapsar: fırlatmadan inişe kadar mı, iniş sonrası çalışma süresi de mi? | kullanıcı | Fırlatmadan uygun koşullu inişe kadar geçen süre |
 | S8 | cPanel barındırıcısı: PHP sürümü, Node var mı, disk ve bant sınırı, alan adı | kullanıcı | PHP ucu; boyut ölçülünce karşılaştırılır |
 
 ## Kapanan

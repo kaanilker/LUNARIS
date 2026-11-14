@@ -41,6 +41,10 @@ Karşılaştır sayfalarının yazdırma görünümü. Adreslerdeki dil öneki (
 ## 2. Planlayıcı
 
 **KARAR:** Kullanıcı tarih ve **Dünya'daki kalkış noktasını** seçer. Bölgeyi sistem seçer.
+**KARAR (amaç):** kalkış noktası görev süresini en aza indirmek için girilir. Sistem, bu kalkış
+noktasından bu tarihte fırlatılınca uygun koşullu bir parsele en kısa sürede inilecek seçenekleri öne
+çıkarır. "Görev süresi"nin tanımı (fırlatmadan inişe mi, inişten sonraki çalışma süresi dahil mi) açık:
+`docs/acik-sorular.md` S9.
 
 - **Girdiler:** fırlatma tarihi, Dünya'da kalkış noktası (hazır fırlatma üsleri listesi ya da harita).
 - **Sonuç:**
@@ -51,8 +55,10 @@ Karşılaştır sayfalarının yazdırma görünümü. Adreslerdeki dil öneki (
 - **Gecikme kaydırıcısı:** fırlatma kayarsa sıralama canlı değişir. Sistem ayrıca **en uygun tarihi**
   söyler: "Bu kalkış noktası için en uygun fırlatma tarihi şu, çünkü ..." (yöntem: açık).
 - Listedeki parsele tıklayınca Site Detay açılır. Senaryo link olarak paylaşılır.
-- **Açık bilimsel soru (B18):** kalkış noktası ve fırlatma tarihi, Ay'a varış zamanını ve iniş
-  koşullarını nasıl belirliyor? Bu model gelmeden kalkış noktası girdisi sonucu değiştirmez.
+- **Açık bilimsel soru (B18):** kalkış noktası ve fırlatma tarihi yolculuk süresini ve Ay'a varış
+  zamanını nasıl belirliyor? Işık ve iletişim koşullarını varış zamanı belirler; kalkış noktası buna
+  fırlatma penceresi ve yörünge yoluyla etki eder (çıkarım). Bu model gelmeden kalkış noktası girdisi
+  sonucu değiştirmez.
 
 ## 3. Uzman Analiz
 

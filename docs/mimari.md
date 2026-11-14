@@ -70,7 +70,8 @@ api/              Yalnız AI yorumu için küçük PHP ucu, Groq'a vekil (§6). 
 bölgesi parseller arasından seçilir. Yöntemin ayrıntısı sonra kararlaştırılacak. Mimarideki "ızgara"
 bu parsellerdir; paket dosyalarında `izgara/` adı korunur.
 
-Ajanın değerlendirmesi (çıkarım, bilim ekibiyle konuşulacak):
+Ajanın değerlendirmesi. Aşağıdaki dört madde **KARAR** (kullanıcı onayı, 2026-11-14); sayısal değerler
+(parsel boyutu, izdüşüm ayrıntısı) bilim ekibinden ve pilot ölçümden gelir:
 
 - **Uyuyor:** §1'deki bölünmeyle örtüşür. Ufuk profili parsel başına bir kez çıkar, günlük metrikler
   parsel × gün tablosu olur. Planlayıcı sıralaması bu tablodan anında yapılır.

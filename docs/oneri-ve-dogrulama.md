@@ -3,7 +3,9 @@
 > **KARAR (kullanıcı, 2026-11-14):** (1) Planlayıcı'nın önerdiği 5–10 parsel, formül çıktısına doğrudan
 > güvenilmeden ayrıca test edilir. (2) Kullanıcının seçtiği fırlatma tarihine karşı en iyi tarihi öneren bir
 > algoritma olur.
-> Aşağıdaki algoritma tasarımları **ÖNERİ** (ajan, 2026-11-14). Formül numaraları
+> **KARAR (kullanıcı, 2026-11-14):** T4 bağımsız kaynak skoru §2.1'deki gibi NASA'nın 9 bölgesine benzerlik ×
+> bölgenin iniş uyum skoru olarak hesaplanır. En iyi tarih önerisi (§3) onaylandı.
+> Diğer ayrıntılar (T1–T3, formüldeki seçimler) **ÖNERİ** (ajan, 2026-11-14). Formül numaraları
 > `docs/LUNARIS_bilim_parametre_seti.md`'den; sayısal eşikler ve aralıklar oradan ya da bilim ekibinden gelir,
 > yoksa yer tutucu. Bu belge Planlayıcı'nın hesap tarafının sahibi; sayfa düzeni `docs/sayfalar.md` §2'de.
 
@@ -38,11 +40,32 @@ Her aday parsel-tarih çifti için çevrimdışı koşulur. Sonuç parselin yan�
 | **T1 İnce çözünürlük** | Aday, paketteki kaba değerler yerine ince noktalarla (S.10, 100 m), tam DEM ve 10 dakikalık adımla yeniden hesaplanır | Sert kısıtlar yine geçiyor ve skor farkı tolerans içinde (B12) |
 | **T2 Belirsizliğe dayanıklılık** | Monte Carlo: DEM yükseklik hatası, 100 m iniş sapması (parsel içindeki en kötü nokta), ağırlıklarda küçük oynama örneklenir; sıralama yeniden yapılır. Sabit tohum. | Aday senaryoların en az %P'sinde ilk 10'da (P bilim ekibinden) |
 | **T3 Eşik payı** | Her sert kısıtta adayın eşiğe uzaklığı: Dünya yüksekliği payı (e − H − 2°), güneş penceresi payı (W − 10 gün), eğim payı (8° − θ_etkin), aydınlanma payı | Bütün paylar pozitif; en küçük pay ekranda gösterilir |
-| **T4 Bağımsız kaynakla uyum** | Aday NASA'nın 9 bölgesinin içinde mi; yakınında Wueller sahası varsa o yılın ≥ 10 gün güneş sonucu bizimkiyle aynı mı | Bilgi amaçlı; uyuşmazlık varsa "kaynakla farklı" notu |
+| **T4 Bağımsız kaynak skoru** | Adayın NASA'nın 9 bölgesine benzerliği × o bölgenin o yılki iniş uyum skoru (§2.1) | Skor rozetle gösterilir; sıralamaya etkisi açık soru (§4) |
 
 **Kural:** T1 ya da T3'ten kalan aday listeden çıkar ve yerine sıradaki doğrulanmış aday gelir. T2'de
 zayıf kalan aday listede kalır ama "belirsizliğe duyarlı" rozeti taşır. Ekranda hiçbir aday doğrulama
 yapılmadan "en uygun" diye gösterilmez.
+
+### 2.1 T4: NASA bölgelerine benzerlik × bölge uyum skoru (KARAR)
+
+```
+B(p, t) = max_j [ sim(p, j) · U_j(yıl(t)) ]        j = NASA'nın 9 bölgesi, B ∈ [0, 1]
+```
+
+- **U_j(yıl): bölgenin iniş uyum skoru.** Bağımsızlığın kaynağı burası, bu yüzden bizim 7.1 skorumuzdan
+  **hesaplanmaz**. Kaynak: Wueller vd. 2026 açık verisi (parametre seti §10, [W]). Öneri: bölgedeki
+  sahalardan o yıl ≥ 10 ardışık gün Güneş ve Dünya'yı birlikte görenlerin oranı (`SunEarthYY`). Veri
+  dosyası henüz repoda yok (doğrulama B-6); gelene kadar yer tutucu.
+- **sim(p, j): benzerlik.** Parselin ve bölgenin aynı fiziksel özellik vektörü (normalize edilmiş:
+  aydınlanma I, Dünya görünürlüğü D, etkin eğim, en uzun karanlık t_d, PSR uzaklığı) karşılaştırılır.
+  Bölgenin vektörü, bölgedeki Wueller sahalarında bizim hesapladığımız değerlerin ortalaması.
+  **Öneri: Gauss çekirdeği** `sim = exp(−‖a − b‖² / 2σ²)`. Parametre setindeki kosinüs benzerliği (7.2)
+  büyüklüğe bakmaz: aydınlanması yarı yarıya olan bir parsel aynı oranlarla "çok benzer" çıkabilir
+  (parametre seti 7.2 bu sınırı kendisi yazıyor). σ bilim ekibinden; yoksa yer tutucu.
+- **Okuma:** "Bu parsel, NASA uzmanlarının seçtiği bölgelere fiziksel olarak ne kadar benziyor ve o bölgeler
+  o yıl ne kadar uygun?" Bağımsızlık iki yerden gelir: bölgeleri NASA seçti, uyum skorunu Wueller verisi
+  verdi. Benzerlik özellikleri bizim hesabımızdan geldiği için skor tam bağımsız değil, yarı bağımsızdır;
+  Hakkında sayfasında böyle yazılır.
 
 Bu dört test, iddianın genel doğrulama zincirinin (`docs/mimari.md` §9.1: Horizons, LRO görüntüleri, gerçek
 iniş araçları) her öneri için ayrıca koşulan parçasıdır. Zincir yöntemin doğruluğunu, bu testler tek tek
@@ -83,6 +106,8 @@ uygun değil durumu) önerilen tarihin neden seçildiğini görsel olarak göste
 
 ## 4. Açık kalanlar
 
-- Arama penceresinin genişliği, T2 için senaryo sayısı N ve eşik P, T1 toleransı (B12).
+- Arama penceresinin genişliği, T2 için senaryo sayısı N ve eşik P, T1 toleransı (B12), T4 için σ.
+- T4 skoru yalnız gösterilir mi, yoksa sıralamaya ya da elemeye girer mi. Ajanın önerisi: yalnız gösterilsin;
+  NASA'nın 9 bölgesi Artemis kısıtlarıyla yapılmış bir daraltma, bütün iyi yerlerin listesi değil.
 - Geçiş profili girdisi: kullanıcı mı seçer, yoksa bütün profiller denenip en kısası mı önerilir (`docs/sayfalar.md` §2, B18).
 - Hesap yükü: gün sayısı × profil × aday sayısı; pilot ölçümünden sonra kestirilir.

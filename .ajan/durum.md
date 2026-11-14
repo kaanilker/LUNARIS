@@ -14,8 +14,8 @@
 2. S2 cevaplanınca iskelet: hat/ için pilot (tek site efemeris + ufuk süresi ölçümü), web/ için sahne arayüzü taslağı.
 3. bilim/ JSON şemalarını yer tutucu örneklerle hazırlamak.
 ### Bende bekleyen
-- Açık sorular S1…S7 (docs/acik-sorular.md), özellikle S2 ön yüz çatısı.
+- Açık sorular (docs/acik-sorular.md), özellikle S2 ön yüz çatısı.
 - Bilim ekibine docs/bilim-girdileri.md listesinin iletilmesi.
-- Push yapılamıyor: gh girişi var ama github_pat_ jetonu LUNARIS'e yazamıyor (git push --dry-run → 403, ölçüldü 2026-11-14). Jeton düzeltilmeli ya da gh auth login web tarayıcı akışıyla yenilenmeli.
+- Push: gh web tarayıcı girişiyle (gho_ jetonu, repo izni) çalışıyor; ilk push 2026-11-14 yapıldı.
 ### Bu oturumda ölçülen tuzaklar
 - Kabuk profili her Bash çağrısında fastfetch basıyor; bağlamı dolduruyor (ölçüldü 2026-11-14 · her Bash çıktısı).

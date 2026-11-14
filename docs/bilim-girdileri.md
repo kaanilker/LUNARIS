@@ -31,7 +31,7 @@
 | B15 | İniş belirsizliği | Modül 1 | TASLAK | 100 m elips |
 | B16 | Benzer parsel ölçütü | 7.2 | TASLAK | kosinüs benzerliği |
 | B17 | Ana Sayfa ve Hakkında metinleri (TR/EN) | — | EKSİK | sınırlamalar listesi §16'da var |
-| B18 | Kalkış modeli | S.7 | TASLAK | girdi önerisi kullanıcı kararıyla gerilimli: doğrulama B-4 |
+| B18 | Kalkış modeli | S.7 | TASLAK | girdi: kalkış noktası + yol seçimi (KARAR 2026-11-14); profil süreleri teyit bekliyor |
 | B19 | Ana Sayfa göstergeleri | S.6 | TASLAK | |
 | B20 | Sıralama yöntemi | 7.1, S.8, Modül 7 | TASLAK | ağırlıklar onay bekliyor |
 

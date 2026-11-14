@@ -75,7 +75,7 @@ iniş araçları) her öneri için ayrıca koşulan parçasıdır. Zincir yönte
 
 ## 3. En iyi tarih önerisi
 
-**Girdi:** kullanıcının fırlatma tarihi t_u, kalkış noktası, geçiş profili (ya da profiller).
+**Girdi:** kullanıcının fırlatma tarihi t_u, kalkış noktası ve seçtiği yol (geçiş profili, varsayılan doğrudan).
 **Arama penceresi:** t_u'dan önce ve sonra en az bir sinodik ay (29,53 gün). Gerekçe: Güneş azimutu bir
 sinodik ayda bütün yönleri dolaşır; pencere bunu kapsamazsa bazı ışık düzenleri hiç denenmez. Pencerenin
 kesin genişliği bilim ekibi ya da kullanıcı kararı (yer tutucu).
@@ -109,5 +109,4 @@ uygun değil durumu) önerilen tarihin neden seçildiğini görsel olarak göste
 ## 4. Açık kalanlar
 
 - Arama penceresinin genişliği, T2 için senaryo sayısı N ve eşik P, T1 toleransı (B12), T4 için σ.
-- Geçiş profili girdisi: kullanıcı mı seçer, yoksa bütün profiller denenip en kısası mı önerilir (`docs/sayfalar.md` §2, B18).
 - Hesap yükü: gün sayısı × profil × aday sayısı; pilot ölçümünden sonra kestirilir.

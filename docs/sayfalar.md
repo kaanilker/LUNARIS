@@ -46,7 +46,9 @@ paylaşılan link gönderenin dilinde açılır.
 noktasından bu tarihte fırlatılınca uygun koşullu bir parsele en kısa sürede inilecek seçenekleri öne
 çıkarır. "Görev süresi" = fırlatmadan Ay'a inişe kadar geçen yolculuk süresi (KARAR, `docs/acik-sorular.md` S9).
 
-- **Girdiler:** fırlatma tarihi, Dünya'da kalkış noktası (hazır fırlatma üsleri listesi ya da harita).
+- **Girdiler:** fırlatma tarihi, Dünya'da kalkış noktası (hazır fırlatma üsleri listesi ya da harita) ve
+  **yol (geçiş profili)** seçimi: doğrudan, faz döngülü, düşük enerjili (KARAR, kullanıcı 2026-11-14).
+  Varsayılan "doğrudan" (KARAR, ajan, yetkiyle). Profil süreleri parametre setinden (Modül 3, S.7).
 - **Sonuç:**
   - En uygun 5–10 parsel, kutup haritasında işaretli ve sıralı (yöntem: açık).
   - Her parsel için **neden seçildiği** düz bir cümleyle ve **verileri**: güneş oranı, iletişim
@@ -145,10 +147,8 @@ Modül 1–4, Pareto S.8, panel ve batarya 2.3 ile 3.1, DSN S.5, belirsizlik 1.2
 görünüm S.4; Site Detay panorama 0.3, izler 0.1 ile 0.4, geri sayım 0.5, iletişim penceresi S.5, oynatıcı S.3,
 özel koordinat S.1 ile S.9; Karşılaştır 7.1.
 
-**Çelişki, kullanıcı kararı geçerli:**
-- Planlayıcı girdisi: parametre seti S.7 "geçiş profili asıl girdi, kalkış noktası bilgi amaçlı" öneriyor.
-  Kullanıcı kararı Dünya'daki kalkış noktası (§2). Açık soru: girdiye geçiş profili de eklenecek mi
-  (`docs/parametre-seti-dogrulama.md` B-4).
+**Çelişki çözüldü (KARAR, kullanıcı 2026-11-14):** Planlayıcı girdisi kalkış noktası **ve** yol seçimi
+birlikte; parametre setinin S.7 önerisi (geçiş profili girdisi) bu yolla karşılandı, kalkış noktası da kalır.
 
 **Parametre setinin eklediği özellikler (ÖNERİ, kullanıcı onayı bekliyor):**
 

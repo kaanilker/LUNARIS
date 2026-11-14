@@ -101,6 +101,9 @@ Ajanın değerlendirmesi. Aşağıdaki dört madde **KARAR** (kullanıcı onayı
 | `dsn.bin` | zaman adımı başına istasyon görünürlüğü | Uzman Analiz, Detay |
 | `dogrulama.json` | Horizons/literatür karşılaştırması, fark ve kaynak | Görevler, Yöntem |
 
+Parametre setinin önerdiği eklemeler (ÖNERİ, `docs/LUNARIS_bilim_parametre_seti.md` §14): ufuk her noktada
+3 yükseklikte (2/10/20 m); özet içinde PSR ve jeoloji alanları; bölge kodu alanı.
+
 Parçalı yükleme: Planlayıcı yalnız seçilen bölgenin parçalarını ister. Paket sürümü URL'de taşınır;
 eski paylaşım linki eski sürümle açılır ya da kullanıcıya sürüm farkı söylenir.
 

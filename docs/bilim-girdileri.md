@@ -1,38 +1,42 @@
-# Temel bilimler ekibinden beklenen girdiler
+# Bilim girdileri: takip listesi
 
-> Bilimsel parametrelerin **tek sahibi** bu dosyadır. Kod ve diğer belgeler buraya kod numarasıyla
-> (B1, B2...) bağlantı verir, sayıyı kopyalamaz. Bir girdi gelince: değer, kaynağı (makale, ürün sayfası,
-> hesap) ve geliş tarihi yazılır, durum `GELDİ` olur. Değer gelmeden hat ve site bu girdiyi yer tutucuyla
-> kullanır ve arayüzde "yer tutucu" etiketi gösterir.
+> **KARAR (kullanıcı, 2026-11-14):** bilimsel parametrelerin, formüllerin ve kriterlerin **ana kaynağı**
+> `docs/LUNARIS_bilim_parametre_seti.md`. Değerler orada yaşar, burada kopyalanmaz. Siteye entegrasyon
+> kullanıcı kararlarına göre yapılır (`docs/sayfalar.md`, `docs/mimari.md`); parametre setindeki bir öneri
+> kullanıcı kararıyla çelişirse kullanıcı kararı geçerlidir.
 >
-> Brif kuralı: koordinat, tarih ya da parametre bilinmiyorsa uydurulmaz.
+> Bu dosya yalnız B1–B20 girdilerinin nerede karşılandığını ve durumunu tutar. Doğrulama bulguları:
+> `docs/parametre-seti-dogrulama.md` (B-1…B-9).
+>
+> Durumlar: **TASLAK** = parametre setinde var, bilim ekibi onaylamadı (değerlerin çoğu [T] ya da [G]).
+> **ONAYLI** = bilim ekibi onayladı. **EKSİK** = parametre setinde yok ya da yarım.
+> Kural değişmedi: bilinmeyen değer uydurulmaz; [G] değerler kaynak girilene kadar sitede "yer tutucu".
 
-| Kod | Girdi | Neden gerekli (mimari bağı) | Durum |
-|---|---|---|---|
-| B1 | SPICE çekirdek listesi (gezegen efemerisi, Ay yönelimi PCK, Ay çerçeve FK, LSK) ve sürümleri | Gök tarafı ve libration (`docs/mimari.md` §3) | BEKLENİYOR |
-| B2 | LOLA DEM ürünü (ad, çözünürlük, kapsama enlemi, referans yüzey) | Ufuk profili, eğim | BEKLENİYOR |
-| B3 | Zaman aralığı (başlangıç, bitiş) ve zaman adımı | Paket boyutu, gecikme kaydırıcısının menzili | BEKLENİYOR |
-| B4 | Parsel ağı: kapsanan bölge sınırı, parsel boyutu, izdüşüm (`docs/mimari.md` §3b) | Planlayıcı, Uzman, özel koordinat | BEKLENİYOR |
-| B5 | Aydınlanma tanımı: Güneş diski kesri mi merkez mi; "kısmi" eşiği | Zaman çizelgesi (güneşli/kısmi/karanlık) | BEKLENİYOR |
-| B6 | Ufuk hesabı: tarama yarıçapı, azimut adımı, Ay eğriliği yöntemi | Ufuk doğruluğu ve süresi | BEKLENİYOR |
-| B7 | Dünya görünürlüğü tanımı: disk merkezi mi kenarı mı; anten maskesi var mı | İletişim penceresi | BEKLENİYOR |
-| B8 | DSN istasyon koordinatları ve en düşük yükseklik maskesi, kaynağıyla | Gerçek iletişim penceresi | BEKLENİYOR |
-| B9 | Metrik tanımları: güneş oranı, iletişim süresi, en uzun karanlık, eğim, buz bölgesine uzaklık (buz verisinin kaynağı) | Planlayıcı özeti, Uzman süzgeçleri | BEKLENİYOR |
-| B10 | Panel ve batarya modeli denklemleri, varsayılan değerler | "Karanlığı atlatır mı?" | BEKLENİYOR |
-| B11 | Doğrulama vakaları: Horizons'ta denenecek site/zamanlar; Quickmap'te karşılaştırılacak katmanlar; literatür çalışmaları ve karşılaştırılacak değerler | Doğrulama bölümü | BEKLENİYOR |
-| B12 | Kabul toleransları: azimut/yükseklik farkı, aydınlanma oranı farkı | Altın dosya testi (`docs/mimari.md` §8) | BEKLENİYOR |
-| B13 | Hazır site listesi: ad, enlem, boylam, yükseklik referansı, kaynak, görev durumu | Site seçimi | BEKLENİYOR |
-| B14 | Tarihteki en önemli 10 Ay **iniş** görevi (Görevler sayfası, yalnız görsel): iniş tarihi ve saati (UTC), konum, sonuç (başarılı/kısmi/başarısız), kaynak (CSA Moon Exploration kullanılabilir) | Görevler ve doğrulama | BEKLENİYOR |
-| B15 | İniş belirsizliği yarıçapı (görev tipine göre) | Belirsizlik analizi | BEKLENİYOR |
-| B16 | Benzer site ölçütü: hangi metrikler, hangi uzaklık | Benzer site önerisi | BEKLENİYOR |
-| B17 | Eğitim, yöntem ve sınırlama metinleri (TR ve EN) | Ana Sayfa anlatısı, Hakkında | BEKLENİYOR |
-| B18 | Kalkış modeli (amaç: görev süresini en aza indirmek, KARAR 2026-11-14): Dünya'daki kalkış noktası ve fırlatma tarihi yolculuk süresini (görev süresi = fırlatmadan inişe kadar), Ay'a varış zamanını ve iniş koşullarını nasıl belirliyor; yanlış zamanda fırlatmanın rotayı ne kadar uzattığı (kullanıcı "~10 kat" diyor, ölçülmedi) (yörünge türü, yolculuk süresi, fırlatma pencereleri); hazır fırlatma üsleri listesi | Planlayıcı girdisi, gecikme kaydırıcısı, en uygun tarih | BEKLENİYOR |
-| B19 | Ana Sayfa göstergeleri: "güney kutbu şu an ne kadar enerji alıyor" ve "inişe ne kadar elverişli" tanımı ve hangi bölge üzerinden hesaplandığı | Ana Sayfa paneli | BEKLENİYOR |
-| B20 | Parsel sıralama yöntemi: hangi metrikler, hangi parsel değeri (merkez, ortalama, en iyi, en kötü), "en uygun tarih" ölçütü; görev süresinin sıralamaya nasıl girdiği | Planlayıcı sıralaması | BEKLENİYOR |
+| Kod | Girdi | Parametre setinde | Durum | Not |
+|---|---|---|---|---|
+| B1 | SPICE çekirdekleri | Modül 0, §14 | TASLAK | DE440, MOON_ME, LT+S; dosya adları ve sürümleri indirmede kesinleşir |
+| B2 | LOLA DEM ürünü | Modül 0, §14 | TASLAK | yakın 5 m, uzak 20–60 m; ürün adları yok |
+| B3 | Zaman aralığı ve adımı | Modül 0 | TASLAK | |
+| B4 | Parsel ağı | S.1, S.10, §12 | TASLAK | kaba ve ince ölçek pilot ölçümünden sonra kesinleşir |
+| B5 | Aydınlanma tanımı | 0.4, S.4 | TASLAK | batış tanımıyla çelişki: doğrulama B-3 |
+| B6 | Ufuk yöntemi | 0.3, S.10 | TASLAK | |
+| B7 | Dünya görünürlüğü | 0.1, 4.1, Modül 4 | TASLAK | paralaks ve günlük libration metni: doğrulama B-1, B-2 |
+| B8 | DSN istasyonları ve maske | Modül 4, S.5 | EKSİK | istasyon adları ve 10° maske var; koordinatlar yok (SPICE'tan alınabilir) |
+| B9 | Metrik tanımları | S.4, Modül 7 | TASLAK | |
+| B10 | Panel ve batarya modeli | 2.3, 3.1 | TASLAK | η_sis türetilmiş: doğrulama B-9 |
+| B11 | Doğrulama vakaları | §12 | TASLAK | Horizons vakalarının nokta ve zamanları belirtilmemiş |
+| B12 | Kabul toleransları | §12 | TASLAK | |
+| B13 | Hazır siteler | §10 | EKSİK | 9 bölge tablosu var; kaynak veri dosyaları repoda yok, saha sayısı 78/130: doğrulama sayısal kontrol ve B-6 |
+| B14 | 10 iniş görevi | §10 | EKSİK | 2/10 koordinat |
+| B15 | İniş belirsizliği | Modül 1 | TASLAK | 100 m elips |
+| B16 | Benzer parsel ölçütü | 7.2 | TASLAK | kosinüs benzerliği |
+| B17 | Ana Sayfa ve Hakkında metinleri (TR/EN) | — | EKSİK | sınırlamalar listesi §16'da var |
+| B18 | Kalkış modeli | S.7 | TASLAK | girdi önerisi kullanıcı kararıyla gerilimli: doğrulama B-4 |
+| B19 | Ana Sayfa göstergeleri | S.6 | TASLAK | |
+| B20 | Sıralama yöntemi | 7.1, S.8, Modül 7 | TASLAK | ağırlıklar onay bekliyor |
 
-## Teslim biçimi (ÖNERİ)
+## Teslim biçimi
 
-Makinece okunan girdiler `bilim/` klasörüne JSON olarak gelir; böylece hat doğrudan okur ve elle kopyalama
-olmaz. Önerilen dosyalar: `bilim/siteler.json` (B13), `bilim/gorevler.json` (B14),
-`bilim/parametreler.json` (B3 ile B12, B15, B16). Her kayıtta `kaynak` alanı zorunludur. Şema, bilim
-ekibiyle birlikte yazılır; örnek dosyalar yer tutucu değerlerle hazırlanabilir.
+Makinece okunan girdiler `bilim/` klasörüne JSON ya da CSV olarak gelir; şablonlar `docs/bilim-ekibine.md`
+§6'da. Parametre setinin andığı veri dosyaları (`wueller2026_130_saha.csv`, `saha_jeoloji.csv`) da
+`bilim/` altına konmalı. Herkese açık repoya koymadan önce verinin lisansı kontrol edilir.

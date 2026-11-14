@@ -204,7 +204,8 @@ karşılaştırılır.
 
 ## 9. Bilim ekibine bağımlılıklar
 
-Liste ve durum `docs/bilim-girdileri.md` (B1–B20). Bilim ekibine giden istek mektubu `docs/bilim-ekibine.md`.
+Bilimsel değerlerin ana kaynağı `docs/LUNARIS_bilim_parametre_seti.md` (KARAR, 2026-11-14); doğrulaması
+`docs/parametre-seti-dogrulama.md`. Girdi durumu `docs/bilim-girdileri.md` (B1–B20). Bilim ekibine giden istek mektubu `docs/bilim-ekibine.md`.
 
 | Neyi bekletiyor | Gereken girdiler |
 |---|---|
@@ -276,7 +277,8 @@ aynı anda yazmasın; mümkünse herkes kendi dalında çalışsın.
 | Mimari | `docs/mimari.md` |
 | Sayfalar | `docs/sayfalar.md` |
 | Tasarım sistemi ve tasarım skill'leri | `docs/tasarim.md` |
-| Bilim girdileri ve durumu | `docs/bilim-girdileri.md` |
+| Bilimsel parametreler ve formüller (ana kaynak) | `docs/LUNARIS_bilim_parametre_seti.md` |
+| Bilim girdileri durumu · doğrulama | `docs/bilim-girdileri.md` · `docs/parametre-seti-dogrulama.md` |
 | Bilim ekibine mektup | `docs/bilim-ekibine.md` |
 | Bilim dışı açık sorular | `docs/acik-sorular.md` |
 | Fikir geliştirme brifi ve fikir dosyaları | `docs/fikir-ajani-brifi.md`, `docs/fikirler/` |

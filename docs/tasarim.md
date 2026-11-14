@@ -44,7 +44,7 @@ Değerler `web/` iskeletinde CSS değişkenleri olarak tek yerde tanımlanır. H
 | `--gunes` (amber), `--gunes-soluk` | seçilecek | yalnız Güneş anlamında |
 | `--dunya` (mavi), `--dunya-soluk` | seçilecek | yalnız Dünya anlamında |
 | `--vurgu` | seçilecek | arayüz etkileşimi; amber ve maviden ayrı |
-| `--uyari`, `--hata`, `--basari` | seçilecek | amber ve maviyle karışmayacak tonlar |
+| `--uyari`, `--hata`, `--basari` | seçilecek | amber ve maviyle karışmayacak tonlar; parametre seti uyarı için macenta + ikon öneriyor |
 | Yazı tipleri (başlık, gövde, sayı) | seçilecek | sayılar için eşit genişlikli rakam |
 | Boşluk ve yazı boyutu ölçeği | seçilecek | |
 | Köşe yarıçapı, gölge, çizgi kalınlığı | seçilecek | |

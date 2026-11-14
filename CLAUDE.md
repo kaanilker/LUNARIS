@@ -12,7 +12,8 @@ Tür: ürün (web) + hackathon teslimi. Özellik teslim etmeden önce `/urun-bit
 Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye karşı ölçüldüğü).
 
 ## Aşama
-Şu an mimari aşaması: bilim ekibinin girdileri gelene kadar site yapılmaz. Açık iş `.ajan/aktif-is.md`.
+Bilim girdileri taslak olarak geldi (parametre seti, 2026-11-14; bilim ekibi onayı bekleniyor).
+Sıradaki işler veri hattı pilotu ve site iskeleti. Açık iş `.ajan/aktif-is.md`.
 
 ## Belgeler ve sahipleri
 | Ne | Tek sahibi |
@@ -23,15 +24,16 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 | Mimari kararlar ve öneriler | `docs/mimari.md` |
 | Sayfa yapısı ve adresler | `docs/sayfalar.md` |
 | Görsel tasarım, belirteçler, kabul ölçütleri, tasarım skill'leri | `docs/tasarim.md` |
-| Bilimsel parametre, site, görev, tolerans | `docs/bilim-girdileri.md` (B1…) |
+| Bilimsel parametre, formül, kriter (ana kaynak) | `docs/LUNARIS_bilim_parametre_seti.md` |
+| Bilim girdilerinin takibi (B1…B20) · doğrulama bulguları | `docs/bilim-girdileri.md` · `docs/parametre-seti-dogrulama.md` |
 | Bilim ekibine istek mektubu (durum tutmaz) | `docs/bilim-ekibine.md` |
 | Bilim dışı açık sorular | `docs/acik-sorular.md` (S1…) |
 | Teslim öncesi kontrol | `DEMO.md` |
 | Fikir ajanı brifi · onaylanmamış fikirler | `docs/fikir-ajani-brifi.md` · `docs/fikirler/` (ÖNERİ) |
 
 ## Bu projeye özgü kurallar
-- **Bilimsel sayı uydurulmaz.** Koordinat, tarih, eşik, tolerans yalnız `docs/bilim-girdileri.md`'den
-  gelir. Yoksa yer tutucu kalır ve arayüzde "yer tutucu" yazar. (Brif ilkesi.)
+- **Bilimsel sayı uydurulmaz.** Koordinat, tarih, eşik, tolerans yalnız parametre setinden
+  (`docs/LUNARIS_bilim_parametre_seti.md`) gelir; sitede kullanım biçimini kullanıcı kararları belirler. Yoksa yer tutucu kalır ve arayüzde "yer tutucu" yazar. (Brif ilkesi.)
 - **Abartılı ifade yok.** "Kesin", "nihai risk", "garanti" yazılmaz; sınırlama açıkça yazılır.
   (SOLARIS'ten çıkan ders, brif.)
 - **Geometrinin başvurusu Python hattıdır.** TS motoru altın dosyaya karşı test edilir; iki yerde ayrı

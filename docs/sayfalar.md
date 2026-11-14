@@ -127,3 +127,35 @@ noktasından bu tarihte fırlatılınca uygun koşullu bir parsele en kısa sür
 60 saniye, 4 adım: problem (Ana Sayfa) → yöntem (Site Detay, panorama ve oynatıcı) → doğrulama
 (Hakkında, doğrulama tablosu) → öneri (Planlayıcı, gecikme kaydırıcısı oynarken). Tur senaryolarındaki
 tarih ve kalkış noktası bilim ekibinden gelir.
+
+## Parametre seti entegrasyonu
+
+Hesapların kaynağı `docs/LUNARIS_bilim_parametre_seti.md` (§11'de sayfa eşlemesi). Bu sayfa planı
+kullanıcı kararıdır; parametre setinin sayfa önerileri bu plana göre alınır.
+
+**Plandaki özelliklerin formülleri:** Ana Sayfa göstergeleri S.6, Ay küresi 0.2; Planlayıcı sıralaması 7.1,
+"neden seçildi" 7.1 katkıları, metrikler S.4, gecikme ve en uygun tarih S.7 ile 3.2; Uzman süzgeçleri
+Modül 1–4, Pareto S.8, panel ve batarya 2.3 ile 3.1, DSN S.5, belirsizlik 1.2, benzer parsel 7.2, aylık
+görünüm S.4; Site Detay panorama 0.3, izler 0.1 ile 0.4, geri sayım 0.5, iletişim penceresi S.5, oynatıcı S.3,
+özel koordinat S.1 ile S.9; Karşılaştır 7.1.
+
+**Çelişki, kullanıcı kararı geçerli:**
+- Planlayıcı girdisi: parametre seti S.7 "geçiş profili asıl girdi, kalkış noktası bilgi amaçlı" öneriyor.
+  Kullanıcı kararı Dünya'daki kalkış noktası (§2). Açık soru: girdiye geçiş profili de eklenecek mi
+  (`docs/parametre-seti-dogrulama.md` B-4).
+
+**Parametre setinin eklediği özellikler (ÖNERİ, kullanıcı onayı bekliyor):**
+
+| Sayfa | Önerilen özellik | Formül |
+|---|---|---|
+| Planlayıcı | Bölge müsaitlik şeridi (NASA'nın 9 bölgesinin yıllara göre uygunluğu) | §10, S.4 |
+| Uzman | Navigasyon saati sayacı, çok yollu sönümleme, link payı | 4.3, 4.4, 4.5 |
+| Uzman | Direk sapması göreli çubuğu | 6.3 |
+| Uzman | Mühendis ve bilim hazır ağırlık ayarları | Modül 7 |
+| Site Detay | Direk yüksekliği kaydırıcısı (2–20 m) | S.9 |
+| Site Detay | Termal gösterge | 2.4 |
+| Site Detay | "Node 2 bağla" depolama karşılaştırması | Modül 3 |
+| Site Detay | PSR rotası ve "su buzu potansiyeli" rozeti | Modül 5 |
+| Site Detay | 1 km toz keep-out ve 6 km radyo ufku halkaları | Modül 4, 6 |
+| Site Detay | "En eski yüzey" jeoloji rozeti | §10 |
+| Görevler | Chandrayaan-3 ve IM-1 koordinatları (2/10) | §10 |

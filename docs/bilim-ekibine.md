@@ -4,6 +4,10 @@
 > GELDİ) tutan tek yer `docs/bilim-girdileri.md`; aşağıdaki B kodları oradaki satırlarla aynı.
 > Repo: https://github.com/kaanilker/LUNARIS
 
+> **Güncelleme (2026-11-14):** İsteklerin çoğu `docs/LUNARIS_bilim_parametre_seti.md` ile taslak olarak
+> karşılandı. Kalanlar ve onay bekleyenler `docs/bilim-girdileri.md`'de; düzeltme önerilerimiz
+> `docs/parametre-seti-dogrulama.md`'de.
+
 ## 1. Kısaca ne yapıyoruz
 
 LUNARIS, Ay'ın güney kutbunda bir iniş noktası ve tarihi seçildiğinde Güneş'in (güç) ve Dünya'nın

@@ -182,6 +182,21 @@ derleme düşer.
   hangi değerler, bilim ekibinden gelir (B11).
 - Her karşılaştırma satırı neye karşı ölçüldüğünü taşır (Horizons, makale, simülasyon).
 
+### 9.1 "En uygun iniş yeri" iddiasının doğrulama zinciri (ÖNERİ, 2026-11-14)
+
+Siteye gidilemez; iddia halkalara ayrılır ve her halka bağımsız bir gerçeğe karşı sınanır.
+
+| # | Halka | Neye karşı |
+|---|---|---|
+| 1 | Güneş ve Dünya konumu | JPL Horizons |
+| 2 | Ufuk hesabı | Analitik cevabı bilinen sentetik araziler (tepe, krater, eğik düzlem) |
+| 3 | Tahmin gerçek gözlemle tutuyor mu | Geçmiş tarihli LRO (LROC) görüntüleri: çekim anı için hesaplanan ışık ve gölge deseni görüntüyle karşılaştırılır (geriye dönük tahmin) |
+| 4 | Gerçek iniş araçları | Kutup bölgesine inen görevlerin iniş yeri ve tarihi için hesaplanan batış zamanı, görevin karanlığa girdiği raporlanmış zamanla karşılaştırılır (IM-1, Chandrayaan-3; tarihler görev raporlarından). Brifteki "LUNARIS o gün ne derdi?" bu tabloda Hakkında sayfasında yaşar. |
+| 5 | Ölçütlerin makullüğü | NASA'nın 9 aday bölgesi (bağımsız uzman seçimi) ve Wueller 2026 saha sayıları |
+| 6 | Seçimin en iyiliği | Tam tarama; Monte Carlo sağlamlık testi (`docs/fikirler/2026-11-14-ml-sentetik-simulasyon.md`) |
+
+Sitedeki ifade: "seçtiğimiz ölçütlere göre en uygun ve belirsizliğe karşı sağlam"; "kesin en iyi" denmez.
+
 ## 10. Test ve kabul (ilk sürüm hedefi)
 
 | Katman | Kabul |

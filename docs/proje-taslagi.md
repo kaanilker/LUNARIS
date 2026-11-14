@@ -251,6 +251,7 @@ docs/            belgeler
 | 1 | **Şimdi yapılabilir:** (a) veri hattı pilotu: SPICE ile tek deneme noktası için Güneş ve Dünya konumu, Horizons'la karşılaştırma, tek ufuk hesabının süresinin ölçümü; (b) SvelteKit iskeleti: 7 boş sayfa, TR/EN, koyu tema, renk belirteçleri, `.htaccess`, cPanel'e deneme yüklemesi; (c) sahne arayüzü ve sahte veri; (d) `bilim/` JSON kalıpları; (e) Groq ucu iskeleti (sınır, yedek, uydurma kontrolü) | bilim verisi beklemez |
 | 2 | Gerçek efemeris ve ufuk hattı, doğrulama tablosu, altın dosya, Site Detay | Öncelik 1 girdileri |
 | 3 | Parsel ağı, metrikler, Planlayıcı, gecikme kaydırıcısı, en uygun tarih, Karşılaştır | Öncelik 2 girdileri |
+| 3b | NASA bölgelerine benzerlik modeli (9 bölge, yalnız bilgi; `docs/fikirler/2026-11-14-ml-nasa-bolge-skoru.md`) | veri hattı (Aşama 2) |
 | 4 | Uzman Analiz, Ana Sayfa göstergeleri, Görevler, Hakkında, rehberli tur, rapor | Öncelik 3 girdileri |
 | 5 | Cilalama, `DEMO.md` kontrol listesi (demo 5 kez baştan sona), cPanel yayını | hepsi |
 

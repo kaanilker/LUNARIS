@@ -1,6 +1,6 @@
 # NASA Artemis III bölgelerinden öğrenen iniş yeri skoru (PU öğrenme)
 
-Durum: kullanım biçimi **KARAR** (kullanıcı, 2026-11-14), uygulama ayrıntıları ÖNERİ · Öneren: kullanıcı (plan belgesi), ajan (değerlendirme)
+Durum: kullanım biçimi, bölge seti (9) ve zamanlama **KARAR** (kullanıcı, 2026-11-14); kalan uygulama ayrıntıları ÖNERİ · Öneren: kullanıcı (plan belgesi), ajan (değerlendirme)
 
 **KARAR (kullanıcı, 2026-11-14):** model seçilen parsellerin yanında yalnız bilgi olarak durur: "bu yerin NASA'nın
 seçtiği iniş bölgelerine benzerliği". Hesapta yeri yoktur; sıralamaya, elemeye ve en uygun tarih seçimine girmez.
@@ -60,9 +60,10 @@ siteye eklenmez; bulgu Hakkında'da "basit aydınlanma oranı NASA'nın seçimin
 
 ## Karar bekleyen
 1. ~~Sıralamaya mı girsin, yalnız bilgi mi olsun?~~ Yalnız bilgi (KARAR, kullanıcı, 2026-11-14).
-2. Pozitifler: güncel 9 bölge mi, 2022'nin 13'ü mü? Ajanın önerisi: 9 bölge ana koşu, 13 bölge duyarlılık koşusu
-   (bilim ekibi ya da kullanıcı onaylar).
-3. Zamanlama: özellikler veri hattına bağlı; model Aşama 2'den sonra eğitilir.
+2. ~~Pozitifler: 9 mu, 13 mü?~~ **KARAR (kullanıcı, 2026-11-14):** NASA'nın güncel (Ekim 2024) 9 bölgesi. Plandaki
+   13 bölge listesi ve 13'lü duyarlılık koşusu uygulanmaz.
+3. ~~Zamanlama~~ **KARAR (kullanıcı, 2026-11-14):** model veri hattından sonra yapılır (Aşama 2 sonrası); şimdi
+   bu iş için çalışma yapılmaz.
 
 ---
 

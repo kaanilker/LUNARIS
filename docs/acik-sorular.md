@@ -9,7 +9,7 @@
 
 ## Kapanan
 - S1 teslim tarihi: kullanıcı takip edilmesini istemedi (KARAR, 2026-11-14).
-- S7 Groq modeli: `openai/gpt-oss-120b`, yedek `openai/gpt-oss-20b` (KARAR, ajan, yetkiyle, 2026-11-14; `docs/mimari.md` §6).
+- S7 Groq modeli: `openai/gpt-oss-20b` (KARAR, kullanıcı, 2026-11-14; ölçüm ve yorum hattı `docs/mimari.md` §6).
 - S8 hosting: disk ve bant sınırsız (kullanıcı beyanı, 2026-11-14); PHP 8.4.
 - S3 barındırma: cPanel; AI sağlayıcısı Groq (KARAR, 2026-11-14). Ayrıntı `docs/mimari.md` §6, §7.
 - S5 kalkış noktası: Dünya'daki fırlatma noktası; brifteki "Ay'daki bölge merkezi" yorumu geçersiz (KARAR, 2026-11-14). Etkisinin modeli B18.

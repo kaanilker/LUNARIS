@@ -127,12 +127,24 @@ Ayrıntılı tip tanımı, ön yüz çatısı seçildikten sonra `web/src/sahnel
 Kurallar brifte (yalnız hesaplanan sonucu yorumlar, boş kutu yok, "AI üretimi" etiketi).
 
 **KARAR (kullanıcı, 2026-11-14):** AI sağlayıcısı Groq API.
-**KARAR (ajan, yetkiyle, 2026-11-14):** model `openai/gpt-oss-120b`, ulaşılamazsa `openai/gpt-oss-20b`.
-Gerekçe: Groq'un resmî model sayfasında (console.groq.com/docs/models, okundu 2026-11-14) fiyatı açık
-"Production" modeller bunlar: 120b girdi/çıktı 1M token başına $0,15 / $0,60, 20b $0,075 / $0,30. Llama
-modelleri "Contact Sales" görünüyor; Qwen 3.8 27B "Preview" (yalnız değerlendirme için). Model kimliği tek
-bir ayar sabitinde durur. API anahtarı gelince iki model, kendi istemimizle Türkçe kalite ve uydurma sayı
-kontrolüne (aşağıda) karşı denenir; sonuç kötüyse karar değişir.
+**KARAR (kullanıcı, 2026-11-14):** model `openai/gpt-oss-20b` (önceki ajan seçimi 120b'nin yerine). Resmî
+fiyat 1M token başına $0,075 girdi / $0,30 çıktı (console.groq.com/docs/models, okundu 2026-11-14). Model
+kimliği tek ayar sabitinde; anahtar yerelde `.env`, sunucuda `public_html` dışında.
+
+**Ölçüm (2026-11-14 · yerel makine · `api/deneme/groq_yorum_deneme.py` ve ilk düz deneme · TEST değerleri,
+her koşu n=1):** üç parselin sayılarıyla karşılaştırma yorumu istendi.
+- 20b, düz istem: uydurma sayı yok, ama **karşılaştırma yanlış** (en yüksek aydınlanmayı yanlış parsele verdi).
+- 120b, düz istem: uydurma sayı yok; bir yerde aydınlanma ile skor karıştı.
+- 20b, kodun hesapladığı olgular ("en yüksek aydınlanma: P-C (88)") istemde verilince: karşılaştırmalar doğru;
+  ama veride olmayan nitelendirme ekledi ("en iyi görüşme koşulları", "sinyallerin geniş alana yayılması").
+- Gecikme 1,4–2,1 s (kuyruk süresi dahil).
+
+**Sonuç, KARAR (ajan, yetkiyle):** sayı kontrolü tek başına yetmez. Yorum hattı:
+1. Karşılaştırmaları ("en yüksek", "en kısa", sıralama) model değil kod hesaplar; istemde "olgular" olarak verilir.
+2. Model yalnız bu olguları cümleye döker; neden-sonuç ve yeni nitelendirme yasaktır.
+3. Çıktı kontrolü: (a) her sayı girdide var; (b) her üstünlük ifadesi doğru parselle eşleşiyor;
+   (c) izin verilmeyen kavramlar (ör. sinyal, görüşme kalitesi gibi veride olmayan) yok. Biri düşerse şablon metin.
+4. Önceden üretilen yorumlar (hazır siteler, demo) insan gözünden geçer; canlı yorum yalnız özel senaryoda.
 **ÖNERİ:** Uç cPanel'de PHP ile yazılır (`api/yorum.php`), çünkü cPanel'de PHP neredeyse her zaman vardır
 ve Node desteği barındırıcıya bağlıdır (çıkarım). Barındırıcıda PHP 8.4 var (kullanıcı, 2026-11-14). Groq anahtarı `public_html`
 dışındaki bir dosyadan okunur, tarayıcıya hiç gitmez. İstek sınırı tek sunucuda dosya tabanlı tutulur.

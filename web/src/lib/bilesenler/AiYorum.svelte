@@ -3,7 +3,6 @@
 	yorum yoksa boş kutu değil yedek metin görünür.
 -->
 <script lang="ts">
-	import MessageSquareText from '@lucide/svelte/icons/message-square-text';
 	import { ceviri } from '$lib/i18n/baglam';
 	import Panel from './Panel.svelte';
 	import Rozet from './Rozet.svelte';
@@ -12,7 +11,7 @@
 	const c = ceviri();
 </script>
 
-<Panel baslik={c.t('ai.baslik')} simge={MessageSquareText} ton="vurgu" {sinif}>
+<Panel baslik={c.t('ai.baslik')} {sinif}>
 	{#snippet sag()}<Rozet tur="ai">{c.t('ai.etiket')}</Rozet>{/snippet}
 	{#if metin}
 		<p class="text-lg leading-relaxed text-metin">{metin}</p>

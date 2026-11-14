@@ -1,6 +1,5 @@
 <!-- Karşılaştır (docs/sayfalar.md §5). Bileşenler Site Detay ile ortak olacak; şimdilik iki boş yuva. -->
 <script lang="ts">
-	import Scale from '@lucide/svelte/icons/scale';
 	import { ceviri } from '$lib/i18n/baglam';
 	import SayfaBasi from '$lib/bilesenler/SayfaBasi.svelte';
 	import Panel from '$lib/bilesenler/Panel.svelte';
@@ -22,7 +21,7 @@
 		</Panel>
 	{/each}
 
-	<Panel baslik={c.t('karsilastir.ozet')} simge={Scale} bekliyor sinif="col-span-12">
+	<Panel baslik={c.t('karsilastir.ozet')} bekliyor sinif="col-span-12">
 		<p class="-mt-2 text-sm text-metin-ikincil">{c.t('karsilastir.ozet_metin')}</p>
 		<div class="overflow-x-auto rounded-kutu border border-cizgi">
 			<table class="text-sm">

@@ -19,6 +19,8 @@
 | Stil aracı: **Tailwind CSS** | **KARAR** (kullanıcı, 2026-11-14; önceki kayıtlarda yazılı değildi, bu turda yazıldı) |
 | Görsel referans: SOLARIS (solaris.quasacode.com) şekil dili | **KARAR** (kullanıcı, 2026-11-14) |
 | Palet koyu laciverde ve siyaha kayar (ikinci turdaki arduvaz yerine) | **KARAR** (kullanıcı, 2026-11-14, üçüncü tur) |
+| Mor kalkar; palet Ay'a yakın olur | **KARAR** (kullanıcı, 2026-11-14, dördüncü tur) |
+| Yapay zekâ işi görünüm işaretleri web'den araştırılır ve site ona göre düzeltilir (§3a) | **KARAR** (kullanıcı, 2026-11-14) |
 | Tasarım skill'i: **frontend-design** kurulur ve kullanılır | **KARAR** (kullanıcı, 2026-11-14); `.claude/skills/frontend-design/`, commit `2c5958e` |
 | 21st.dev bileşenleri kullanılır | **KARAR** (kullanıcı, 2026-11-14); bağlantı kullanıcının API anahtarını bekliyor (§5) |
 | Kesin renk değerleri, yazı tipleri, boşluk ölçeği | **KARAR** (ajan, yetkiyle, 2026-11-14, üçüncü tur; §3) |
@@ -37,7 +39,7 @@ Kaynak: `docs/kaynak/LUNARIS_AGENT_BRIEF.md` "Tasarım yönü" ve "Bizim için �
 - Renk tek başına anlam taşımaz: güneşli, kısmi, karanlık durumları renk dışında desen, etiket ya da
   simgeyle de ayırt edilir (renk körlüğü).
 
-## 3. Tasarım planı ve belirteçler (KARAR, ajan, yetkiyle, 2026-11-14, üçüncü tur)
+## 3. Tasarım planı ve belirteçler (KARAR, ajan, yetkiyle, 2026-11-14, dördüncü tur)
 
 frontend-design skill'inin süreciyle yazıldı: plan, plana karşı denetim, kod, ekran görüntüsüyle eleştiri.
 Değerlerin tek yeri `web/src/lib/stil/belirtecler.css` içindeki Tailwind `@theme` bloğu; Tailwind'in hazır renk
@@ -49,10 +51,11 @@ görev kontrol konsolu. Ayırt edici öğe buradan seçildi: **ufuk çizgisi**. 
 işaretli ince bir ufukla biter; Ana Sayfa'da bu çizgi bütün genişliği kaplar. Cesaret yalnız burada harcanır,
 gerisi sakin.
 
-**Renk (kullanıcı: koyu lacivert ve siyah).** `zemin` laciverde çalan siyah (L\* 1,7), `yuzey` gece laciverti
-(enstrüman paneli), `yuzey-2` bir kat açık lacivert (girdi, iç kutu), `metin` ay ışığı beyazı, `metin-ikincil`
-soğuk gri. `vurgu` açık menekşe: lacivertle uyumlu, amber ve gök mavisinden ayrı, SOLARIS'le akraba. Güneş amber,
-Dünya gök mavisi (§2).
+**Renk: Ay'da renk yoktur (kullanıcı: mor kalksın, Ay'a yakın palet).** Gökyüzü siyah, yüzey gri regolit, ışık
+gümüş; sahnede renkli olan yalnız Güneş ve Dünya. Palet bunu aynen taşır: `zemin` gökyüzü (laciverde çok hafif
+çalan siyah, L\* 1,9), `yuzey` ve `yuzey-2` koyu regolit grisi (panel, girdi), `metin` ay ışığı, `metin-ikincil`
+regolit grisi, `vurgu` ay gümüşü (birincil düğme, etkin menü, odak halkası). Böylece sitedeki tek renkli öğeler
+amber Güneş ve mavi Dünya olur; §2'deki renk kuralı tasarımın ana fikrine dönüşür. Mor yok.
 
 **Yazı.** Tek aile, iki rol: **Archivo** değişken yazı tipi. Başlıklar genişlik ekseninde açık (`font-stretch`
 %118) ve yarı kalın: mühendislik çizimi ve görev yaması etiketi gibi; gövde normal genişlikte. Sayılar eşit
@@ -84,10 +87,39 @@ simge kutusu (renkli kutu artık yalnız Güneş ve Dünya göstergelerinde, anl
 koyu zemin ve lacivert ton (kullanıcı kararı), anlatı bölümlerindeki sıra numarası (içerik gerçekten sıralı bir
 anlatı).
 
-**Şekil.** Kart 12 px, iç kutu 8 px, rozet tam yuvarlak; 1 px kenar; gölge ve degrade süs yok. Hareket yalnız
-kullanıcı eylemine yanıt olarak.
+**Şekil.** Kart 6 px, iç kutu 4 px, rozet tam yuvarlak; 1 px kenar; gölge, degrade, bulanık cam yok. Mühendislik
+aracı sertliği; her öğede aynı yuvarlak köşe olmasın diye kademeli. Hareket yalnız kullanıcı eylemine yanıt olarak.
 
-**Yer tutucu.** Kesikli kenarlı "Yer tutucu" rozeti ve kısa açıklama; beklenen girdiler virgülle yazılır.
+**Okuma şeridi.** Yan yana aynı göstergeler üç ayrı kart değil, tek panelde dikey çizgilerle bölünmüş bir konsol
+okuma şerididir. Simge yalnız işlevi olan yerde (oynat, yazdır, dış bağlantı, dil) ve anlam taşıyan Güneş ve
+Dünya işaretinde; menüde ve panel başlıklarında simge yok.
+
+**Yer tutucu.** Kesikli kenarlı "Yer tutucu" rozeti ve kısa açıklama; beklenen girdiler virgülle yazılır. Panel
+içinde ikinci bir çerçeve çizilmez (kart içinde kart); kesikli çerçeve yalnız panel dışındaki boş görsel yerinde.
+
+### 3a. Yapay zekâ işi görünüm işaretleri (araştırma, 2026-11-14)
+
+Kaynaklar çoğunlukla tasarım ajansı ve araç blogu; bağımsız ölçüm yok, liste sezgisel (kaynaklar da bunu yazıyor).
+Ama listeler büyük ölçüde örtüşüyor. Okunanlar: Laith0003/ux-skill "Anti AI slop ban list", Nutlope/hallmark
+anti-pattern kataloğu, 925studios "AI slop design tells", Fountain Institute "7 tells", utsubo "12 signals",
+21st.dev "website not look AI generated", frontend-design SKILL.md.
+
+| İşaret | LUNARIS'te durum (dördüncü tur) |
+|---|---|
+| Mor-mavi degrade, mor vurgu | kaldırıldı; vurgu ay gümüşü |
+| Inter her yerde | kaldırıldı (üçüncü tur); Archivo |
+| Logo solda, bağlantılar, sağda düğme, ekrana yapışık bulanık şerit | menü yapışık ve bulanık değil, bağlantılar logonun yanında, sağda düğme yerine metin bağlantısı |
+| Yan yana üç eşit kart, simge kutulu özellik kartı | okuma şeridi; simge kutusu yalnız Güneş ve Dünya |
+| Her öğede aynı 12 px köşe | 6, 4 px ve rozet |
+| Kart içinde kart | panel içi yer tutucu çerçevesiz |
+| Lucide simgeleri her yerde | yalnız işlevli düğmelerde |
+| Bölüm başına büyük harfli üst etiket, orta nokta, ok | kaldırıldı (üçüncü tur), test ölçüyor |
+| Sırası anlamsız numaralı liste (01, 02) | Görevler'den kaldırıldı; anlatıda kaldı (gerçek sıra) |
+| Her kelimesi büyük harfle başlayan başlık | İngilizce başlıklar cümle düzeninde |
+| Düz tırnak ve kesme işareti | kıvrık kesme işareti (’) |
+| Saf siyah zemin, cam efekti, parıltı, degrade yazı, yüzen küre süsü | yok |
+| Uydurma metrik, emoji simge, Jane Doe, sahte marka | yok; bilimsel sayı uydurulmaz kuralı zaten var |
+
 
 ## 4. Kabul ölçütleri (ÖNERİ; 10–13 KARAR, ajan, yetkiyle, 2026-11-14)
 
@@ -102,14 +134,15 @@ Bir tasarım işi bunlar sağlanmadan bitmiş sayılmaz. Her biri ölçülebilir
 7. Ana Sayfa'da ana soru ve iki düğme ilk ekranda, kaydırmadan görünür (masaüstü ve 375 px).
 8. Her sayfa iki dilde taşma ve kesilme olmadan görünür (İngilizce ve Türkçe metin uzunlukları farklı).
 9. Arayüze dokunan iş gerçek tarayıcıda açılarak denetlenir (§5, görsel denetim).
-10. Katmanlar ayrışır: zemin L\* 1 ile 4 arası (laciverde çalan siyah; kullanıcı kararı, üçüncü tur), kart
+10. Katmanlar ayrışır: zemin L\* 1 ile 4 arası (siyah gökyüzü; kullanıcı kararı, üçüncü ve dördüncü tur), kart
     zeminden en az 3 L\* açık, girdi alanı karttan en az 3 L\* açık. `belirtecler.test.ts` ölçer.
 11. Rastgele konum yok: her panelin sol ve sağ kenarı 12 sütunlu ızgaranın bir sütun çizgisine ±1 px oturur
     (masaüstü ve 375 px). `tests/sayfalar.e2e.ts` ölçer.
-12. Tek şekil dili: görünen öğelerin köşe yarıçapı yalnız 0, 8, 12 px ya da tam yuvarlak; renkler yalnız
+12. Tek şekil dili: görünen öğelerin köşe yarıçapı yalnız 0, 4, 6 px ya da tam yuvarlak; renkler yalnız
     belirteçlerden. Test ölçer.
-13. Şablon işaretleri yok: görünen metinde orta nokta ayırıcı (" · ") ve ok ("→") yok, hiçbir öğe büyük harfe
-    çevrilmiyor (`text-transform: uppercase`). `tests/sayfalar.e2e.ts` ölçer.
+13. Şablon işaretleri yok (§3a): görünen metinde orta nokta ayırıcı (" · "), ok ("→") ve düz kesme işareti (')
+    yok; hiçbir öğe büyük harfe çevrilmiyor; degrade arka plan, bulanık cam (`backdrop-filter`) ve gölge yok;
+    üst çubuk ekrana yapışık değil. `tests/sayfalar.e2e.ts` ölçer.
 
 ## 5. Tasarım araçları (KARAR, 2026-11-14)
 

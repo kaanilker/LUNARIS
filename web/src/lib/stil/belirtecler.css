@@ -9,24 +9,24 @@
 	--color-*: initial;
 	--radius-*: initial;
 
-	/* Katmanlar: laciverde çalan siyah zemin (L* 1,7), gece laciverti panel, bir kat açık girdi. */
-	--color-zemin: #04060d;
-	--color-yuzey: #0b1122;
-	--color-yuzey-2: #141d36;
-	--color-cizgi: #1f2b4a;
-	--color-cizgi-guclu: #5d6b8f;
+	/* Ay'da renk yoktur: siyah gökyüzü, gri regolit, gümüş ışık. Renkli olan yalnız Güneş ve Dünya. */
+	--color-zemin: #05070c;
+	--color-yuzey: #101319;
+	--color-yuzey-2: #1b1f27;
+	--color-cizgi: #2b303b;
+	--color-cizgi-guclu: #6c727e;
 
-	/* Metin: ay ışığı beyazı ve soğuk gri */
-	--color-metin: #e8ecf5;
-	--color-metin-ikincil: #93a0bb;
+	/* Metin: ay ışığı ve regolit grisi */
+	--color-metin: #eceef1;
+	--color-metin-ikincil: #a0a5ae;
 
-	/* Anlam renkleri */
+	/* Anlam renkleri: sitedeki tek renkli öğeler */
 	--color-gunes: #fbbf24;
 	--color-dunya: #38bdf8;
 
-	/* Arayüz vurgusu: yalnız birincil düğme, etkin menü, odak halkası */
-	--color-vurgu: #b3a4ff;
-	--color-vurgu-uzerine: #120d2b;
+	/* Arayüz vurgusu: ay gümüşü; yalnız birincil düğme, etkin menü, odak halkası */
+	--color-vurgu: #d5dae2;
+	--color-vurgu-uzerine: #0a0c11;
 
 	/* Durum */
 	--color-uyari: #f472b6;
@@ -37,9 +37,9 @@
 	--font-baslik: 'Archivo Variable', system-ui, sans-serif;
 	--font-govde: 'Archivo Variable', system-ui, sans-serif;
 
-	/* Köşeler: kart 12 px, iç kutu 8 px; rozetler rounded-full */
-	--radius-kutu: 8px;
-	--radius-kart: 12px;
+	/* Köşeler: kart 6 px, iç kutu 4 px; rozetler rounded-full. Kademeli, her öğede aynı değil. */
+	--radius-kutu: 4px;
+	--radius-kart: 6px;
 
 	/* İçerik genişliği */
 	--container-icerik: 80rem;
@@ -57,6 +57,6 @@
 		--color-metin-ikincil: #475569;
 		--color-gunes: #a35f00;
 		--color-dunya: #0369a1;
-		--color-vurgu: #5b3fd1;
+		--color-vurgu: #111827;
 	}
 }

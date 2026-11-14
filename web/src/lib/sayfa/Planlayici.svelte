@@ -3,10 +3,6 @@
 	Girdiler şimdilik yalnız sayfa içinde tutulur; senaryo deposu ve adres eşlemesi ayrı iş (docs/mimari.md §7).
 -->
 <script lang="ts">
-	import SlidersHorizontal from '@lucide/svelte/icons/sliders-horizontal';
-	import CalendarDays from '@lucide/svelte/icons/calendar-days';
-	import MapIcon from '@lucide/svelte/icons/map';
-	import ListOrdered from '@lucide/svelte/icons/list-ordered';
 	import Share2 from '@lucide/svelte/icons/share-2';
 	import { ceviri } from '$lib/i18n/baglam';
 	import SayfaBasi from '$lib/bilesenler/SayfaBasi.svelte';
@@ -39,7 +35,7 @@
 
 <div class="kap grid grid-cols-12 items-start gap-6" data-izgara>
 	<!-- Senaryo -->
-	<Panel baslik={c.t('planla.senaryo')} simge={SlidersHorizontal} ton="vurgu" sinif="col-span-12 lg:col-span-4 lg:sticky lg:top-24">
+	<Panel baslik={c.t('planla.senaryo')} sinif="col-span-12 lg:col-span-4 lg:sticky lg:top-24">
 		<form class="flex flex-col gap-6" onsubmit={(e) => e.preventDefault()}>
 			<label class="flex flex-col gap-2">
 				<span class="text-sm font-medium text-metin">{c.t('planla.tarih')}</span>
@@ -86,7 +82,7 @@
 
 	<!-- Sonuçlar -->
 	<div class="col-span-12 flex min-w-0 flex-col gap-6 lg:col-span-8">
-		<Panel baslik={c.t('planla.tarihler')} simge={CalendarDays} bekliyor>
+		<Panel baslik={c.t('planla.tarihler')} bekliyor>
 			<dl class="grid gap-3 sm:grid-cols-3">
 				<div class="flex flex-col gap-1 rounded-kutu border border-cizgi bg-yuzey-2 p-4">
 					<dt class="text-xs text-metin-ikincil">{c.t('planla.tarih_secilen')}</dt>
@@ -104,13 +100,13 @@
 			<YerTutucu satir metin={c.t('planla.tarih_hesap')} girdi="B3, B18" />
 		</Panel>
 
-		<Panel baslik={c.t('planla.harita')} simge={MapIcon} bekliyor>
+		<Panel baslik={c.t('planla.harita')} bekliyor>
 			<YerTutucu metin={c.t('planla.harita_not')} girdi="B4, P1, 7.1">
 				<KutupIzgara etiketler={yonler} />
 			</YerTutucu>
 		</Panel>
 
-		<Panel baslik={c.t('planla.sonuc')} simge={ListOrdered} bekliyor>
+		<Panel baslik={c.t('planla.sonuc')} bekliyor>
 			<p class="-mt-2 text-sm text-metin-ikincil">{c.t('planla.sonuc_not')}</p>
 			<div class="overflow-x-auto rounded-kutu border border-cizgi">
 				<table class="text-sm">

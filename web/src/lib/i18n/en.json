@@ -7,8 +7,8 @@
 	"menu": {
 		"ana": "Home",
 		"planla": "Planner",
-		"uzman": "Expert Analysis",
-		"site": "Site Detail",
+		"uzman": "Expert analysis",
+		"site": "Site detail",
 		"karsilastir": "Compare",
 		"gorevler": "Missions",
 		"hakkinda": "About",
@@ -21,7 +21,7 @@
 	},
 	"tur": {
 		"baslat": "Start the tour",
-		"hazir_degil": "The guided tour is not ready yet. Its steps will be added with the science team's scenarios."
+		"hazir_degil": "The guided tour is not ready yet. Its steps will be added with the science team’s scenarios."
 	},
 	"yer_tutucu": {
 		"etiket": "Placeholder",
@@ -122,7 +122,7 @@
 		"paylas": "Share scenario"
 	},
 	"uzman": {
-		"baslik": "Expert Analysis",
+		"baslik": "Expert analysis",
 		"giris": "Every number with its unit and definition. The Planner scenario carries over by link, so nothing is entered twice.",
 		"suzgec": "Threshold filters",
 		"suzgec_metin": "Minimum sunlight fraction, minimum contact time, longest darkness, slope and distance to ice regions.",
@@ -141,7 +141,7 @@
 		"bekliyor": "The method and thresholds await science team approval."
 	},
 	"site": {
-		"baslik": "Site Detail",
+		"baslik": "Site detail",
 		"parsel": "Parcel",
 		"parsel_yok": "No parcel selected",
 		"parsel_yok_metin": "Pick a parcel from the Planner list or enter coordinates below.",
@@ -170,14 +170,14 @@
 		"boylam": "Longitude",
 		"koordinat_not": "Custom coordinate results will be interpolated from nearby points.",
 		"hesapla": "Compute",
-		"karsilastira_ekle": "Add to Compare",
+		"karsilastira_ekle": "Add to compare",
 		"rapor": "Print report"
 	},
 	"karsilastir": {
 		"baslik": "Compare",
 		"giris": "Two parcels, or two dates at the same parcel, side by side.",
 		"secim": "Parcel and date",
-		"secim_bekliyor": "The selection comes from Site Detail and the Planner.",
+		"secim_bekliyor": "The selection comes from Site detail and the Planner.",
 		"ozet": "Difference summary",
 		"ozet_metin": "Values that differ are highlighted.",
 		"sutun_metrik": "Metric",
@@ -224,7 +224,7 @@
 		"sinirlamalar": "Assumptions and limitations",
 		"sinirlamalar_bekliyor": "The list will be published once the science team approves it.",
 		"ekip": "Team",
-		"ekip_metin": "LUNARIS is Quasar Team's project for the NASA Space Apps Challenge 2026. Fundamental science, software and animation teams work on it together.",
+		"ekip_metin": "LUNARIS is Quasar Team’s project for the NASA Space Apps Challenge 2026. Fundamental science, software and animation teams work on it together.",
 		"video": "Demo video",
 		"video_bekliyor": "The video will be added before submission."
 	}

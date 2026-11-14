@@ -1,7 +1,8 @@
 <!--
 	Bilim girdisi ya da sahne gelmemiş yer (CLAUDE.md: arayüzde "yer tutucu" yazar).
 	girdi: beklenen girdinin kodu (B19, S.6, A1); docs/bilim-girdileri.md ve docs/animasyonlar.md'deki kodlar.
-	satir: alan altında tek satırlık not; değilse kartın içinde ortalanmış boş durum.
+	satir: alan altında tek satırlık not; değilse ortalanmış boş durum.
+	cerceve: kesikli çerçeve; yalnız panel dışında (panel içinde kart içinde kart olur, docs/tasarim.md §3a).
 -->
 <script lang="ts">
 	import type { Snippet } from 'svelte';
@@ -12,9 +13,17 @@
 		metin,
 		girdi,
 		satir = false,
+		cerceve = false,
 		sinif = '',
 		children
-	}: { metin: string; girdi?: string; satir?: boolean; sinif?: string; children?: Snippet } = $props();
+	}: {
+		metin: string;
+		girdi?: string;
+		satir?: boolean;
+		cerceve?: boolean;
+		sinif?: string;
+		children?: Snippet;
+	} = $props();
 
 	const c = ceviri();
 </script>
@@ -27,7 +36,9 @@
 	</p>
 {:else}
 	<div
-		class="flex flex-1 flex-col items-center justify-center gap-4 rounded-kutu border border-dashed border-cizgi bg-zemin/40 px-5 py-8 text-center {sinif}"
+		class="flex flex-1 flex-col items-center justify-center gap-4 px-5 py-8 text-center {cerceve
+			? 'rounded-kutu border border-dashed border-cizgi-guclu/60'
+			: ''} {sinif}"
 		data-yer-tutucu={girdi ?? ''}
 	>
 		{#if children}{@render children()}{/if}

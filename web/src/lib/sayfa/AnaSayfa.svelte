@@ -7,7 +7,7 @@
 	import YerTutucu from '$lib/bilesenler/YerTutucu.svelte';
 	import Rozet from '$lib/bilesenler/Rozet.svelte';
 	import AiYorum from '$lib/bilesenler/AiYorum.svelte';
-	import Gosterge from '$lib/bilesenler/Gosterge.svelte';
+	import OkumaSeridi from '$lib/bilesenler/OkumaSeridi.svelte';
 	import Bolum from '$lib/bilesenler/Bolum.svelte';
 	import KureCizim from '$lib/cizim/KureCizim.svelte';
 	import UfukCizgisi from '$lib/cizim/UfukCizgisi.svelte';
@@ -55,9 +55,14 @@
 
 <div class="kap mt-16 grid grid-cols-12 gap-y-16">
 	<Bolum baslik={c.t('ana.kutup_baslik')} aciklama={c.t('ana.kutup_alt')}>
-		<Gosterge sinif="col-span-12 md:col-span-4" etiket={c.t('ana.gosterge_enerji')} formul="S.6, E" anlam="gunes" />
-		<Gosterge sinif="col-span-12 md:col-span-4" etiket={c.t('ana.gosterge_inis')} formul="S.6, U" />
-		<Gosterge sinif="col-span-12 md:col-span-4" etiket={c.t('ana.gosterge_dunya')} formul="S.6, V" anlam="dunya" />
+		<OkumaSeridi
+			sinif="col-span-12"
+			olcumler={[
+				{ etiket: c.t('ana.gosterge_enerji'), formul: 'S.6, E', anlam: 'gunes' },
+				{ etiket: c.t('ana.gosterge_inis'), formul: 'S.6, U' },
+				{ etiket: c.t('ana.gosterge_dunya'), formul: 'S.6, V', anlam: 'dunya' }
+			]}
+		/>
 		<div class="col-span-12">
 			<YerTutucu satir metin={c.t('ana.gosterge_bekliyor')} girdi="B19, S.6, B3" />
 		</div>
@@ -71,7 +76,7 @@
 					<h3 class="flex items-baseline gap-3 text-lg leading-snug font-semibold text-metin">
 						<span class="text-metin-ikincil tabular-nums">{i + 1}</span>{c.t(`ana.${bolum.anahtar}`)}
 					</h3>
-					<YerTutucu metin={c.t('ana.anlati_bekliyor')} girdi={`B17, ${bolum.sahne}`} sinif="min-h-48" />
+					<YerTutucu metin={c.t('ana.anlati_bekliyor')} girdi={`B17, ${bolum.sahne}`} cerceve sinif="min-h-48" />
 				</li>
 			{/each}
 		</ol>

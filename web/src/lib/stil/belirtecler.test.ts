@@ -8,12 +8,11 @@ const BELIRTEC_DOSYASI = 'src/lib/stil/belirtecler.css';
 // gunes ve dunya renklerini kullanan her dosya burada adıyla durur; yeni kullanım eklenirken anlamın
 // Güneş ya da Dünya olduğu gözle denetlenir (docs/tasarim.md §4 ölçüt 5).
 const ANLAM_RENGI_KULLANABILIR = [
-	'src/lib/bilesenler/Gosterge.svelte',
-	'src/lib/bilesenler/Panel.svelte',
+	'src/lib/bilesenler/OkumaSeridi.svelte',
 	'src/lib/sayfa/AnaSayfa.svelte',
 	'src/lib/sayfa/SiteDetay.svelte'
 ];
-const ANLAM_RENGI = /-(gunes|dunya)\b(?!_)|anlam="(gunes|dunya)"|ton="(gunes|dunya)"|--color-(gunes|dunya)/;
+const ANLAM_RENGI = /-(gunes|dunya)\b(?!_)|anlam[=:] ?["'](gunes|dunya)["']|--color-(gunes|dunya)/;
 
 function dosyalar(kok: string): string[] {
 	return readdirSync(kok).flatMap((ad: string) => {
@@ -64,18 +63,22 @@ describe('tasarım belirteçleri', () => {
 	});
 
 	it('amber ve mavi yalnız izinli dosyalarda (ölçüt 5)', () => {
+		// Mor yok (kullanıcı kararı, dördüncü tur): vurgu renksiz gümüş, doygunluğu düşük.
+		const vurgu = belirtecler()['vurgu'];
+		const [r, g, b] = [1, 3, 5].map((i) => parseInt(vurgu.slice(i, i + 2), 16));
+		expect(Math.max(r, g, b) - Math.min(r, g, b)).toBeLessThanOrEqual(16);
 		const kullanan = dosyalar('src')
 			.filter((y) => y !== BELIRTEC_DOSYASI && !y.endsWith('.test.ts'))
 			.filter((y) => ANLAM_RENGI.test(readFileSync(y, 'utf8')));
 		expect(kullanan.sort()).toEqual([...ANLAM_RENGI_KULLANABILIR].sort());
 	});
 
-	it('zemin laciverde çalan siyah, katmanlar ayrışır (ölçüt 10)', () => {
+	it('zemin siyah gökyüzü, katmanlar ayrışır (ölçüt 10)', () => {
 		const b = belirtecler();
 		const zemin = lYildiz(b['zemin']);
 		expect(zemin).toBeGreaterThanOrEqual(1);
 		expect(zemin).toBeLessThanOrEqual(4);
-		// Lacivert: mavi kanal kırmızı ve yeşilden baskın.
+		// Gökyüzü siyahı laciverde çok hafif çalar: mavi kanal kırmızı ve yeşilden baskın.
 		const [r, g, bl] = [1, 3, 5].map((i) => parseInt(b['zemin'].slice(i, i + 2), 16));
 		expect(bl).toBeGreaterThan(Math.max(r, g));
 		expect(lYildiz(b['yuzey']) - zemin).toBeGreaterThanOrEqual(3);

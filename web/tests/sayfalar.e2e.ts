@@ -120,10 +120,10 @@ async function hizaHatalari(page: Page): Promise<string[]> {
 	});
 }
 
-// Ölçüt 12: köşe yarıçapı yalnız 0, 8, 12 px ya da tam yuvarlak.
+// Ölçüt 12: köşe yarıçapı yalnız 0, 4, 6 px ya da tam yuvarlak.
 async function koseHatalari(page: Page): Promise<string[]> {
 	return page.evaluate(() => {
-		const izinli = new Set(['0px', '8px', '12px']);
+		const izinli = new Set(['0px', '4px', '6px']);
 		const hatalar = new Set<string>();
 		for (const o of document.querySelectorAll<HTMLElement>('body *')) {
 			if (o.offsetParent === null && getComputedStyle(o).position !== 'fixed') continue;
@@ -152,7 +152,7 @@ test('üst çubuk içerik kabının içinde kalıyor (1280 px, Türkçe)', async
 	test.skip(page.viewportSize()!.width < 1280, 'masaüstü menüsü yalnız 1280 px ve üstünde');
 	await page.goto('/tr/gorevler/');
 	const sag = await page.evaluate(() => {
-		const satir = document.querySelector('header .kap')!;
+		const satir = document.querySelector('header.kap')!;
 		const sinir = satir.getBoundingClientRect().right - parseFloat(getComputedStyle(satir).paddingRight);
 		const enSag = Math.max(...[...satir.querySelectorAll('a, button')].map((o) => o.getBoundingClientRect().right));
 		return enSag - sinir;
@@ -170,9 +170,29 @@ for (const yollar of Object.values(SAYFALAR)) {
 				const buyukHarf = [...document.querySelectorAll<HTMLElement>('body *')].filter(
 					(o) => o.offsetParent !== null && getComputedStyle(o).textTransform === 'uppercase'
 				).length;
-				return { ortaNokta: metin.includes(' · '), ok: metin.includes('→'), buyukHarf };
+				const gorunen = [...document.querySelectorAll<HTMLElement>('body *')].filter((o) => o.offsetParent !== null);
+				const stil = gorunen.map((o) => getComputedStyle(o));
+				return {
+					ortaNokta: metin.includes(' · '),
+					ok: metin.includes('→'),
+					duzKesme: /\p{L}'\p{L}/u.test(metin),
+					buyukHarf,
+					degrade: stil.filter((s) => s.backgroundImage.includes('gradient')).length,
+					cam: stil.filter((s) => s.backdropFilter !== 'none').length,
+					golge: stil.filter((s) => s.boxShadow !== 'none').length,
+					yapisikUst: getComputedStyle(document.querySelector('header')!).position
+				};
 			});
-			expect(bulgu).toEqual({ ortaNokta: false, ok: false, buyukHarf: 0 });
+			expect(bulgu).toEqual({
+				ortaNokta: false,
+				ok: false,
+				duzKesme: false,
+				buyukHarf: 0,
+				degrade: 0,
+				cam: 0,
+				golge: 0,
+				yapisikUst: 'static'
+			});
 		});
 	}
 }

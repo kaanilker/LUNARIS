@@ -51,7 +51,7 @@
 	</Bolum>
 
 	<Bolum baslik={c.t('hakkinda.yontem')}>
-		<div class="col-span-12"><YerTutucu metin={c.t('hakkinda.yontem_bekliyor')} girdi="B17" sinif="min-h-36" /></div>
+		<div class="col-span-12"><YerTutucu metin={c.t('hakkinda.yontem_bekliyor')} girdi="B17" cerceve sinif="min-h-36" /></div>
 	</Bolum>
 
 	<Bolum baslik={c.t('hakkinda.dogrulama')} aciklama={c.t('hakkinda.dogrulama_metin')}>
@@ -79,7 +79,7 @@
 	</Bolum>
 
 	<Bolum baslik={c.t('hakkinda.sinirlamalar')}>
-		<div class="col-span-12"><YerTutucu metin={c.t('hakkinda.sinirlamalar_bekliyor')} girdi="B17" sinif="min-h-36" /></div>
+		<div class="col-span-12"><YerTutucu metin={c.t('hakkinda.sinirlamalar_bekliyor')} girdi="B17" cerceve sinif="min-h-36" /></div>
 	</Bolum>
 
 	<Bolum baslik={c.t('hakkinda.ekip')}>
@@ -90,6 +90,6 @@
 	</Bolum>
 
 	<Bolum baslik={c.t('hakkinda.video')}>
-		<div class="col-span-12"><YerTutucu metin={c.t('hakkinda.video_bekliyor')} sinif="min-h-32" /></div>
+		<div class="col-span-12"><YerTutucu metin={c.t('hakkinda.video_bekliyor')} cerceve sinif="min-h-32" /></div>
 	</Bolum>
 </div>

@@ -3,10 +3,6 @@
 	Şimdilik yalnız çerçeve: azimut ekseni ve yön harfleri. Silüet ve izler veri hattından gelecek.
 -->
 <script lang="ts">
-	import Mountain from '@lucide/svelte/icons/mountain';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Camera from '@lucide/svelte/icons/camera';
-	import Crosshair from '@lucide/svelte/icons/crosshair';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import SkipBack from '@lucide/svelte/icons/skip-back';
 	import SkipForward from '@lucide/svelte/icons/skip-forward';
@@ -17,7 +13,7 @@
 	import SayfaBasi from '$lib/bilesenler/SayfaBasi.svelte';
 	import Panel from '$lib/bilesenler/Panel.svelte';
 	import YerTutucu from '$lib/bilesenler/YerTutucu.svelte';
-	import Gosterge from '$lib/bilesenler/Gosterge.svelte';
+	import OkumaSeridi from '$lib/bilesenler/OkumaSeridi.svelte';
 
 	let { parsel }: { parsel?: string } = $props();
 	const c = ceviri();
@@ -47,7 +43,7 @@
 />
 
 <div class="kap grid grid-cols-12 items-start gap-6" data-izgara>
-	<Panel baslik={c.t('site.panorama')} simge={Mountain} bekliyor sinif="col-span-12">
+	<Panel baslik={c.t('site.panorama')} bekliyor sinif="col-span-12">
 		{#snippet sag()}
 			<ul class="flex items-center gap-4 text-xs text-metin-ikincil">
 				<li class="flex items-center gap-2"><span class="w-5 border-t-2 border-gunes"></span>{c.t('site.gunes_izi')}</li>
@@ -74,11 +70,16 @@
 		<YerTutucu satir metin={c.t('site.panorama_not')} girdi="B2, B6, 0.3, 0.1, 0.4, S1" />
 	</Panel>
 
-	<Gosterge sinif="col-span-12 md:col-span-4" etiket={c.t('site.gun_batimi')} formul="0.5" anlam="gunes" />
-	<Gosterge sinif="col-span-12 md:col-span-4" etiket={c.t('site.dunya_batimi')} formul="0.5" anlam="dunya" />
-	<Gosterge sinif="col-span-12 md:col-span-4" etiket={c.t('site.iletisim')} formul="S.5" anlam="dunya" />
+	<OkumaSeridi
+		sinif="col-span-12"
+		olcumler={[
+			{ etiket: c.t('site.gun_batimi'), formul: '0.5', anlam: 'gunes' },
+			{ etiket: c.t('site.dunya_batimi'), formul: '0.5', anlam: 'dunya' },
+			{ etiket: c.t('site.iletisim'), formul: 'S.5', anlam: 'dunya' }
+		]}
+	/>
 
-	<Panel baslik={c.t('site.cizelge')} simge={Clock} bekliyor sinif="col-span-12">
+	<Panel baslik={c.t('site.cizelge')} bekliyor sinif="col-span-12">
 		<p class="-mt-2 text-sm text-metin-ikincil">{c.t('site.cizelge_metin')}</p>
 		<YerTutucu metin={c.t('site.oynatici_bekliyor')} girdi="S.3, S.4, S.5, S3" sinif="min-h-32" />
 		<div class="flex flex-wrap items-center gap-3" role="group" aria-label={c.t('site.oynatici')}>
@@ -89,12 +90,12 @@
 		</div>
 	</Panel>
 
-	<Panel baslik={c.t('site.astronot')} simge={Camera} bekliyor sinif="col-span-12 lg:col-span-8">
+	<Panel baslik={c.t('site.astronot')} bekliyor sinif="col-span-12 lg:col-span-8">
 		<YerTutucu metin={c.t('site.astronot_not')} girdi="S4" sinif="min-h-80" />
 	</Panel>
 
 	<div class="col-span-12 flex flex-col gap-6 lg:col-span-4">
-		<Panel baslik={c.t('site.koordinat')} simge={Crosshair}>
+		<Panel baslik={c.t('site.koordinat')}>
 			<form class="grid grid-cols-2 gap-3" onsubmit={(e) => e.preventDefault()}>
 				<label class="flex flex-col gap-2 text-sm font-medium"
 					>{c.t('site.enlem')}<input inputmode="decimal" disabled /></label
@@ -107,7 +108,7 @@
 			<YerTutucu satir metin={c.t('site.koordinat_not')} girdi="S.1, S.9" />
 		</Panel>
 
-		<Panel baslik={c.t('site.dis')} simge={ExternalLink}>
+		<Panel baslik={c.t('site.dis')}>
 			<ul class="flex flex-col divide-y divide-cizgi rounded-kutu border border-cizgi">
 				{#each DIS_ARACLAR as arac (arac.ad)}
 					<li>

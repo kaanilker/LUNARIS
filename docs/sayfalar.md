@@ -20,7 +20,8 @@ Menüdeki sıra hesaplama sayfalarından sonra görsel sayfalar şeklinde:
 | 7 | Hakkında | `/tr/hakkinda` · `/en/about` | herkes |
 
 Sayfa olmayanlar: **Rehberli Tur** her sayfanın üstünde açılan katman. **Rapor** Site Detay ve
-Karşılaştır sayfalarının yazdırma görünümü. Adreslerdeki dil öneki (`/tr/`, `/en/`) ÖNERİ.
+Karşılaştır sayfalarının yazdırma görünümü. Adreslerde dil öneki (`/tr/`, `/en/`): KARAR (ajan, yetkiyle);
+paylaşılan link gönderenin dilinde açılır.
 
 ## 1. Ana Sayfa
 
@@ -81,7 +82,9 @@ noktasından bu tarihte fırlatılınca uygun koşullu bir parsele en kısa sür
 **KARAR:** 360° panorama, güney kutbunda seçilen noktanın ufkunu gösterir.
 
 - **360° ufuk panoraması:** seçilen parselin merkezinden bakınca görünen arazi silüeti, gökyüzünde
-  Güneş'in (amber) ve Dünya'nın (mavi) izleri.
+  Güneş'in (amber) ve Dünya'nın (mavi) izleri. Çizim iki boyutlu, düzleştirilmiş panorama (SVG; iz sayısı
+  artarsa canvas): KARAR (ajan, yetkiyle). Gerekçe: hızlı, okunaklı, mobilde rahat; 3B bakış astronot
+  görünümünde zaten var.
 - **Geri sayımlar:** gün batımına, Dünya batımına, sonraki iletişim penceresine kalan süre.
 - **Zaman çizelgesi:** güneşli, kısmi, karanlık dönemler; iletişim pencereleri.
 - **Zaman oynatıcı:** panorama, 3B sahne ve kartlar birlikte hareket eder.
@@ -125,7 +128,7 @@ noktasından bu tarihte fırlatılınca uygun koşullu bir parsele en kısa sür
 - AI yorum kutusu: "AI üretimi" etiketi, gelmezse hazır metin.
 - Yer tutucu etiketi: bilim girdisi gelmemiş değerin yanında.
 
-## Rehberli Tur (ÖNERİ)
+## Rehberli Tur (KARAR, ajan, yetkiyle; tur senaryoları bilim ekibinden)
 
 60 saniye, 4 adım: problem (Ana Sayfa) → yöntem (Site Detay, panorama ve oynatıcı) → doğrulama
 (Hakkında, doğrulama tablosu) → öneri (Planlayıcı, gecikme kaydırıcısı oynarken). Tur senaryolarındaki

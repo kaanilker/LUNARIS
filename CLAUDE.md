@@ -32,6 +32,15 @@ Sıradaki işler veri hattı pilotu ve site iskeleti. Açık iş `.ajan/aktif-is
 | Teslim öncesi kontrol | `DEMO.md` |
 | Fikir ajanı brifi · onaylanmamış fikirler | `docs/fikir-ajani-brifi.md` · `docs/fikirler/` (ÖNERİ) |
 
+## Karar yetkisi
+**KARAR (kullanıcı, 2026-11-14):** Teknik ve tasarım ayrıntılarında ajan karar verir ve uygular; kullanıcıya
+sormaz. Kapsam: çizim ve gösterim biçimi, kütüphane ve araç seçimi, adres ve dosya yapısı, algoritma
+ayrıntısı, tasarım belirteçlerinin `docs/tasarim.md` §4 ölçütleriyle seçimi. Ajan bunları sahip belgeye
+"KARAR (ajan, yetkiyle)" etiketi ve tek cümle gerekçeyle yazar.
+Kapsam dışı, kullanıcıya sorulur: ürün kapsamı ve yön (yeni sayfa ya da özellik, Planlayıcı girdileri,
+parametre setinin önerdiği ek özellikler), geri alması pahalı ya da dışa dönük adımlar. Bilimsel değer ve
+yöntem bilim ekibinden gelir (parametre seti).
+
 ## Bu projeye özgü kurallar
 - **Bilimsel sayı uydurulmaz.** Koordinat, tarih, eşik, tolerans yalnız parametre setinden
   (`docs/LUNARIS_bilim_parametre_seti.md`) gelir; sitede kullanım biçimini kullanıcı kararları belirler. Yoksa yer tutucu kalır ve arayüzde "yer tutucu" yazar. (Brif ilkesi.)

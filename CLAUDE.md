@@ -19,6 +19,7 @@ Bilimsel sonuç raporlanırken ayrıca `/arastirma-bitti` (sabit girdi, neye kar
 |---|---|
 | Challenge, brif ve NASA kaynak metni (değişmez) | `docs/kaynak/` |
 | Problem, demo akışı, kapsam | `SPEC.md` |
+| Yazılım ekibi için projenin tamamının özeti (sahip belgelere bağlanır) | `docs/proje-taslagi.md` |
 | Mimari kararlar ve öneriler | `docs/mimari.md` |
 | Sayfa yapısı ve adresler | `docs/sayfalar.md` |
 | Bilimsel parametre, site, görev, tolerans | `docs/bilim-girdileri.md` (B1…) |

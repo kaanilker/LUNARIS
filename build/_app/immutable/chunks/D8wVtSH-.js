@@ -1,0 +1,3 @@
+import{rt as e}from"./CHxWu12g.js";var t=e=>e;function n(e){let t=e-1;return t*t*t+1}function r(e){let t=typeof e==`string`&&e.match(/^\s*(-?[\d.]+)([^\s]*)\s*$/);return t?[parseFloat(t[1]),t[2]||`px`]:[e,`px`]}function i(e,{delay:n=0,duration:r=400,easing:i=t}={}){let a=+getComputedStyle(e).opacity;return{delay:n,duration:r,easing:i,css:e=>`opacity: ${e*a}`}}function a(e,{delay:t=0,duration:i=400,easing:a=n,x:o=0,y:s=0,opacity:c=0}={}){let l=getComputedStyle(e),u=+l.opacity,d=l.transform===`none`?``:l.transform,f=u*(1-c),[p,m]=r(o),[h,g]=r(s);return{delay:t,duration:i,easing:a,css:(e,t)=>`
+			transform: ${d} translate(${(1-e)*p}${m}, ${(1-e)*h}${g});
+			opacity: ${u-f*t}`}}var o=e({acik:!1,adim:0});export{i as n,a as r,o as t};

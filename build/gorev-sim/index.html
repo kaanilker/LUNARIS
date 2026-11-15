@@ -1,0 +1,4369 @@
+<!DOCTYPE html>
+<!-- LUNARIS entegrasyonu (2026-11-15): kaynak index/index.html kopyasıdır. Tek değişiklik: aşağıdaki <style> başında iframe içinde tam yükseklik için "html, body { height:100%; margin:0 }" kuralı. CDN bağlantıları ve kalan içerik değiştirilmedi. -->
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUNARIS — Görev Simülasyonu ve Zaman Çizelgesi</title>
+  <style>
+html, body { height: 100%; margin: 0; }
+.calibre {
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre1 {
+  background-color: #000;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  overflow: hidden;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre2 {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom-color: rgba(56, 189, 248, 0.3);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.3);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 12px;
+  border-right-color: rgba(56, 189, 248, 0.3);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.3);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  left: 20px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  position: absolute;
+  top: 20px;
+  width: 320px;
+  z-index: 10;
+}
+.calibre3 {
+  background: #0f172a;
+  border-bottom-color: rgba(56, 189, 248, 0.5);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.5);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(56, 189, 248, 0.5);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.5);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #7dd3fc;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  height: 26px;
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 26px;
+  z-index: 2;
+}
+.calibre4 {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 4px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 28px;
+  padding-top: 0;
+  page-break-before: always;
+}
+.calibre5 {
+  background: rgba(2, 6, 23, 0.72);
+  border-bottom-color: rgba(56, 189, 248, 0.28);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.28);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 8px;
+  border-right-color: rgba(56, 189, 248, 0.28);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.28);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 4px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+.calibre6 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre7 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre8 {
+  background: #0f172a;
+  border-bottom-color: rgba(56, 189, 248, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(56, 189, 248, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #e0f2fe;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+}
+.calibre9 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 3px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre10 {
+  background: #0f172a;
+  border-bottom-color: #334155;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #334155;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: #334155;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #334155;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #f8fafc;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 5px;
+  width: 100%;
+}
+.calibre11 {
+  border-top-color: rgba(56, 189, 248, 0.28);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 14px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 12px;
+  position: relative;
+  width: 100%;
+}
+.calibre12 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 6px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre13 {
+  background: rgba(2, 6, 23, 0.85);
+  border-bottom-color: rgba(251, 146, 60, 0.45);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(251, 146, 60, 0.45);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 9px;
+  border-right-color: rgba(251, 146, 60, 0.45);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(251, 146, 60, 0.45);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  line-height: 1.45;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 11px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 11px;
+}
+.calibre14 {
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre15 {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  list-style-type: decimal;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 19px;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre16 {
+  background: #0f172a;
+  border-bottom-color: rgba(56, 189, 248, 0.45);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.45);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 12px;
+  border-right-color: rgba(56, 189, 248, 0.45);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.45);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  padding-bottom: 18px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 18px;
+  width: min(340px, calc(100vw - 32px));
+}
+.calibre17 {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre18 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre19 {
+  background: #075985;
+  border-bottom-color: rgba(56, 189, 248, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(56, 189, 248, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #e0f2fe;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+}
+.calibre20 {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.94);
+  border-bottom-color: rgba(56, 189, 248, 0.38);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.38);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 12px;
+  border-right-color: rgba(56, 189, 248, 0.38);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.38);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  left: 352px;
+  line-height: 1.45;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  position: absolute;
+  top: 20px;
+  width: min(350px, calc(100vw - 40px));
+  z-index: 12;
+}
+.calibre21 {
+  background: #0f172a;
+  border-bottom-color: rgba(148, 163, 184, 0.4);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(148, 163, 184, 0.4);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(148, 163, 184, 0.4);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(148, 163, 184, 0.4);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  height: 26px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  width: 26px;
+}
+.calibre22 {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1.33333em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 30px;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  page-break-before: always;
+}
+.calibre23 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre24 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 12px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre25 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  list-style-type: decimal;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 22px;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre26 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  list-style-type: disc;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 18px;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre27 {
+  box-sizing: border-box;
+  display: list-item;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre28 {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.96);
+  border-bottom-color: rgba(56, 189, 248, 0.4);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.4);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 12px;
+  border-right-color: rgba(56, 189, 248, 0.4);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.4);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  line-height: 1.5;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: min(390px, calc(100vw - 40px));
+  z-index: 15;
+}
+.calibre29 {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 6px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre30 {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1.33333em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 30px;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  page-break-before: always;
+}
+.calibre31 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 6px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre32 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 3px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 12px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre33 {
+  background: rgba(2, 6, 23, 0.55);
+  border-bottom-color: rgba(56, 189, 248, 0.25);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.25);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 8px;
+  border-right-color: rgba(56, 189, 248, 0.25);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.25);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 12px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+.calibre34 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 4px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 14px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre35 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: list-item;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 6px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre36 {
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre37 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre38 {
+  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom-color: rgba(56, 189, 248, 0.3);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.3);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 14px;
+  border-right-color: rgba(56, 189, 248, 0.3);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.3);
+  border-top-style: solid;
+  border-top-width: 1px;
+  bottom: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 8px;
+  left: 50%;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-width: 800px;
+  padding-bottom: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 14px;
+  position: absolute;
+  transform: translatex(-50%);
+  width: 70vw;
+  z-index: 10;
+}
+.calibre39 {
+  accent-color: #38bdf8;
+  box-sizing: border-box;
+  cursor: pointer;
+  flex: 1;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre40 {
+  box-sizing: border-box;
+  color: #94a3b8;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre41 {
+  bottom: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 6px;
+  left: 20px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  position: absolute;
+  z-index: 14;
+}
+.calibre42 {
+  box-sizing: border-box;
+  fill: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  height: 20px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 20px;
+}
+.calibre43 {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom-color: rgba(56, 189, 248, 0.38);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.38);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 10px;
+  border-right-color: rgba(56, 189, 248, 0.38);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.38);
+  border-top-style: solid;
+  border-top-width: 1px;
+  bottom: 46px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  gap: 12px;
+  grid-template-columns: 1fr 125px;
+  left: 48px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 12px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 12px;
+  position: absolute;
+  width: min(390px, calc(100vw - 100px));
+}
+.calibre44 {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre45 {
+  align-items: center;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  cursor: pointer;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  gap: 7px;
+  line-height: 1.3;
+  margin-bottom: 7px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre46 {
+  accent-color: #ff8a1f;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre47 {
+  box-sizing: border-box;
+  color: #fb923c;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  grid-column: 1/-1;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 2px;
+  min-height: 1.1em;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre48 {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom-color: rgba(251, 146, 60, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(251, 146, 60, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 10px;
+  border-right-color: rgba(251, 146, 60, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(251, 146, 60, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  bottom: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
+  color: #e2e8f0;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  left: 48px;
+  line-height: 1.65;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 10px;
+  position: absolute;
+  width: 265px;
+}
+.calibre49 {
+  box-sizing: border-box;
+  color: #ffb36b;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  margin-bottom: 3px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre50 {
+  background: #1e293b;
+  border-bottom-color: #fb923c;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #fb923c;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 4px;
+  border-right-color: #fb923c;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #fb923c;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #fed7aa;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 1em;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  min-width: 1.4em;
+  padding-bottom: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0;
+  text-align: center;
+}
+.calibre51 {
+  background: rgba(15, 23, 42, 0.88);
+  border-bottom-color: rgba(255, 138, 31, 0.65);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(255, 138, 31, 0.65);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(255, 138, 31, 0.65);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(255, 138, 31, 0.65);
+  border-top-style: solid;
+  border-top-width: 1px;
+  bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  color: #ffd8a8;
+  display: none;
+  font-family: ui-monospace, "Cascadia Mono", monospace;
+  font-size: 0.58333em;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  pointer-events: none;
+  position: fixed;
+  right: 16px;
+  white-space: pre;
+  z-index: 20;
+}
+.calibre52 {
+  background: #0f172a;
+  border-bottom-color: rgba(255, 138, 31, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(255, 138, 31, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 12px;
+  border-right-color: rgba(255, 138, 31, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(255, 138, 31, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
+  color: #e2e8f0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  padding-bottom: 18px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 18px;
+  width: min(410px, calc(100vw - 32px));
+}
+.calibre53 {
+  box-sizing: border-box;
+  color: #ffb36b;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre54 {
+  background: #090f1d;
+  border-bottom-color: #334155;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #334155;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: #334155;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #334155;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #f8fafc;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  width: 100%;
+}
+.calibre55 {
+  background: #0f172a;
+  border-bottom-color: rgba(251, 146, 60, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(251, 146, 60, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(251, 146, 60, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(251, 146, 60, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #ffedd5;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 7px;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 7px;
+}
+.calibre56 {
+  background: #c2410c;
+  border-bottom-color: #fb923c;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #fb923c;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: #fb923c;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #fb923c;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 7px;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 7px;
+}
+.calibre57 {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  height: 100vh;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  width: 100vw;
+}
+.calibre58 {
+  background: rgba(15, 23, 42, 0.94);
+  border-bottom-color: #38bdf8;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #38bdf8;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 8px;
+  border-right-color: #38bdf8;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #38bdf8;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  display: block;
+  font-family: system-ui;
+  font-size: 0.75em;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  left: 50%;
+  line-height: normal;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-width: 460px;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 10px;
+  position: fixed;
+  top: 18px;
+  transform: translatex(-50%);
+  z-index: 30;
+}
+.control-group {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.control-group1 {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.control-group2 {
+  box-sizing: border-box;
+  display: block;
+  flex: 1;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.dialog-actions {
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 16px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.dialog-actions1 {
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 14px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.eval-caveat {
+  box-sizing: border-box;
+  color: #fbbf24;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.eval-heading {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.flex-row {
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 8px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.goto-hint {
+  box-sizing: border-box;
+  color: #fdba74;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 8px;
+  min-height: 1.2em;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.map-btn {
+  backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.88);
+  border-bottom-color: rgba(56, 189, 248, 0.45);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.45);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 8px;
+  border-right-color: rgba(56, 189, 248, 0.45);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.45);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #7dd3fc;
+  cursor: pointer;
+  display: grid;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  height: 40px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  place-items: center;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  width: 40px;
+}
+.play-btn {
+  background: #38bdf8;
+  border-bottom-color: currentColor;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-left-color: currentColor;
+  border-left-style: none;
+  border-left-width: medium;
+  border-radius: 6px;
+  border-right-color: currentColor;
+  border-right-style: none;
+  border-right-width: medium;
+  border-top-color: currentColor;
+  border-top-style: none;
+  border-top-width: medium;
+  box-sizing: border-box;
+  color: #0f172a;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 6px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 6px;
+  transition: background 0.2s;
+}
+.result-warning {
+  box-sizing: border-box;
+  color: #fbbf24;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sf-badge {
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.77778em;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+  white-space: nowrap;
+}
+.sfd-action-btn {
+  background: #075985;
+  border-bottom-color: rgba(56, 189, 248, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(56, 189, 248, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #f0f9ff;
+  cursor: pointer;
+  flex: 1;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 6px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 6px;
+  text-align: center;
+}
+.sfd-action-btn1 {
+  background: #9a3412;
+  border-bottom-color: #fb923c;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #fb923c;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: #fb923c;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #fb923c;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #ffedd5;
+  cursor: pointer;
+  flex: 1;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 6px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 6px;
+  text-align: center;
+}
+.sfd-action-btn2 {
+  background: #075985;
+  border-bottom-color: rgba(56, 189, 248, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(56, 189, 248, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #f0f9ff;
+  cursor: pointer;
+  display: none;
+  flex: 1;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 6px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 6px;
+  text-align: center;
+}
+.sfd-actions {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 6px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 9px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sfd-header {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 8px;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sfd-meta {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  display: block;
+  font-family: ui-monospace, monospace;
+  font-size: 1em;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sfd-section-title {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 7px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sfd-text {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sfd-title {
+  box-sizing: border-box;
+  color: #ffb36b;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.status-badge {
+  background: rgba(51, 65, 85, 0.38);
+  border-bottom-color: rgba(148, 163, 184, 0.4);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(148, 163, 184, 0.4);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 4px;
+  border-right-color: rgba(148, 163, 184, 0.4);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(148, 163, 184, 0.4);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+}
+.subtitle {
+  box-sizing: border-box;
+  color: #94a3b8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.time-display {
+  box-sizing: border-box;
+  color: #38bdf8;
+  font-family: monospace;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.timeline-controls {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 12px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.timeline-header {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  justify-content: space-between;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.pcalibre2:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+.pcalibre1:hover {
+  background: #7dd3fc;
+}
+.pcalibre3:hover {
+  background: #ea580c;
+}
+.pcalibre:hover {
+  filter: brightness(1.15);
+}
+
+  </style>
+</head>
+<body class="calibre1">
+<div id="ui-panel" class="calibre2">
+    <button id="ui-collapse-button" type="button" aria-label="Paneli daralt" aria-expanded="true" title="Paneli daralt" class="calibre3">⌃</button>
+    <h2 class="calibre4">LUNARIS • Görev Planlayıcı</h2>
+    <p class="subtitle">İniş noktası ve başlangıç zamanı seçimi</p>
+    <section id="site-evaluation" aria-live="polite" class="calibre5">
+      <div class="eval-heading">Tarih ve saate göre aday iniş bölgesi</div>
+      <strong id="best-site" class="calibre6">Hesaplanıyor…</strong>
+      <p id="selected-mission-datetime" class="calibre7"></p>
+      <p id="selected-site-evidence" aria-live="polite" class="calibre7"></p>
+      <p class="eval-caveat">Tüm güney yarımküre yaklaşık bir koordinat ağıyla taranır. Güneşlenme hesabı basitleştirilmiştir; DEM olmadığından eğim ve iniş güvenliği doğrulanamaz.</p>
+    </section>
+    <div class="control-group">
+      <button id="mission-date-button" type="button" class="calibre8">Tarih ve saat seç</button>
+    </div>
+    <div class="control-group">
+      <label for="body-focus" class="calibre9">Gök cismi odağı:</label>
+      <select id="body-focus" class="calibre10">
+        <option value="moon" class="calibre">Ay</option>
+        <option value="earth" class="calibre">Dünya</option>
+        <option value="sun" class="calibre">Güneş</option>
+      </select>
+    </div>
+    <section id="sample-flights-panel" aria-labelledby="sample-flights-title" class="calibre11">
+      <button id="sample-collapse-button" type="button" aria-label="Örnek uçuşları daralt" aria-expanded="true" title="Paneli daralt" class="calibre3">⌃</button>
+      <h2 id="sample-flights-title" class="calibre4">Örnek Uçuşlar &amp; Adaylar</h2>
+      <p class="subtitle">Bir görevi seçip iniş bölgesine gidebilir ve görev raporunu inceleyebilirsin</p>
+      <div id="sample-flight-list" role="list" class="calibre12"></div>
+      <div id="sample-flight-detail" aria-live="polite" hidden="" class="calibre13">
+        <div class="sfd-header">
+          <div class="sfd-title" id="sfd-title"></div>
+          <span class="sf-badge" id="sfd-badge"></span>
+        </div>
+        <div class="sfd-meta" id="sfd-meta"></div>
+        <div class="sfd-section-title" id="sfd-info-label">İniş ve Görev Bilgileri</div>
+        <p class="sfd-text" id="sfd-info"></p>
+        <div class="sfd-section-title" id="sfd-reason-label">Neden Bu Bölge Seçildi?</div>
+        <p class="sfd-text" id="sfd-reason"></p>
+        <div class="sfd-actions">
+          <button type="button" class="sfd-action-btn pcalibre" id="sfd-fly-btn">🎯 Bölgeye git</button>
+          <button type="button" class="sfd-action-btn1 pcalibre" id="sfd-fp-btn">👨‍🚀 1. Kişi (Yüzey) Modu</button>
+        
+          <button type="button" class="sfd-action-btn2 pcalibre" id="sfd-alternative-btn" hidden="">🧭 Alternatif öner</button>
+        </div>
+        <div id="sfd-alternatives" hidden="" aria-live="polite" class="calibre14">
+          <div class="sfd-section-title">Alternatif güney kutbu bölgeleri</div>
+          <ol id="sfd-alternative-list" class="calibre15"></ol>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  
+<dialog id="mission-dialog" aria-labelledby="mission-dialog-title" class="calibre16">
+    <form id="mission-form" class="calibre17">
+      <h3 id="mission-dialog-title" class="calibre18">Görev tarihini ve saatini seç</h3>
+      <div class="control-group1">
+        <label for="mission-date" class="calibre9">Planlanan tarih</label>
+        <input type="date" id="mission-date" value="2026-11-15" required="" class="calibre10">
+      </div>
+      <div class="control-group1">
+        <label for="mission-time" class="calibre9">Planlanan saat</label>
+        <input type="time" id="mission-time" value="12:00" required="" class="calibre10">
+      </div>
+      <div class="dialog-actions">
+        <button id="mission-dialog-cancel" type="button" class="calibre8">Vazgeç</button>
+        <button type="submit" class="calibre19">Uygula</button>
+      </div></form>
+    
+  </dialog>
+
+  
+<aside id="landing-result-panel" aria-labelledby="landing-result-title" aria-live="polite" hidden="" class="calibre20">
+    <button id="landing-result-close" type="button" aria-label="Sonuç panelini kapat" class="calibre21">×</button>
+    <h2 id="landing-result-title" class="calibre22">İniş bölgesi ön değerlendirmesi</h2>
+    <p id="result-mission-time" class="calibre23"></p>
+    <h3 id="result-site-name" class="calibre24">Aday bölge hesaplanıyor…</h3>
+    <p id="result-site-coordinates" class="calibre23"></p>
+    <p id="result-solar-elevation" class="calibre23"></p>
+    <p id="result-illumination" class="calibre23"></p>
+    <h3 class="calibre24">En uygun 5 aday (sıralı)</h3>
+    <p id="result-scan-info" class="calibre23"></p>
+    <ol id="result-candidate-list" class="calibre25"></ol>
+    <h3 class="calibre24">Parametre değerlendirmesi</h3>
+    <ul class="calibre26">
+      <li id="result-sun-check" class="calibre27"></li>
+      <li id="result-slope-check" class="calibre27"></li>
+      <li id="result-duration-check" class="calibre27"></li>
+      <li id="result-dem-check" class="calibre27"></li>
+    </ul>
+    <p class="result-warning">Bu, mevcut adaylar arasındaki yaklaşık bir öneridir. Koordinat bazlı arazi ve zaman serisi verisi olmadan iniş güvenliği doğrulanamaz.</p>
+  </aside>
+  
+<aside id="feature-info-panel" aria-labelledby="feature-info-title" aria-live="polite" hidden="" class="calibre28">
+    <button id="feature-info-close" type="button" aria-label="Bilgi panelini kapat" class="calibre21">×</button>
+    <p id="feature-info-category" class="calibre29"></p>
+    <h2 id="feature-info-title" class="calibre30"></h2>
+    <p id="feature-info-coordinates" class="calibre31"></p>
+    <p id="feature-info-description" class="calibre31"></p>
+    <h3 id="feature-info-detail-label" hidden="" class="calibre32"></h3>
+    <p id="feature-info-detail" hidden="" class="calibre31"></p>
+    <section id="feature-info-parameters" hidden="" class="calibre33">
+      <h3 class="calibre34">Güney kutbu planlama parametreleri</h3>
+      <ol class="calibre15">
+        <li class="calibre35"><strong class="calibre36">Topografya:</strong> LOLA DEM 10 / 30 / 80 m çözünürlükleri; kalıcı gölge (PSR) maskesi.</li>
+        <li class="calibre35"><strong class="calibre36">Aydınlanma:</strong> 18,6 yıllık presesyon döngüsü; Connecting Ridge %92,27 (2 m) ve %95,65 (10 m).</li>
+        <li class="calibre35"><strong class="calibre36">Enerji:</strong> Shackleton A1 için 73–117 saat depolama; 10 km uzaktaki B sahası bağlantısıyla 68 saat.</li>
+        <li class="calibre35"><strong class="calibre36">İniş güvenliği:</strong> eğim &lt;8°; 8° yamaçlardan en az 100 m tampon.</li>
+        <li class="calibre35"><strong class="calibre36">Dünya / iletişim:</strong> kutupta Dünya ufkun üstünde %48,4; kesintisiz pencere ort. 13,1 gün, en çok 14,4 gün.</li>
+        <li class="calibre35"><strong class="calibre36">Gateway:</strong> 9:2 NRHO dönemi ortalama 6,56 gün; görev kalış süresini tek başına belirlemez.</li>
+        <li class="calibre35"><strong class="calibre36">DE440:</strong> Ay ortalama yarıçapı 1.737,4 km; librasyon döngüsü 27,22 gün.</li>
+      </ol>
+      <p class="calibre31">Bu değerler bölgesel planlama bağlamıdır; her görevin sahasında ölçülmüş sonuçlar değildir.</p>
+    </section>
+    <p class="calibre31"><a id="feature-info-source" href="https://science.nasa.gov/moon/missions/" target="_blank" rel="noopener noreferrer" class="calibre37">NASA Ay görevleri</a></p>
+  </aside>
+
+  
+<div id="timeline-container" class="calibre38">
+    <div class="timeline-header">
+      <div class="calibre17">Simülasyon Zamanı: <span id="current-time-label" class="time-display">15 Kas 2026 - 12:00 (Gün 0)</span></div>
+      <div id="power-status" class="status-badge">Konum ve tarih bazlı güneşlenme verisi bekleniyor</div>
+    </div>
+    <div class="timeline-controls">
+      <button id="play-pause-btn" class="play-btn pcalibre1">Oynat ❚▶</button>
+      <input type="range" id="timeline-slider" min="0" max="720" value="0" step="1" class="calibre39">
+      <span class="calibre40">30 Günlük Döngü</span>
+    </div>
+  </div>
+
+  
+<div id="map-controls" class="calibre41">
+    <button id="map-fly" class="map-btn pcalibre2" type="button" aria-label="Aya uç (Koordinat seç)" title="Aya uç — Gitmek istediğiniz koordinatları seçin">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="calibre42"><line x1="22" y1="2" x2="11" y2="13" class="calibre"></line><polygon points="22 2 15 22 11 13 2 9 22 2" class="calibre"></polygon></svg>
+    </button>
+    <button id="map-zoom-in" class="map-btn pcalibre2" type="button" aria-label="Yakınlaştır" title="Yakınlaştır">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="calibre42"><line x1="12" y1="5" x2="12" y2="19" class="calibre"></line><line x1="5" y1="12" x2="19" y2="12" class="calibre"></line></svg>
+    </button>
+    <button id="map-zoom-out" class="map-btn pcalibre2" type="button" aria-label="Uzaklaştır" title="Uzaklaştır">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="calibre42"><line x1="5" y1="12" x2="19" y2="12" class="calibre"></line></svg>
+    </button>
+    <button id="map-open" class="map-btn pcalibre2" type="button" aria-label="Harita seçenekleri" aria-expanded="false" aria-controls="map-panel" title="Projections &amp; Graticule">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="calibre42"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" class="calibre"></polygon><line x1="8" y1="2" x2="8" y2="18" class="calibre"></line><line x1="16" y1="6" x2="16" y2="22" class="calibre"></line></svg>
+    </button>
+    <button id="map-gamepad" class="map-btn pcalibre2" type="button" aria-label="Klavye ile hareket (Oyun konsolu)" aria-pressed="false" title="Klavye ile hareket (Yalnızca 3D Globe)">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="calibre42"><rect x="2" y="7" width="20" height="11" rx="5.5" class="calibre"></rect><line x1="7" y1="10.5" x2="7" y2="14.5" class="calibre"></line><line x1="5" y1="12.5" x2="9" y2="12.5" class="calibre"></line><circle cx="15.5" cy="11.5" r="0.9" class="calibre"></circle><circle cx="18" cy="13.8" r="0.9" class="calibre"></circle></svg>
+    </button>
+    <div id="map-panel" role="group" aria-label="Harita seçenekleri" hidden="" class="calibre43">
+      <div class="calibre17">
+        <h4 class="calibre44">Projections</h4>
+        <div id="map-list" role="radiogroup" aria-label="Projections" class="calibre17"></div>
+      </div>
+      <div class="calibre17">
+        <h4 class="calibre44">Katmanlar</h4>
+        <label class="calibre45"><input type="checkbox" id="graticule-toggle" class="calibre46"> Graticule (Turuncu Ağ)</label>
+        <label class="calibre45"><input type="checkbox" id="nomenclature-toggle" class="calibre46"> Nomenclature (İsimler)</label>
+      </div>
+      <p id="map-status" role="status" aria-live="polite" class="calibre47"></p>
+    </div>
+    <div id="gamepad-hint" role="note" hidden="" class="calibre48">
+      <div class="calibre49">3D Globe Klavye Kontrolü</div>
+      <div class="calibre17"><kbd class="calibre50">W</kbd><kbd class="calibre50">A</kbd><kbd class="calibre50">S</kbd><kbd class="calibre50">D</kbd> / <kbd class="calibre50">↑</kbd><kbd class="calibre50">↓</kbd><kbd class="calibre50">←</kbd><kbd class="calibre50">→</kbd> yürü</div>
+      <div class="calibre17"><kbd class="calibre50">Q</kbd> yüksel  <kbd class="calibre50">E</kbd> alçal</div>
+      <div class="calibre17"><kbd class="calibre50">R</kbd> yukarı bak  <kbd class="calibre50">F</kbd> aşağı bak</div>
+      <div class="calibre17"><kbd class="calibre50">Z</kbd> saat yönü  <kbd class="calibre50">C</kbd> saat yönü tersi</div>
+    </div>
+  </div>
+
+  
+<div id="coord-readout" hidden="" class="calibre51"></div>
+
+  
+<dialog id="goto-dialog" aria-labelledby="goto-title" class="calibre52">
+    <form id="goto-form" class="calibre17">
+      <h3 id="goto-title" class="calibre53">Gitmek istediğiniz koordinatları seçin</h3>
+      <p class="subtitle">Gerçek NASA LROC / USGS / IAU veri tabanından bir bölge seçin veya doğrudan enlem/boylam girin:</p>
+      <div class="control-group">
+        <label for="goto-place" class="calibre9">NASA / IAU Doğrulanmış Ay Bölgeleri</label>
+        <select id="goto-place" class="calibre10"><option value="" class="calibre">— Özel koordinat girin —</option></select>
+      </div>
+      <div class="flex-row">
+        <div class="control-group2">
+          <label for="goto-lat" class="calibre9">Enlem (−90° … +90°, K:+ / G:−)</label>
+          <input id="goto-lat" type="number" min="-90" max="90" step="any" value="-89.9" required="" class="calibre54">
+        </div>
+        <div class="control-group2">
+          <label for="goto-lon" class="calibre9">Boylam (−180° … +180°, D:+ / B:−)</label>
+          <input id="goto-lon" type="number" min="-180" max="180" step="any" value="0.0" required="" class="calibre54">
+        </div>
+      </div>
+      <p id="goto-hint" class="goto-hint" role="status">Shackleton Krateri Kenarı: -89.90° G, 0.00° D</p>
+      <div class="dialog-actions1">
+        <button id="goto-cancel" type="button" class="calibre55">Vazgeç</button>
+        <button type="submit" class="pcalibre3 calibre56">Koordinata Uç ✈</button>
+      </div></form>
+    
+  </dialog>
+
+  
+<div id="canvas-container" class="calibre57"></div>
+  
+<div id="model-status" class="calibre58">3B modeller yükleniyor…</div>
+
+  
+<script class="calibre14">
+    (() => {
+      const bindCollapse = (panelId, btnId) => {
+        const panel = document.getElementById(panelId);
+        const button = document.getElementById(btnId);
+        if (!panel || !button) return;
+        button.addEventListener('click', () => {
+          const collapsed = panel.classList.toggle('panel-collapsed');
+          button.textContent = collapsed ? '⌄' : '⌃';
+          button.setAttribute('aria-expanded', String(!collapsed));
+          button.setAttribute('aria-label', collapsed ? 'Paneli aç' : 'Paneli daralt');
+          button.title = collapsed ? 'Paneli aç' : 'Paneli daralt';
+        });
+      };
+      bindCollapse('ui-panel', 'ui-collapse-button');
+      bindCollapse('sample-flights-panel', 'sample-collapse-button');
+      window.addEventListener('error', (event) => {
+        const status = document.getElementById('model-status');
+        if (status && event.target instanceof HTMLScriptElement) {
+          status.style.borderColor = '#f87171';
+          status.textContent = 'Three.js modülleri yüklenemedi. İnternet bağlantısını kontrol edip sayfayı yenileyin.';
+        }
+      }, true);
+    })();
+  </script>
+
+  
+<script type="importmap" class="calibre14">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  
+<script type="module" class="calibre14">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+    import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.2, 250000);
+    const defaultCameraNear = camera.near;
+    camera.position.set(0, -4.5, 4.5);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, logarithmicDepthBuffer: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    container.appendChild(renderer.domElement);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.minDistance = 0.5;
+    controls.maxDistance = 220000;
+    controls.zoomSpeed = 0.45;
+    let cameraFlight = null;
+    controls.addEventListener('start', () => { cameraFlight = null; });
+
+    const moonRadius = 2.0;
+    const modelScaleFactor = 8;
+    const moonSizeMultiplier = 1.8;
+    const moonVisualRadius = moonRadius * modelScaleFactor * moonSizeMultiplier;
+    const earthVisualDiameter = moonRadius * 2 * (12742 / 3474.8) * modelScaleFactor * 1.5;
+    const sunVisualDiameter = moonRadius * 2 * (1392700 / 3474.8) * modelScaleFactor / 50;
+    const sceneUnitsPerKm = moonRadius / (1737.4 * 9);
+    const earthMoonDistance = Math.max(384400 * sceneUnitsPerKm, (earthVisualDiameter / 1.5) * 1.15) * 1.5;
+    const earthSunDistance = 149597870 * sceneUnitsPerKm * 0.02 * 1.6;
+    const initialMoonPhase = Math.PI / 2;
+    const earthPosition = new THREE.Vector3(earthSunDistance, 0, 0);
+    const moonPosition = new THREE.Vector3(
+      earthSunDistance + Math.cos(initialMoonPhase) * earthMoonDistance,
+      0,
+      Math.sin(initialMoonPhase) * earthMoonDistance
+    );
+    const sunPosition = new THREE.Vector3(0, 0, 0);
+    const UP_Y = new THREE.Vector3(0, 1, 0);
+
+    const sunModelGroup = new THREE.Group();
+    sunModelGroup.userData.focusBody = 'sun';
+    scene.add(sunModelGroup);
+
+    const earthModelGroup = new THREE.Group();
+    earthModelGroup.userData.focusBody = 'earth';
+    earthModelGroup.position.copy(earthPosition);
+    scene.add(earthModelGroup);
+
+    const moonMesh = new THREE.Group();
+    moonMesh.userData.focusBody = 'moon';
+    moonMesh.position.copy(moonPosition);
+    scene.add(moonMesh);
+
+    function createOrbitLine(radius, opacity = 0.45, segments = 512) {
+      const points = [];
+      for (let i = 0; i < segments; i++) {
+        const angle = (i / segments) * Math.PI * 2;
+        points.push(new THREE.Vector3(Math.cos(angle) * radius, 0, Math.sin(angle) * radius));
+      }
+      const geometry = new THREE.BufferGeometry().setFromPoints(points);
+      const material = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity, depthWrite: false });
+      return new THREE.LineLoop(geometry, material);
+    }
+    const earthOrbitLine = createOrbitLine(earthSunDistance, 0.3);
+    const moonOrbitLine = createOrbitLine(earthMoonDistance);
+    scene.add(earthOrbitLine);
+    earthModelGroup.add(moonOrbitLine);
+
+    const LUNAR_PLACES = [
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Shackleton Krateri Kenarı', lat: -89.90, lon: 0.00, desc: 'Güney kutbu; %85,5–%92,1 aydınlanma (C3)' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Connecting Ridge', lat: -89.40, lon: -137.50, desc: '2 m’de %92,27, 10 m’de %95,65 aydınlanma (C2)' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Peak Near Shackleton', lat: -88.80, lon: 123.70, desc: 'NASA Artemis III aday bölgesi [E3, E4]' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Malapert Massif', lat: -85.50, lon: 12.90, desc: 'Yüksek Dünya görünürlüğü (%74,7 / ~20 gün) [G1]' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Cabeus Krateri (LCROSS)', lat: -84.68, lon: -48.72, desc: 'LCROSS su buzu tespit noktası (%5,6 ± 2,9) [H2]' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Haworth Krateri', lat: -87.45, lon: -5.17, desc: 'Artemis III aday bölgesi ve PSR alanı [E4]' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Shoemaker Krateri', lat: -88.14, lon: 45.91, desc: 'Kalıcı gölgeli su buzu krateri [D1]' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Faustini Krateri Kenarı', lat: -87.18, lon: 84.31, desc: 'Artemis III aday bölgesi [E4]' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'de Gerlache Krateri Kenarı', lat: -88.48, lon: -88.34, desc: 'Artemis III aday bölgesi [E4]' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Nobile Krateri Kenarı (VIPER)', lat: -85.28, lon: 53.27, desc: 'NASA VIPER ve Artemis III aday bölgesi [E3]' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Amundsen Krateri Kenarı', lat: -84.44, lon: 83.07, desc: 'Artemis III aday bölgesi [E4]' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Slater Düzlüğü (Slater Plain)', lat: -88.08, lon: 111.20, desc: 'Artemis III güncellenmiş aday bölgesi [E5]' },
+      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Mons Mouton (Leibniz Beta)', lat: -85.40, lon: 31.80, desc: 'Artemis III aday platosu [E3]' },
+      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 11 (Tranquility Base)', lat: 0.67416, lon: 23.47314, desc: 'İlk insanlı Ay inişi (20 Temmuz 1969)' },
+      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 12 (Oceanus Procellarum)', lat: -3.01239, lon: -23.42157, desc: 'Hassas iniş görevi (Kasım 1969)' },
+      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 14 (Fra Mauro)', lat: -3.64530, lon: -17.47136, desc: 'Fra Mauro yaylası (Şubat 1971)' },
+      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 15 (Hadley-Apennine)', lat: 26.13239, lon: 3.63386, desc: 'İlk Ay Rover görevi (Temmuz 1971)' },
+      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 16 (Descartes)', lat: -8.97301, lon: 15.50019, desc: 'Merkez yaylalar (Nisan 1972)' },
+      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 17 (Taurus-Littrow)', lat: 20.19080, lon: 30.77168, desc: 'Son Apollo inişi (Aralık 1972)' },
+      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: 'IM-1 Odysseus (Malapert A)', lat: -80.1276, lon: 1.4367, desc: 'CLPS IM-1 iniş noktası (22 Şubat 2024) [G4]' },
+      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: 'Chandrayaan-3 (Statio Shiv Shakti)', lat: -69.3730, lon: 32.3190, desc: 'ISRO güney yüksek enlem inişi (23 Ağustos 2023) [I2]' },
+      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: 'SLIM (Shioli Krateri)', lat: -13.3160, lon: 25.2510, desc: 'JAXA hassas iniş noktası (Ocak 2024)' },
+      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: "Chang'e 3 (Mare Imbrium)", lat: 44.1214, lon: -19.5116, desc: 'Yutu rover iniş alanı (2013)' },
+      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: "Chang'e 4 (Von Kármán Krateri)", lat: -45.4446, lon: 177.5991, desc: 'Ay’ın uzak yüzüne ilk iniş (2019)' },
+      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: "Chang'e 5 (Mons Rümker)", lat: 43.0576, lon: -51.9161, desc: 'Numune getirme görevi (2020)' },
+      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: "Chang'e 6 (Apollo Havzası)", lat: -41.6385, lon: -153.9852, desc: 'Uzak yüzden numune getirme (2024)' },
+      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: 'Luna 9 (Oceanus Procellarum)', lat: 7.08, lon: -64.37, desc: 'Ay yüzeyine ilk yumuşak iniş (1966)' },
+      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: 'Lunokhod 1 (Luna 17)', lat: 38.2378, lon: -35.0017, desc: 'İlk uzaktan kumandalı Ay aracı (1970)' },
+      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Tycho Krateri', lat: -43.31, lon: -11.36, desc: '85 km çaplı genç parlak ışınlı krater' },
+      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Copernicus Krateri', lat: 9.62, lon: -20.08, desc: '93 km çaplı belirgin teraslı krater' },
+      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Aristarchus Platosu', lat: 23.73, lon: -47.49, desc: 'Ay’ın en parlak jeolojik oluşumlarından biri' },
+      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Plato Krateri', lat: 51.62, lon: -9.33, desc: '101 km çaplı koyu tabanlı krater' },
+      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Clavius Krateri', lat: -58.62, lon: -14.73, desc: '231 km çaplı dev güney krateri' },
+      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Tsiolkovskiy Krateri', lat: -20.38, lon: 128.97, desc: 'Uzak yüzdeki merkezi tepeli krater' },
+      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Güney Kutbu (90°G)', lat: -90.00, lon: 0.00, desc: 'Tam Güney Kutbu noktası' },
+      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Kuzey Kutbu (90°K)', lat: 90.00, lon: 0.00, desc: 'Tam Kuzey Kutbu noktası' }
+    ];
+
+    const GRATICULE_LON_OFFSET_DEG = 0;
+    const GRATICULE_LIFT = 0.0022;
+    const GRATICULE_COLOR = 0xff8a1f;
+    const GRATICULE_STRONG_COLOR = 0xff5500;
+
+    let moonSurfaceRadius = moonVisualRadius;
+    let moonModelRoot = null;
+    let moonTextureMap = null;
+    let moonShadedTexture = null;
+
+    const ELEV_LAT_STEPS = 360;
+    const ELEV_LON_STEPS = 720;
+    const lunarRadiusRatioGrid = new Float32Array((ELEV_LAT_STEPS + 1) * (ELEV_LON_STEPS + 1)).fill(1.0);
+    let hasElevationGrid = false;
+
+    function latLonToUnitVector(lat, lon) {
+      const phi = THREE.MathUtils.degToRad(90 - lat);
+      const theta = THREE.MathUtils.degToRad(lon + 180 + GRATICULE_LON_OFFSET_DEG);
+      const sinPhi = Math.sin(phi);
+      return new THREE.Vector3(-sinPhi * Math.cos(theta), Math.cos(phi), sinPhi * Math.sin(theta));
+    }
+
+    function latLonToVector3(lat, lon, radius = moonSurfaceRadius) {
+      return latLonToUnitVector(lat, lon).multiplyScalar(radius);
+    }
+
+    function localVectorToLatLon(localVec) {
+      const len = localVec.length();
+      if (len < 1e-8) return { lat: 0, lon: 0 };
+      const lat = THREE.MathUtils.radToDeg(Math.asin(THREE.MathUtils.clamp(localVec.y / len, -1, 1)));
+      let lon = THREE.MathUtils.radToDeg(Math.atan2(localVec.z, -localVec.x)) - 180 - GRATICULE_LON_OFFSET_DEG;
+      lon = ((lon + 180) % 360 + 360) % 360 - 180;
+      return { lat, lon };
+    }
+
+    function getSurfaceRadiusRatio(lat, lon) {
+      if (!hasElevationGrid) return 1.0;
+      const clampedLat = THREE.MathUtils.clamp(((lat + 90) / 180) * ELEV_LAT_STEPS, 0, ELEV_LAT_STEPS);
+      const wrappedLon = ((((lon + 180) % 360 + 360) % 360) / 360) * ELEV_LON_STEPS;
+      const lat0 = Math.floor(clampedLat);
+      const lat1 = Math.min(ELEV_LAT_STEPS, lat0 + 1);
+      const lon0 = Math.floor(wrappedLon);
+      const lon1 = (lon0 + 1) % ELEV_LON_STEPS;
+      const ty = clampedLat - lat0, tx = wrappedLon - lon0;
+      const stride = ELEV_LON_STEPS + 1;
+      return (1 - ty) * ((1 - tx) * lunarRadiusRatioGrid[lat0 * stride + lon0] + tx * lunarRadiusRatioGrid[lat0 * stride + lon1])
+           + ty * ((1 - tx) * lunarRadiusRatioGrid[lat1 * stride + lon0] + tx * lunarRadiusRatioGrid[lat1 * stride + lon1]);
+    }
+
+    function getSurfaceRadiusAt(lat, lon) {
+      return moonSurfaceRadius * getSurfaceRadiusRatio(lat, lon);
+    }
+
+    function buildLunarSurfaceGrid(model) {
+      const sums = new Float32Array((ELEV_LAT_STEPS + 1) * (ELEV_LON_STEPS + 1));
+      const counts = new Uint16Array((ELEV_LAT_STEPS + 1) * (ELEV_LON_STEPS + 1));
+      moonMesh.updateMatrixWorld(true);
+      model.updateMatrixWorld(true);
+      const toMoonLocal = new THREE.Matrix4().copy(moonMesh.matrixWorld).invert();
+      const v = new THREE.Vector3();
+      let totalRadius = 0, totalVerts = 0;
+
+      model.traverse((node) => {
+        if (!node.isMesh || !node.geometry?.attributes?.position) return;
+        if (!moonTextureMap && node.material?.map) moonTextureMap = node.material.map;
+        const posAttr = node.geometry.attributes.position;
+        const nodeToMoon = new THREE.Matrix4().multiplyMatrices(toMoonLocal, node.matrixWorld);
+        for (let i = 0; i < posAttr.count; i++) {
+          v.fromBufferAttribute(posAttr, i).applyMatrix4(nodeToMoon);
+          const r = v.length();
+          if (r > 1e-5) {
+            totalRadius += r;
+            totalVerts++;
+            const { lat, lon } = localVectorToLatLon(v);
+            const li = Math.round(THREE.MathUtils.clamp(((lat + 90) / 180) * ELEV_LAT_STEPS, 0, ELEV_LAT_STEPS));
+            const loni = Math.round(THREE.MathUtils.clamp(((lon + 180) / 360) * ELEV_LON_STEPS, 0, ELEV_LON_STEPS));
+            const idx = li * (ELEV_LON_STEPS + 1) + loni;
+            sums[idx] += r;
+            counts[idx]++;
+          }
+        }
+      });
+
+      const meanRadius = totalVerts > 0 ? totalRadius / totalVerts : moonVisualRadius;
+      if (meanRadius > 0) {
+        for (let li = 0; li <= ELEV_LAT_STEPS; li++) {
+          for (let loni = 0; loni <= ELEV_LON_STEPS; loni++) {
+            const idx = li * (ELEV_LON_STEPS + 1) + loni;
+            lunarRadiusRatioGrid[idx] = counts[idx] > 0 ? (sums[idx] / counts[idx]) / meanRadius : 1.0;
+          }
+        }
+        for (let pass = 0; pass < 3; pass++) {
+          for (let li = 1; li < ELEV_LAT_STEPS; li++) {
+            for (let loni = 0; loni <= ELEV_LON_STEPS; loni++) {
+              const idx = li * (ELEV_LON_STEPS + 1) + loni;
+              if (counts[idx] === 0) {
+                const prevLon = (loni - 1 + ELEV_LON_STEPS) % ELEV_LON_STEPS;
+                const nextLon = (loni + 1) % ELEV_LON_STEPS;
+                lunarRadiusRatioGrid[idx] = 0.25 * (
+                  lunarRadiusRatioGrid[(li - 1) * (ELEV_LON_STEPS + 1) + loni] +
+                  lunarRadiusRatioGrid[(li + 1) * (ELEV_LON_STEPS + 1) + loni] +
+                  lunarRadiusRatioGrid[li * (ELEV_LON_STEPS + 1) + prevLon] +
+                  lunarRadiusRatioGrid[li * (ELEV_LON_STEPS + 1) + nextLon]
+                );
+              }
+            }
+          }
+        }
+        hasElevationGrid = true;
+        buildElevationDataTexture();
+      }
+      return meanRadius;
+    }
+
+    let lunarElevationTexture = null;
+    function buildElevationDataTexture() {
+      const W = ELEV_LON_STEPS, H = ELEV_LAT_STEPS;
+      const stride = ELEV_LON_STEPS + 1;
+      let src = new Float32Array(W * H);
+      let dst = new Float32Array(W * H);
+      for (let y = 0; y < H; y++) {
+        for (let x = 0; x < W; x++) {
+          src[y * W + x] = lunarRadiusRatioGrid[y * stride + x];
+        }
+      }
+      for (let pass = 0; pass < 3; pass++) {
+        for (let y = 0; y < H; y++) {
+          const ym = Math.max(0, y - 1), yp = Math.min(H - 1, y + 1);
+          for (let x = 0; x < W; x++) {
+            const xm = (x - 1 + W) % W, xp = (x + 1) % W;
+            dst[y * W + x] = (
+              src[y * W + x] * 4 +
+              src[y * W + xm] * 2 + src[y * W + xp] * 2 +
+              src[ym * W + x] * 2 + src[yp * W + x] * 2 +
+              src[ym * W + xm] + src[ym * W + xp] + src[yp * W + xm] + src[yp * W + xp]
+            ) / 16;
+          }
+        }
+        const tmp = src; src = dst; dst = tmp;
+      }
+      const rgba = new Uint8Array(W * H * 4);
+      for (let i = 0; i < W * H; i++) {
+        const val = THREE.MathUtils.clamp(Math.round(((src[i] - 0.965) / 0.07) * 255), 0, 255);
+        rgba[i * 4] = val;
+        rgba[i * 4 + 1] = val;
+        rgba[i * 4 + 2] = val;
+        rgba[i * 4 + 3] = 255;
+      }
+      lunarElevationTexture = new THREE.DataTexture(rgba, W, H, THREE.RGBAFormat);
+      lunarElevationTexture.wrapS = THREE.RepeatWrapping;
+      lunarElevationTexture.wrapT = THREE.ClampToEdgeWrapping;
+      lunarElevationTexture.minFilter = THREE.LinearFilter;
+      lunarElevationTexture.magFilter = THREE.LinearFilter;
+      lunarElevationTexture.needsUpdate = true;
+    }
+
+    function moonSurfaceHit(lat, lon) {
+      const normal = latLonToUnitVector(lat, lon);
+      const r = getSurfaceRadiusAt(lat, lon);
+      return { position: normal.clone().multiplyScalar(r), normal, radius: r };
+    }
+
+    function measureMoonRadius() {
+      const worldScale = moonMesh.scale.x;
+      if (!moonModelRoot) return moonVisualRadius * worldScale;
+      return (moonModelRoot.userData.trueLocalRadius || moonVisualRadius) * worldScale;
+    }
+
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+    const loader = new GLTFLoader();
+    loader.setDRACOLoader(dracoLoader);
+
+    const modelStatus = document.getElementById('model-status');
+    let loadedModels = 0;
+    function markModelLoaded(name) {
+      loadedModels++;
+      modelStatus.style.borderColor = '#34d399';
+      modelStatus.textContent = loadedModels === 3 ? 'Ay, Dünya ve Güneş modelleri yüklendi.' : `${name} yüklendi; diğer modeller yükleniyor…`;
+      if (loadedModels === 3) setTimeout(() => modelStatus.remove(), 3500);
+    }
+
+    function normalizeAndFitMoonModel(moonModel) {
+      moonModel.traverse((node) => {
+        node.position.set(0, 0, 0);
+        node.rotation.set(0, 0, 0);
+        node.quaternion.identity();
+        node.scale.set(1, 1, 1);
+      });
+      moonModel.updateMatrixWorld(true);
+
+      const v = new THREE.Vector3(), centroid = new THREE.Vector3();
+      let count = 0;
+      moonModel.traverse((node) => {
+        if (!node.isMesh || !node.geometry?.attributes?.position) return;
+        const pos = node.geometry.attributes.position;
+        for (let i = 0; i < pos.count; i += 4) {
+          v.fromBufferAttribute(pos, i).applyMatrix4(node.matrixWorld);
+          centroid.add(v);
+          count++;
+        }
+      });
+      if (count > 0) centroid.divideScalar(count);
+      moonModel.position.sub(centroid);
+      moonModel.updateMatrixWorld(true);
+
+      let radiusSum = 0, rCount = 0;
+      moonModel.traverse((node) => {
+        if (!node.isMesh || !node.geometry?.attributes?.position) return;
+        const pos = node.geometry.attributes.position;
+        for (let i = 0; i < pos.count; i += 4) {
+          v.fromBufferAttribute(pos, i).applyMatrix4(node.matrixWorld);
+          radiusSum += v.length();
+          rCount++;
+        }
+      });
+      const scale = moonVisualRadius / (rCount > 0 ? radiusSum / rCount : 1);
+      moonModel.scale.multiplyScalar(scale);
+      moonModel.position.multiplyScalar(scale);
+      moonModel.updateMatrixWorld(true);
+      moonModel.userData.trueLocalRadius = moonVisualRadius;
+      moonModel.userData.isMoonModel = true;
+      const maxAniso = renderer.capabilities.getMaxAnisotropy();
+      moonModel.traverse((node) => {
+        if (node.isMesh) {
+          node.castShadow = false;
+          node.receiveShadow = false;
+          if (node.material?.map) {
+            node.material.map.anisotropy = maxAniso;
+            node.material.map.needsUpdate = true;
+          }
+        }
+      });
+    }
+
+    loader.load('./moon4.glb', (gltf) => {
+      const moonModel = gltf.scene;
+      normalizeAndFitMoonModel(moonModel);
+      moonMesh.add(moonModel);
+      moonModelRoot = moonModel;
+      moonModel.userData.trueLocalRadius = buildLunarSurfaceGrid(moonModel);
+      onMoonModelChanged();
+      update2DProjectionMapsTexture();
+      markModelLoaded('Ay');
+      recommendLandingSite(Number(slider.value), true);
+    }, (event) => {
+      modelStatus.textContent = event.total > 0 ? `Ay modeli indiriliyor: %${Math.round(event.loaded / event.total * 100)}` : 'Ay modeli indiriliyor (yaklaşık 167 MB)…';
+    }, (error) => { console.warn('moon4.glb bulunamadı, prosedürel model kullanılıyor'); createFallbackMoon(); });
+    function createFallbackMoon() {
+      const group = new THREE.Group();
+      const geo = new THREE.SphereGeometry(moonVisualRadius, 96, 64);
+      const pos = geo.attributes.position;
+      const v = new THREE.Vector3();
+      for (let i = 0; i < pos.count; i++) {
+        v.fromBufferAttribute(pos, i);
+        const u = v.clone().normalize();
+        const h = 0.015 * Math.sin(u.x * 11) * Math.cos(u.y * 13) + 0.008 * Math.cos(u.z * 19 + u.x * 7);
+        v.multiplyScalar(1 + h);
+        pos.setXYZ(i, v.x, v.y, v.z);
+      }
+      geo.computeVertexNormals();
+      const mat = new THREE.MeshStandardMaterial({ color: 0x9ca3af, roughness: 0.92, metalness: 0.04 });
+      const mesh = new THREE.Mesh(geo, mat);
+      group.add(mesh);
+      group.userData.trueLocalRadius = moonVisualRadius;
+      group.userData.isMoonModel = true;
+      moonMesh.add(group);
+      moonModelRoot = group;
+      group.userData.trueLocalRadius = buildLunarSurfaceGrid(group);
+      onMoonModelChanged();
+      update2DProjectionMapsTexture();
+      markModelLoaded('Ay (Prosedürel)');
+      recommendLandingSite(Number(slider.value), true);
+    }
+    function createFallbackEarth() {
+      const geo = new THREE.SphereGeometry(earthVisualDiameter * 0.5, 48, 32);
+      const mat = new THREE.MeshStandardMaterial({ color: 0x2563eb, roughness: 0.65, metalness: 0.1 });
+      earthModelGroup.add(new THREE.Mesh(geo, mat));
+      markModelLoaded('Dünya (Prosedürel)');
+    }
+    function createFallbackSun() {
+      const geo = new THREE.SphereGeometry(sunVisualDiameter * 0.5, 32, 24);
+      const mat = new THREE.MeshBasicMaterial({ color: 0xfde047 });
+      sunModelGroup.add(new THREE.Mesh(geo, mat));
+      markModelLoaded('Güneş (Prosedürel)');
+    }
+
+
+    loader.load('./earth1.glb', (gltf) => {
+      const earthModel = gltf.scene;
+      const earthSize = new THREE.Box3().setFromObject(earthModel).getSize(new THREE.Vector3());
+      const maxDim = Math.max(earthSize.x, earthSize.y, earthSize.z);
+      if (maxDim > 0) earthModel.scale.setScalar(earthVisualDiameter / maxDim);
+      earthModel.position.sub(new THREE.Box3().setFromObject(earthModel).getCenter(new THREE.Vector3()));
+      earthModelGroup.add(earthModel);
+      markModelLoaded('Dünya');
+    }, (event) => {
+      if (event.total > 0) modelStatus.textContent = `Dünya modeli indiriliyor: %${Math.round(event.loaded / event.total * 100)}`;
+    }, (error) => { createFallbackEarth(); });
+
+    loader.load('./sun2.glb', (gltf) => {
+      const sunModel = gltf.scene;
+      const sunSize = new THREE.Box3().setFromObject(sunModel).getSize(new THREE.Vector3());
+      const maxDim = Math.max(sunSize.x, sunSize.y, sunSize.z);
+      if (maxDim > 0) sunModel.scale.setScalar(sunVisualDiameter / maxDim);
+      sunModel.position.sub(new THREE.Box3().setFromObject(sunModel).getCenter(new THREE.Vector3()));
+      sunModel.traverse((node) => {
+        if (node.isMesh) { node.castShadow = false; node.receiveShadow = false; }
+      });
+      sunModelGroup.add(sunModel);
+      markModelLoaded('Güneş');
+    }, undefined, (error) => { createFallbackSun(); });
+
+    const sunLight = new THREE.PointLight(0xfff5e0, 2.8, 0, 0);
+    sunLight.position.copy(sunPosition);
+    scene.add(sunLight);
+    scene.add(new THREE.AmbientLight(0xdbeafe, 0.26));
+
+    function showLoadError(file, error) {
+      modelStatus.style.borderColor = '#f87171';
+      modelStatus.textContent = `${file} yüklenemedi. Sayfayı yerel bir web sunucusu üzerinden açın (ör. VS Code Live Server).`;
+      console.error(`${file} yüklenemedi:`, error);
+    }
+
+    const recommendationMarkerGroup = new THREE.Group();
+    moonMesh.add(recommendationMarkerGroup);
+    let showRecommendationMarkers = false;
+    let isFirstPersonView = false;
+
+    function clearRecommendationMarkers() {
+      for (const marker of [...recommendationMarkerGroup.children]) {
+        marker.traverse((object) => {
+          object.geometry?.dispose();
+          const materials = Array.isArray(object.material) ? object.material : [object.material];
+          for (const material of materials) {
+            material?.map?.dispose();
+            material?.dispose();
+          }
+        });
+        recommendationMarkerGroup.remove(marker);
+      }
+    }
+
+    function renderRecommendationMarkers(recommendations) {
+      clearRecommendationMarkers();
+      recommendationMarkerGroup.visible = showRecommendationMarkers && !isFirstPersonView && isGlobeProjection();
+      if (!recommendationMarkerGroup.visible) return;
+      const colors = [0xffcc33, 0x38bdf8, 0xf472b6, 0x4ade80, 0xc084fc];
+      recommendations.forEach((candidate, index) => {
+        const surfaceHit = moonSurfaceHit(candidate.lat, candidate.lon);
+        const normal = surfaceHit.normal;
+        const marker = new THREE.Group();
+        marker.position.copy(surfaceHit.position).addScaledVector(normal, moonSurfaceRadius * 0.006);
+        marker.quaternion.setFromUnitVectors(UP_Y, normal);
+
+        const color = colors[index % colors.length];
+        marker.add(new THREE.Mesh(
+          new THREE.SphereGeometry(moonSurfaceRadius * 0.012, 12, 12),
+          new THREE.MeshBasicMaterial({ color, depthTest: true })
+        ));
+
+        const canvas = document.createElement('canvas');
+        canvas.width = 128;
+        canvas.height = 128;
+        const ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(64, 64, 56, 0, Math.PI * 2);
+        ctx.fillStyle = `#${color.toString(16).padStart(6, '0')}`;
+        ctx.fill();
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = '#ffffff';
+        ctx.stroke();
+        ctx.fillStyle = '#07111f';
+        ctx.font = 'bold 68px Segoe UI, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(String(index + 1), 64, 67);
+
+        const texture = new THREE.CanvasTexture(canvas);
+        texture.colorSpace = THREE.SRGBColorSpace;
+        const label = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, transparent: true, depthTest: true, depthWrite: false }));
+        label.scale.set(moonSurfaceRadius * 0.075, moonSurfaceRadius * 0.075, 1);
+        label.position.y = moonSurfaceRadius * 0.014;
+        marker.add(label);
+        recommendationMarkerGroup.add(marker);
+      });
+    }
+
+    let currentLandingLocal = new THREE.Vector3(0, -moonVisualRadius, 0);
+    let currentLandingNormal = new THREE.Vector3(0, -1, 0);
+    let landingFocusTarget = moonPosition.clone();
+    let activeFocus = 'moon';
+
+    function moonOverviewOffset() {
+      const toEarth = earthPosition.clone().sub(moonPosition).normalize();
+      const toSun = sunPosition.clone().sub(moonPosition).normalize();
+      return toEarth.add(toSun).normalize().negate();
+    }
+
+    function updateLandingSite(lat, lon, preserveView = false) {
+      const surfaceHit = moonSurfaceHit(lat, lon);
+      currentLandingLocal.copy(surfaceHit.position);
+      currentLandingNormal.copy(surfaceHit.normal);
+      if (!preserveView) activeFocus = 'moon';
+
+      const focusPos = surfaceHit.position.clone().applyAxisAngle(UP_Y, moonMesh.rotation.y);
+      const focusNormal = surfaceHit.normal.clone().applyAxisAngle(UP_Y, moonMesh.rotation.y);
+      landingFocusTarget.copy(moonMesh.position).add(focusPos).addScaledVector(focusNormal, -moonSurfaceRadius * 0.08);
+      if (!preserveView) {
+        camera.up.set(0, 1, 0);
+        controls.target.copy(moonMesh.position);
+        camera.position.copy(moonMesh.position).addScaledVector(moonOverviewOffset(), moonSurfaceRadius * 2.4);
+        controls.update();
+      }
+    }
+
+    function focusBody(body) {
+      isFirstPersonView = false;
+      camera.near = defaultCameraNear;
+      camera.updateProjectionMatrix();
+      camera.up.set(0, 1, 0);
+      if (body !== 'moon' && currentProjectionId !== 'globe') switchProjection('globe');
+      recommendationMarkerGroup.visible = showRecommendationMarkers && body === 'moon' && isGlobeProjection();
+      const viewDirection = body === 'moon'
+        ? moonOverviewOffset()
+        : body === 'sun'
+          ? new THREE.Vector3(-0.8, 0, 0.6).normalize()
+          : camera.position.clone().sub(controls.target).normalize();
+      let target = body === 'moon' ? moonMesh.position.clone() : landingFocusTarget;
+      let distance = moonSurfaceRadius * 2.35;
+      if (body === 'earth') {
+        target = earthPosition;
+        distance = earthVisualDiameter * 1.8;
+      } else if (body === 'sun') {
+        target = sunPosition;
+        distance = sunVisualDiameter * 3.5;
+      }
+      activeFocus = body;
+      setMapControlsVisible(body === 'moon');
+      cameraFlight = {
+        fromPosition: camera.position.clone(),
+        fromTarget: controls.target.clone(),
+        toTarget: target.clone(),
+        toPosition: target.clone().addScaledVector(viewDirection, distance),
+        startedAt: performance.now(),
+        duration: 2000
+      };
+    }
+
+    function goToLandingCandidate(candidate) {
+      isFirstPersonView = false;
+      if (!isGlobeProjection()) switchProjection('globe');
+      recommendationMarkerGroup.visible = showRecommendationMarkers;
+      flyToLatLon(candidate.lat, candidate.lon, candidate.name || 'Aday Bölge');
+    }
+
+    function enterFirstPersonAtCandidate(candidate) {
+      if (!isGlobeProjection()) switchProjection('globe');
+      setGamepadActive(false);
+      updateLandingSite(candidate.lat, candidate.lon, true);
+      activeFocus = 'first-person';
+      isFirstPersonView = true;
+      camera.near = 0.00001;
+      camera.updateProjectionMatrix();
+      recommendationMarkerGroup.visible = false;
+      cameraFlight = null;
+      document.getElementById('body-focus').value = 'moon';
+
+      const localPoint = currentLandingLocal.clone().applyAxisAngle(UP_Y, moonMesh.rotation.y);
+      const surfaceNormal = currentLandingNormal.clone().applyAxisAngle(UP_Y, moonMesh.rotation.y).normalize();
+      camera.up.copy(surfaceNormal);
+      const cameraPosition = moonMesh.position.clone().add(localPoint).addScaledVector(surfaceNormal, moonSurfaceRadius * 0.00002);
+
+      const toEarth = earthPosition.clone().sub(cameraPosition);
+      let forward = toEarth.clone().addScaledVector(surfaceNormal, -toEarth.dot(surfaceNormal));
+      if (forward.lengthSq() < 1e-4) {
+        forward.set(0, 0, 1).addScaledVector(surfaceNormal, -surfaceNormal.z);
+      }
+      forward.normalize().addScaledVector(surfaceNormal, 0.08).normalize();
+      camera.position.copy(cameraPosition);
+      controls.target.copy(cameraPosition).addScaledVector(forward, moonSurfaceRadius * 0.03);
+      camera.lookAt(controls.target);
+      controls.update();
+
+      const fpBtn = document.getElementById('sfd-fp-btn');
+      if (fpBtn) fpBtn.textContent = '🌍 Yörünge Görünümüne Dön';
+    }
+
+    const PROJECTIONS = [
+      { id: 'globe',      label: '3D Globe',       globe: true },
+      { id: 'north-pole', label: 'North Pole Map', globe: false },
+      { id: 'global',     label: 'Global Map',     globe: false },
+      { id: 'south-pole', label: 'South Pole Map', globe: false }
+    ];
+    let currentProjectionId = 'globe';
+    const isGlobeProjection = () => currentProjectionId === 'globe';
+
+    const projectionMapGroup = new THREE.Group();
+    projectionMapGroup.visible = false;
+    moonMesh.add(projectionMapGroup);
+
+    const graticuleGroup = new THREE.Group();
+    graticuleGroup.visible = false;
+    moonMesh.add(graticuleGroup);
+
+    const nomenclatureGroup = new THREE.Group();
+    nomenclatureGroup.visible = false;
+    moonMesh.add(nomenclatureGroup);
+
+    const NOMENCLATURE_ITEMS = [
+      { name: 'Tycho', lat: -43.31, lon: -11.36, type: 'crater' },
+      { name: 'Copernicus', lat: 9.62, lon: -20.08, type: 'crater' },
+      { name: 'Clavius', lat: -58.62, lon: -14.73, type: 'crater' },
+      { name: 'Plato', lat: 51.62, lon: -9.33, type: 'crater' },
+      { name: 'Aristarchus', lat: 23.73, lon: -47.49, type: 'crater' },
+      { name: 'Shackleton', lat: -89.90, lon: 0.00, type: 'crater' },
+      { name: 'Connecting Ridge', lat: -89.40, lon: -137.50, type: 'crater' },
+      { name: 'Cabeus', lat: -84.68, lon: -48.72, type: 'crater' },
+      { name: 'Shoemaker', lat: -88.14, lon: 45.91, type: 'crater' },
+      { name: 'Tsiolkovskiy', lat: -20.38, lon: 128.97, type: 'crater' },
+      { name: 'Mare Imbrium', lat: 32.80, lon: -15.60, type: 'crater' },
+      { name: 'Mare Tranquillitatis', lat: 8.50, lon: 31.40, type: 'crater' },
+      { name: 'Apollo 11', lat: 0.67, lon: 23.47, type: 'lander' },
+      { name: 'Apollo 12', lat: -3.01, lon: -23.42, type: 'lander' },
+      { name: 'Apollo 15', lat: 26.13, lon: 3.63, type: 'lander' },
+      { name: 'Apollo 16', lat: -8.97, lon: 15.50, type: 'lander' },
+      { name: 'Apollo 17', lat: 20.19, lon: 30.77, type: 'lander' },
+      { name: 'Chandrayaan-3', lat: -69.37, lon: 32.32, type: 'lander' },
+      { name: "Chang'e 4", lat: -45.44, lon: 177.60, type: 'lander' },
+      { name: 'IM-1 Odysseus', lat: -80.13, lon: 1.44, type: 'lander' },
+      { name: 'Luna 9', lat: 7.08, lon: -64.37, type: 'lander' }
+    ];
+
+    let graticuleBuiltRadius = 0;
+    let graticuleBuiltStep = 15;
+    let graticuleBuiltElevationState = false;
+    const graticuleLabelSprites = [];
+    const nomenclatureSprites = [];
+    const labelTextures = new Map();
+    const nomenclatureTextures = new Map();
+    const graticuleUniforms = {
+      uCamLocalDir: { value: new THREE.Vector3(0, 0, 1) },
+      uHorizonCos: { value: 0.35 }
+    };
+
+    function createGraticuleLineMaterial(colorHex, opacity) {
+      return new THREE.ShaderMaterial({
+        transparent: true,
+        depthTest: false,
+        depthWrite: false,
+        uniforms: {
+          uColor: { value: new THREE.Color(colorHex) },
+          uOpacity: { value: opacity },
+          uCamLocalDir: graticuleUniforms.uCamLocalDir,
+          uHorizonCos: graticuleUniforms.uHorizonCos
+        },
+        vertexShader: `
+          varying vec3 vLocalDir;
+          void main() {
+            vLocalDir = normalize(position);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: `
+          uniform vec3 uColor;
+          uniform float uOpacity;
+          uniform vec3 uCamLocalDir;
+          uniform float uHorizonCos;
+          varying vec3 vLocalDir;
+          void main() {
+            if (dot(normalize(vLocalDir), uCamLocalDir) < uHorizonCos) discard;
+            gl_FragColor = vec4(uColor, uOpacity);
+          }
+        `
+      });
+    }
+
+    function getLabelTexture(text, isStrong = false) {
+      const key = `${text}_${isStrong ? 1 : 0}`;
+      let texture = labelTextures.get(key);
+      if (texture) return texture;
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 96;
+      const ctx = canvas.getContext('2d');
+      ctx.font = '800 54px "Segoe UI", system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.lineWidth = 10;
+      ctx.strokeStyle = 'rgba(10, 5, 0, 0.96)';
+      ctx.strokeText(text, 128, 48);
+      ctx.fillStyle = isStrong ? '#ff9d3b' : '#ffd09e';
+      ctx.fillText(text, 128, 48);
+      texture = new THREE.CanvasTexture(canvas);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      labelTextures.set(key, texture);
+      return texture;
+    }
+
+    function getNomenclatureTexture(item) {
+      const key = `${item.type}_${item.name}`;
+      let tex = nomenclatureTextures.get(key);
+      if (tex) return tex;
+      const canvas = document.createElement('canvas');
+      canvas.width = 512;
+      canvas.height = 128;
+      const ctx = canvas.getContext('2d');
+      const isLander = item.type === 'lander';
+      const icon = isLander ? '✦ ' : '◎ ';
+      const fullText = icon + item.name;
+      ctx.font = '700 44px "Segoe UI", system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      const tw = Math.min(480, ctx.measureText(fullText).width + 44);
+      const bx = (512 - tw) / 2, by = 22, bh = 84, br = 18;
+      ctx.fillStyle = isLander ? 'rgba(8, 47, 73, 0.92)' : 'rgba(30, 27, 18, 0.90)';
+      ctx.strokeStyle = isLander ? '#38bdf8' : '#fbbf24';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.roundRect(bx, by, tw, bh, br);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = isLander ? '#e0f2fe' : '#fef3c7';
+      ctx.fillText(fullText, 256, 65);
+      tex = new THREE.CanvasTexture(canvas);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      nomenclatureTextures.set(key, tex);
+      return tex;
+    }
+
+    function rebuildNomenclature3D() {
+      nomenclatureSprites.length = 0;
+      for (const child of [...nomenclatureGroup.children]) {
+        nomenclatureGroup.remove(child);
+      }
+      const radius = moonSurfaceRadius;
+      for (const item of NOMENCLATURE_ITEMS) {
+        const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+          map: getNomenclatureTexture(item),
+          transparent: true,
+          depthTest: false,
+          depthWrite: false
+        }));
+        const pos = latLonToVector3(item.lat, item.lon, getSurfaceRadiusAt(item.lat, item.lon) * 1.012);
+        sprite.position.copy(pos);
+        sprite.userData.localNormal = pos.clone().normalize();
+        sprite.userData.nomenclatureItem = item;
+        sprite.scale.set(radius * 0.175, radius * 0.044, 1);
+        sprite.renderOrder = 6;
+        nomenclatureGroup.add(sprite);
+        nomenclatureSprites.push(sprite);
+      }
+    }
+
+    function computeIdealGraticuleStep() {
+      const ratio = camera.position.distanceTo(moonMesh.position) / Math.max(moonSurfaceRadius, 1);
+      if (ratio < 1.35) return 5;
+      if (ratio < 1.95) return 10;
+      return 15;
+    }
+
+    const formatLatLabel = (lat) => lat === 0 ? '0°' : `${Math.abs(lat)} ${lat > 0 ? 'N' : 'S'}`;
+    const formatLonLabel = (lon) => (lon === 0 || Math.abs(lon) === 180) ? `${Math.abs(lon)}°` : `${Math.abs(lon)} ${lon > 0 ? 'E' : 'W'}`;
+
+    function rebuildGraticule(stepDeg = graticuleBuiltStep) {
+      const radius = moonSurfaceRadius;
+      graticuleBuiltRadius = radius;
+      graticuleBuiltStep = stepDeg;
+      graticuleBuiltElevationState = hasElevationGrid;
+      graticuleLabelSprites.length = 0;
+
+      for (const child of [...graticuleGroup.children]) {
+        graticuleGroup.remove(child);
+        child.geometry?.dispose();
+        if (child.material && !child.isSprite) child.material.dispose();
+      }
+
+      const normalMat = createGraticuleLineMaterial(GRATICULE_COLOR, 0.78);
+      const strongMat = createGraticuleLineMaterial(GRATICULE_STRONG_COLOR, 0.98);
+      const surfacePoint = (lat, lon, extraLift = 0) => latLonToVector3(lat, lon, getSurfaceRadiusAt(lat, lon) * (1 + GRATICULE_LIFT + extraLift));
+
+      const addLine = (points, material, loop) => {
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        const line = loop ? new THREE.LineLoop(geometry, material) : new THREE.Line(geometry, material);
+        line.raycast = () => {};
+        line.renderOrder = 4;
+        graticuleGroup.add(line);
+      };
+
+      for (let lat = -90 + stepDeg; lat < 90; lat += stepDeg) {
+        const points = [];
+        for (let lon = -180; lon < 180; lon += 1) points.push(surfacePoint(lat, lon));
+        addLine(points, lat === 0 ? strongMat : normalMat, true);
+      }
+
+      for (let lon = -180; lon < 180; lon += stepDeg) {
+        const points = [];
+        for (let lat = -90; lat <= 90; lat += 1) points.push(surfacePoint(lat, lon));
+        addLine(points, (lon === 0 || Math.abs(lon) === 180) ? strongMat : normalMat, false);
+      }
+
+      const labelStep = stepDeg <= 5 ? 10 : stepDeg <= 10 ? 20 : 30;
+      const addLabel = (text, lat, lon, isStrong = false) => {
+        const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+          map: getLabelTexture(text, isStrong),
+          transparent: true,
+          depthTest: false,
+          depthWrite: false
+        }));
+        const pos = surfacePoint(lat, lon, 0.006);
+        sprite.position.copy(pos);
+        sprite.userData.localNormal = pos.clone().normalize();
+        sprite.scale.set(radius * 0.105, radius * 0.039, 1);
+        sprite.raycast = () => {};
+        sprite.renderOrder = 5;
+        graticuleGroup.add(sprite);
+        graticuleLabelSprites.push(sprite);
+      };
+
+      for (let lat = -90 + labelStep; lat <= 90 - labelStep; lat += labelStep) {
+        if (lat === 0) continue;
+        for (const lon of [-120, -60, 0, 60, 120, 180]) addLabel(formatLatLabel(lat), lat, lon, false);
+      }
+      addLabel('90 N', 89.2, 0, true);
+      addLabel('90 S', -89.2, 0, true);
+      for (let lon = -180 + labelStep; lon <= 180; lon += labelStep) {
+        const isPrime = lon === 0 || Math.abs(lon) === 180;
+        addLabel(formatLonLabel(lon), 0, lon, isPrime);
+        if (Math.abs(lon) % 30 === 0) {
+          addLabel(formatLonLabel(lon), 45, lon, isPrime);
+          addLabel(formatLonLabel(lon), -45, lon, isPrime);
+        }
+      }
+
+      rebuildNomenclature3D();
+      goToMarkerGroup.scale.setScalar(radius * 0.014);
+    }
+
+    function syncGraticuleToMoon() {
+      const currentRadius = measureMoonRadius();
+      const idealStep = computeIdealGraticuleStep();
+      const radiusChanged = Math.abs(currentRadius - graticuleBuiltRadius) / Math.max(graticuleBuiltRadius, 1e-6) > 0.0005;
+      if (radiusChanged || idealStep !== graticuleBuiltStep || hasElevationGrid !== graticuleBuiltElevationState) {
+        moonSurfaceRadius = currentRadius;
+        rebuildGraticule(idealStep);
+      }
+      moonMesh.updateMatrixWorld(true);
+      const camLocalVec = moonMesh.worldToLocal(camera.position.clone());
+      const camLocalDist = Math.max(camLocalVec.length(), moonSurfaceRadius * 1.002);
+      const camLocalDir = camLocalVec.clone().divideScalar(camLocalDist);
+      const horizonCos = THREE.MathUtils.clamp((moonSurfaceRadius * 0.985) / camLocalDist, 0.02, 0.992);
+      graticuleUniforms.uCamLocalDir.value.copy(camLocalDir);
+      graticuleUniforms.uHorizonCos.value = horizonCos;
+
+      const camDist = camera.position.distanceTo(moonMesh.position);
+      const distFactor = THREE.MathUtils.clamp((camDist - moonSurfaceRadius * 0.85) / (moonSurfaceRadius * 1.5), 0.35, 1.25);
+
+      if (graticuleGroup.visible && graticuleLabelSprites.length > 0) {
+        const w = moonSurfaceRadius * 0.105 * distFactor;
+        const h = moonSurfaceRadius * 0.039 * distFactor;
+        for (const sprite of graticuleLabelSprites) {
+          sprite.scale.set(w, h, 1);
+          sprite.visible = sprite.userData.localNormal.dot(camLocalDir) > horizonCos + 0.04;
+        }
+      }
+
+      if (nomenclatureGroup.visible && nomenclatureSprites.length > 0) {
+        const nw = moonSurfaceRadius * 0.175 * distFactor;
+        const nh = moonSurfaceRadius * 0.044 * distFactor;
+        for (const sprite of nomenclatureSprites) {
+          sprite.scale.set(nw, nh, 1);
+          sprite.visible = sprite.userData.localNormal.dot(camLocalDir) > horizonCos + 0.04;
+        }
+      }
+    }
+
+    function onMoonModelChanged() {
+      moonSurfaceRadius = measureMoonRadius();
+      rebuildGraticule(computeIdealGraticuleStep());
+    }
+
+    const goToMarkerGroup = new THREE.Group();
+    goToMarkerGroup.visible = false;
+    const goToDot = new THREE.Mesh(new THREE.SphereGeometry(0.85, 16, 16), new THREE.MeshBasicMaterial({ color: 0xff8a1f }));
+    const goToRing = new THREE.Mesh(new THREE.RingGeometry(1.3, 1.85, 32), new THREE.MeshBasicMaterial({ color: 0xffb36b, side: THREE.DoubleSide }));
+    goToRing.rotation.x = -Math.PI / 2;
+    goToRing.position.y = 0.15;
+    goToMarkerGroup.add(goToDot, goToRing);
+    goToMarkerGroup.traverse((obj) => { obj.raycast = () => {}; });
+    moonMesh.add(goToMarkerGroup);
+
+    onMoonModelChanged();
+
+    let projectionPlaneMesh = null;
+    function createProjectionShaderMaterial(mode) {
+      return new THREE.ShaderMaterial({
+        side: THREE.DoubleSide,
+        transparent: mode !== 0,
+        uniforms: {
+          uMap: { value: moonTextureMap },
+          uElevMap: { value: lunarElevationTexture },
+          uHasMap: { value: Boolean(moonTextureMap) },
+          uHasElev: { value: Boolean(lunarElevationTexture) },
+          uMode: { value: mode }
+        },
+        vertexShader: `
+          varying vec2 vUv;
+          void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: `
+          uniform sampler2D uMap;
+          uniform sampler2D uElevMap;
+          uniform bool uHasMap;
+          uniform bool uHasElev;
+          uniform int uMode;
+          varying vec2 vUv;
+
+          void main() {
+            float lat = 0.0;
+            float lon = 0.0;
+            float edgeAlpha = 1.0;
+
+            if (uMode == 0) {
+              lon = (vUv.x - 0.5) * 360.0;
+              lat = (vUv.y - 0.5) * 180.0;
+            } else {
+              vec2 p = (vUv - 0.5) * 2.0;
+              float r = length(p);
+              if (r > 1.0) discard;
+              edgeAlpha = 1.0 - smoothstep(0.992, 1.0, r);
+              lat = (uMode == 1) ? (90.0 - r * 90.0) : (-90.0 + r * 90.0);
+              lon = degrees(atan(p.y, p.x));
+            }
+
+            float u = fract((lon + 180.0) / 360.0);
+            float vTex = clamp((90.0 - lat) / 180.0, 0.0005, 0.9995);
+            float vElev = clamp((lat + 90.0) / 180.0, 0.002, 0.998);
+
+            vec3 baseCol = vec3(0.42, 0.45, 0.50);
+            if (uHasMap) {
+              vec2 uvA = vec2(u, vTex);
+              vec2 uvB = vec2(fract(u + 0.5), vTex);
+              vec2 dx = min(abs(dFdx(uvA)), abs(dFdx(uvB)));
+              vec2 dy = min(abs(dFdy(uvA)), abs(dFdy(uvB)));
+              vec3 raw = textureGrad(uMap, uvA, dx, dy).rgb;
+              vec3 d1 = textureGrad(uMap, vec2(fract(u + 0.00045), vTex), dx, dy).rgb;
+              vec3 d2 = textureGrad(uMap, vec2(u, clamp(vTex + 0.00045, 0.0005, 0.9995)), dx, dy).rgb;
+              float micro = dot(raw - 0.5 * (d1 + d2), vec3(0.333)) * 1.8;
+              baseCol = pow(clamp(raw, 0.0, 1.0), vec3(1.45)) * 0.68 + micro;
+            }
+
+            float shade = 1.0;
+            if (uHasElev) {
+              float stepU = 0.0035;
+              float stepV = 0.0035;
+              float eE = texture2D(uElevMap, vec2(fract(u + stepU), vElev)).r;
+              float eW = texture2D(uElevMap, vec2(fract(u - stepU), vElev)).r;
+              float eN = texture2D(uElevMap, vec2(u, clamp(vElev + stepV, 0.002, 0.998))).r;
+              float eS = texture2D(uElevMap, vec2(u, clamp(vElev - stepV, 0.002, 0.998))).r;
+              float slope = (eW - eE) * 1.35 + (eN - eS) * 1.15;
+              shade = clamp(0.96 + slope, 0.62, 1.26);
+            }
+
+            vec3 finalCol = clamp(baseCol * shade, 0.04, 0.88);
+            gl_FragColor = vec4(finalCol, edgeAlpha);
+          }
+        `
+      });
+    }
+
+    function create2DProjectionView(projId) {
+      for (const child of [...projectionMapGroup.children]) {
+        projectionMapGroup.remove(child);
+        child.traverse((n) => {
+          n.geometry?.dispose();
+          if (n.material && !n.isSprite) n.material.dispose();
+        });
+      }
+      const r = moonSurfaceRadius;
+      const lineMat = new THREE.LineBasicMaterial({ color: GRATICULE_COLOR, transparent: true, opacity: 0.78, depthTest: false });
+      const strongMat = new THREE.LineBasicMaterial({ color: GRATICULE_STRONG_COLOR, transparent: true, opacity: 0.98, depthTest: false });
+
+      const add2DGraticuleLabel = (text, x, y, isStrong = false) => {
+        const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+          map: getLabelTexture(text, isStrong),
+          transparent: true,
+          depthTest: false,
+          depthWrite: false
+        }));
+        sprite.position.set(x, y, 0.12);
+        sprite.scale.set(r * 0.21, r * 0.078, 1);
+        sprite.userData.layerType = 'graticule';
+        sprite.raycast = () => {};
+        sprite.renderOrder = 5;
+        projectionMapGroup.add(sprite);
+      };
+
+      const add2DNomenclatureLabel = (item, x, y) => {
+        const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+          map: getNomenclatureTexture(item),
+          transparent: true,
+          depthTest: false,
+          depthWrite: false
+        }));
+        sprite.position.set(x, y, 0.18);
+        sprite.scale.set(r * 0.32, r * 0.08, 1);
+        sprite.userData.layerType = 'nomenclature';
+        sprite.userData.nomenclatureItem = item;
+        sprite.renderOrder = 6;
+        projectionMapGroup.add(sprite);
+      };
+
+      if (projId === 'global') {
+        const width = r * 3.2, height = r * 1.6;
+        projectionPlaneMesh = new THREE.Mesh(
+          new THREE.PlaneGeometry(width, height, 4, 4),
+          createProjectionShaderMaterial(0)
+        );
+        projectionPlaneMesh.userData = { projectionType: 'global', mapWidth: width, mapHeight: height };
+        projectionMapGroup.add(projectionPlaneMesh);
+
+        for (let lat = -75; lat <= 75; lat += 15) {
+          const y = (lat / 90) * (height / 2);
+          const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-width / 2, y, 0.05), new THREE.Vector3(width / 2, y, 0.05)]), lat === 0 ? strongMat : lineMat);
+          line.userData.layerType = 'graticule';
+          line.raycast = () => {};
+          projectionMapGroup.add(line);
+          if (lat % 30 === 0 && lat !== 0) {
+            add2DGraticuleLabel(formatLatLabel(lat), -width * 0.46, y, false);
+            add2DGraticuleLabel(formatLatLabel(lat), width * 0.46, y, false);
+          }
+        }
+        for (let lon = -180; lon <= 180; lon += 15) {
+          const x = (lon / 180) * (width / 2);
+          const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(x, -height / 2, 0.05), new THREE.Vector3(x, height / 2, 0.05)]), lon === 0 ? strongMat : lineMat);
+          line.userData.layerType = 'graticule';
+          line.raycast = () => {};
+          projectionMapGroup.add(line);
+          if (lon % 30 === 0 && Math.abs(lon) < 180) {
+            add2DGraticuleLabel(formatLonLabel(lon), x, 0, lon === 0);
+          }
+        }
+        for (const item of NOMENCLATURE_ITEMS) {
+          const x = (item.lon / 180) * (width / 2);
+          const y = (item.lat / 90) * (height / 2);
+          add2DNomenclatureLabel(item, x, y);
+        }
+      } else {
+        const isNorth = projId === 'north-pole';
+        const discRadius = r * 1.35;
+        projectionPlaneMesh = new THREE.Mesh(
+          new THREE.PlaneGeometry(discRadius * 2, discRadius * 2, 4, 4),
+          createProjectionShaderMaterial(isNorth ? 1 : 2)
+        );
+        projectionPlaneMesh.userData = { projectionType: projId, discRadius };
+        projectionMapGroup.add(projectionPlaneMesh);
+
+        for (let step = 15; step <= 90; step += 15) {
+          const ringR = (step / 90) * discRadius, pts = [];
+          for (let a = 0; a < 360; a += 2) {
+            const rad = THREE.MathUtils.degToRad(a);
+            pts.push(new THREE.Vector3(Math.cos(rad) * ringR, Math.sin(rad) * ringR, 0.05));
+          }
+          const loop = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts), step === 90 ? strongMat : lineMat);
+          loop.userData.layerType = 'graticule';
+          loop.raycast = () => {};
+          projectionMapGroup.add(loop);
+          if (step % 30 === 0 && step < 90) {
+            const latVal = isNorth ? (90 - step) : (-90 + step);
+            add2DGraticuleLabel(formatLatLabel(latVal), 0, ringR, false);
+          }
+        }
+        for (let lon = -180; lon < 180; lon += 15) {
+          const rad = THREE.MathUtils.degToRad(lon);
+          const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0.05), new THREE.Vector3(Math.cos(rad) * discRadius, Math.sin(rad) * discRadius, 0.05)]), (lon === 0 || Math.abs(lon) === 180) ? strongMat : lineMat);
+          line.userData.layerType = 'graticule';
+          line.raycast = () => {};
+          projectionMapGroup.add(line);
+          if (lon % 30 === 0) {
+            const labelR = discRadius * 1.07;
+            add2DGraticuleLabel(formatLonLabel(lon), Math.cos(rad) * labelR, Math.sin(rad) * labelR, lon === 0 || Math.abs(lon) === 180);
+          }
+        }
+        for (const item of NOMENCLATURE_ITEMS) {
+          if (isNorth && item.lat < 0) continue;
+          if (!isNorth && item.lat > 0) continue;
+          const distRatio = isNorth ? ((90 - item.lat) / 90) : ((item.lat + 90) / 90);
+          const rad = THREE.MathUtils.degToRad(item.lon);
+          const rr = distRatio * discRadius;
+          add2DNomenclatureLabel(item, Math.cos(rad) * rr, Math.sin(rad) * rr);
+        }
+      }
+    }
+
+    function update2DProjectionMapsTexture() {
+      if (!isGlobeProjection()) create2DProjectionView(currentProjectionId);
+    }
+
+    const freeLocal = new THREE.Vector3();
+    const mapFocusLocal = new THREE.Vector3();
+    function resolveFocusTarget() {
+      if (activeFocus === 'sun') return sunPosition;
+      if (activeFocus === 'earth') return earthPosition;
+      if (activeFocus === 'map' && !isGlobeProjection()) {
+        moonMesh.updateMatrixWorld(true);
+        projectionMapGroup.updateMatrixWorld(true);
+        return projectionMapGroup.localToWorld(mapFocusLocal.clone());
+      }
+      if (activeFocus === 'free' && isGlobeProjection()) {
+        moonMesh.updateMatrixWorld(true);
+        return moonMesh.localToWorld(freeLocal.clone());
+      }
+      return moonMesh.position;
+    }
+
+    const mapControlsEl = document.getElementById('map-controls');
+    const mapPanel = document.getElementById('map-panel');
+    const mapOpenBtn = document.getElementById('map-open');
+    const mapList = document.getElementById('map-list');
+    const gamepadBtn = document.getElementById('map-gamepad');
+    const gamepadHint = document.getElementById('gamepad-hint');
+    const graticuleToggle = document.getElementById('graticule-toggle');
+    const nomenclatureToggle = document.getElementById('nomenclature-toggle');
+    const readout = document.getElementById('coord-readout');
+    const setMapStatus = (text) => { document.getElementById('map-status').textContent = text; };
+
+    function setMapControlsVisible(visible) {
+      mapControlsEl.hidden = !visible;
+      if (!visible) {
+        closeMapPanel();
+        setGamepadActive(false);
+        readout.hidden = true;
+      }
+    }
+
+    function closeMapPanel() {
+      mapPanel.hidden = true;
+      mapOpenBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    function applyProjectionState() {
+      const globe = isGlobeProjection();
+      if (moonModelRoot) moonModelRoot.visible = globe;
+      earthModelGroup.visible = globe;
+      sunModelGroup.visible = globe;
+      earthOrbitLine.visible = globe;
+      moonOrbitLine.visible = globe;
+      projectionMapGroup.visible = !globe;
+      graticuleGroup.visible = graticuleToggle.checked && globe;
+      nomenclatureGroup.visible = nomenclatureToggle.checked && globe;
+      recommendationMarkerGroup.visible = showRecommendationMarkers && globe && !isFirstPersonView;
+      for (const child of projectionMapGroup.children) {
+        if (child === projectionPlaneMesh) continue;
+        if (child.userData.layerType === 'nomenclature') {
+          child.visible = nomenclatureToggle.checked;
+        } else {
+          child.visible = graticuleToggle.checked;
+        }
+      }
+      gamepadBtn.disabled = !globe;
+      gamepadBtn.title = globe ? 'Klavye ile hareket (WASD / ↑↓←→, Q/E, R/F, Z/C)' : 'Klavye kontrolü yalnızca 3D Globe haritasında kullanılabilir';
+      if (!globe) setGamepadActive(false);
+    }
+
+    function switchProjection(id) {
+      const entry = PROJECTIONS.find((item) => item.id === id);
+      if (!entry) return;
+      isFirstPersonView = false;
+      activeFocus = 'moon';
+      camera.near = defaultCameraNear;
+      camera.updateProjectionMatrix();
+      currentProjectionId = id;
+      const radio = mapList.querySelector(`input[value="${id}"]`);
+      if (radio) radio.checked = true;
+
+      camera.up.set(0, 1, 0);
+      if (entry.globe) {
+        controls.enableRotate = true;
+        applyProjectionState();
+        onMoonModelChanged();
+        setMapStatus('3D Globe aktif.');
+        cameraFlight = {
+          fromPosition: camera.position.clone(),
+          fromTarget: controls.target.clone(),
+          toTarget: moonMesh.position.clone(),
+          toPosition: moonMesh.position.clone().addScaledVector(moonOverviewOffset(), moonSurfaceRadius * 2.35),
+          startedAt: performance.now(),
+          duration: 1200
+        };
+      } else {
+        create2DProjectionView(id);
+        applyProjectionState();
+        controls.enableRotate = false;
+        setMapStatus(`${entry.label} görünümü aktif (Klavye konsolu devre dışı).`);
+        projectionMapGroup.quaternion.copy(moonMesh.quaternion).invert();
+        cameraFlight = {
+          fromPosition: camera.position.clone(),
+          fromTarget: controls.target.clone(),
+          toTarget: moonMesh.position.clone(),
+          toPosition: moonMesh.position.clone().add(new THREE.Vector3(0, 0, moonSurfaceRadius * 2.6)),
+          startedAt: performance.now(),
+          duration: 1000
+        };
+      }
+    }
+
+    mapOpenBtn.addEventListener('click', () => {
+      const willOpen = mapPanel.hidden;
+      mapPanel.hidden = !willOpen;
+      mapOpenBtn.setAttribute('aria-expanded', String(willOpen));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !mapPanel.hidden) { closeMapPanel(); mapOpenBtn.focus(); }
+    });
+    document.addEventListener('pointerdown', (event) => {
+      if (!mapPanel.hidden && !mapControlsEl.contains(event.target)) closeMapPanel();
+    });
+    graticuleToggle.addEventListener('change', applyProjectionState);
+    nomenclatureToggle.addEventListener('change', applyProjectionState);
+
+    for (const entry of PROJECTIONS) {
+      const label = document.createElement('label');
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'moon-projection';
+      input.value = entry.id;
+      input.checked = entry.id === currentProjectionId;
+      input.addEventListener('change', () => switchProjection(entry.id));
+      const text = document.createElement('span');
+      text.textContent = entry.label;
+      label.append(input, text);
+      mapList.appendChild(label);
+    }
+
+    function zoomMap(factor) {
+      const target = controls.target.clone();
+      const offset = camera.position.clone().sub(target);
+      const at = (f) => target.clone().addScaledVector(offset, f);
+      let f = THREE.MathUtils.clamp(offset.length() * factor, controls.minDistance, controls.maxDistance) / Math.max(offset.length(), 1e-5);
+      if (f < 1 && isGlobeProjection()) {
+        const minDistance = moonSurfaceRadius * 1.03;
+        if (at(f).distanceTo(moonMesh.position) < minDistance) {
+          let low = f, high = 1;
+          for (let i = 0; i < 14; i++) {
+            const mid = (low + high) / 2;
+            if (at(mid).distanceTo(moonMesh.position) < minDistance) low = mid; else high = mid;
+          }
+          f = high;
+        }
+      }
+      cameraFlight = { fromPosition: camera.position.clone(), fromTarget: target.clone(), toTarget: target.clone(), toPosition: at(f), startedAt: performance.now(), duration: 320 };
+    }
+    document.getElementById('map-zoom-in').addEventListener('click', () => zoomMap(0.72));
+    document.getElementById('map-zoom-out').addEventListener('click', () => zoomMap(1.38));
+
+    const gotoDialog = document.getElementById('goto-dialog');
+    const gotoPlace = document.getElementById('goto-place');
+    const gotoLat = document.getElementById('goto-lat');
+    const gotoLon = document.getElementById('goto-lon');
+    const gotoHint = document.getElementById('goto-hint');
+
+    for (const group of [...new Set(LUNAR_PLACES.map((p) => p.group))]) {
+      const optgroup = document.createElement('optgroup');
+      optgroup.label = group;
+      LUNAR_PLACES.forEach((place, index) => {
+        if (place.group !== group) return;
+        const option = document.createElement('option');
+        option.value = String(index);
+        option.textContent = `${place.name} (${place.lat.toFixed(2)}°, ${place.lon.toFixed(2)}°)`;
+        optgroup.appendChild(option);
+      });
+      gotoPlace.appendChild(optgroup);
+    }
+
+    gotoPlace.addEventListener('change', () => {
+      const place = LUNAR_PLACES[Number(gotoPlace.value)];
+      if (!place) return;
+      gotoLat.value = place.lat;
+      gotoLon.value = place.lon;
+      gotoHint.textContent = `${place.name} — ${Math.abs(place.lat).toFixed(2)}° ${place.lat >= 0 ? 'K' : 'G'}, ${Math.abs(place.lon).toFixed(2)}° ${place.lon >= 0 ? 'D' : 'B'}${place.desc ? ' • ' + place.desc : ''}`;
+    });
+
+    [gotoLat, gotoLon].forEach((input) => input.addEventListener('input', () => {
+      gotoPlace.value = '';
+      const lat = Number(gotoLat.value), lon = Number(gotoLon.value);
+      if (Number.isFinite(lat) && Number.isFinite(lon)) {
+        gotoHint.textContent = `Seçilen koordinat: ${Math.abs(lat).toFixed(2)}° ${lat >= 0 ? 'K' : 'G'}, ${Math.abs(lon).toFixed(2)}° ${lon >= 0 ? 'D' : 'B'}`;
+      }
+    }));
+
+    document.getElementById('map-fly').addEventListener('click', () => { closeMapPanel(); gotoDialog.showModal(); });
+    document.getElementById('goto-cancel').addEventListener('click', () => gotoDialog.close());
+    document.getElementById('goto-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const lat = Number(gotoLat.value);
+      const lon = ((Number(gotoLon.value) + 180) % 360 + 360) % 360 - 180;
+      if (!Number.isFinite(lat) || lat < -90 || lat > 90 || !Number.isFinite(lon)) return;
+      const selectedPlace = gotoPlace.value !== '' ? LUNAR_PLACES[Number(gotoPlace.value)] : null;
+      gotoDialog.close();
+      flyToLatLon(lat, lon, selectedPlace?.name);
+    });
+
+    function getLocalSurfaceRadiusAtWorldPos(worldCamPos) {
+      moonMesh.updateMatrixWorld(true);
+      const localCam = moonMesh.worldToLocal(worldCamPos.clone());
+      const { lat, lon } = localVectorToLatLon(localCam);
+      return getSurfaceRadiusAt(lat, lon);
+    }
+
+    function getMinMoonCameraDistance(worldCamPos) {
+      return getLocalSurfaceRadiusAtWorldPos(worldCamPos) + moonSurfaceRadius * (isFirstPersonView ? 0.00001 : 0.014);
+    }
+
+    function enforceMoonSurfaceCollision() {
+      if (!isGlobeProjection() || (activeFocus !== 'moon' && activeFocus !== 'free' && activeFocus !== 'first-person')) return;
+      const center = moonMesh.position;
+      const offset = camera.position.clone().sub(center);
+      const dist = offset.length();
+      const minDist = getMinMoonCameraDistance(camera.position);
+      if (dist < minDist) {
+        if (dist < 1e-5) offset.set(0, 0, 1);
+        camera.position.copy(center).addScaledVector(offset.normalize(), minDist);
+      }
+    }
+
+    function flyToLatLon(lat, lon, placeName = '', distanceMultiplier = 1.24) {
+      isFirstPersonView = false;
+      camera.near = defaultCameraNear;
+      camera.updateProjectionMatrix();
+      document.getElementById('body-focus').value = 'moon';
+      setMapControlsVisible(true);
+
+      if (!isGlobeProjection() && projectionPlaneMesh) {
+        const projectionType = projectionPlaneMesh.userData.projectionType;
+        let mapPoint;
+        if (projectionType === 'global') {
+          const { mapWidth, mapHeight } = projectionPlaneMesh.userData;
+          mapPoint = new THREE.Vector3((lon / 180) * (mapWidth / 2), (lat / 90) * (mapHeight / 2), 0.18);
+        } else {
+          const isNorth = projectionType === 'north-pole';
+          const radialFraction = isNorth ? (90 - lat) / 90 : (lat + 90) / 90;
+          const radialDistance = radialFraction * projectionPlaneMesh.userData.discRadius;
+          const angle = THREE.MathUtils.degToRad(lon);
+          mapPoint = new THREE.Vector3(Math.cos(angle) * radialDistance, Math.sin(angle) * radialDistance, 0.18);
+        }
+
+        mapFocusLocal.copy(mapPoint);
+        moonMesh.updateMatrixWorld(true);
+        projectionMapGroup.updateMatrixWorld(true);
+        const target = projectionMapGroup.localToWorld(mapPoint.clone());
+        const mapNormal = new THREE.Vector3(0, 0, 1).transformDirection(projectionMapGroup.matrixWorld).normalize();
+        if (camera.position.clone().sub(target).dot(mapNormal) < 0) mapNormal.negate();
+        camera.up.copy(new THREE.Vector3(0, 1, 0).transformDirection(projectionMapGroup.matrixWorld).normalize());
+        activeFocus = 'map';
+        cameraFlight = {
+          fromPosition: camera.position.clone(),
+          fromTarget: controls.target.clone(),
+          toTarget: target,
+          toPosition: target.clone().addScaledVector(mapNormal, moonSurfaceRadius * 0.72),
+          startedAt: performance.now(),
+          duration: 900
+        };
+        setMapStatus('Seçilen bölge haritada yaklaştırılıyor…');
+        return;
+      }
+
+      if (!isGlobeProjection()) switchProjection('globe');
+
+      const surfaceHit = moonSurfaceHit(lat, lon);
+      const localPos = surfaceHit.position;
+      const localNormal = surfaceHit.normal;
+      activeFocus = 'moon';
+
+      goToMarkerGroup.position.copy(localPos).addScaledVector(localNormal, moonSurfaceRadius * 0.004);
+      goToMarkerGroup.quaternion.setFromUnitVectors(UP_Y, localNormal);
+      goToMarkerGroup.scale.setScalar(moonSurfaceRadius * 0.014);
+      goToMarkerGroup.visible = true;
+
+      moonMesh.updateMatrixWorld(true);
+      const worldNormal = localNormal.clone().transformDirection(moonMesh.matrixWorld).normalize();
+
+      let tangent = new THREE.Vector3().crossVectors(UP_Y, worldNormal);
+      if (tangent.lengthSq() < 1e-4) tangent.set(1, 0, 0);
+      tangent.normalize();
+      camera.up.copy(new THREE.Vector3().crossVectors(worldNormal, tangent).normalize());
+
+      const toPosition = moonMesh.position.clone().addScaledVector(worldNormal, moonSurfaceRadius * distanceMultiplier);
+
+      cameraFlight = {
+        fromPosition: camera.position.clone(),
+        fromTarget: controls.target.clone(),
+        toTarget: moonMesh.position.clone(),
+        toPosition,
+        startedAt: performance.now(),
+        duration: 1700
+      };
+      const labelStr = `${Math.abs(lat).toFixed(2)}° ${lat >= 0 ? 'K' : 'G'}, ${Math.abs(lon).toFixed(2)}° ${lon >= 0 ? 'D' : 'B'}`;
+      setMapStatus(placeName ? `${placeName} (${labelStr}) noktasına yakınlaşılıyor…` : `${labelStr} koordinatına uçuluyor…`);
+    }
+
+    const hoverRaycaster = new THREE.Raycaster();
+    const hoverPointer = new THREE.Vector2();
+    const hoverSphere = new THREE.Sphere();
+    const hoverHit = new THREE.Vector3();
+    let hoverEvent = null, hoverFrame = 0;
+
+    function findNearestLunarPlace(lat, lon, maxDeg = 2.6) {
+      let best = null, bestAngDeg = maxDeg;
+      const u1 = latLonToUnitVector(lat, lon);
+      for (const item of NOMENCLATURE_ITEMS) {
+        const u2 = latLonToUnitVector(item.lat, item.lon);
+        const angDeg = THREE.MathUtils.radToDeg(Math.acos(THREE.MathUtils.clamp(u1.dot(u2), -1, 1)));
+        if (angDeg < bestAngDeg) { bestAngDeg = angDeg; best = item; }
+      }
+      for (const place of LUNAR_PLACES) {
+        const u2 = latLonToUnitVector(place.lat, place.lon);
+        const angDeg = THREE.MathUtils.radToDeg(Math.acos(THREE.MathUtils.clamp(u1.dot(u2), -1, 1)));
+        if (angDeg < bestAngDeg) { bestAngDeg = angDeg; best = place; }
+      }
+      return best;
+    }
+
+    function pickNomenclatureSprite(rc) {
+      if (isGlobeProjection()) {
+        if (!nomenclatureGroup.visible) return null;
+        const visibleSprites = nomenclatureSprites.filter((s) => s.visible);
+        const hits = rc.intersectObjects(visibleSprites, false);
+        return hits[0]?.object?.userData?.nomenclatureItem || null;
+      }
+      if (!nomenclatureToggle.checked) return null;
+      const mapSprites = projectionMapGroup.children.filter((c) => c.visible && c.userData?.nomenclatureItem);
+      const hits = rc.intersectObjects(mapSprites, false);
+      return hits[0]?.object?.userData?.nomenclatureItem || null;
+    }
+
+    function updateHoverReadout() {
+      hoverFrame = 0;
+      const event = hoverEvent;
+      if (!event || event.buttons || (activeFocus !== 'moon' && activeFocus !== 'free')) {
+        readout.hidden = true;
+        renderer.domElement.style.cursor = '';
+        return;
+      }
+      const rect = renderer.domElement.getBoundingClientRect();
+      hoverPointer.set(((event.clientX - rect.left) / rect.width) * 2 - 1, -((event.clientY - rect.top) / rect.height) * 2 + 1);
+      hoverRaycaster.setFromCamera(hoverPointer, camera);
+
+      const spriteItem = pickNomenclatureSprite(hoverRaycaster);
+
+      let lat = null, lon = null;
+      if (isGlobeProjection()) {
+        moonMesh.updateMatrixWorld(true);
+        hoverSphere.set(moonMesh.position, moonSurfaceRadius);
+        if (hoverRaycaster.ray.intersectSphere(hoverSphere, hoverHit)) {
+          const coords = localVectorToLatLon(moonMesh.worldToLocal(hoverHit.clone()));
+          lat = coords.lat;
+          lon = coords.lon;
+        } else if (spriteItem) {
+          lat = spriteItem.lat;
+          lon = spriteItem.lon;
+        }
+      } else if (projectionPlaneMesh) {
+        const hits = hoverRaycaster.intersectObject(projectionPlaneMesh, false);
+        if (hits.length) {
+          const localPt = projectionPlaneMesh.worldToLocal(hits[0].point.clone());
+          const pType = projectionPlaneMesh.userData.projectionType;
+          if (pType === 'global') {
+            lon = (localPt.x / (projectionPlaneMesh.userData.mapWidth / 2)) * 180;
+            lat = (localPt.y / (projectionPlaneMesh.userData.mapHeight / 2)) * 90;
+          } else {
+            const distRatio = Math.hypot(localPt.x, localPt.y) / projectionPlaneMesh.userData.discRadius;
+            if (distRatio <= 1) {
+              lat = pType === 'north-pole' ? (90 - distRatio * 90) : (-90 + distRatio * 90);
+              lon = THREE.MathUtils.radToDeg(Math.atan2(localPt.y, localPt.x));
+            }
+          }
+        } else if (spriteItem) {
+          lat = spriteItem.lat;
+          lon = spriteItem.lon;
+        }
+      }
+      if (lat === null || lon === null) {
+        readout.hidden = true;
+        renderer.domElement.style.cursor = '';
+        return;
+      }
+      const nearPlace = spriteItem || findNearestLunarPlace(lat, lon);
+      renderer.domElement.style.cursor = nearPlace ? 'pointer' : '';
+      const coordText = `Enlem: ${Math.abs(lat).toFixed(2)}° ${lat >= 0 ? 'K' : 'G'}  |  Boylam: ${Math.abs(lon).toFixed(2)}° ${lon >= 0 ? 'D' : 'B'}`;
+      readout.textContent = nearPlace ? `${coordText}  •  📍 ${nearPlace.name} (Yakınlaşmak için tıkla)` : coordText;
+      readout.hidden = false;
+    }
+
+    renderer.domElement.addEventListener('pointermove', (event) => { hoverEvent = event; if (!hoverFrame) hoverFrame = requestAnimationFrame(updateHoverReadout); });
+    renderer.domElement.addEventListener('pointerleave', () => { hoverEvent = null; readout.hidden = true; renderer.domElement.style.cursor = ''; });
+
+    let pressX = 0, pressY = 0, dragged = false;
+    renderer.domElement.addEventListener('pointerdown', (event) => { pressX = event.clientX; pressY = event.clientY; dragged = false; }, true);
+    renderer.domElement.addEventListener('pointermove', (event) => { if (event.buttons && Math.hypot(event.clientX - pressX, event.clientY - pressY) > 5) dragged = true; }, true);
+    renderer.domElement.addEventListener('click', (event) => { if (dragged) { event.stopImmediatePropagation(); dragged = false; } }, true);
+
+    const raycaster = new THREE.Raycaster();
+    const pointer = new THREE.Vector2();
+    renderer.domElement.addEventListener('click', (event) => {
+      const rect = renderer.domElement.getBoundingClientRect();
+      pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+      raycaster.setFromCamera(pointer, camera);
+
+      const clickedSpriteItem = pickNomenclatureSprite(raycaster);
+      if (clickedSpriteItem) {
+        showLunarFeatureInfo(clickedSpriteItem);
+        flyToLatLon(clickedSpriteItem.lat, clickedSpriteItem.lon, clickedSpriteItem.name, 1.22);
+        return;
+      }
+
+      if (activeFocus === 'moon' || activeFocus === 'free') {
+        if (isGlobeProjection()) {
+          moonMesh.updateMatrixWorld(true);
+          hoverSphere.set(moonMesh.position, moonSurfaceRadius);
+          if (raycaster.ray.intersectSphere(hoverSphere, hoverHit)) {
+            const { lat, lon } = localVectorToLatLon(moonMesh.worldToLocal(hoverHit.clone()));
+            const nearCrater = findNearestLunarPlace(lat, lon, 2.8);
+            if (nearCrater) {
+              showLunarFeatureInfo(nearCrater);
+              flyToLatLon(nearCrater.lat, nearCrater.lon, nearCrater.name, 1.22);
+              return;
+            }
+          }
+        } else if (projectionPlaneMesh) {
+          const hits = raycaster.intersectObject(projectionPlaneMesh, false);
+          if (hits.length) {
+            const localPt = projectionPlaneMesh.worldToLocal(hits[0].point.clone());
+            const pType = projectionPlaneMesh.userData.projectionType;
+            let lat = null, lon = null;
+            if (pType === 'global') {
+              lon = (localPt.x / (projectionPlaneMesh.userData.mapWidth / 2)) * 180;
+              lat = (localPt.y / (projectionPlaneMesh.userData.mapHeight / 2)) * 90;
+            } else {
+              const distRatio = Math.hypot(localPt.x, localPt.y) / projectionPlaneMesh.userData.discRadius;
+              if (distRatio <= 1) {
+                lat = pType === 'north-pole' ? (90 - distRatio * 90) : (-90 + distRatio * 90);
+                lon = THREE.MathUtils.radToDeg(Math.atan2(localPt.y, localPt.x));
+              }
+            }
+            if (lat !== null && lon !== null) {
+              const nearCrater = findNearestLunarPlace(lat, lon, 3.2);
+              if (nearCrater) {
+                showLunarFeatureInfo(nearCrater);
+                flyToLatLon(nearCrater.lat, nearCrater.lon, nearCrater.name, 1.22);
+                return;
+              }
+            }
+          }
+        }
+      }
+
+      const hit = raycaster.intersectObjects(scene.children, true).find((item) => item.object.isMesh);
+      let object = hit?.object;
+      while (object && !object.userData.focusBody) object = object.parent;
+      if (object?.userData.focusBody) {
+        if (object.userData.focusBody === 'moon' && activeFocus === 'moon') return;
+        document.getElementById('body-focus').value = object.userData.focusBody;
+        focusBody(object.userData.focusBody);
+      }
+    });
+
+    const GAMEPAD_KEYS = new Set(['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'w', 'a', 's', 'd', 'q', 'e', 'z', 'c', 'r', 'f']);
+    const heldKeys = new Set();
+    let gamepadActive = false, gamepadFrame = 0, gamepadLast = 0;
+    let gamepadPitch = 0;
+    const gamepadHeading = new THREE.Vector3(0, 1, 0);
+
+    function applyGamepadCameraPose() {
+      const center = moonMesh.position;
+      const radialUnit = camera.position.clone().sub(center);
+      if (radialUnit.lengthSq() < 1e-6) radialUnit.set(0, 0, 1);
+      radialUnit.normalize();
+      gamepadHeading.addScaledVector(radialUnit, -gamepadHeading.dot(radialUnit));
+      if (gamepadHeading.lengthSq() < 1e-6) {
+        gamepadHeading.set(0, 1, 0).addScaledVector(radialUnit, -radialUnit.y);
+        if (gamepadHeading.lengthSq() < 1e-6) gamepadHeading.set(1, 0, 0);
+      }
+      gamepadHeading.normalize();
+
+      const cosP = Math.cos(gamepadPitch), sinP = Math.sin(gamepadPitch);
+      const lookDir = radialUnit.clone().multiplyScalar(-cosP).addScaledVector(gamepadHeading, sinP).normalize();
+      camera.up.copy(gamepadHeading).multiplyScalar(cosP).addScaledVector(radialUnit, sinP).normalize();
+      controls.target.copy(camera.position).addScaledVector(lookDir, moonSurfaceRadius);
+      camera.lookAt(controls.target);
+    }
+
+    function setGamepadActive(on) {
+      const nextState = Boolean(on && isGlobeProjection());
+      if (nextState && !gamepadActive) {
+        const center = moonMesh.position;
+        const radialUnit = camera.position.clone().sub(center).normalize();
+        camera.updateMatrixWorld();
+        const camUp = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 1);
+        const camForward = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 2).negate();
+        const tangentFwd = camForward.clone().addScaledVector(radialUnit, -camForward.dot(radialUnit));
+        const tangentUp = camUp.clone().addScaledVector(radialUnit, -camUp.dot(radialUnit));
+        gamepadHeading.copy(tangentFwd.lengthSq() > 1e-4 ? tangentFwd : tangentUp);
+        if (gamepadHeading.lengthSq() < 1e-6) gamepadHeading.set(0, 1, 0).addScaledVector(radialUnit, -radialUnit.y);
+        gamepadHeading.normalize();
+        gamepadPitch = THREE.MathUtils.clamp(Math.acos(THREE.MathUtils.clamp(-camForward.dot(radialUnit), -1, 1)), 0, 1.48);
+        applyGamepadCameraPose();
+      } else if (!nextState && gamepadActive) {
+        gamepadPitch = 0;
+        if (isGlobeProjection()) {
+          controls.target.copy(moonMesh.position);
+          camera.up.set(0, 1, 0);
+          camera.lookAt(controls.target);
+        }
+      }
+      gamepadActive = nextState;
+      gamepadBtn.setAttribute('aria-pressed', String(gamepadActive));
+      gamepadHint.hidden = !gamepadActive;
+      if (!gamepadActive) { heldKeys.clear(); gamepadLast = 0; }
+    }
+    gamepadBtn.addEventListener('click', () => { if (isGlobeProjection()) setGamepadActive(!gamepadActive); });
+
+    function keyboardBusy() {
+      const el = document.activeElement;
+      const typing = el && (el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || (el.tagName === 'INPUT' && !['range', 'checkbox', 'radio', 'button'].includes(el.type)));
+      return Boolean(typing || document.querySelector('dialog[open]'));
+    }
+
+    window.addEventListener('keydown', (event) => {
+      if (!gamepadActive || !isGlobeProjection() || event.ctrlKey || event.metaKey || event.altKey || keyboardBusy()) return;
+      const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+      if (!GAMEPAD_KEYS.has(key)) return;
+      event.preventDefault();
+      heldKeys.add(key);
+      if (!gamepadFrame) gamepadFrame = requestAnimationFrame(gamepadStep);
+    });
+    window.addEventListener('keyup', (event) => { heldKeys.delete(event.key.length === 1 ? event.key.toLowerCase() : event.key); });
+    window.addEventListener('blur', () => heldKeys.clear());
+
+    function gamepadStep(now) {
+      gamepadFrame = 0;
+      if (!gamepadActive || !heldKeys.size || !isGlobeProjection()) { gamepadLast = 0; return; }
+      const dt = gamepadLast ? Math.min(0.05, (now - gamepadLast) / 1000) : 0.016;
+      gamepadLast = now;
+      cameraFlight = null;
+      isFirstPersonView = false;
+      camera.near = defaultCameraNear;
+      camera.updateProjectionMatrix();
+
+      const center = moonMesh.position, radius = moonSurfaceRadius;
+      const prevSurfaceR = getLocalSurfaceRadiusAtWorldPos(camera.position);
+      const minClearance = radius * 0.014;
+      const prevAltitude = Math.max(camera.position.distanceTo(center) - prevSurfaceR, minClearance);
+      const angularRate = THREE.MathUtils.clamp(0.32 + 0.65 * (prevAltitude / radius), 0.14, 1.05) * dt;
+
+      const radialInit = camera.position.clone().sub(center).normalize();
+      gamepadHeading.addScaledVector(radialInit, -gamepadHeading.dot(radialInit));
+      if (gamepadHeading.lengthSq() < 1e-6) gamepadHeading.set(0, 1, 0).addScaledVector(radialInit, -radialInit.y);
+      gamepadHeading.normalize();
+      const rightTangent = new THREE.Vector3().crossVectors(gamepadHeading, radialInit).normalize();
+
+      const rotateAroundMoon = (axis, angle) => {
+        camera.position.sub(center).applyAxisAngle(axis, angle).add(center);
+        gamepadHeading.applyAxisAngle(axis, angle).normalize();
+      };
+
+      const moveForward = (heldKeys.has('ArrowUp') || heldKeys.has('w') ? 1 : 0) - (heldKeys.has('ArrowDown') || heldKeys.has('s') ? 1 : 0);
+      const moveRight = (heldKeys.has('ArrowRight') || heldKeys.has('d') ? 1 : 0) - (heldKeys.has('ArrowLeft') || heldKeys.has('a') ? 1 : 0);
+
+      if (moveForward !== 0) rotateAroundMoon(rightTangent, -moveForward * angularRate);
+      if (moveRight !== 0) rotateAroundMoon(gamepadHeading, moveRight * angularRate);
+
+      const verticalDir = (heldKeys.has('q') ? 1 : 0) - (heldKeys.has('e') ? 1 : 0);
+      const newSurfaceR = getLocalSurfaceRadiusAtWorldPos(camera.position);
+      const nextAltitude = verticalDir !== 0
+        ? THREE.MathUtils.clamp(prevAltitude * Math.exp(1.15 * dt * verticalDir), minClearance, controls.maxDistance)
+        : prevAltitude;
+
+      const radial = camera.position.clone().sub(center);
+      if (radial.lengthSq() < 1e-6) radial.set(0, 0, 1);
+      camera.position.copy(center).addScaledVector(radial.normalize(), newSurfaceR + nextAltitude);
+
+      const spinDir = (heldKeys.has('z') ? 1 : 0) - (heldKeys.has('c') ? 1 : 0);
+      if (spinDir !== 0) {
+        const spinAxis = camera.position.clone().sub(center).normalize();
+        const spinAngle = -spinDir * 1.25 * dt;
+        gamepadHeading.applyAxisAngle(spinAxis, spinAngle).normalize();
+      }
+
+      const pitchDir = (heldKeys.has('r') ? 1 : 0) - (heldKeys.has('f') ? 1 : 0);
+      if (pitchDir !== 0) {
+        gamepadPitch = THREE.MathUtils.clamp(gamepadPitch + pitchDir * 1.15 * dt, 0, 1.48);
+      }
+
+      applyGamepadCameraPose();
+      activeFocus = 'moon';
+      gamepadFrame = requestAnimationFrame(gamepadStep);
+    }
+
+    const SAMPLE_FLIGHTS = [
+      {
+        id: 'apollo-11',
+        name: 'Apollo 11 — Tranquility Base',
+        shortTitle: 'Apollo 11',
+        statusType: 'landed',
+        badgeText: '✓ Gerçekleşti (1969)',
+        subtitle: 'Mare Tranquillitatis • İlk İnsanlı Ay İnişi',
+        agencyDate: 'NASA • 20 Temmuz 1969 • 0.67° K, 23.47° D',
+        lat: 0.67416,
+        lon: 23.47314,
+        illuminationRatio: null,
+        infoLabel: 'İniş ve Görev Bilgileri',
+        infoText: 'Neil Armstrong ve Buzz Aldrin, Eagle Ay Modülü (LM) ile Sessizlik Denizi’ne inerek insanlığın Ay yüzeyindeki ilk adımlarını attı. Yüzeyde 21 saat 36 dakika kalındı; 21,5 kg Ay bazaltı/regoliti Dünya’ya getirildi, sismometre ve lazer yansıtıcı (LRRR) yerleştirildi.',
+        reasonLabel: 'Neden Bu Bölge Seçildi?',
+        reasonText: 'Ekvatora yakın düz bazaltik mare tabanı olması, yerel eğimin <2° altında kalması, iniş radarını yanıltacak derin krater/kaya yoğunluğunun çok düşük olması ve Dünya ile kesintisiz doğrudan iletişim açısı sunması nedeniyle seçilmiştir.'
+      },
+      {
+        id: 'chandrayaan-3',
+        name: 'Chandrayaan-3 — Shiv Shakti',
+        shortTitle: 'Chandrayaan-3',
+        statusType: 'landed',
+        badgeText: '✓ Güney Kutbu 1. İniş',
+        subtitle: '69.37° G, 32.32° D • ISRO Vikram & Pragyan',
+        agencyDate: 'ISRO (Hindistan) • 23 Ağustos 2023 • 69.37° G, 32.32° D',
+        lat: -69.3730,
+        lon: 32.3190,
+        illuminationRatio: null,
+        infoLabel: 'İniş ve Görev Bilgileri',
+        infoText: 'Ay’ın güney yüksek enlemlerine (Güney Kutbu bölgesine) yapılan tarihteki ilk başarılı yumuşak iniştir. Vikram iniş aracı ve Pragyan gezgini; ChaSTE probu ile ilk kez kutup yakınındaki üst regolit sıcaklık gradyanını ölçmüş ve LIBS ile yerinde kükürt (S), alüminyum, kalsiyum ve demir varlığını doğrulamıştır.',
+        reasonLabel: 'Neden Bu Bölge Seçildi?',
+        reasonText: 'Manzinus ve Boguslawsky kraterleri arasında ~70° G yüksek enlemde bulunmasına rağmen 4,5 × 2,4 km boyutlarında, yerel eğimi <7° olan güvenli bir iniş platosu sunması ve bir tam Ay günü (~14 Dünya günü) kesintisiz Güneş enerjisi sağlaması nedeniyle seçilmiştir.'
+      },
+      {
+        id: 'im1-odysseus',
+        name: 'IM-1 Odysseus — Malapert A',
+        shortTitle: 'IM-1 Odysseus',
+        statusType: 'landed',
+        badgeText: '✓ Güney Kutbu 2. İniş',
+        subtitle: '80.13° G, 1.44° D • Güney Kutbu’na En Yakın İniş',
+        agencyDate: 'Intuitive Machines / NASA CLPS • 22 Şubat 2024 • 80.13° G, 1.44° D',
+        lat: -80.1276,
+        lon: 1.4367,
+        illuminationRatio: null,
+        infoLabel: 'İniş ve Görev Bilgileri',
+        infoText: 'NASA CLPS programı kapsamında fırlatılan Nova-C Odysseus iniş aracı; 80.13° G enlemine inerek bugüne kadar Ay’ın Güney Kutbu’na en yakın noktaya ulaşan uzay aracı ve 1972’deki Apollo 17’den bu yana ABD’nin ilk yumuşak Ay inişi olmuştur. NASA’nın 6 bilimsel yükünü yüzeye taşımıştır.',
+        reasonLabel: 'Neden Bu Bölge Seçildi?',
+        reasonText: '5 km yüksekliğindeki Malapert Massif dağ kütlesinin komşuluğunda yer alması, Dünya’nın ufuk üzerinde sürekli görünür kalarak doğrudan haberleşmeye imkân vermesi ve gelecekteki Artemis üsleri için kutup aydınlanma kuşağına giriş kapısı olması nedeniyle seçilmiştir.'
+      },
+      {
+        id: 'artemis-shackleton',
+        name: 'Artemis III — Shackleton C1 Sırtı',
+        shortTitle: 'Shackleton C1 Sırtı',
+        statusType: 'planned',
+        badgeText: '⏳ Planlanan Aday #1',
+        subtitle: '89.90° G, 0.00° D • Tam Güney Kutbu Ana Hedefi',
+        agencyDate: 'Planlanan Görev (NASA / LUNARIS) • 89.90° G, 0.00° D',
+        lat: -89.90,
+        lon: 0.00,
+        illuminationRatio: 0.921,
+        infoLabel: 'Planlanan İniş Hedefi ve Görev Profili',
+        infoText: 'Henüz fırlatılmadı; insanlığın Güney Kutbu’na yapacağı ilk iniş (Artemis III) ve LUNARIS kalıcı üs senaryomuz için belirlenen 1 numaralı hedef noktadır. 21 km çaplı ve 4,2 km derinliğindeki Shackleton Krateri’nin tam Güney Kutbu’ndan geçen yüksek aydınlanmalı sırt hattına iniş planlanmaktadır.',
+        reasonLabel: 'Neden Bu Bölgeyi Seçtik?',
+        reasonText: 'NASA LOLA/LROC verilerine göre 2 m yükseklikte yılın %85,5–%92,1’inde Güneş alır (36 m² panel ile ~45,1 kW sürekli güç). Hemen yanındaki krater tabanı kalıcı gölgededir (PSR, ~40 K) ve yaşam desteği ile hidroliz roket yakıtı için milyonlarca ton su buzu barındırır; sırt eğimi <8° güvenlik sınırındadır.'
+      },
+      {
+        id: 'lunaris-connecting-ridge',
+        name: 'LUNARIS — Connecting Ridge Üssü',
+        shortTitle: 'Connecting Ridge',
+        statusType: 'planned',
+        badgeText: '⏳ Planlanan Aday #2',
+        subtitle: '89.40° G, 137.50° B • En Yüksek Aydınlanma Sırtı',
+        agencyDate: 'Planlanan Görev (LUNARIS Üs Adayı) • 89.40° G, 137.50° B',
+        lat: -89.40,
+        lon: -137.50,
+        illuminationRatio: 0.9227,
+        infoLabel: 'Planlanan İniş Hedefi ve Görev Profili',
+        infoText: 'Henüz fırlatılmadı; Shackleton ile de Gerlache kraterlerini birbirine bağlayan sırt (Connecting Ridge) üzerinde uzun süreli otonom güç üretimi ve robotik buz sondajı için belirlediğimiz 2 numaralı stratejik hedef noktadır.',
+        reasonLabel: 'Neden Bu Bölgeyi Seçtik?',
+        reasonText: '2 m’de %92,27 ve 10 m kulede %95,65 aydınlanma ortalamasıyla tüm Ay yüzeyinde en uzun kesintisiz Güneş penceresine sahip bölgedir. İki büyük kalıcı gölgeli su buzu kraterinin (Shackleton ve de Gerlache) tam ortasında doğal bir enerji köprüsü oluşturur ve <8° eğim şartını sağlar.'
+      }
+    ];
+
+    let activeSampleFlight = SAMPLE_FLIGHTS[3];
+    let trackedSite = { lat: activeSampleFlight.lat, lon: activeSampleFlight.lon, name: activeSampleFlight.shortTitle, illuminationRatio: activeSampleFlight.illuminationRatio };
+
+    function angleBetweenSitesDeg(lat1, lon1, lat2, lon2) {
+      return THREE.MathUtils.radToDeg(Math.acos(THREE.MathUtils.clamp(
+        latLonToUnitVector(lat1, lon1).dot(latLonToUnitVector(lat2, lon2)), -1, 1
+      )));
+    }
+
+    function showSampleFlightInfo(flight) {
+      document.getElementById('feature-info-category').textContent = `Örnek görev · ${flight.agencyDate}`;
+      document.getElementById('feature-info-title').textContent = flight.name;
+      document.getElementById('feature-info-coordinates').textContent = `Koordinatlar: ${flight.lat.toFixed(2)}°, ${flight.lon.toFixed(2)}°`;
+      document.getElementById('feature-info-description').textContent = flight.infoText;
+      document.getElementById('feature-info-detail-label').textContent = flight.reasonLabel;
+      document.getElementById('feature-info-detail-label').hidden = false;
+      document.getElementById('feature-info-detail').textContent = flight.reasonText;
+      document.getElementById('feature-info-detail').hidden = false;
+      document.getElementById('feature-info-parameters').hidden = flight.id === 'apollo-11';
+      document.getElementById('feature-info-source').href = flight.id === 'chandrayaan-3'
+        ? 'https://www.isro.gov.in/Chandrayaan3.html'
+        : 'https://science.nasa.gov/moon/missions/';
+      document.getElementById('feature-info-source').textContent = flight.id === 'chandrayaan-3' ? 'ISRO Chandrayaan-3' : 'NASA Ay görevleri';
+      document.getElementById('feature-info-panel').hidden = false;
+    }
+
+    function showLunarFeatureInfo(item) {
+      const sampleFlight = SAMPLE_FLIGHTS.find((flight) => angleBetweenSitesDeg(item.lat, item.lon, flight.lat, flight.lon) < 1.5);
+      if (sampleFlight) {
+        showSampleFlightInfo(sampleFlight);
+        return;
+      }
+      let place = LUNAR_PLACES.find((entry) => entry.name === item.name);
+      if (!place) {
+        place = LUNAR_PLACES
+          .map((entry) => ({ entry, separation: angleBetweenSitesDeg(item.lat, item.lon, entry.lat, entry.lon) }))
+          .filter((match) => match.separation < 4)
+          .sort((a, b) => a.separation - b.separation)[0]?.entry;
+      }
+      const details = place || item;
+      document.getElementById('feature-info-category').textContent = details.group || 'Ay yüzeyi etiketi';
+      document.getElementById('feature-info-title').textContent = details.name || item.name || 'Ay yüzeyi noktası';
+      document.getElementById('feature-info-coordinates').textContent = `Koordinatlar: ${details.lat.toFixed(2)}° ${details.lat < 0 ? 'G' : 'K'}, ${details.lon.toFixed(2)}° ${details.lon < 0 ? 'B' : 'D'}`;
+      document.getElementById('feature-info-description').textContent = details.desc || 'Ay yüzeyindeki adlandırılmış oluşum. Haritadaki koordinat yaklaşık merkezini gösterir.';
+      document.getElementById('feature-info-detail-label').hidden = true;
+      document.getElementById('feature-info-detail').hidden = true;
+      document.getElementById('feature-info-parameters').hidden = details.lat > -60;
+      document.getElementById('feature-info-source').href = 'https://science.nasa.gov/moon/';
+      document.getElementById('feature-info-source').textContent = 'NASA Ay kaynakları';
+      document.getElementById('feature-info-panel').hidden = false;
+    }
+
+    const sampleFlightListEl = document.getElementById('sample-flight-list');
+    const sampleFlightDetailEl = document.getElementById('sample-flight-detail');
+    const sfdTitleEl = document.getElementById('sfd-title');
+    const sfdBadgeEl = document.getElementById('sfd-badge');
+    const sfdMetaEl = document.getElementById('sfd-meta');
+    const sfdInfoLabelEl = document.getElementById('sfd-info-label');
+    const sfdInfoEl = document.getElementById('sfd-info');
+    const sfdReasonLabelEl = document.getElementById('sfd-reason-label');
+    const sfdReasonEl = document.getElementById('sfd-reason');
+    const sfdFlyBtn = document.getElementById('sfd-fly-btn');
+    const sfdFpBtn = document.getElementById('sfd-fp-btn');
+    const sfdAlternativeBtn = document.getElementById('sfd-alternative-btn');
+    const sfdAlternativesEl = document.getElementById('sfd-alternatives');
+    const sfdAlternativeListEl = document.getElementById('sfd-alternative-list');
+
+    function renderSampleFlightCard(flight) {
+      sampleFlightDetailEl.hidden = false;
+      sfdTitleEl.textContent = flight.name;
+      sfdBadgeEl.textContent = flight.badgeText;
+      sfdBadgeEl.className = `sf-badge ${flight.statusType}`;
+      sfdMetaEl.textContent = flight.agencyDate;
+      sfdInfoLabelEl.textContent = flight.infoLabel;
+      sfdInfoEl.textContent = flight.infoText;
+      sfdReasonLabelEl.textContent = flight.reasonLabel;
+      sfdReasonEl.textContent = flight.reasonText;
+      sfdFpBtn.textContent = isFirstPersonView ? '🌍 Yörünge Görünümüne Dön' : '👨‍🚀 1. Kişi (Yüzey) Modu';
+      sfdAlternativeBtn.hidden = flight.statusType !== 'planned';
+      sfdAlternativesEl.hidden = true;
+      for (const btn of sampleFlightListEl.querySelectorAll('.sample-flight-btn')) {
+        btn.classList.toggle('active', btn.dataset.flightId === flight.id);
+      }
+    }
+
+    function selectSampleFlight(flight, shouldFly = false) {
+      activeSampleFlight = flight;
+      trackedSite = { lat: flight.lat, lon: flight.lon, name: flight.shortTitle, illuminationRatio: flight.illuminationRatio };
+      updateLandingSite(flight.lat, flight.lon, true);
+      document.getElementById('best-site').textContent = `${flight.shortTitle} (${Math.abs(flight.lat).toFixed(2)}° ${flight.lat >= 0 ? 'K' : 'G'}, ${Math.abs(flight.lon).toFixed(2)}° ${flight.lon >= 0 ? 'D' : 'B'})`;
+      renderSampleFlightCard(flight);
+      updateLivePowerStatus();
+      if (shouldFly) {
+        flyToLatLon(flight.lat, flight.lon, flight.name, 1.20);
+      }
+    }
+
+    SAMPLE_FLIGHTS.forEach((flight) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'sample-flight-btn';
+      btn.dataset.flightId = flight.id;
+      btn.innerHTML = `
+        <div class="sf-top">
+          <span class="sf-name">${flight.name}</span>
+          <span class="sf-badge ${flight.statusType}">${flight.badgeText}</span>
+        </div>
+        <div class="sf-sub">${flight.subtitle}</div>
+      `;
+      btn.addEventListener('click', () => selectSampleFlight(flight, false));
+      sampleFlightListEl.appendChild(btn);
+    });
+
+    sfdFlyBtn.addEventListener('click', () => {
+      if (!activeSampleFlight) return;
+      flyToLatLon(activeSampleFlight.lat, activeSampleFlight.lon, activeSampleFlight.name, 1.18);
+      showSampleFlightInfo(activeSampleFlight);
+      sfdFpBtn.textContent = '👨‍🚀 1. Kişi (Yüzey) Modu';
+    });
+
+    function showSampleAlternatives(flight) {
+      const minDistanceKm = 500;
+      const alternatives = [];
+      for (const candidate of lastRankedSouthSites) {
+        if (candidate.lat > -65) continue;
+        const referenceDistance = 2 * landingParameters.lunarRadiusKm * Math.sin(
+          THREE.MathUtils.degToRad(angleBetweenSitesDeg(flight.lat, flight.lon, candidate.lat, candidate.lon)) / 2
+        );
+        if (referenceDistance < minDistanceKm) continue;
+        const separated = alternatives.every((chosen) => {
+          const distance = 2 * landingParameters.lunarRadiusKm * Math.sin(
+            THREE.MathUtils.degToRad(angleBetweenSitesDeg(chosen.lat, chosen.lon, candidate.lat, candidate.lon)) / 2
+          );
+          return distance >= minDistanceKm;
+        });
+        if (separated) alternatives.push({ ...candidate, distanceFromTargetKm: referenceDistance });
+        if (alternatives.length === 3) break;
+      }
+
+      sfdAlternativeListEl.replaceChildren();
+      if (!alternatives.length) {
+        const empty = document.createElement('li');
+        empty.textContent = 'Bu tarih için yeterli uzaklıkta alternatif hesaplanamadı.';
+        sfdAlternativeListEl.appendChild(empty);
+      }
+      alternatives.forEach((candidate, index) => {
+        const item = document.createElement('li');
+        const summary = document.createElement('span');
+        summary.textContent = `${candidate.lat.toFixed(2)}°, ${candidate.lon.toFixed(2)}° · yaklaşık ${candidate.distanceFromTargetKm.toFixed(0)} km uzakta · en uzun Güneş penceresi ~${candidate.maxSunWindowDays.toFixed(1)} gün `;
+        const goButton = document.createElement('button');
+        goButton.type = 'button';
+        goButton.className = 'candidate-go';
+        goButton.textContent = 'Bölgeye git';
+        goButton.addEventListener('click', () => {
+          const alternative = { ...candidate, name: `${flight.shortTitle} alternatifi ${index + 1}` };
+          trackedSite = { lat: alternative.lat, lon: alternative.lon, name: alternative.name, illuminationRatio: alternative.evidence?.illuminationAt2m ?? null };
+          updateLandingSite(alternative.lat, alternative.lon, true);
+          updateLivePowerStatus();
+          flyToLatLon(alternative.lat, alternative.lon, alternative.name, 1.18);
+          document.getElementById('feature-info-category').textContent = `Alternatif iniş bölgesi · ${flight.shortTitle}`;
+          document.getElementById('feature-info-title').textContent = alternative.name;
+          document.getElementById('feature-info-coordinates').textContent = `Koordinatlar: ${alternative.lat.toFixed(2)}° G, ${alternative.lon.toFixed(2)}°`;
+          document.getElementById('feature-info-description').textContent = `Planlanan ${flight.shortTitle} hedefi yerine değerlendirilmek üzere, güney kutbu koordinat ağındaki seçenekler arasından önerildi.`;
+          document.getElementById('feature-info-detail-label').textContent = 'Öneri ölçütleri ve sınırlar';
+          document.getElementById('feature-info-detail-label').hidden = false;
+          document.getElementById('feature-info-detail').textContent = `Planlanan hedeften yaklaşık ${alternative.distanceFromTargetKm.toFixed(0)} km uzakta. Bu tarih çevresinde tahmini en uzun kesintisiz Güneş penceresi ~${alternative.maxSunWindowDays.toFixed(1)} gün. Eğim <8° ve 100 m tampon şartları yerel DEM verisi olmadığı için doğrulanamıyor.`;
+          document.getElementById('feature-info-detail').hidden = false;
+          document.getElementById('feature-info-parameters').hidden = false;
+          document.getElementById('feature-info-source').href = 'https://science.nasa.gov/moon/';
+          document.getElementById('feature-info-source').textContent = 'NASA Ay kaynakları';
+          document.getElementById('feature-info-panel').hidden = false;
+        });
+        item.append(summary, goButton);
+        sfdAlternativeListEl.appendChild(item);
+      });
+      sfdAlternativesEl.hidden = false;
+    }
+
+    sfdAlternativeBtn.addEventListener('click', () => {
+      if (activeSampleFlight?.statusType === 'planned') showSampleAlternatives(activeSampleFlight);
+    });
+
+    sfdFpBtn.addEventListener('click', () => {
+      if (!activeSampleFlight) return;
+      if (isFirstPersonView) {
+        flyToLatLon(activeSampleFlight.lat, activeSampleFlight.lon, activeSampleFlight.name, 1.20);
+        sfdFpBtn.textContent = '👨‍🚀 1. Kişi (Yüzey) Modu';
+      } else {
+        enterFirstPersonAtCandidate({ lat: activeSampleFlight.lat, lon: activeSampleFlight.lon, name: activeSampleFlight.name });
+      }
+    });
+
+    applyProjectionState();
+    updateLandingSite(-89.9, 0.0);
+
+    let isPlaying = false;
+    const slider = document.getElementById('timeline-slider');
+    const timeLabel = document.getElementById('current-time-label');
+    const playBtn = document.getElementById('play-pause-btn');
+    const powerStatus = document.getElementById('power-status');
+    const dateInput = document.getElementById('mission-date');
+    const missionTimeInput = document.getElementById('mission-time');
+    const missionDialog = document.getElementById('mission-dialog');
+
+    const landingParameters = {
+      lunarRadiusKm: 1737.4,
+      maxSlopeDeg: 8,
+      minContinuousSunDays: 6.5,
+      panelAreaM2: 36,
+      solarFluxWm2: 1360.8,
+      demResolutionM: 10,
+      sunAngularRadiusMinDeg: 0.261,
+      maxSubsolarLatitudeDeg: 1.59
+    };
+
+    function updateLivePowerStatus() {
+      const site = trackedSite || { lat: -89.9, lon: 0.0, name: 'Shackleton C1', illuminationRatio: 0.921 };
+      const effectiveLat = Math.abs(site.lat) > 85 ? (site.lat >= 0 ? 84.5 : -84.5) : site.lat;
+      const localNorm = latLonToUnitVector(effectiveLat, site.lon);
+      const worldNorm = localNorm.clone().applyAxisAngle(UP_Y, moonMesh.rotation.y).normalize();
+      const toSun = sunPosition.clone().sub(moonPosition).normalize();
+      const sinElev = worldNorm.dot(toSun);
+      const elevDeg = THREE.MathUtils.radToDeg(Math.asin(THREE.MathUtils.clamp(sinElev, -1, 1)));
+      const panelMaxKw = (landingParameters.panelAreaM2 * landingParameters.solarFluxWm2) / 1000;
+      const output = document.getElementById('selected-site-evidence');
+
+      if (elevDeg > -landingParameters.sunAngularRadiusMinDeg) {
+        const effFactor = site.illuminationRatio
+          ? site.illuminationRatio
+          : THREE.MathUtils.clamp(Math.sin(THREE.MathUtils.degToRad(Math.max(elevDeg, 6))), 0.18, 1.0);
+        const kw = (panelMaxKw * effFactor).toFixed(1);
+        powerStatus.className = 'status-badge status-ok';
+        powerStatus.textContent = `☀️ Güneş var! Paneller enerji üretiyor (~${kw} kW).`;
+        if (output) {
+          output.textContent = `${site.name}: Güneş ufkun üstünde (+${Math.max(0.1, elevDeg).toFixed(1)}°). 36 m² panel anlık güç üretimi ~${kw} kW.`;
+        }
+      } else {
+        powerStatus.className = 'status-badge status-shadow';
+        powerStatus.textContent = '🌑 Güneş yok. Şimdi batarya kullanılıyor.';
+        if (output) {
+          output.textContent = `${site.name}: Bölge şu anda krater/Ay gölgesinde (Güneş ${elevDeg.toFixed(1)}°). Güneş panelleri devre dışı, batarya modunda.`;
+        }
+      }
+    }
+
+    renderSampleFlightCard(activeSampleFlight);
+
+    const documentedSiteEvidence = {
+      '-89.9,0.0': { referenceName: 'Shackleton C1 Ridge', illuminationAt2m: 0.921 },
+      '-89.4,222.5': { referenceName: 'Connecting Ridge', illuminationAt2m: 0.9227, illuminationAt10m: 0.9565 }
+    };
+
+    const southHemisphereGrid = [];
+    for (let lat = -2.5; lat > -90; lat -= 5) {
+      for (let lon = -180; lon < 180; lon += 10) southHemisphereGrid.push({ lat, lon, evidence: null });
+    }
+    southHemisphereGrid.push(
+      { lat: -89.9, lon: 0, evidence: documentedSiteEvidence['-89.9,0.0'] },
+      { lat: -89.4, lon: -137.5, evidence: documentedSiteEvidence['-89.4,222.5'] }
+    );
+    let lastRankedSouthSites = [];
+    let lastAutoRecommendationDay = null, recommendationTimer = null;
+
+    function recommendLandingSite(simulationHours = Number(slider.value), force = false) {
+      const missionDate = new Date(`${dateInput.value}T${missionTimeInput.value || '00:00'}:00`);
+      missionDate.setHours(missionDate.getHours() + simulationHours);
+      const recommendationDay = Math.floor(missionDate.getTime() / 86400000);
+      if (!force && recommendationDay === lastAutoRecommendationDay) return;
+      lastAutoRecommendationDay = recommendationDay;
+
+      const epochMs = Date.UTC(2000, 0, 6, 18, 14), synodicPeriodDays = 29.53059, sampleHours = 3;
+      const sampleCount = Math.ceil((synodicPeriodDays * 24) / sampleHours);
+      const samples = [];
+      for (let i = 0; i < sampleCount; i++) {
+        const daysFromEpoch = (missionDate.getTime() + i * sampleHours * 3600000 - epochMs) / 86400000;
+        const solarLongitude = THREE.MathUtils.degToRad(((daysFromEpoch / synodicPeriodDays) * 360) % 360);
+        const solarDeclination = THREE.MathUtils.degToRad(landingParameters.maxSubsolarLatitudeDeg * Math.sin((daysFromEpoch / 365.25) * Math.PI * 2));
+        samples.push({ solarLongitude, sinDeclination: Math.sin(solarDeclination), cosDeclination: Math.cos(solarDeclination) });
+      }
+
+      const sunLimbSin = Math.sin(THREE.MathUtils.degToRad(-landingParameters.sunAngularRadiusMinDeg));
+      const ranked = southHemisphereGrid.map((candidate) => {
+        const lat = THREE.MathUtils.degToRad(candidate.lat), lon = THREE.MathUtils.degToRad(candidate.lon);
+        const sinLat = Math.sin(lat), cosLat = Math.cos(lat);
+        let run = 0, maxRun = 0, leadingRun = 0, stillLeading = true, trailingRun = 0, currentElevation = 0;
+        for (let i = 0; i < samples.length; i++) {
+          const s = samples[i];
+          const sinElevation = sinLat * s.sinDeclination + cosLat * s.cosDeclination * Math.cos(lon - s.solarLongitude);
+          if (i === 0) currentElevation = THREE.MathUtils.radToDeg(Math.asin(THREE.MathUtils.clamp(sinElevation, -1, 1)));
+          if (sinElevation >= sunLimbSin) {
+            run++;
+            maxRun = Math.max(maxRun, run);
+            if (stillLeading) leadingRun++;
+            trailingRun = run;
+          } else {
+            run = 0;
+            stillLeading = false;
+            trailingRun = 0;
+          }
+        }
+        const maxSunWindowDays = Math.min(sampleCount, Math.max(maxRun, leadingRun + trailingRun)) * sampleHours / 24;
+        const score = maxSunWindowDays * 100 + currentElevation + (candidate.evidence?.illuminationAt2m ?? 0) * 0.001;
+        return { ...candidate, elevation: currentElevation, maxSunWindowDays, score };
+      }).sort((a, b) => b.score - a.score);
+      lastRankedSouthSites = ranked;
+
+      const thresholdCandidates = ranked.filter((c) => c.maxSunWindowDays >= landingParameters.minContinuousSunDays);
+      const eligible = thresholdCandidates.length >= 5 ? thresholdCandidates : ranked;
+      const recommendations = [], minSeparationKm = 500;
+      for (const candidate of eligible) {
+        const farEnough = recommendations.every((chosen) => {
+          const lat1 = THREE.MathUtils.degToRad(chosen.lat), lat2 = THREE.MathUtils.degToRad(candidate.lat);
+          const a = Math.sin((lat2 - lat1) / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(THREE.MathUtils.degToRad(candidate.lon - chosen.lon) / 2) ** 2;
+          return 2 * landingParameters.lunarRadiusKm * Math.asin(Math.sqrt(Math.min(1, a))) >= minSeparationKm;
+        });
+        if (farEnough) recommendations.push(candidate);
+        if (recommendations.length === 5) break;
+      }
+
+      const selected = recommendations[0] || ranked[0];
+      recommendations.forEach((c, idx) => { c.name = `Güney yarımküre adayı ${idx + 1}`; });
+      renderRecommendationMarkers(recommendations);
+      document.getElementById('best-site').textContent = selected.name || 'Güney yarımküre adayı';
+
+      const resultDate = missionDate.toLocaleString('tr-TR', { dateStyle: 'medium', timeStyle: 'short' });
+      const panelIncidentKw = landingParameters.panelAreaM2 * landingParameters.solarFluxWm2 / 1000;
+      document.getElementById('result-scan-info').textContent = `${southHemisphereGrid.length} konum tarandı; adaylar arasında en az ${minSeparationKm} km bırakıldı.`;
+      document.getElementById('result-candidate-list').replaceChildren(...recommendations.map((candidate, index) => {
+        const item = document.createElement('li');
+        const illumination = candidate.evidence ? `; kaynak ortalaması %${(candidate.evidence.illuminationAt2m * 100).toFixed(2)}` : '; uzun dönem kaynak ölçümü yok';
+        const row = document.createElement('div');
+        row.className = 'candidate-row';
+        const details = document.createElement('span');
+        details.textContent = `${candidate.lat.toFixed(2)}°, ${candidate.lon.toFixed(2)}° — Güneş ~${candidate.maxSunWindowDays.toFixed(1)} gün; yükseklik ${candidate.elevation.toFixed(1)}°${illumination}`;
+        const actions = document.createElement('div');
+        actions.className = 'candidate-actions';
+        const goButton = document.createElement('button');
+        goButton.type = 'button';
+        goButton.className = 'candidate-go';
+        goButton.textContent = 'Git';
+        goButton.addEventListener('click', () => goToLandingCandidate(candidate));
+        const fpButton = document.createElement('button');
+        fpButton.type = 'button';
+        fpButton.className = 'candidate-go';
+        fpButton.textContent = '1. kişi';
+        fpButton.addEventListener('click', () => enterFirstPersonAtCandidate(candidate));
+        actions.append(goButton, fpButton);
+        row.append(details, actions);
+        item.replaceChildren(row);
+        return item;
+      }));
+
+      document.getElementById('result-mission-time').textContent = `Değerlendirilen zaman: ${resultDate}`;
+      document.getElementById('result-site-name').textContent = selected.name;
+      document.getElementById('result-site-coordinates').textContent = `Koordinatlar: ${selected.lat.toFixed(2)}°, ${selected.lon.toFixed(2)}°`;
+      document.getElementById('result-solar-elevation').textContent = `Yaklaşık anlık Güneş yüksekliği: ${selected.elevation.toFixed(1)}°`;
+      document.getElementById('result-illumination').textContent = selected.evidence
+        ? `Kaynak aydınlanma ortalaması: %${(selected.evidence.illuminationAt2m * 100).toFixed(2)}; ${landingParameters.panelAreaM2} m² panel ham güç ~${(panelIncidentKw * selected.evidence.illuminationAt2m).toFixed(1)} kW.`
+        : 'Bu bölge için belgelenmiş uzun dönem aydınlanma ortalaması yok.';
+      document.getElementById('result-sun-check').textContent = selected.elevation > -landingParameters.sunAngularRadiusMinDeg
+        ? 'Seçilen anda Güneş ufkun üstünde.'
+        : 'Seçilen anda Güneş ufkun altında.';
+      document.getElementById('result-slope-check').textContent = `Azami eğim eşiği <${landingParameters.maxSlopeDeg}°: DEM bulunmadığından kontrol edilemiyor.`;
+      document.getElementById('result-duration-check').textContent = `En uzun Güneş penceresi ~${selected.maxSunWindowDays.toFixed(1)} gün (eşik ≥${landingParameters.minContinuousSunDays} gün).`;
+      document.getElementById('result-dem-check').textContent = `${landingParameters.demResolutionM} m DEM çözünürlüğü ayarlı.`;
+      if (!activeSampleFlight) {
+        trackedSite = { lat: selected.lat, lon: selected.lon, name: selected.name, illuminationRatio: selected.evidence?.illuminationAt2m ?? null };
+        updateLandingSite(selected.lat, selected.lon, true);
+      }
+      updateLivePowerStatus();
+    }
+
+    function updateSiteEvidence(evidence, estimatedElevation) {
+      updateLivePowerStatus();
+    }
+
+    function updateSimulationTime(stepValue, forceRecommendation = false, debounceRecommendation = false) {
+      const hours = Number(stepValue);
+      const baseDate = new Date(`${dateInput.value}T${missionTimeInput.value || '00:00'}:00`);
+      baseDate.setHours(baseDate.getHours() + hours);
+
+      const dayCount = Math.floor(hours / 24);
+      const formattedDate = baseDate.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' });
+      const formattedTime = baseDate.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+
+      timeLabel.textContent = `${formattedDate} - ${formattedTime} (Gün ${dayCount})`;
+      document.getElementById('selected-mission-datetime').textContent = `Öneri zamanı: ${formattedDate}, ${formattedTime}`;
+      document.getElementById('result-mission-time').textContent = `Değerlendirilen zaman: ${formattedDate}, ${formattedTime}`;
+
+      const prevMoonPos = moonPosition.clone();
+      const prevMoonAngle = moonMesh.rotation.y;
+      const earthAngle = (hours / (365 * 24)) * Math.PI * 2;
+      const moonAngle = initialMoonPhase + (hours / (27.3 * 24)) * Math.PI * 2;
+      earthPosition.set(Math.cos(earthAngle) * earthSunDistance, 0, Math.sin(earthAngle) * earthSunDistance);
+      earthModelGroup.position.copy(earthPosition);
+      earthModelGroup.rotation.y = (hours / 24) * Math.PI * 2;
+      sunModelGroup.rotation.y = (hours / (25.38 * 24)) * Math.PI * 2;
+      moonPosition.set(earthPosition.x + Math.cos(moonAngle) * earthMoonDistance, 0, earthPosition.z + Math.sin(moonAngle) * earthMoonDistance);
+      moonMesh.position.copy(moonPosition);
+      moonMesh.rotation.y = moonAngle;
+      if (!isGlobeProjection()) projectionMapGroup.quaternion.copy(moonMesh.quaternion).invert();
+
+      const rotatedLandingLocal = currentLandingLocal.clone().applyAxisAngle(UP_Y, moonAngle);
+      const rotatedLandingNormal = currentLandingNormal.clone().applyAxisAngle(UP_Y, moonAngle);
+      landingFocusTarget.copy(moonPosition).add(rotatedLandingLocal).addScaledVector(rotatedLandingNormal, -moonSurfaceRadius * 0.08);
+      updateLivePowerStatus();
+
+      if (debounceRecommendation) {
+        clearTimeout(recommendationTimer);
+        recommendationTimer = setTimeout(() => recommendLandingSite(hours, true), 150);
+      } else {
+        clearTimeout(recommendationTimer);
+        recommendationTimer = null;
+        recommendLandingSite(hours, forceRecommendation);
+      }
+
+      if (isFirstPersonView && isGlobeProjection()) {
+        const rotationDelta = moonAngle - prevMoonAngle;
+        const cameraOffset = camera.position.clone().sub(prevMoonPos).applyAxisAngle(UP_Y, rotationDelta);
+        const targetOffset = controls.target.clone().sub(prevMoonPos).applyAxisAngle(UP_Y, rotationDelta);
+        camera.position.copy(moonPosition).add(cameraOffset);
+        controls.target.copy(moonPosition).add(targetOffset);
+        camera.up.applyAxisAngle(UP_Y, rotationDelta).normalize();
+        cameraFlight = null;
+      } else if (gamepadActive && isGlobeProjection()) {
+        const moonDelta = moonPosition.clone().sub(prevMoonPos);
+        camera.position.add(moonDelta);
+        controls.target.add(moonDelta);
+      } else {
+        const focusTarget = resolveFocusTarget();
+        const focusShift = focusTarget.clone().sub(controls.target);
+        controls.target.add(focusShift);
+        camera.position.add(focusShift);
+      }
+    }
+
+    slider.addEventListener('input', (e) => updateSimulationTime(e.target.value, false, true));
+    playBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      playBtn.textContent = isPlaying ? "Durdur ⏸" : "Oynat ❚▶";
+    });
+
+    function animateTimeline() {
+      if (isPlaying) {
+        let val = Number(slider.value) + 1;
+        if (val > 720) val = 0;
+        slider.value = val;
+        updateSimulationTime(val);
+      }
+    }
+
+    document.getElementById('mission-date-button').addEventListener('click', () => missionDialog.showModal());
+    document.getElementById('mission-dialog-cancel').addEventListener('click', () => missionDialog.close());
+    document.getElementById('mission-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      missionDialog.close();
+      showRecommendationMarkers = true;
+      isFirstPersonView = false;
+      updateSimulationTime(slider.value, true);
+      document.getElementById('landing-result-panel').hidden = false;
+    });
+    document.getElementById('landing-result-close').addEventListener('click', () => {
+      document.getElementById('landing-result-panel').hidden = true;
+    });
+    document.getElementById('feature-info-close').addEventListener('click', () => {
+      document.getElementById('feature-info-panel').hidden = true;
+    });
+    document.getElementById('body-focus').addEventListener('change', (e) => focusBody(e.target.value));
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      animateTimeline();
+      syncGraticuleToMoon();
+      if (cameraFlight) {
+        const progress = Math.min((performance.now() - cameraFlight.startedAt) / cameraFlight.duration, 1);
+        const eased = progress * progress * (3 - 2 * progress);
+        camera.position.lerpVectors(cameraFlight.fromPosition, cameraFlight.toPosition, eased);
+        controls.target.lerpVectors(cameraFlight.fromTarget, cameraFlight.toTarget, eased);
+        if (isGlobeProjection() && !isFirstPersonView && activeFocus === 'moon') {
+          const center = moonMesh.position;
+          const d0 = cameraFlight.fromPosition.distanceTo(center);
+          const d1 = cameraFlight.toPosition.distanceTo(center);
+          const desiredDist = Math.max(THREE.MathUtils.lerp(d0, d1, eased), getMinMoonCameraDistance(camera.position));
+          const dir = camera.position.clone().sub(center);
+          if (dir.lengthSq() < 1e-6) dir.set(0, 1, 0);
+          camera.position.copy(center).addScaledVector(dir.normalize(), desiredDist);
+        }
+        if (progress >= 1) cameraFlight = null;
+      }
+      if (!gamepadActive) {
+        controls.update();
+      }
+      enforceMoonSurfaceCollision();
+      if (gamepadActive && isGlobeProjection()) {
+        applyGamepadCameraPose();
+      }
+      renderer.render(scene, camera);
+    }
+
+    updateSimulationTime(slider.value, true);
+    animate();
+  </script>
+
+
+
+
+  
+</body>
+</html>

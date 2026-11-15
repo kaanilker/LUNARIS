@@ -1,0 +1,9 @@
+Ay yuzey haritasi: ay-yuzey-nasa.jpg (lroc_color_2k.jpg)
+Kaynak: NASA Scientific Visualization Studio, CGI Moon Kit (ID 4720)
+https://svs.gsfc.nasa.gov/4720/
+Harita, Lunar Reconnaissance Orbiter Camera (LROC) goruntulerinden uretilmistir.
+Gorsellestirme kredisi: Ernie Wright (USRA); bilimsel kaynak: Noah Petro (NASA/GSFC).
+
+Dunya yuzey haritasi: dunya-yuzey-nasa.jpg (Blue Marble: Next Generation + bulut katmani, 2048x1024)
+Kaynak: NASA Goddard Space Flight Center / Reto Stöckli (NASA Earth Observatory)
+https://visibleearth.nasa.gov/collection/1484/blue-marble

@@ -1,0 +1,1799 @@
+.calibre {
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre1 {
+  background-color: #000;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  overflow: hidden;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre2 {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom-color: rgba(56, 189, 248, 0.3);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.3);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 12px;
+  border-right-color: rgba(56, 189, 248, 0.3);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.3);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  left: 20px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  position: absolute;
+  top: 20px;
+  width: 320px;
+  z-index: 10;
+}
+.calibre3 {
+  background: #0f172a;
+  border-bottom-color: rgba(56, 189, 248, 0.5);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.5);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(56, 189, 248, 0.5);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.5);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #7dd3fc;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  height: 26px;
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 26px;
+  z-index: 2;
+}
+.calibre4 {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 4px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 28px;
+  padding-top: 0;
+  page-break-before: always;
+}
+.calibre5 {
+  background: rgba(2, 6, 23, 0.72);
+  border-bottom-color: rgba(56, 189, 248, 0.28);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.28);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 8px;
+  border-right-color: rgba(56, 189, 248, 0.28);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.28);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 4px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+.calibre6 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre7 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre8 {
+  background: #0f172a;
+  border-bottom-color: rgba(56, 189, 248, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(56, 189, 248, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #e0f2fe;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+}
+.calibre9 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 3px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre10 {
+  background: #0f172a;
+  border-bottom-color: #334155;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #334155;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: #334155;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #334155;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #f8fafc;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 5px;
+  width: 100%;
+}
+.calibre11 {
+  border-top-color: rgba(56, 189, 248, 0.28);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 14px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 12px;
+  position: relative;
+  width: 100%;
+}
+.calibre12 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 6px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre13 {
+  background: rgba(2, 6, 23, 0.85);
+  border-bottom-color: rgba(251, 146, 60, 0.45);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(251, 146, 60, 0.45);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 9px;
+  border-right-color: rgba(251, 146, 60, 0.45);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(251, 146, 60, 0.45);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  line-height: 1.45;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 11px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 11px;
+}
+.calibre14 {
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre15 {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  list-style-type: decimal;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 19px;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre16 {
+  background: #0f172a;
+  border-bottom-color: rgba(56, 189, 248, 0.45);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.45);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 12px;
+  border-right-color: rgba(56, 189, 248, 0.45);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.45);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  padding-bottom: 18px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 18px;
+  width: min(340px, calc(100vw - 32px));
+}
+.calibre17 {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre18 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre19 {
+  background: #075985;
+  border-bottom-color: rgba(56, 189, 248, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(56, 189, 248, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #e0f2fe;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+}
+.calibre20 {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.94);
+  border-bottom-color: rgba(56, 189, 248, 0.38);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.38);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 12px;
+  border-right-color: rgba(56, 189, 248, 0.38);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.38);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  left: 352px;
+  line-height: 1.45;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  position: absolute;
+  top: 20px;
+  width: min(350px, calc(100vw - 40px));
+  z-index: 12;
+}
+.calibre21 {
+  background: #0f172a;
+  border-bottom-color: rgba(148, 163, 184, 0.4);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(148, 163, 184, 0.4);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(148, 163, 184, 0.4);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(148, 163, 184, 0.4);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  height: 26px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  width: 26px;
+}
+.calibre22 {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1.33333em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 30px;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  page-break-before: always;
+}
+.calibre23 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre24 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 12px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre25 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  list-style-type: decimal;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 22px;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre26 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  list-style-type: disc;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 18px;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre27 {
+  box-sizing: border-box;
+  display: list-item;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre28 {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.96);
+  border-bottom-color: rgba(56, 189, 248, 0.4);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.4);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 12px;
+  border-right-color: rgba(56, 189, 248, 0.4);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.4);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  line-height: 1.5;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: min(390px, calc(100vw - 40px));
+  z-index: 15;
+}
+.calibre29 {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 6px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre30 {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1.33333em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 30px;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  page-break-before: always;
+}
+.calibre31 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 6px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre32 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 3px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 12px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre33 {
+  background: rgba(2, 6, 23, 0.55);
+  border-bottom-color: rgba(56, 189, 248, 0.25);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.25);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 8px;
+  border-right-color: rgba(56, 189, 248, 0.25);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.25);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 12px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+.calibre34 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 4px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 14px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre35 {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: list-item;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 6px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre36 {
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre37 {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre38 {
+  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom-color: rgba(56, 189, 248, 0.3);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.3);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 14px;
+  border-right-color: rgba(56, 189, 248, 0.3);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.3);
+  border-top-style: solid;
+  border-top-width: 1px;
+  bottom: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 8px;
+  left: 50%;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-width: 800px;
+  padding-bottom: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 14px;
+  position: absolute;
+  transform: translatex(-50%);
+  width: 70vw;
+  z-index: 10;
+}
+.calibre39 {
+  accent-color: #38bdf8;
+  box-sizing: border-box;
+  cursor: pointer;
+  flex: 1;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre40 {
+  box-sizing: border-box;
+  color: #94a3b8;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre41 {
+  bottom: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 6px;
+  left: 20px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  position: absolute;
+  z-index: 14;
+}
+.calibre42 {
+  box-sizing: border-box;
+  fill: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  height: 20px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 20px;
+}
+.calibre43 {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom-color: rgba(56, 189, 248, 0.38);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.38);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 10px;
+  border-right-color: rgba(56, 189, 248, 0.38);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.38);
+  border-top-style: solid;
+  border-top-width: 1px;
+  bottom: 46px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  gap: 12px;
+  grid-template-columns: 1fr 125px;
+  left: 48px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 12px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 12px;
+  position: absolute;
+  width: min(390px, calc(100vw - 100px));
+}
+.calibre44 {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre45 {
+  align-items: center;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  cursor: pointer;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  gap: 7px;
+  line-height: 1.3;
+  margin-bottom: 7px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre46 {
+  accent-color: #ff8a1f;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre47 {
+  box-sizing: border-box;
+  color: #fb923c;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  grid-column: 1/-1;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 2px;
+  min-height: 1.1em;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre48 {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom-color: rgba(251, 146, 60, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(251, 146, 60, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 10px;
+  border-right-color: rgba(251, 146, 60, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(251, 146, 60, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  bottom: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
+  color: #e2e8f0;
+  display: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  left: 48px;
+  line-height: 1.65;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 10px;
+  position: absolute;
+  width: 265px;
+}
+.calibre49 {
+  box-sizing: border-box;
+  color: #ffb36b;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  margin-bottom: 3px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre50 {
+  background: #1e293b;
+  border-bottom-color: #fb923c;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #fb923c;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 4px;
+  border-right-color: #fb923c;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #fb923c;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #fed7aa;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 1em;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  min-width: 1.4em;
+  padding-bottom: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0;
+  text-align: center;
+}
+.calibre51 {
+  background: rgba(15, 23, 42, 0.88);
+  border-bottom-color: rgba(255, 138, 31, 0.65);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(255, 138, 31, 0.65);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(255, 138, 31, 0.65);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(255, 138, 31, 0.65);
+  border-top-style: solid;
+  border-top-width: 1px;
+  bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  color: #ffd8a8;
+  display: none;
+  font-family: ui-monospace, "Cascadia Mono", monospace;
+  font-size: 0.58333em;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  pointer-events: none;
+  position: fixed;
+  right: 16px;
+  white-space: pre;
+  z-index: 20;
+}
+.calibre52 {
+  background: #0f172a;
+  border-bottom-color: rgba(255, 138, 31, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(255, 138, 31, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 12px;
+  border-right-color: rgba(255, 138, 31, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(255, 138, 31, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
+  color: #e2e8f0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  padding-bottom: 18px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 18px;
+  width: min(410px, calc(100vw - 32px));
+}
+.calibre53 {
+  box-sizing: border-box;
+  color: #ffb36b;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.calibre54 {
+  background: #090f1d;
+  border-bottom-color: #334155;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #334155;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: #334155;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #334155;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #f8fafc;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 6px;
+  width: 100%;
+}
+.calibre55 {
+  background: #0f172a;
+  border-bottom-color: rgba(251, 146, 60, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(251, 146, 60, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(251, 146, 60, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(251, 146, 60, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #ffedd5;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 7px;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 7px;
+}
+.calibre56 {
+  background: #c2410c;
+  border-bottom-color: #fb923c;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #fb923c;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: #fb923c;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #fb923c;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 7px;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 7px;
+}
+.calibre57 {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  height: 100vh;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  width: 100vw;
+}
+.calibre58 {
+  background: rgba(15, 23, 42, 0.94);
+  border-bottom-color: #38bdf8;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #38bdf8;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 8px;
+  border-right-color: #38bdf8;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #38bdf8;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  display: block;
+  font-family: system-ui;
+  font-size: 0.75em;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  left: 50%;
+  line-height: normal;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-width: 460px;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 10px;
+  position: fixed;
+  top: 18px;
+  transform: translatex(-50%);
+  z-index: 30;
+}
+.control-group {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.control-group1 {
+  box-sizing: border-box;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.control-group2 {
+  box-sizing: border-box;
+  display: block;
+  flex: 1;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.dialog-actions {
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 16px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.dialog-actions1 {
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 14px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.eval-caveat {
+  box-sizing: border-box;
+  color: #fbbf24;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.eval-heading {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.flex-row {
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 8px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.goto-hint {
+  box-sizing: border-box;
+  color: #fdba74;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 8px;
+  min-height: 1.2em;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.map-btn {
+  backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.88);
+  border-bottom-color: rgba(56, 189, 248, 0.45);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.45);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 8px;
+  border-right-color: rgba(56, 189, 248, 0.45);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.45);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #7dd3fc;
+  cursor: pointer;
+  display: grid;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  height: 40px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  place-items: center;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  width: 40px;
+}
+.play-btn {
+  background: #38bdf8;
+  border-bottom-color: currentColor;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-left-color: currentColor;
+  border-left-style: none;
+  border-left-width: medium;
+  border-radius: 6px;
+  border-right-color: currentColor;
+  border-right-style: none;
+  border-right-width: medium;
+  border-top-color: currentColor;
+  border-top-style: none;
+  border-top-width: medium;
+  box-sizing: border-box;
+  color: #0f172a;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 6px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 6px;
+  transition: background 0.2s;
+}
+.result-warning {
+  box-sizing: border-box;
+  color: #fbbf24;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sf-badge {
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.77778em;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+  white-space: nowrap;
+}
+.sfd-action-btn {
+  background: #075985;
+  border-bottom-color: rgba(56, 189, 248, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(56, 189, 248, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #f0f9ff;
+  cursor: pointer;
+  flex: 1;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 6px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 6px;
+  text-align: center;
+}
+.sfd-action-btn1 {
+  background: #9a3412;
+  border-bottom-color: #fb923c;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: #fb923c;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: #fb923c;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #fb923c;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #ffedd5;
+  cursor: pointer;
+  flex: 1;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 6px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 6px;
+  text-align: center;
+}
+.sfd-action-btn2 {
+  background: #075985;
+  border-bottom-color: rgba(56, 189, 248, 0.55);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(56, 189, 248, 0.55);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 6px;
+  border-right-color: rgba(56, 189, 248, 0.55);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(56, 189, 248, 0.55);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #f0f9ff;
+  cursor: pointer;
+  display: none;
+  flex: 1;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 6px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 6px;
+  text-align: center;
+}
+.sfd-actions {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 6px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 9px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sfd-header {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 8px;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sfd-meta {
+  box-sizing: border-box;
+  color: #7dd3fc;
+  display: block;
+  font-family: ui-monospace, monospace;
+  font-size: 1em;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sfd-section-title {
+  box-sizing: border-box;
+  color: #38bdf8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 7px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sfd-text {
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  margin-bottom: 6px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.sfd-title {
+  box-sizing: border-box;
+  color: #ffb36b;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.status-badge {
+  background: rgba(51, 65, 85, 0.38);
+  border-bottom-color: rgba(148, 163, 184, 0.4);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(148, 163, 184, 0.4);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 4px;
+  border-right-color: rgba(148, 163, 184, 0.4);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(148, 163, 184, 0.4);
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: #cbd5e1;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1em;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+}
+.subtitle {
+  box-sizing: border-box;
+  color: #94a3b8;
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.time-display {
+  box-sizing: border-box;
+  color: #38bdf8;
+  font-family: monospace;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.timeline-controls {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  gap: 12px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.timeline-header {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.75em;
+  justify-content: space-between;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.pcalibre2:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+.pcalibre1:hover {
+  background: #7dd3fc;
+}
+.pcalibre3:hover {
+  background: #ea580c;
+}
+.pcalibre:hover {
+  filter: brightness(1.15);
+}

@@ -1,9 +1,0 @@
-# Veri hattı bağımlılıkları. Sürümler 2026-11-14'te Python 3.11.9 ile kurulup içe aktarılarak doğrulandı.
-spiceypy==8.4.0      # NASA SPICE (CSPICE N0067): Güneş/Dünya konumu, libration
-numpy==2.4.6
-scipy==1.17.1
-rasterio==1.4.4      # LOLA DEM okuma (GDAL 3.10.3 içinde gelir)
-pyproj==3.7.2        # Ay kutup stereografik izdüşümü, parseller (PROJ 9.5.1)
-astroquery==0.4.11   # JPL Horizons doğrulaması
-requests==2.34.2
-pytest==9.2.0

@@ -1,2020 +1,365 @@
 <!DOCTYPE html>
-<!-- LUNARIS entegrasyonu (2026-11-15): kaynak index/index.html kopyasıdır. Tek değişiklik: aşağıdaki <style> başında iframe içinde tam yükseklik için "html, body { height:100%; margin:0 }" kuralı. CDN bağlantıları ve kalan içerik değiştirilmedi. -->
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUNARIS — Görev Simülasyonu ve Zaman Çizelgesi</title>
+  <title>LUNARIS</title>
+  <link rel="modulepreload" href="./vendor/three/build/three.module.js" />
+  <link rel="modulepreload" href="./vendor/three/build/three.core.js" />
   <style>
-html, body { height: 100%; margin: 0; }
-.calibre {
-  box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre1 {
-  background-color: #000;
-  box-sizing: border-box;
-  color: #e2e8f0;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  overflow: hidden;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre2 {
-  backdrop-filter: blur(10px);
-  background: rgba(15, 23, 42, 0.85);
-  border-bottom-color: rgba(56, 189, 248, 0.3);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.3);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 12px;
-  border-right-color: rgba(56, 189, 248, 0.3);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.3);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  left: 20px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  max-height: calc(100vh - 170px);
-  overflow-y: auto;
-  padding-bottom: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
-  position: absolute;
-  top: 20px;
-  width: 320px;
-  z-index: 10;
-}
-.calibre3 {
-  background: #0f172a;
-  border-bottom-color: rgba(56, 189, 248, 0.5);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.5);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: rgba(56, 189, 248, 0.5);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.5);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #7dd3fc;
-  cursor: pointer;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  height: 26px;
-  line-height: 1.2;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  width: 26px;
-  z-index: 2;
-}
-.calibre4 {
-  box-sizing: border-box;
-  color: #38bdf8;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 4px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 28px;
-  padding-top: 0;
-  page-break-before: always;
-}
-.calibre5 {
-  background: rgba(2, 6, 23, 0.72);
-  border-bottom-color: rgba(56, 189, 248, 0.28);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.28);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 8px;
-  border-right-color: rgba(56, 189, 248, 0.28);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.28);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  line-height: 1.4;
-  margin-bottom: 12px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 4px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-}
-.calibre6 {
-  box-sizing: border-box;
-  color: #7dd3fc;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-weight: bold;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre7 {
-  box-sizing: border-box;
-  color: #cbd5e1;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 5px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre8 {
-  background: #0f172a;
-  border-bottom-color: rgba(56, 189, 248, 0.55);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.55);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: rgba(56, 189, 248, 0.55);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.55);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #e0f2fe;
-  cursor: pointer;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 8px;
-}
-.calibre9 {
-  box-sizing: border-box;
-  color: #cbd5e1;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  margin-bottom: 3px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre10 {
-  background: #0f172a;
-  border-bottom-color: #334155;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: #334155;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: #334155;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: #334155;
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #f8fafc;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 5px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 5px;
-  width: 100%;
-}
-.calibre11 {
-  border-top-color: rgba(56, 189, 248, 0.28);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 14px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 12px;
-  position: relative;
-  width: 100%;
-}
-.calibre12 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  gap: 6px;
-  margin-bottom: 10px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre13 {
-  background: rgba(2, 6, 23, 0.85);
-  border-bottom-color: rgba(251, 146, 60, 0.45);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(251, 146, 60, 0.45);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 9px;
-  border-right-color: rgba(251, 146, 60, 0.45);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(251, 146, 60, 0.45);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  display: none;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  line-height: 1.45;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 11px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 11px;
-}
-.calibre14 {
-  box-sizing: border-box;
-  display: none;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre15 {
-  box-sizing: border-box;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  list-style-type: decimal;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 19px;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre16 {
-  background: #0f172a;
-  border-bottom-color: rgba(56, 189, 248, 0.45);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.45);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 12px;
-  border-right-color: rgba(56, 189, 248, 0.45);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.45);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #e2e8f0;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  padding-bottom: 18px;
-  padding-left: 18px;
-  padding-right: 18px;
-  padding-top: 18px;
-  width: min(340px, calc(100vw - 32px));
-}
-.calibre17 {
-  box-sizing: border-box;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre18 {
-  box-sizing: border-box;
-  color: #7dd3fc;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 12px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre19 {
-  background: #075985;
-  border-bottom-color: rgba(56, 189, 248, 0.55);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.55);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: rgba(56, 189, 248, 0.55);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.55);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #e0f2fe;
-  cursor: pointer;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 8px;
-}
-.calibre20 {
-  backdrop-filter: blur(10px);
-  background: rgba(15, 23, 42, 0.94);
-  border-bottom-color: rgba(56, 189, 248, 0.38);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.38);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 12px;
-  border-right-color: rgba(56, 189, 248, 0.38);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.38);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  box-sizing: border-box;
-  display: none;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  left: 352px;
-  line-height: 1.45;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  max-height: calc(100vh - 160px);
-  overflow-y: auto;
-  padding-bottom: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
-  position: absolute;
-  top: 20px;
-  width: min(350px, calc(100vw - 40px));
-  z-index: 12;
-}
-.calibre21 {
-  background: #0f172a;
-  border-bottom-color: rgba(148, 163, 184, 0.4);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(148, 163, 184, 0.4);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: rgba(148, 163, 184, 0.4);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(148, 163, 184, 0.4);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #e2e8f0;
-  cursor: pointer;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  height: 26px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  position: absolute;
-  right: 9px;
-  top: 9px;
-  width: 26px;
-}
-.calibre22 {
-  box-sizing: border-box;
-  color: #38bdf8;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1.33333em;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 10px;
-  margin-left: 0;
-  margin-right: 30px;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  page-break-before: always;
-}
-.calibre23 {
-  box-sizing: border-box;
-  color: #cbd5e1;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 5px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 5px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre24 {
-  box-sizing: border-box;
-  color: #7dd3fc;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 5px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 12px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre25 {
-  box-sizing: border-box;
-  color: #cbd5e1;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  list-style-type: decimal;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 22px;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre26 {
-  box-sizing: border-box;
-  color: #cbd5e1;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  list-style-type: disc;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 18px;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre27 {
-  box-sizing: border-box;
-  display: list-item;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 5px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 5px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre28 {
-  backdrop-filter: blur(10px);
-  background: rgba(15, 23, 42, 0.96);
-  border-bottom-color: rgba(56, 189, 248, 0.4);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.4);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 12px;
-  border-right-color: rgba(56, 189, 248, 0.4);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.4);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-  box-sizing: border-box;
-  display: none;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  line-height: 1.5;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  max-height: calc(100vh - 150px);
-  overflow-y: auto;
-  padding-bottom: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: min(390px, calc(100vw - 40px));
-  z-index: 15;
-}
-.calibre29 {
-  box-sizing: border-box;
-  color: #38bdf8;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-weight: 700;
-  margin-bottom: 6px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 6px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre30 {
-  box-sizing: border-box;
-  color: #38bdf8;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1.33333em;
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 8px;
-  margin-left: 0;
-  margin-right: 30px;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  page-break-before: always;
-}
-.calibre31 {
-  box-sizing: border-box;
-  color: #cbd5e1;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 6px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 6px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre32 {
-  box-sizing: border-box;
-  color: #7dd3fc;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: 700;
-  margin-bottom: 3px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 12px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre33 {
-  background: rgba(2, 6, 23, 0.55);
-  border-bottom-color: rgba(56, 189, 248, 0.25);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.25);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 8px;
-  border-right-color: rgba(56, 189, 248, 0.25);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.25);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  display: none;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 12px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-}
-.calibre34 {
-  box-sizing: border-box;
-  color: #7dd3fc;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 4px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 14px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre35 {
-  box-sizing: border-box;
-  color: #cbd5e1;
-  display: list-item;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 6px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 6px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre36 {
-  box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-weight: bold;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre37 {
-  box-sizing: border-box;
-  color: #7dd3fc;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre38 {
-  backdrop-filter: blur(12px);
-  background: rgba(15, 23, 42, 0.9);
-  border-bottom-color: rgba(56, 189, 248, 0.3);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.3);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 14px;
-  border-right-color: rgba(56, 189, 248, 0.3);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.3);
-  border-top-style: solid;
-  border-top-width: 1px;
-  bottom: 25px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  gap: 8px;
-  left: 50%;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  max-width: 800px;
-  padding-bottom: 14px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 14px;
-  position: absolute;
-  transform: translatex(-50%);
-  width: 70vw;
-  z-index: 10;
-}
-.calibre39 {
-  accent-color: #38bdf8;
-  box-sizing: border-box;
-  cursor: pointer;
-  flex: 1;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre40 {
-  box-sizing: border-box;
-  color: #94a3b8;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre41 {
-  bottom: 25px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  gap: 6px;
-  left: 20px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  position: absolute;
-  z-index: 14;
-}
-.calibre42 {
-  box-sizing: border-box;
-  fill: none;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  height: 20px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-  width: 20px;
-}
-.calibre43 {
-  backdrop-filter: blur(10px);
-  background: rgba(15, 23, 42, 0.95);
-  border-bottom-color: rgba(56, 189, 248, 0.38);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.38);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 10px;
-  border-right-color: rgba(56, 189, 248, 0.38);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.38);
-  border-top-style: solid;
-  border-top-width: 1px;
-  bottom: 46px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
-  display: none;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  gap: 12px;
-  grid-template-columns: 1fr 125px;
-  left: 48px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 12px;
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-top: 12px;
-  position: absolute;
-  width: min(390px, calc(100vw - 100px));
-}
-.calibre44 {
-  box-sizing: border-box;
-  color: #38bdf8;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 8px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre45 {
-  align-items: center;
-  box-sizing: border-box;
-  color: #e2e8f0;
-  cursor: pointer;
-  display: flex;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  gap: 7px;
-  line-height: 1.3;
-  margin-bottom: 7px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre46 {
-  accent-color: #ff8a1f;
-  box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre47 {
-  box-sizing: border-box;
-  color: #fb923c;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  grid-column: 1/-1;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 2px;
-  min-height: 1.1em;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre48 {
-  background: rgba(15, 23, 42, 0.95);
-  border-bottom-color: rgba(251, 146, 60, 0.55);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(251, 146, 60, 0.55);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 10px;
-  border-right-color: rgba(251, 146, 60, 0.55);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(251, 146, 60, 0.55);
-  border-top-style: solid;
-  border-top-width: 1px;
-  bottom: 0;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  box-sizing: border-box;
-  color: #e2e8f0;
-  display: none;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  left: 48px;
-  line-height: 1.65;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 10px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 10px;
-  position: absolute;
-  width: 265px;
-}
-.calibre49 {
-  box-sizing: border-box;
-  color: #ffb36b;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-weight: 700;
-  margin-bottom: 3px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre50 {
-  background: #1e293b;
-  border-bottom-color: #fb923c;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: #fb923c;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 4px;
-  border-right-color: #fb923c;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: #fb923c;
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #fed7aa;
-  display: inline-block;
-  font-family: monospace;
-  font-size: 1em;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  min-width: 1.4em;
-  padding-bottom: 0;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 0;
-  text-align: center;
-}
-.calibre51 {
-  background: rgba(15, 23, 42, 0.88);
-  border-bottom-color: rgba(255, 138, 31, 0.65);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(255, 138, 31, 0.65);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: rgba(255, 138, 31, 0.65);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(255, 138, 31, 0.65);
-  border-top-style: solid;
-  border-top-width: 1px;
-  bottom: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
-  color: #ffd8a8;
-  display: none;
-  font-family: ui-monospace, "Cascadia Mono", monospace;
-  font-size: 0.58333em;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 600;
-  line-height: normal;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  pointer-events: none;
-  position: fixed;
-  right: 16px;
-  white-space: pre;
-  z-index: 20;
-}
-.calibre52 {
-  background: #0f172a;
-  border-bottom-color: rgba(255, 138, 31, 0.55);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(255, 138, 31, 0.55);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 12px;
-  border-right-color: rgba(255, 138, 31, 0.55);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(255, 138, 31, 0.55);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.65);
-  box-sizing: border-box;
-  color: #e2e8f0;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  padding-bottom: 18px;
-  padding-left: 18px;
-  padding-right: 18px;
-  padding-top: 18px;
-  width: min(410px, calc(100vw - 32px));
-}
-.calibre53 {
-  box-sizing: border-box;
-  color: #ffb36b;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 6px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.calibre54 {
-  background: #090f1d;
-  border-bottom-color: #334155;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: #334155;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: #334155;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: #334155;
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #f8fafc;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 6px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 6px;
-  width: 100%;
-}
-.calibre55 {
-  background: #0f172a;
-  border-bottom-color: rgba(251, 146, 60, 0.55);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(251, 146, 60, 0.55);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: rgba(251, 146, 60, 0.55);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(251, 146, 60, 0.55);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #ffedd5;
-  cursor: pointer;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  font-weight: 600;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 7px;
-  padding-left: 13px;
-  padding-right: 13px;
-  padding-top: 7px;
-}
-.calibre56 {
-  background: #c2410c;
-  border-bottom-color: #fb923c;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: #fb923c;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: #fb923c;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: #fb923c;
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  font-weight: 600;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 7px;
-  padding-left: 13px;
-  padding-right: 13px;
-  padding-top: 7px;
-}
-.calibre57 {
-  box-sizing: border-box;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  height: 100vh;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  width: 100vw;
-}
-.calibre58 {
-  background: rgba(15, 23, 42, 0.94);
-  border-bottom-color: #38bdf8;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: #38bdf8;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 8px;
-  border-right-color: #38bdf8;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: #38bdf8;
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #e2e8f0;
-  display: block;
-  font-family: system-ui;
-  font-size: 0.75em;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  left: 50%;
-  line-height: normal;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  max-width: 460px;
-  padding-bottom: 10px;
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-top: 10px;
-  position: fixed;
-  top: 18px;
-  transform: translatex(-50%);
-  z-index: 30;
-}
-.control-group {
-  box-sizing: border-box;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 10px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.control-group1 {
-  box-sizing: border-box;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 12px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.control-group2 {
-  box-sizing: border-box;
-  display: block;
-  flex: 1;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 10px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.dialog-actions {
-  box-sizing: border-box;
-  display: flex;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  gap: 8px;
-  justify-content: flex-end;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 16px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.dialog-actions1 {
-  box-sizing: border-box;
-  display: flex;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  gap: 8px;
-  justify-content: flex-end;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 14px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.eval-caveat {
-  box-sizing: border-box;
-  color: #fbbf24;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 5px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.eval-heading {
-  box-sizing: border-box;
-  color: #38bdf8;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-weight: 700;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.flex-row {
-  box-sizing: border-box;
-  display: flex;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  gap: 8px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.goto-hint {
-  box-sizing: border-box;
-  color: #fdba74;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 8px;
-  min-height: 1.2em;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.map-btn {
-  backdrop-filter: blur(8px);
-  background: rgba(15, 23, 42, 0.88);
-  border-bottom-color: rgba(56, 189, 248, 0.45);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.45);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 8px;
-  border-right-color: rgba(56, 189, 248, 0.45);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.45);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #7dd3fc;
-  cursor: pointer;
-  display: grid;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  height: 40px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  place-items: center;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
-  width: 40px;
-}
-.play-btn {
-  background: #38bdf8;
-  border-bottom-color: currentColor;
-  border-bottom-style: none;
-  border-bottom-width: medium;
-  border-left-color: currentColor;
-  border-left-style: none;
-  border-left-width: medium;
-  border-radius: 6px;
-  border-right-color: currentColor;
-  border-right-style: none;
-  border-right-width: medium;
-  border-top-color: currentColor;
-  border-top-style: none;
-  border-top-width: medium;
-  box-sizing: border-box;
-  color: #0f172a;
-  cursor: pointer;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  font-weight: 600;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 6px;
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-top: 6px;
-  transition: background 0.2s;
-}
-.result-warning {
-  box-sizing: border-box;
-  color: #fbbf24;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 5px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 5px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.sf-badge {
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.77778em;
-  font-weight: 700;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 2px;
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 2px;
-  white-space: nowrap;
-}
-.sfd-action-btn {
-  background: #075985;
-  border-bottom-color: rgba(56, 189, 248, 0.55);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.55);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: rgba(56, 189, 248, 0.55);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.55);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #f0f9ff;
-  cursor: pointer;
-  flex: 1;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: 600;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 6px;
-  padding-left: 9px;
-  padding-right: 9px;
-  padding-top: 6px;
-  text-align: center;
-}
-.sfd-action-btn1 {
-  background: #9a3412;
-  border-bottom-color: #fb923c;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: #fb923c;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: #fb923c;
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: #fb923c;
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #ffedd5;
-  cursor: pointer;
-  flex: 1;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: 600;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 6px;
-  padding-left: 9px;
-  padding-right: 9px;
-  padding-top: 6px;
-  text-align: center;
-}
-.sfd-action-btn2 {
-  background: #075985;
-  border-bottom-color: rgba(56, 189, 248, 0.55);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(56, 189, 248, 0.55);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 6px;
-  border-right-color: rgba(56, 189, 248, 0.55);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(56, 189, 248, 0.55);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #f0f9ff;
-  cursor: pointer;
-  display: none;
-  flex: 1;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: 600;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 6px;
-  padding-left: 9px;
-  padding-right: 9px;
-  padding-top: 6px;
-  text-align: center;
-}
-.sfd-actions {
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  gap: 6px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 9px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.sfd-header {
-  align-items: flex-start;
-  box-sizing: border-box;
-  display: flex;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  gap: 8px;
-  justify-content: space-between;
-  margin-bottom: 6px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.sfd-meta {
-  box-sizing: border-box;
-  color: #7dd3fc;
-  display: block;
-  font-family: ui-monospace, monospace;
-  font-size: 1em;
-  margin-bottom: 8px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.sfd-section-title {
-  box-sizing: border-box;
-  color: #38bdf8;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: 700;
-  margin-bottom: 2px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 7px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.sfd-text {
-  box-sizing: border-box;
-  color: #cbd5e1;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  margin-bottom: 6px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.sfd-title {
-  box-sizing: border-box;
-  color: #ffb36b;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  font-weight: 700;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.status-badge {
-  background: rgba(51, 65, 85, 0.38);
-  border-bottom-color: rgba(148, 163, 184, 0.4);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgba(148, 163, 184, 0.4);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-radius: 4px;
-  border-right-color: rgba(148, 163, 184, 0.4);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgba(148, 163, 184, 0.4);
-  border-top-style: solid;
-  border-top-width: 1px;
-  box-sizing: border-box;
-  color: #cbd5e1;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 1em;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 3px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 3px;
-}
-.subtitle {
-  box-sizing: border-box;
-  color: #94a3b8;
-  display: block;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  margin-bottom: 12px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.time-display {
-  box-sizing: border-box;
-  color: #38bdf8;
-  font-family: monospace;
-  font-weight: 600;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.timeline-controls {
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  gap: 12px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.timeline-header {
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  font-size: 0.75em;
-  justify-content: space-between;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-}
-.pcalibre2:disabled {
-  cursor: not-allowed;
-  opacity: 0.35;
-}
-.pcalibre1:hover {
-  background: #7dd3fc;
-}
-.pcalibre3:hover {
-  background: #ea580c;
-}
-.pcalibre:hover {
-  filter: brightness(1.15);
-}
-
+    html, body { height: 100%; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    body { background-color: #000; color: #e2e8f0; overflow: hidden; }
+    #canvas-container { width: 100vw; height: 100vh; }
+    #ui-panel { position: absolute; top: 20px; left: 20px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(56, 189, 248, 0.3); padding: 16px; border-radius: 12px; width: 320px; max-height: calc(100vh - 170px); overflow-y: auto; z-index: 10; }
+    #ui-panel h2 { padding-right: 28px; }
+    #ui-collapse-button { position: absolute; top: 8px; right: 8px; width: 26px; height: 26px; border: 1px solid rgba(56, 189, 248, 0.5); border-radius: 6px; background: #0f172a; color: #7dd3fc; font-size: 1rem; line-height: 1; cursor: pointer; z-index: 2; }
+    #ui-panel.panel-collapsed { width: 44px; height: 44px; min-height: 44px; max-height: 44px; overflow: hidden; padding: 8px; }
+    #ui-panel.panel-collapsed > :not(#ui-collapse-button) { display: none; }
+    #site-evaluation { margin: 4px 0 12px; padding: 10px; border: 1px solid rgba(56, 189, 248, 0.28); border-radius: 8px; background: rgba(2, 6, 23, 0.72); font-size: 0.72rem; line-height: 1.4; }
+    #site-evaluation strong { color: #7dd3fc; }
+    #site-evaluation p { margin-top: 5px; color: #cbd5e1; }
+    #site-evaluation .eval-heading { color: #38bdf8; font-weight: 700; }
+    #site-evaluation .eval-caveat { color: #fbbf24; }
+    #mission-date-button, #mission-form button { border: 1px solid rgba(56, 189, 248, 0.55); border-radius: 6px; padding: 8px 10px; background: #0f172a; color: #e0f2fe; cursor: pointer; font-size: 0.82rem; }
+    #mission-dialog { width: min(340px, calc(100vw - 32px)); margin: auto; padding: 18px; border: 1px solid rgba(56, 189, 248, 0.45); border-radius: 12px; background: #0f172a; color: #e2e8f0; }
+    #mission-dialog::backdrop { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(3px); }
+    #mission-dialog h3 { margin-bottom: 12px; color: #7dd3fc; font-size: 1rem; }
+    #mission-form .control-group { margin-bottom: 12px; }
+    #mission-form .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+    #mission-form button[type="submit"] { background: #075985; }
+    #landing-result-panel { position: absolute; top: 20px; left: 352px; z-index: 12; width: min(350px, calc(100vw - 40px)); max-height: calc(100vh - 160px); overflow-y: auto; padding: 16px; border: 1px solid rgba(56, 189, 248, 0.38); border-radius: 12px; background: rgba(15, 23, 42, 0.94); backdrop-filter: blur(10px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4); font-size: 0.78rem; line-height: 1.45; }
+    #landing-result-panel[hidden] { display: none; }
+    #landing-result-panel h2 { margin: 0 30px 10px 0; }
+    #landing-result-panel h3 { margin: 12px 0 5px; color: #7dd3fc; font-size: 0.78rem; }
+    #landing-result-panel p { margin: 5px 0; color: #cbd5e1; }
+    #landing-result-panel ul { padding-left: 18px; color: #cbd5e1; }
+    #landing-result-panel li { margin: 5px 0; }
+    #result-candidate-list { padding-left: 22px; color: #cbd5e1; }
+    #result-candidate-list li { margin: 7px 0; }
+    .candidate-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .candidate-actions { display: flex; flex: 0 0 auto; gap: 5px; }
+    .candidate-go { flex: 0 0 auto; border: 1px solid rgba(56, 189, 248, 0.55); border-radius: 5px; padding: 4px 8px; background: #0f172a; color: #7dd3fc; cursor: pointer; }
+    #landing-result-panel .result-warning { color: #fbbf24; }
+    #feature-info-panel { position: absolute; top: 20px; right: 20px; z-index: 15; width: min(390px, calc(100vw - 40px)); max-height: calc(100vh - 150px); overflow-y: auto; padding: 16px; border: 1px solid rgba(56, 189, 248, .4); border-radius: 12px; background: rgba(15, 23, 42, .96); backdrop-filter: blur(10px); box-shadow: 0 12px 40px rgba(0, 0, 0, .45); font-size: .78rem; line-height: 1.5; }
+    #feature-info-panel[hidden] { display: none; }
+    #feature-info-panel h2 { margin: 0 30px 8px 0; }
+    #feature-info-panel p { margin: 6px 0; color: #cbd5e1; }
+    #feature-info-category { color: #38bdf8 !important; font-weight: 700; }
+    #feature-info-detail-label, #feature-info-parameters h3 { margin: 14px 0 4px; color: #7dd3fc; font-size: .78rem; }
+    #feature-info-parameters { margin-top: 12px; padding: 10px; border: 1px solid rgba(56, 189, 248, .25); border-radius: 8px; background: rgba(2, 6, 23, .55); }
+    #feature-info-parameters[hidden] { display: none; }
+    #feature-info-parameters ol { padding-left: 19px; }
+    #feature-info-parameters li { margin: 6px 0; color: #cbd5e1; }
+    #feature-info-close { position: absolute; top: 9px; right: 9px; width: 26px; height: 26px; border: 1px solid rgba(148, 163, 184, .4); border-radius: 6px; background: #0f172a; color: #e2e8f0; cursor: pointer; }
+    #feature-info-source { color: #7dd3fc; }
+    #landing-result-close { position: absolute; top: 9px; right: 9px; width: 26px; height: 26px; border: 1px solid rgba(148, 163, 184, 0.4); border-radius: 6px; background: #0f172a; color: #e2e8f0; cursor: pointer; }
+    #sample-flights-panel { position: relative; width: 100%; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(56, 189, 248, 0.28); }
+    #sample-flights-panel h2 { padding-right: 28px; }
+    #sample-collapse-button { position: absolute; top: 8px; right: 8px; width: 26px; height: 26px; border: 1px solid rgba(56, 189, 248, 0.5); border-radius: 6px; background: #0f172a; color: #7dd3fc; font-size: 1rem; line-height: 1; cursor: pointer; z-index: 2; }
+    #sample-flights-panel.panel-collapsed { width: 100%; height: 30px; min-height: 30px; max-height: 30px; overflow: hidden; padding: 4px 0; }
+    #sample-flights-panel.panel-collapsed > :not(#sample-collapse-button) { display: none; }
+    #sample-flight-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+    .sample-flight-btn { width: 100%; text-align: left; padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.25); background: rgba(2, 6, 23, 0.72); color: #e2e8f0; cursor: pointer; transition: border-color 0.15s, background 0.15s, transform 0.1s; display: flex; flex-direction: column; gap: 3px; }
+    .sample-flight-btn:hover { border-color: rgba(56, 189, 248, 0.65); background: rgba(15, 23, 42, 0.95); }
+    .sample-flight-btn.active { border-color: #fb923c; background: rgba(124, 45, 18, 0.38); box-shadow: 0 0 14px rgba(251, 146, 60, 0.25); }
+    .sf-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+    .sf-name { font-size: 0.81rem; font-weight: 700; color: #f8fafc; }
+    .sf-badge { font-size: 0.65rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; white-space: nowrap; }
+    .sf-badge.landed { background: rgba(16, 185, 129, 0.18); color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.45); }
+    .sf-badge.planned { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(251, 191, 36, 0.5); }
+    .sf-sub { font-size: 0.71rem; color: #94a3b8; }
+    #sample-flight-detail { padding: 11px 12px; border-radius: 9px; border: 1px solid rgba(251, 146, 60, 0.45); background: rgba(2, 6, 23, 0.85); font-size: 0.75rem; line-height: 1.45; }
+    #sample-flight-detail[hidden] { display: none; }
+    .sfd-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+    .sfd-title { font-size: 0.88rem; font-weight: 700; color: #ffb36b; }
+    .sfd-meta { font-size: 0.71rem; color: #7dd3fc; font-family: ui-monospace, monospace; margin-bottom: 8px; }
+    .sfd-section-title { font-size: 0.73rem; font-weight: 700; color: #38bdf8; margin-top: 7px; margin-bottom: 2px; }
+    .sfd-text { color: #cbd5e1; margin: 0 0 6px; }
+    .sfd-actions { display: flex; gap: 6px; margin-top: 9px; flex-wrap: wrap; }
+    #sfd-alternative-btn[hidden], #sfd-alternatives[hidden] { display: none; }
+    #sfd-alternative-list { padding-left: 19px; }
+    #sfd-alternative-list li { margin: 7px 0; color: #cbd5e1; }
+    #sfd-alternative-list .candidate-go { display: block; margin-top: 4px; }
+    .sfd-action-btn { flex: 1; padding: 6px 9px; border-radius: 6px; border: 1px solid rgba(56, 189, 248, 0.55); background: #075985; color: #f0f9ff; font-size: 0.74rem; font-weight: 600; cursor: pointer; text-align: center; }
+    .sfd-action-btn.fp { background: #9a3412; border-color: #fb923c; color: #ffedd5; }
+    #feature-info-detail-label { margin: 12px 0 3px; color: #7dd3fc; font-size: .76rem; font-weight: 700; }
+    .sfd-action-btn:hover { filter: brightness(1.15); }
+    .status-badge.status-ok { background: rgba(6, 78, 59, 0.75); color: #a7f3d0; border-color: #34d399; }
+    .status-badge.status-shadow { background: rgba(127, 29, 29, 0.82); color: #fecaca; border-color: #f87171; font-weight: 700; }
+    h2 { font-size: 1.05rem; color: #38bdf8; margin-bottom: 4px; }
+    p.subtitle { font-size: 0.78rem; color: #94a3b8; margin-bottom: 12px; }
+    .control-group { margin-bottom: 10px; }
+    label { display: block; font-size: 0.78rem; margin-bottom: 3px; color: #cbd5e1; }
+    select, input[type="date"], input[type="time"] { width: 100%; background: #0f172a; color: #f8fafc; border: 1px solid #334155; padding: 5px 8px; border-radius: 6px; font-size: 0.82rem; }
+    .flex-row { display: flex; gap: 8px; }
+    #timeline-container { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); width: 70vw; max-width: 800px; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); border: 1px solid rgba(56, 189, 248, 0.3); padding: 14px 20px; border-radius: 14px; z-index: 10; display: flex; flex-direction: column; gap: 8px; }
+    .timeline-header { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
+    .time-display { color: #38bdf8; font-weight: 600; font-family: monospace; }
+    .timeline-controls { display: flex; align-items: center; gap: 12px; }
+    button.play-btn { background: #38bdf8; color: #0f172a; border: none; padding: 6px 14px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.8rem; transition: background 0.2s; }
+    button.play-btn:hover { background: #7dd3fc; }
+    input[type="range"] { flex: 1; accent-color: #38bdf8; cursor: pointer; }
+    .status-badge { font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; background: rgba(51, 65, 85, 0.38); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.4); }
+    #map-controls { position: absolute; left: 20px; bottom: 25px; z-index: 14; display: flex; flex-direction: column; gap: 6px; }
+    #map-controls[hidden], #map-panel[hidden], #gamepad-hint[hidden], #coord-readout[hidden] { display: none !important; }
+    .map-btn { width: 40px; height: 40px; display: grid; place-items: center; padding: 0; cursor: pointer; border: 1px solid rgba(56, 189, 248, 0.45); border-radius: 8px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); color: #7dd3fc; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+    .map-btn:hover:not(:disabled), .map-btn[aria-expanded="true"] { background: #075985; color: #e0f2fe; }
+    .map-btn:focus-visible { outline: 2px solid #38bdf8; outline-offset: 2px; }
+    .map-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    #map-controls .map-btn[aria-pressed="true"] { background: #9a3412; color: #ffedd5; border-color: #fb923c; box-shadow: 0 0 12px rgba(251, 146, 60, 0.45); }
+    #map-controls .map-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    #map-panel { position: absolute; left: 48px; bottom: 46px; width: min(390px, calc(100vw - 100px)); display: grid; grid-template-columns: 1fr 125px; gap: 12px; padding: 12px 14px; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(56, 189, 248, 0.38); border-radius: 10px; font-size: 0.78rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+    #map-panel h4 { margin: 0 0 8px; color: #38bdf8; font-size: 0.78rem; }
+    #map-panel label { display: flex; gap: 7px; align-items: center; margin: 0 0 7px; cursor: pointer; line-height: 1.3; color: #e2e8f0; font-size: 0.76rem; }
+    #map-panel input { accent-color: #ff8a1f; margin: 0; }
+    #map-status { grid-column: 1 / -1; margin: 2px 0 0; min-height: 1.1em; color: #fb923c; font-size: 0.71rem; }
+    #gamepad-hint { position: absolute; left: 48px; bottom: 0; width: 265px; padding: 10px 12px; border: 1px solid rgba(251, 146, 60, 0.55); border-radius: 10px; background: rgba(15, 23, 42, 0.95); color: #e2e8f0; font-size: 0.74rem; line-height: 1.65; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); }
+    #gamepad-hint kbd { display: inline-block; min-width: 1.4em; padding: 0 5px; border: 1px solid #fb923c; border-radius: 4px; background: #1e293b; color: #fed7aa; font: 600 0.71rem monospace; text-align: center; }
+    #coord-readout { position: fixed; right: 16px; bottom: 16px; z-index: 20; pointer-events: none; padding: 5px 10px; border-radius: 6px; background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(255, 138, 31, 0.65); color: #ffd8a8; font: 600 11px ui-monospace, 'Cascadia Mono', monospace; white-space: pre; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); }
+    #goto-dialog { width: min(410px, calc(100vw - 32px)); margin: auto; padding: 18px; border: 1px solid rgba(255, 138, 31, 0.55); border-radius: 12px; background: #0f172a; color: #e2e8f0; box-shadow: 0 18px 48px rgba(0, 0, 0, 0.65); }
+    #goto-dialog::backdrop { background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(3px); }
+    #goto-dialog h3 { margin-bottom: 6px; color: #ffb36b; font-size: 1rem; }
+    #goto-dialog p.goto-sub { font-size: 0.74rem; color: #94a3b8; margin-bottom: 12px; }
+    #goto-dialog input[type="number"] { width: 100%; background: #090f1d; color: #f8fafc; border: 1px solid #334155; padding: 6px 8px; border-radius: 6px; font-size: 0.82rem; }
+    #goto-dialog .goto-hint { min-height: 1.2em; margin-top: 8px; color: #fdba74; font-size: 0.73rem; }
+    #goto-form .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+    #goto-form button { border: 1px solid rgba(251, 146, 60, 0.55); border-radius: 6px; padding: 7px 13px; background: #0f172a; color: #ffedd5; cursor: pointer; font-size: 0.82rem; font-weight: 600; }
+    #goto-form button[type="submit"] { background: #c2410c; border-color: #fb923c; color: #fff; }
+    #goto-form button[type="submit"]:hover { background: #ea580c; }
+    @media (max-width: 640px) { #map-controls { bottom: 130px; } }
+    #model-status { position: fixed; right: 16px; bottom: 64px; z-index: 30; max-width: 300px; padding: 6px 10px; border: 1px solid #38bdf8; border-radius: 8px; background: rgba(15, 23, 42, 0.92); color: #e2e8f0; font: 12px system-ui; pointer-events: none; }
+    #model-status.hata { border-color: #f87171; pointer-events: auto; cursor: pointer; }
   </style>
 </head>
-<body class="calibre1">
-<div id="ui-panel" class="calibre2">
-    <button id="ui-collapse-button" type="button" aria-label="Paneli daralt" aria-expanded="true" title="Paneli daralt" class="calibre3">⌃</button>
-    <h2 class="calibre4">LUNARIS • Görev Planlayıcı</h2>
-    <p class="subtitle">İniş noktası ve başlangıç zamanı seçimi</p>
-    <section id="site-evaluation" aria-live="polite" class="calibre5">
-      <div class="eval-heading">Tarih ve saate göre aday iniş bölgesi</div>
-      <strong id="best-site" class="calibre6">Hesaplanıyor…</strong>
-      <p id="selected-mission-datetime" class="calibre7"></p>
-      <p id="selected-site-evidence" aria-live="polite" class="calibre7"></p>
-      <p class="eval-caveat">Tüm güney yarımküre yaklaşık bir koordinat ağıyla taranır. Güneşlenme hesabı basitleştirilmiştir; DEM olmadığından eğim ve iniş güvenliği doğrulanamaz.</p>
+<body>
+  <div id="ui-panel">
+    <button id="ui-collapse-button" type="button" aria-expanded="true" data-t-aria="panel.daralt" data-t-title="panel.daralt">⌃</button>
+    <h2 data-t="ui.baslik"></h2>
+    <p class="subtitle" data-t="ui.alt"></p>
+    <section id="site-evaluation" aria-live="polite">
+      <div class="eval-heading" data-t="eval.baslik"></div>
+      <strong id="best-site" data-t="eval.hesaplaniyor"></strong>
+      <p id="selected-mission-datetime"></p>
+      <p id="selected-site-evidence" aria-live="polite"></p>
+      <p class="eval-caveat" data-t="eval.uyari"></p>
     </section>
     <div class="control-group">
-      <button id="mission-date-button" type="button" class="calibre8">Tarih ve saat seç</button>
+      <button id="mission-date-button" type="button" data-t="tarih.dugme"></button>
     </div>
     <div class="control-group">
-      <label for="body-focus" class="calibre9">Gök cismi odağı:</label>
-      <select id="body-focus" class="calibre10">
-        <option value="moon" class="calibre">Ay</option>
-        <option value="earth" class="calibre">Dünya</option>
-        <option value="sun" class="calibre">Güneş</option>
+      <label for="body-focus" data-t="odak.etiket"></label>
+      <select id="body-focus">
+        <option value="moon" data-t="odak.ay"></option>
+        <option value="earth" data-t="odak.dunya"></option>
+        <option value="sun" data-t="odak.gunes"></option>
       </select>
     </div>
-    <section id="sample-flights-panel" aria-labelledby="sample-flights-title" class="calibre11">
-      <button id="sample-collapse-button" type="button" aria-label="Örnek uçuşları daralt" aria-expanded="true" title="Paneli daralt" class="calibre3">⌃</button>
-      <h2 id="sample-flights-title" class="calibre4">Örnek Uçuşlar &amp; Adaylar</h2>
-      <p class="subtitle">Bir görevi seçip iniş bölgesine gidebilir ve görev raporunu inceleyebilirsin</p>
-      <div id="sample-flight-list" role="list" class="calibre12"></div>
-      <div id="sample-flight-detail" aria-live="polite" hidden="" class="calibre13">
+    <section id="sample-flights-panel" aria-labelledby="sample-flights-title">
+      <button id="sample-collapse-button" type="button" aria-expanded="true" data-t-aria="ornek.daralt_etiket" data-t-title="panel.daralt">⌃</button>
+      <h2 id="sample-flights-title" data-t="ornek.baslik"></h2>
+      <p class="subtitle" data-t="ornek.alt"></p>
+      <div id="sample-flight-list" role="list"></div>
+      <div id="sample-flight-detail" aria-live="polite" hidden>
         <div class="sfd-header">
           <div class="sfd-title" id="sfd-title"></div>
           <span class="sf-badge" id="sfd-badge"></span>
         </div>
         <div class="sfd-meta" id="sfd-meta"></div>
-        <div class="sfd-section-title" id="sfd-info-label">İniş ve Görev Bilgileri</div>
+        <div class="sfd-section-title" id="sfd-info-label" data-t="ornek.bilgi_etiket"></div>
         <p class="sfd-text" id="sfd-info"></p>
-        <div class="sfd-section-title" id="sfd-reason-label">Neden Bu Bölge Seçildi?</div>
+        <div class="sfd-section-title" id="sfd-reason-label" data-t="ornek.neden_etiket"></div>
         <p class="sfd-text" id="sfd-reason"></p>
         <div class="sfd-actions">
-          <button type="button" class="sfd-action-btn pcalibre" id="sfd-fly-btn">🎯 Bölgeye git</button>
-          <button type="button" class="sfd-action-btn1 pcalibre" id="sfd-fp-btn">👨‍🚀 1. Kişi (Yüzey) Modu</button>
-        
-          <button type="button" class="sfd-action-btn2 pcalibre" id="sfd-alternative-btn" hidden="">🧭 Alternatif öner</button>
+          <button type="button" class="sfd-action-btn" id="sfd-fly-btn" data-t="ornek.git"></button>
+          <button type="button" class="sfd-action-btn fp" id="sfd-fp-btn" data-t="ornek.fp"></button>
+
+          <button type="button" class="sfd-action-btn" id="sfd-alternative-btn" data-t="ornek.alternatif" hidden></button>
         </div>
-        <div id="sfd-alternatives" hidden="" aria-live="polite" class="calibre14">
-          <div class="sfd-section-title">Alternatif güney kutbu bölgeleri</div>
-          <ol id="sfd-alternative-list" class="calibre15"></ol>
+        <div id="sfd-alternatives" hidden aria-live="polite">
+          <div class="sfd-section-title" data-t="ornek.alternatif_baslik"></div>
+          <ol id="sfd-alternative-list"></ol>
         </div>
       </div>
     </section>
   </div>
 
-  
-<dialog id="mission-dialog" aria-labelledby="mission-dialog-title" class="calibre16">
-    <form id="mission-form" class="calibre17">
-      <h3 id="mission-dialog-title" class="calibre18">Görev tarihini ve saatini seç</h3>
-      <div class="control-group1">
-        <label for="mission-date" class="calibre9">Planlanan tarih</label>
-        <input type="date" id="mission-date" value="2026-11-15" required="" class="calibre10">
+  <dialog id="mission-dialog" aria-labelledby="mission-dialog-title">
+    <form id="mission-form">
+      <h3 id="mission-dialog-title" data-t="tarihkutu.baslik"></h3>
+      <div class="control-group">
+        <label for="mission-date" data-t="tarihkutu.tarih"></label>
+        <input type="date" id="mission-date" value="2026-11-15" required />
       </div>
-      <div class="control-group1">
-        <label for="mission-time" class="calibre9">Planlanan saat</label>
-        <input type="time" id="mission-time" value="12:00" required="" class="calibre10">
+      <div class="control-group">
+        <label for="mission-time" data-t="tarihkutu.saat"></label>
+        <input type="time" id="mission-time" value="12:00" required />
       </div>
       <div class="dialog-actions">
-        <button id="mission-dialog-cancel" type="button" class="calibre8">Vazgeç</button>
-        <button type="submit" class="calibre19">Uygula</button>
-      </div></form>
-    
+        <button id="mission-dialog-cancel" type="button" data-t="ortak.vazgec"></button>
+        <button type="submit" data-t="tarihkutu.uygula"></button>
+      </div>
+    </form>
   </dialog>
 
-  
-<aside id="landing-result-panel" aria-labelledby="landing-result-title" aria-live="polite" hidden="" class="calibre20">
-    <button id="landing-result-close" type="button" aria-label="Sonuç panelini kapat" class="calibre21">×</button>
-    <h2 id="landing-result-title" class="calibre22">İniş bölgesi ön değerlendirmesi</h2>
-    <p id="result-mission-time" class="calibre23"></p>
-    <h3 id="result-site-name" class="calibre24">Aday bölge hesaplanıyor…</h3>
-    <p id="result-site-coordinates" class="calibre23"></p>
-    <p id="result-solar-elevation" class="calibre23"></p>
-    <p id="result-illumination" class="calibre23"></p>
-    <h3 class="calibre24">En uygun 5 aday (sıralı)</h3>
-    <p id="result-scan-info" class="calibre23"></p>
-    <ol id="result-candidate-list" class="calibre25"></ol>
-    <h3 class="calibre24">Parametre değerlendirmesi</h3>
-    <ul class="calibre26">
-      <li id="result-sun-check" class="calibre27"></li>
-      <li id="result-slope-check" class="calibre27"></li>
-      <li id="result-duration-check" class="calibre27"></li>
-      <li id="result-dem-check" class="calibre27"></li>
+  <aside id="landing-result-panel" aria-labelledby="landing-result-title" aria-live="polite" hidden>
+    <button id="landing-result-close" type="button" data-t-aria="sonuc.kapat">×</button>
+    <h2 id="landing-result-title" data-t="sonuc.baslik"></h2>
+    <p id="result-mission-time"></p>
+    <h3 id="result-site-name" data-t="sonuc.aday_hesaplaniyor"></h3>
+    <p id="result-site-coordinates"></p>
+    <p id="result-solar-elevation"></p>
+    <p id="result-illumination"></p>
+    <h3 data-t="sonuc.en_uygun"></h3>
+    <p id="result-scan-info"></p>
+    <ol id="result-candidate-list"></ol>
+    <h3 data-t="sonuc.parametre"></h3>
+    <ul>
+      <li id="result-sun-check"></li>
+      <li id="result-slope-check"></li>
+      <li id="result-duration-check"></li>
+      <li id="result-dem-check"></li>
     </ul>
-    <p class="result-warning">Bu, mevcut adaylar arasındaki yaklaşık bir öneridir. Koordinat bazlı arazi ve zaman serisi verisi olmadan iniş güvenliği doğrulanamaz.</p>
+    <p class="result-warning" data-t="sonuc.uyari"></p>
   </aside>
-  
-<aside id="feature-info-panel" aria-labelledby="feature-info-title" aria-live="polite" hidden="" class="calibre28">
-    <button id="feature-info-close" type="button" aria-label="Bilgi panelini kapat" class="calibre21">×</button>
-    <p id="feature-info-category" class="calibre29"></p>
-    <h2 id="feature-info-title" class="calibre30"></h2>
-    <p id="feature-info-coordinates" class="calibre31"></p>
-    <p id="feature-info-description" class="calibre31"></p>
-    <h3 id="feature-info-detail-label" hidden="" class="calibre32"></h3>
-    <p id="feature-info-detail" hidden="" class="calibre31"></p>
-    <section id="feature-info-parameters" hidden="" class="calibre33">
-      <h3 class="calibre34">Güney kutbu planlama parametreleri</h3>
-      <ol class="calibre15">
-        <li class="calibre35"><strong class="calibre36">Topografya:</strong> LOLA DEM 10 / 30 / 80 m çözünürlükleri; kalıcı gölge (PSR) maskesi.</li>
-        <li class="calibre35"><strong class="calibre36">Aydınlanma:</strong> 18,6 yıllık presesyon döngüsü; Connecting Ridge %92,27 (2 m) ve %95,65 (10 m).</li>
-        <li class="calibre35"><strong class="calibre36">Enerji:</strong> Shackleton A1 için 73–117 saat depolama; 10 km uzaktaki B sahası bağlantısıyla 68 saat.</li>
-        <li class="calibre35"><strong class="calibre36">İniş güvenliği:</strong> eğim &lt;8°; 8° yamaçlardan en az 100 m tampon.</li>
-        <li class="calibre35"><strong class="calibre36">Dünya / iletişim:</strong> kutupta Dünya ufkun üstünde %48,4; kesintisiz pencere ort. 13,1 gün, en çok 14,4 gün.</li>
-        <li class="calibre35"><strong class="calibre36">Gateway:</strong> 9:2 NRHO dönemi ortalama 6,56 gün; görev kalış süresini tek başına belirlemez.</li>
-        <li class="calibre35"><strong class="calibre36">DE440:</strong> Ay ortalama yarıçapı 1.737,4 km; librasyon döngüsü 27,22 gün.</li>
+  <aside id="feature-info-panel" aria-labelledby="feature-info-title" aria-live="polite" hidden>
+    <button id="feature-info-close" type="button" data-t-aria="bilgi.kapat">×</button>
+    <p id="feature-info-category"></p>
+    <h2 id="feature-info-title"></h2>
+    <p id="feature-info-coordinates"></p>
+    <p id="feature-info-description"></p>
+    <h3 id="feature-info-detail-label" hidden></h3>
+    <p id="feature-info-detail" hidden></p>
+    <section id="feature-info-parameters" hidden>
+      <h3 data-t="bilgi.parametreler"></h3>
+      <ol>
+        <li data-t-html="bilgi.p1"></li>
+        <li data-t-html="bilgi.p2"></li>
+        <li data-t-html="bilgi.p3"></li>
+        <li data-t-html="bilgi.p4"></li>
+        <li data-t-html="bilgi.p5"></li>
+        <li data-t-html="bilgi.p6"></li>
+        <li data-t-html="bilgi.p7"></li>
       </ol>
-      <p class="calibre31">Bu değerler bölgesel planlama bağlamıdır; her görevin sahasında ölçülmüş sonuçlar değildir.</p>
+      <p data-t="bilgi.p_not"></p>
     </section>
-    <p class="calibre31"><a id="feature-info-source" href="https://science.nasa.gov/moon/missions/" target="_blank" rel="noopener noreferrer" class="calibre37">NASA Ay görevleri</a></p>
+    <p><a id="feature-info-source" href="https://science.nasa.gov/moon/missions/" target="_blank" rel="noopener noreferrer" data-t="bilgi.kaynak_gorevler"></a></p>
   </aside>
 
-  
-<div id="timeline-container" class="calibre38">
+  <div id="timeline-container">
     <div class="timeline-header">
-      <div class="calibre17">Simülasyon Zamanı: <span id="current-time-label" class="time-display">15 Kas 2026 - 12:00 (Gün 0)</span></div>
-      <div id="power-status" class="status-badge">Konum ve tarih bazlı güneşlenme verisi bekleniyor</div>
+      <div><span data-t="zaman.etiket"></span> <span id="current-time-label" class="time-display"></span></div>
+      <div id="power-status" class="status-badge" data-t="zaman.guc_bekleniyor"></div>
     </div>
     <div class="timeline-controls">
-      <button id="play-pause-btn" class="play-btn pcalibre1">Oynat ❚▶</button>
-      <input type="range" id="timeline-slider" min="0" max="720" value="0" step="1" class="calibre39">
-      <span class="calibre40">30 Günlük Döngü</span>
+      <button id="play-pause-btn" class="play-btn" data-t="zaman.oynat"></button>
+      <input type="range" id="timeline-slider" min="0" max="720" value="0" step="1" />
+      <span style="font-size: 0.75rem; color: #94a3b8;" data-t="zaman.dongu"></span>
     </div>
   </div>
 
-  
-<div id="map-controls" class="calibre41">
-    <button id="map-fly" class="map-btn pcalibre2" type="button" aria-label="Aya uç (Koordinat seç)" title="Aya uç — Gitmek istediğiniz koordinatları seçin">
-      <svg viewBox="0 0 24 24" aria-hidden="true" class="calibre42"><line x1="22" y1="2" x2="11" y2="13" class="calibre"></line><polygon points="22 2 15 22 11 13 2 9 22 2" class="calibre"></polygon></svg>
+  <div id="map-controls">
+    <button id="map-fly" class="map-btn" type="button" data-t-aria="harita.uc_etiket" data-t-title="harita.uc_baslik">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
-    <button id="map-zoom-in" class="map-btn pcalibre2" type="button" aria-label="Yakınlaştır" title="Yakınlaştır">
-      <svg viewBox="0 0 24 24" aria-hidden="true" class="calibre42"><line x1="12" y1="5" x2="12" y2="19" class="calibre"></line><line x1="5" y1="12" x2="19" y2="12" class="calibre"></line></svg>
+    <button id="map-zoom-in" class="map-btn" type="button" data-t-aria="harita.yakinlastir" data-t-title="harita.yakinlastir">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
     </button>
-    <button id="map-zoom-out" class="map-btn pcalibre2" type="button" aria-label="Uzaklaştır" title="Uzaklaştır">
-      <svg viewBox="0 0 24 24" aria-hidden="true" class="calibre42"><line x1="5" y1="12" x2="19" y2="12" class="calibre"></line></svg>
+    <button id="map-zoom-out" class="map-btn" type="button" data-t-aria="harita.uzaklastir" data-t-title="harita.uzaklastir">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/></svg>
     </button>
-    <button id="map-open" class="map-btn pcalibre2" type="button" aria-label="Harita seçenekleri" aria-expanded="false" aria-controls="map-panel" title="Projections &amp; Graticule">
-      <svg viewBox="0 0 24 24" aria-hidden="true" class="calibre42"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" class="calibre"></polygon><line x1="8" y1="2" x2="8" y2="18" class="calibre"></line><line x1="16" y1="6" x2="16" y2="22" class="calibre"></line></svg>
+    <button id="map-open" class="map-btn" type="button" aria-expanded="false" aria-controls="map-panel" data-t-aria="harita.secenekler" data-t-title="harita.projections">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
     </button>
-    <button id="map-gamepad" class="map-btn pcalibre2" type="button" aria-label="Klavye ile hareket (Oyun konsolu)" aria-pressed="false" title="Klavye ile hareket (Yalnızca 3D Globe)">
-      <svg viewBox="0 0 24 24" aria-hidden="true" class="calibre42"><rect x="2" y="7" width="20" height="11" rx="5.5" class="calibre"></rect><line x1="7" y1="10.5" x2="7" y2="14.5" class="calibre"></line><line x1="5" y1="12.5" x2="9" y2="12.5" class="calibre"></line><circle cx="15.5" cy="11.5" r="0.9" class="calibre"></circle><circle cx="18" cy="13.8" r="0.9" class="calibre"></circle></svg>
+    <button id="map-gamepad" class="map-btn" type="button" aria-pressed="false" data-t-aria="harita.klavye_etiket" data-t-title="harita.klavye_baslik">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="11" rx="5.5"/><line x1="7" y1="10.5" x2="7" y2="14.5"/><line x1="5" y1="12.5" x2="9" y2="12.5"/><circle cx="15.5" cy="11.5" r="0.9"/><circle cx="18" cy="13.8" r="0.9"/></svg>
     </button>
-    <div id="map-panel" role="group" aria-label="Harita seçenekleri" hidden="" class="calibre43">
-      <div class="calibre17">
-        <h4 class="calibre44">Projections</h4>
-        <div id="map-list" role="radiogroup" aria-label="Projections" class="calibre17"></div>
+    <div id="map-panel" role="group" data-t-aria="harita.secenekler" hidden>
+      <div>
+        <h4 data-t="harita.projections_h"></h4>
+        <div id="map-list" role="radiogroup" data-t-aria="harita.projections_h"></div>
       </div>
-      <div class="calibre17">
-        <h4 class="calibre44">Katmanlar</h4>
-        <label class="calibre45"><input type="checkbox" id="graticule-toggle" class="calibre46"> Graticule (Turuncu Ağ)</label>
-        <label class="calibre45"><input type="checkbox" id="nomenclature-toggle" class="calibre46"> Nomenclature (İsimler)</label>
+      <div>
+        <h4 data-t="harita.katmanlar"></h4>
+        <label><input type="checkbox" id="graticule-toggle"> <span data-t="harita.graticule"></span></label>
+        <label><input type="checkbox" id="nomenclature-toggle"> <span data-t="harita.nomenclature"></span></label>
       </div>
-      <p id="map-status" role="status" aria-live="polite" class="calibre47"></p>
+      <p id="map-status" role="status" aria-live="polite"></p>
     </div>
-    <div id="gamepad-hint" role="note" hidden="" class="calibre48">
-      <div class="calibre49">3D Globe Klavye Kontrolü</div>
-      <div class="calibre17"><kbd class="calibre50">W</kbd><kbd class="calibre50">A</kbd><kbd class="calibre50">S</kbd><kbd class="calibre50">D</kbd> / <kbd class="calibre50">↑</kbd><kbd class="calibre50">↓</kbd><kbd class="calibre50">←</kbd><kbd class="calibre50">→</kbd> yürü</div>
-      <div class="calibre17"><kbd class="calibre50">Q</kbd> yüksel  <kbd class="calibre50">E</kbd> alçal</div>
-      <div class="calibre17"><kbd class="calibre50">R</kbd> yukarı bak  <kbd class="calibre50">F</kbd> aşağı bak</div>
-      <div class="calibre17"><kbd class="calibre50">Z</kbd> saat yönü  <kbd class="calibre50">C</kbd> saat yönü tersi</div>
+    <div id="gamepad-hint" role="note" hidden>
+      <div style="color:#ffb36b;font-weight:700;margin-bottom:3px;" data-t="klavye.baslik"></div>
+      <div data-t-html="klavye.yuru"></div>
+      <div data-t-html="klavye.yuksel"></div>
+      <div data-t-html="klavye.bak"></div>
+      <div data-t-html="klavye.don"></div>
     </div>
   </div>
 
-  
-<div id="coord-readout" hidden="" class="calibre51"></div>
+  <div id="coord-readout" hidden></div>
 
-  
-<dialog id="goto-dialog" aria-labelledby="goto-title" class="calibre52">
-    <form id="goto-form" class="calibre17">
-      <h3 id="goto-title" class="calibre53">Gitmek istediğiniz koordinatları seçin</h3>
-      <p class="subtitle">Gerçek NASA LROC / USGS / IAU veri tabanından bir bölge seçin veya doğrudan enlem/boylam girin:</p>
+  <dialog id="goto-dialog" aria-labelledby="goto-title">
+    <form id="goto-form">
+      <h3 id="goto-title" data-t="goto.baslik"></h3>
+      <p class="goto-sub" data-t="goto.alt"></p>
       <div class="control-group">
-        <label for="goto-place" class="calibre9">NASA / IAU Doğrulanmış Ay Bölgeleri</label>
-        <select id="goto-place" class="calibre10"><option value="" class="calibre">— Özel koordinat girin —</option></select>
+        <label for="goto-place" data-t="goto.yer_etiket"></label>
+        <select id="goto-place"><option value="" data-t="goto.ozel"></option></select>
       </div>
       <div class="flex-row">
-        <div class="control-group2">
-          <label for="goto-lat" class="calibre9">Enlem (−90° … +90°, K:+ / G:−)</label>
-          <input id="goto-lat" type="number" min="-90" max="90" step="any" value="-89.9" required="" class="calibre54">
+        <div class="control-group" style="flex:1">
+          <label for="goto-lat" data-t="goto.enlem"></label>
+          <input id="goto-lat" type="number" min="-90" max="90" step="any" value="-89.9" required />
         </div>
-        <div class="control-group2">
-          <label for="goto-lon" class="calibre9">Boylam (−180° … +180°, D:+ / B:−)</label>
-          <input id="goto-lon" type="number" min="-180" max="180" step="any" value="0.0" required="" class="calibre54">
+        <div class="control-group" style="flex:1">
+          <label for="goto-lon" data-t="goto.boylam"></label>
+          <input id="goto-lon" type="number" min="-180" max="180" step="any" value="0.0" required />
         </div>
       </div>
-      <p id="goto-hint" class="goto-hint" role="status">Shackleton Krateri Kenarı: -89.90° G, 0.00° D</p>
-      <div class="dialog-actions1">
-        <button id="goto-cancel" type="button" class="calibre55">Vazgeç</button>
-        <button type="submit" class="pcalibre3 calibre56">Koordinata Uç ✈</button>
-      </div></form>
-    
+      <p id="goto-hint" class="goto-hint" role="status" data-t="goto.ipucu_ilk"></p>
+      <div class="dialog-actions">
+        <button id="goto-cancel" type="button" data-t="ortak.vazgec"></button>
+        <button type="submit" data-t="goto.uc"></button>
+      </div>
+    </form>
   </dialog>
 
-  
-<div id="canvas-container" class="calibre57"></div>
-  
-<div id="model-status" class="calibre58">3B modeller yükleniyor…</div>
+  <div id="canvas-container"></div>
+  <div id="model-status" role="status" data-t="yukleme.baslangic"></div>
 
-  
-<script class="calibre14">
+  <script>
+    // Dil ve sözlük: ?dil=tr|en (varsayılan tr). Sözlük dil/<kod>.json; modül betik aynı sözlüğü bekler.
     (() => {
+      const kod = new URLSearchParams(location.search).get('dil') === 'en' ? 'en' : 'tr';
+      document.documentElement.lang = kod;
+      let sozluk = {};
+      const t = (anahtar, parametre) => {
+        const metin = sozluk[anahtar];
+        if (metin === undefined) { console.warn(`Missing translation key: ${anahtar}`); return anahtar; }
+        return parametre ? metin.replace(/\{(\w+)\}/g, (eslesen, ad) => (ad in parametre ? parametre[ad] : eslesen)) : metin;
+      };
+      const sozlukYukle = async (k) => {
+        const yanit = await fetch(`./dil/${k}.json`);
+        if (!yanit.ok) throw new Error(`HTTP ${yanit.status} for dil/${k}.json`);
+        return yanit.json();
+      };
+      const doldur = () => {
+        document.title = t('sayfa.baslik');
+        for (const el of document.querySelectorAll('[data-t]')) el.textContent = t(el.dataset.t);
+        for (const el of document.querySelectorAll('[data-t-html]')) el.innerHTML = t(el.dataset.tHtml);
+        for (const el of document.querySelectorAll('[data-t-aria]')) el.setAttribute('aria-label', t(el.dataset.tAria));
+        for (const el of document.querySelectorAll('[data-t-title]')) el.title = t(el.dataset.tTitle);
+      };
+      const hazir = (async () => {
+        try {
+          sozluk = await sozlukYukle(kod);
+        } catch (hata) {
+          console.warn(`Could not load the "${kod}" dictionary, falling back to "tr"`, hata);
+          try { sozluk = await sozlukYukle('tr'); } catch (hata2) { console.warn('The "tr" dictionary could not be loaded either; keys will be shown', hata2); }
+        }
+        doldur();
+      })();
+      window.LUNARIS_DIL = { kod, t, hazir };
+
       const bindCollapse = (panelId, btnId) => {
         const panel = document.getElementById(panelId);
         const button = document.getElementById(btnId);
@@ -2023,8 +368,9 @@ html, body { height: 100%; margin: 0; }
           const collapsed = panel.classList.toggle('panel-collapsed');
           button.textContent = collapsed ? '⌄' : '⌃';
           button.setAttribute('aria-expanded', String(!collapsed));
-          button.setAttribute('aria-label', collapsed ? 'Paneli aç' : 'Paneli daralt');
-          button.title = collapsed ? 'Paneli aç' : 'Paneli daralt';
+          const etiket = t(collapsed ? 'panel.ac' : 'panel.daralt');
+          button.setAttribute('aria-label', etiket);
+          button.title = etiket;
         });
       };
       bindCollapse('ui-panel', 'ui-collapse-button');
@@ -2033,28 +379,33 @@ html, body { height: 100%; margin: 0; }
         const status = document.getElementById('model-status');
         if (status && event.target instanceof HTMLScriptElement) {
           status.style.borderColor = '#f87171';
-          status.textContent = 'Three.js modülleri yüklenemedi. İnternet bağlantısını kontrol edip sayfayı yenileyin.';
+          status.textContent = t('yukleme.modul_hata');
         }
       }, true);
     })();
   </script>
 
-  
-<script type="importmap" class="calibre14">
+  <script type="importmap">
     {
       "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        "three": "./vendor/three/build/three.module.js",
+        "three/addons/": "./vendor/three/examples/jsm/"
       }
     }
   </script>
 
-  
-<script type="module" class="calibre14">
+  <script type="module">
     import * as THREE from 'three';
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
     import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+
+    const { t } = window.LUNARIS_DIL;
+    await window.LUNARIS_DIL.hazir;
+    const latDir = (lat) => (lat >= 0 ? t('yon.k') : t('yon.g'));
+    const lonDir = (lon) => (lon >= 0 ? t('yon.d') : t('yon.b'));
+    const konumMetni = (lat, lon) => `${Math.abs(lat).toFixed(2)}° ${latDir(lat)}, ${Math.abs(lon).toFixed(2)}° ${lonDir(lon)}`;
+    const yerel = t('yerel');
 
     const container = document.getElementById('canvas-container');
     const scene = new THREE.Scene();
@@ -2129,44 +480,48 @@ html, body { height: 100%; margin: 0; }
     scene.add(earthOrbitLine);
     earthModelGroup.add(moonOrbitLine);
 
-    const LUNAR_PLACES = [
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Shackleton Krateri Kenarı', lat: -89.90, lon: 0.00, desc: 'Güney kutbu; %85,5–%92,1 aydınlanma (C3)' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Connecting Ridge', lat: -89.40, lon: -137.50, desc: '2 m’de %92,27, 10 m’de %95,65 aydınlanma (C2)' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Peak Near Shackleton', lat: -88.80, lon: 123.70, desc: 'NASA Artemis III aday bölgesi [E3, E4]' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Malapert Massif', lat: -85.50, lon: 12.90, desc: 'Yüksek Dünya görünürlüğü (%74,7 / ~20 gün) [G1]' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Cabeus Krateri (LCROSS)', lat: -84.68, lon: -48.72, desc: 'LCROSS su buzu tespit noktası (%5,6 ± 2,9) [H2]' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Haworth Krateri', lat: -87.45, lon: -5.17, desc: 'Artemis III aday bölgesi ve PSR alanı [E4]' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Shoemaker Krateri', lat: -88.14, lon: 45.91, desc: 'Kalıcı gölgeli su buzu krateri [D1]' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Faustini Krateri Kenarı', lat: -87.18, lon: 84.31, desc: 'Artemis III aday bölgesi [E4]' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'de Gerlache Krateri Kenarı', lat: -88.48, lon: -88.34, desc: 'Artemis III aday bölgesi [E4]' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Nobile Krateri Kenarı (VIPER)', lat: -85.28, lon: 53.27, desc: 'NASA VIPER ve Artemis III aday bölgesi [E3]' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Amundsen Krateri Kenarı', lat: -84.44, lon: 83.07, desc: 'Artemis III aday bölgesi [E4]' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Slater Düzlüğü (Slater Plain)', lat: -88.08, lon: 111.20, desc: 'Artemis III güncellenmiş aday bölgesi [E5]' },
-      { group: 'Artemis III & Güney Kutbu Adayları (NASA)', name: 'Mons Mouton (Leibniz Beta)', lat: -85.40, lon: 31.80, desc: 'Artemis III aday platosu [E3]' },
-      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 11 (Tranquility Base)', lat: 0.67416, lon: 23.47314, desc: 'İlk insanlı Ay inişi (20 Temmuz 1969)' },
-      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 12 (Oceanus Procellarum)', lat: -3.01239, lon: -23.42157, desc: 'Hassas iniş görevi (Kasım 1969)' },
-      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 14 (Fra Mauro)', lat: -3.64530, lon: -17.47136, desc: 'Fra Mauro yaylası (Şubat 1971)' },
-      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 15 (Hadley-Apennine)', lat: 26.13239, lon: 3.63386, desc: 'İlk Ay Rover görevi (Temmuz 1971)' },
-      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 16 (Descartes)', lat: -8.97301, lon: 15.50019, desc: 'Merkez yaylalar (Nisan 1972)' },
-      { group: 'Apollo İniş Noktaları (NASA LROC)', name: 'Apollo 17 (Taurus-Littrow)', lat: 20.19080, lon: 30.77168, desc: 'Son Apollo inişi (Aralık 1972)' },
-      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: 'IM-1 Odysseus (Malapert A)', lat: -80.1276, lon: 1.4367, desc: 'CLPS IM-1 iniş noktası (22 Şubat 2024) [G4]' },
-      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: 'Chandrayaan-3 (Statio Shiv Shakti)', lat: -69.3730, lon: 32.3190, desc: 'ISRO güney yüksek enlem inişi (23 Ağustos 2023) [I2]' },
-      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: 'SLIM (Shioli Krateri)', lat: -13.3160, lon: 25.2510, desc: 'JAXA hassas iniş noktası (Ocak 2024)' },
-      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: "Chang'e 3 (Mare Imbrium)", lat: 44.1214, lon: -19.5116, desc: 'Yutu rover iniş alanı (2013)' },
-      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: "Chang'e 4 (Von Kármán Krateri)", lat: -45.4446, lon: 177.5991, desc: 'Ay’ın uzak yüzüne ilk iniş (2019)' },
-      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: "Chang'e 5 (Mons Rümker)", lat: 43.0576, lon: -51.9161, desc: 'Numune getirme görevi (2020)' },
-      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: "Chang'e 6 (Apollo Havzası)", lat: -41.6385, lon: -153.9852, desc: 'Uzak yüzden numune getirme (2024)' },
-      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: 'Luna 9 (Oceanus Procellarum)', lat: 7.08, lon: -64.37, desc: 'Ay yüzeyine ilk yumuşak iniş (1966)' },
-      { group: 'Modern ve Robotik Görevler (NASA / IAU)', name: 'Lunokhod 1 (Luna 17)', lat: 38.2378, lon: -35.0017, desc: 'İlk uzaktan kumandalı Ay aracı (1970)' },
-      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Tycho Krateri', lat: -43.31, lon: -11.36, desc: '85 km çaplı genç parlak ışınlı krater' },
-      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Copernicus Krateri', lat: 9.62, lon: -20.08, desc: '93 km çaplı belirgin teraslı krater' },
-      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Aristarchus Platosu', lat: 23.73, lon: -47.49, desc: 'Ay’ın en parlak jeolojik oluşumlarından biri' },
-      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Plato Krateri', lat: 51.62, lon: -9.33, desc: '101 km çaplı koyu tabanlı krater' },
-      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Clavius Krateri', lat: -58.62, lon: -14.73, desc: '231 km çaplı dev güney krateri' },
-      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Tsiolkovskiy Krateri', lat: -20.38, lon: 128.97, desc: 'Uzak yüzdeki merkezi tepeli krater' },
-      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Güney Kutbu (90°G)', lat: -90.00, lon: 0.00, desc: 'Tam Güney Kutbu noktası' },
-      { group: 'Önemli Kraterler ve Kutuplar (IAU)', name: 'Kuzey Kutbu (90°K)', lat: 90.00, lon: 0.00, desc: 'Tam Kuzey Kutbu noktası' }
+    // Yer adları ve açıklamaları dil sözlüğündendir (yer.<sıra>.ad, grup.<g>); burada yalnız grup sırası ve koordinat durur.
+    const LUNAR_PLACE_DATA = [
+      [0, -89.90, 0.00],
+      [0, -89.40, -137.50],
+      [0, -88.80, 123.70],
+      [0, -85.50, 12.90],
+      [0, -84.68, -48.72],
+      [0, -87.45, -5.17],
+      [0, -88.14, 45.91],
+      [0, -87.18, 84.31],
+      [0, -88.48, -88.34],
+      [0, -85.28, 53.27],
+      [0, -84.44, 83.07],
+      [0, -88.08, 111.20],
+      [0, -85.40, 31.80],
+      [1, 0.67416, 23.47314],
+      [1, -3.01239, -23.42157],
+      [1, -3.64530, -17.47136],
+      [1, 26.13239, 3.63386],
+      [1, -8.97301, 15.50019],
+      [1, 20.19080, 30.77168],
+      [2, -80.1276, 1.4367],
+      [2, -69.3730, 32.3190],
+      [2, -13.3160, 25.2510],
+      [2, 44.1214, -19.5116],
+      [2, -45.4446, 177.5991],
+      [2, 43.0576, -51.9161],
+      [2, -41.6385, -153.9852],
+      [2, 7.08, -64.37],
+      [2, 38.2378, -35.0017],
+      [3, -43.31, -11.36],
+      [3, 9.62, -20.08],
+      [3, 23.73, -47.49],
+      [3, 51.62, -9.33],
+      [3, -58.62, -14.73],
+      [3, -20.38, 128.97],
+      [3, -90.00, 0.00],
+      [3, 90.00, 0.00]
     ];
+    const LUNAR_PLACES = LUNAR_PLACE_DATA.map(([grup, lat, lon], sira) => ({
+      group: t(`grup.${grup}`), name: t(`yer.${sira}.ad`), lat, lon, desc: t(`yer.${sira}.aciklama`)
+    }));
 
     const GRATICULE_LON_OFFSET_DEG = 0;
     const GRATICULE_LIFT = 0.0022;
@@ -2337,17 +692,23 @@ html, body { height: 100%; margin: 0; }
     }
 
     const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+    dracoLoader.setDecoderPath('./draco/');
     const loader = new GLTFLoader();
     loader.setDRACOLoader(dracoLoader);
 
+    // Yükleme göstergesi: köşede küçük, bitince kaybolur; hata olursa notu kalır.
     const modelStatus = document.getElementById('model-status');
-    let loadedModels = 0;
-    function markModelLoaded(name) {
-      loadedModels++;
-      modelStatus.style.borderColor = '#34d399';
-      modelStatus.textContent = loadedModels === 3 ? 'Ay, Dünya ve Güneş modelleri yüklendi.' : `${name} yüklendi; diğer modeller yükleniyor…`;
-      if (loadedModels === 3) setTimeout(() => modelStatus.remove(), 3500);
+    function showLoadProgress(adAnahtar, olay) {
+      if (!modelStatus.isConnected || modelStatus.classList.contains('hata')) return;
+      const ad = t(adAnahtar);
+      modelStatus.textContent = olay.lengthComputable && olay.total > 0
+        ? t('yukleme.yuzde', { ad, yuzde: Math.round((olay.loaded / olay.total) * 100) })
+        : t('yukleme.mb', { ad, mb: (olay.loaded / 1e6).toFixed(1) });
+    }
+    function showLoadErrors(adAnahtarlari) {
+      modelStatus.classList.add('hata');
+      modelStatus.textContent = t('yukleme.hata', { ad: adAnahtarlari.map((a) => t(a)).join(', ') });
+      modelStatus.addEventListener('click', () => modelStatus.remove(), { once: true });
     }
 
     function normalizeAndFitMoonModel(moonModel) {
@@ -2403,73 +764,67 @@ html, body { height: 100%; margin: 0; }
       });
     }
 
-    loader.load('./moon4.glb', (gltf) => {
-      const moonModel = gltf.scene;
-      normalizeAndFitMoonModel(moonModel);
-      moonMesh.add(moonModel);
-      moonModelRoot = moonModel;
-      moonModel.userData.trueLocalRadius = buildLunarSurfaceGrid(moonModel);
+    // Yer tutucu gök cisimleri: ilk karede hemen çizilir; GLB'ler inince yerlerine geçer (konum ve ölçek aynı gruplardadır).
+    const placeholders = { moon: null, earth: null, sun: null };
+    function disposeModel(kok) {
+      kok.removeFromParent();
+      kok.traverse((dugum) => {
+        dugum.geometry?.dispose();
+        const malzemeler = Array.isArray(dugum.material) ? dugum.material : dugum.material ? [dugum.material] : [];
+        for (const malzeme of malzemeler) { malzeme.map?.dispose(); malzeme.dispose(); }
+      });
+    }
+    {
+      const moonGroup = new THREE.Group();
+      moonGroup.add(new THREE.Mesh(
+        new THREE.SphereGeometry(moonVisualRadius, 96, 64),
+        new THREE.MeshStandardMaterial({ color: 0x9ca3af, roughness: 0.92, metalness: 0.04 })
+      ));
+      moonGroup.userData.trueLocalRadius = moonVisualRadius;
+      moonGroup.userData.isMoonModel = true;
+      moonMesh.add(moonGroup);
+      moonModelRoot = moonGroup;
+      placeholders.moon = moonGroup;
+
+      placeholders.earth = new THREE.Mesh(
+        new THREE.SphereGeometry(earthVisualDiameter * 0.5, 48, 32),
+        new THREE.MeshStandardMaterial({ color: 0x2563eb, roughness: 0.65, metalness: 0.1 })
+      );
+      earthModelGroup.add(placeholders.earth);
+
+      placeholders.sun = new THREE.Mesh(
+        new THREE.SphereGeometry(sunVisualDiameter * 0.5, 32, 24),
+        new THREE.MeshBasicMaterial({ color: 0xfde047 })
+      );
+      sunModelGroup.add(placeholders.sun);
+    }
+
+    function applyMoonModel(model, detailed) {
+      normalizeAndFitMoonModel(model);
+      model.visible = isGlobeProjection();
+      moonMesh.add(model);
+      const previous = moonModelRoot;
+      moonModelRoot = model;
+      if (previous) disposeModel(previous);
+      // Yükseklik ağı ve 2B harita dokusu yalnız ayrıntılı modelden çıkarılır; önizleme küre yarıçapıyla sınırlıdır.
+      if (detailed) model.userData.trueLocalRadius = buildLunarSurfaceGrid(model);
       onMoonModelChanged();
-      update2DProjectionMapsTexture();
-      markModelLoaded('Ay');
-      recommendLandingSite(Number(slider.value), true);
-    }, (event) => {
-      modelStatus.textContent = event.total > 0 ? `Ay modeli indiriliyor: %${Math.round(event.loaded / event.total * 100)}` : 'Ay modeli indiriliyor (yaklaşık 167 MB)…';
-    }, (error) => { console.warn('moon4.glb bulunamadı, prosedürel model kullanılıyor'); createFallbackMoon(); });
-    function createFallbackMoon() {
-      const group = new THREE.Group();
-      const geo = new THREE.SphereGeometry(moonVisualRadius, 96, 64);
-      const pos = geo.attributes.position;
-      const v = new THREE.Vector3();
-      for (let i = 0; i < pos.count; i++) {
-        v.fromBufferAttribute(pos, i);
-        const u = v.clone().normalize();
-        const h = 0.015 * Math.sin(u.x * 11) * Math.cos(u.y * 13) + 0.008 * Math.cos(u.z * 19 + u.x * 7);
-        v.multiplyScalar(1 + h);
-        pos.setXYZ(i, v.x, v.y, v.z);
+      if (detailed) {
+        update2DProjectionMapsTexture();
+        recommendLandingSite(Number(slider.value), true);
       }
-      geo.computeVertexNormals();
-      const mat = new THREE.MeshStandardMaterial({ color: 0x9ca3af, roughness: 0.92, metalness: 0.04 });
-      const mesh = new THREE.Mesh(geo, mat);
-      group.add(mesh);
-      group.userData.trueLocalRadius = moonVisualRadius;
-      group.userData.isMoonModel = true;
-      moonMesh.add(group);
-      moonModelRoot = group;
-      group.userData.trueLocalRadius = buildLunarSurfaceGrid(group);
-      onMoonModelChanged();
-      update2DProjectionMapsTexture();
-      markModelLoaded('Ay (Prosedürel)');
-      recommendLandingSite(Number(slider.value), true);
-    }
-    function createFallbackEarth() {
-      const geo = new THREE.SphereGeometry(earthVisualDiameter * 0.5, 48, 32);
-      const mat = new THREE.MeshStandardMaterial({ color: 0x2563eb, roughness: 0.65, metalness: 0.1 });
-      earthModelGroup.add(new THREE.Mesh(geo, mat));
-      markModelLoaded('Dünya (Prosedürel)');
-    }
-    function createFallbackSun() {
-      const geo = new THREE.SphereGeometry(sunVisualDiameter * 0.5, 32, 24);
-      const mat = new THREE.MeshBasicMaterial({ color: 0xfde047 });
-      sunModelGroup.add(new THREE.Mesh(geo, mat));
-      markModelLoaded('Güneş (Prosedürel)');
     }
 
-
-    loader.load('./earth1.glb', (gltf) => {
-      const earthModel = gltf.scene;
+    function applyEarthModel(earthModel) {
       const earthSize = new THREE.Box3().setFromObject(earthModel).getSize(new THREE.Vector3());
       const maxDim = Math.max(earthSize.x, earthSize.y, earthSize.z);
       if (maxDim > 0) earthModel.scale.setScalar(earthVisualDiameter / maxDim);
       earthModel.position.sub(new THREE.Box3().setFromObject(earthModel).getCenter(new THREE.Vector3()));
       earthModelGroup.add(earthModel);
-      markModelLoaded('Dünya');
-    }, (event) => {
-      if (event.total > 0) modelStatus.textContent = `Dünya modeli indiriliyor: %${Math.round(event.loaded / event.total * 100)}`;
-    }, (error) => { createFallbackEarth(); });
+      if (placeholders.earth) { disposeModel(placeholders.earth); placeholders.earth = null; }
+    }
 
-    loader.load('./sun2.glb', (gltf) => {
-      const sunModel = gltf.scene;
+    function applySunModel(sunModel) {
       const sunSize = new THREE.Box3().setFromObject(sunModel).getSize(new THREE.Vector3());
       const maxDim = Math.max(sunSize.x, sunSize.y, sunSize.z);
       if (maxDim > 0) sunModel.scale.setScalar(sunVisualDiameter / maxDim);
@@ -2478,19 +833,39 @@ html, body { height: 100%; margin: 0; }
         if (node.isMesh) { node.castShadow = false; node.receiveShadow = false; }
       });
       sunModelGroup.add(sunModel);
-      markModelLoaded('Güneş');
-    }, undefined, (error) => { createFallbackSun(); });
+      if (placeholders.sun) { disposeModel(placeholders.sun); placeholders.sun = null; }
+    }
+
+    // Sıra: önizleme Ay, ayrıntılı Ay, sonra Dünya ve Güneş birlikte. Bir dosya inmezse yer tutucu kalır, uyarı yazılır.
+    async function loadModels() {
+      const failed = [];
+      const attempt = async (file, nameKey, apply) => {
+        try {
+          const gltf = await loader.loadAsync(`./${file}`, (olay) => showLoadProgress(nameKey, olay));
+          apply(gltf.scene);
+          return true;
+        } catch (error) {
+          console.warn(`${file} could not be loaded; the placeholder stays`, error);
+          failed.push(nameKey);
+          return false;
+        }
+      };
+      const mark = (durum) => { document.documentElement.dataset.yukleme = durum; };
+      if (await attempt('moon4-onizleme.glb', 'cisim.ay_onizleme', (model) => applyMoonModel(model, false))) mark('onizleme');
+      if (await attempt('moon4.glb', 'cisim.ay', (model) => applyMoonModel(model, true))) mark('ayrintili');
+      await Promise.all([
+        attempt('earth1.glb', 'cisim.dunya', applyEarthModel),
+        attempt('sun2.glb', 'cisim.gunes', applySunModel)
+      ]);
+      mark('tam');
+      if (failed.length) showLoadErrors(failed);
+      else modelStatus.remove();
+    }
 
     const sunLight = new THREE.PointLight(0xfff5e0, 2.8, 0, 0);
     sunLight.position.copy(sunPosition);
     scene.add(sunLight);
     scene.add(new THREE.AmbientLight(0xdbeafe, 0.26));
-
-    function showLoadError(file, error) {
-      modelStatus.style.borderColor = '#f87171';
-      modelStatus.textContent = `${file} yüklenemedi. Sayfayı yerel bir web sunucusu üzerinden açın (ör. VS Code Live Server).`;
-      console.error(`${file} yüklenemedi:`, error);
-    }
 
     const recommendationMarkerGroup = new THREE.Group();
     moonMesh.add(recommendationMarkerGroup);
@@ -2621,7 +996,7 @@ html, body { height: 100%; margin: 0; }
       isFirstPersonView = false;
       if (!isGlobeProjection()) switchProjection('globe');
       recommendationMarkerGroup.visible = showRecommendationMarkers;
-      flyToLatLon(candidate.lat, candidate.lon, candidate.name || 'Aday Bölge');
+      flyToLatLon(candidate.lat, candidate.lon, candidate.name || t('js.aday_bolge'));
     }
 
     function enterFirstPersonAtCandidate(candidate) {
@@ -2653,7 +1028,7 @@ html, body { height: 100%; margin: 0; }
       controls.update();
 
       const fpBtn = document.getElementById('sfd-fp-btn');
-      if (fpBtn) fpBtn.textContent = '🌍 Yörünge Görünümüne Dön';
+      if (fpBtn) fpBtn.textContent = t('ornek.fp_donus');
     }
 
     const PROJECTIONS = [
@@ -3231,7 +1606,7 @@ html, body { height: 100%; margin: 0; }
         }
       }
       gamepadBtn.disabled = !globe;
-      gamepadBtn.title = globe ? 'Klavye ile hareket (WASD / ↑↓←→, Q/E, R/F, Z/C)' : 'Klavye kontrolü yalnızca 3D Globe haritasında kullanılabilir';
+      gamepadBtn.title = t(globe ? 'harita.klavye_acik' : 'harita.klavye_kapali');
       if (!globe) setGamepadActive(false);
     }
 
@@ -3251,7 +1626,7 @@ html, body { height: 100%; margin: 0; }
         controls.enableRotate = true;
         applyProjectionState();
         onMoonModelChanged();
-        setMapStatus('3D Globe aktif.');
+        setMapStatus(t('harita.globe_aktif'));
         cameraFlight = {
           fromPosition: camera.position.clone(),
           fromTarget: controls.target.clone(),
@@ -3264,7 +1639,7 @@ html, body { height: 100%; margin: 0; }
         create2DProjectionView(id);
         applyProjectionState();
         controls.enableRotate = false;
-        setMapStatus(`${entry.label} görünümü aktif (Klavye konsolu devre dışı).`);
+        setMapStatus(t('harita.gorunum_aktif', { ad: entry.label }));
         projectionMapGroup.quaternion.copy(moonMesh.quaternion).invert();
         cameraFlight = {
           fromPosition: camera.position.clone(),
@@ -3350,14 +1725,14 @@ html, body { height: 100%; margin: 0; }
       if (!place) return;
       gotoLat.value = place.lat;
       gotoLon.value = place.lon;
-      gotoHint.textContent = `${place.name} — ${Math.abs(place.lat).toFixed(2)}° ${place.lat >= 0 ? 'K' : 'G'}, ${Math.abs(place.lon).toFixed(2)}° ${place.lon >= 0 ? 'D' : 'B'}${place.desc ? ' • ' + place.desc : ''}`;
+      gotoHint.textContent = `${place.name} — ${konumMetni(place.lat, place.lon)}${place.desc ? ' • ' + place.desc : ''}`;
     });
 
     [gotoLat, gotoLon].forEach((input) => input.addEventListener('input', () => {
       gotoPlace.value = '';
       const lat = Number(gotoLat.value), lon = Number(gotoLon.value);
       if (Number.isFinite(lat) && Number.isFinite(lon)) {
-        gotoHint.textContent = `Seçilen koordinat: ${Math.abs(lat).toFixed(2)}° ${lat >= 0 ? 'K' : 'G'}, ${Math.abs(lon).toFixed(2)}° ${lon >= 0 ? 'D' : 'B'}`;
+        gotoHint.textContent = t('goto.secilen', { k: konumMetni(lat, lon) });
       }
     }));
 
@@ -3433,7 +1808,7 @@ html, body { height: 100%; margin: 0; }
           startedAt: performance.now(),
           duration: 900
         };
-        setMapStatus('Seçilen bölge haritada yaklaştırılıyor…');
+        setMapStatus(t('harita.bolge_yaklasiyor'));
         return;
       }
 
@@ -3467,8 +1842,8 @@ html, body { height: 100%; margin: 0; }
         startedAt: performance.now(),
         duration: 1700
       };
-      const labelStr = `${Math.abs(lat).toFixed(2)}° ${lat >= 0 ? 'K' : 'G'}, ${Math.abs(lon).toFixed(2)}° ${lon >= 0 ? 'D' : 'B'}`;
-      setMapStatus(placeName ? `${placeName} (${labelStr}) noktasına yakınlaşılıyor…` : `${labelStr} koordinatına uçuluyor…`);
+      const labelStr = konumMetni(lat, lon);
+      setMapStatus(placeName ? t('harita.yakinlasiyor', { ad: placeName, k: labelStr }) : t('harita.uculuyor', { k: labelStr }));
     }
 
     const hoverRaycaster = new THREE.Raycaster();
@@ -3559,8 +1934,8 @@ html, body { height: 100%; margin: 0; }
       }
       const nearPlace = spriteItem || findNearestLunarPlace(lat, lon);
       renderer.domElement.style.cursor = nearPlace ? 'pointer' : '';
-      const coordText = `Enlem: ${Math.abs(lat).toFixed(2)}° ${lat >= 0 ? 'K' : 'G'}  |  Boylam: ${Math.abs(lon).toFixed(2)}° ${lon >= 0 ? 'D' : 'B'}`;
-      readout.textContent = nearPlace ? `${coordText}  •  📍 ${nearPlace.name} (Yakınlaşmak için tıkla)` : coordText;
+      const coordText = t('okuma.koordinat', { lat: `${Math.abs(lat).toFixed(2)}° ${latDir(lat)}`, lon: `${Math.abs(lon).toFixed(2)}° ${lonDir(lon)}` });
+      readout.textContent = nearPlace ? t('okuma.yakinlas', { k: coordText, ad: nearPlace.name }) : coordText;
       readout.hidden = false;
     }
 
@@ -3770,88 +2145,22 @@ html, body { height: 100%; margin: 0; }
       gamepadFrame = requestAnimationFrame(gamepadStep);
     }
 
-    const SAMPLE_FLIGHTS = [
-      {
-        id: 'apollo-11',
-        name: 'Apollo 11 — Tranquility Base',
-        shortTitle: 'Apollo 11',
-        statusType: 'landed',
-        badgeText: '✓ Gerçekleşti (1969)',
-        subtitle: 'Mare Tranquillitatis • İlk İnsanlı Ay İnişi',
-        agencyDate: 'NASA • 20 Temmuz 1969 • 0.67° K, 23.47° D',
-        lat: 0.67416,
-        lon: 23.47314,
-        illuminationRatio: null,
-        infoLabel: 'İniş ve Görev Bilgileri',
-        infoText: 'Neil Armstrong ve Buzz Aldrin, Eagle Ay Modülü (LM) ile Sessizlik Denizi’ne inerek insanlığın Ay yüzeyindeki ilk adımlarını attı. Yüzeyde 21 saat 36 dakika kalındı; 21,5 kg Ay bazaltı/regoliti Dünya’ya getirildi, sismometre ve lazer yansıtıcı (LRRR) yerleştirildi.',
-        reasonLabel: 'Neden Bu Bölge Seçildi?',
-        reasonText: 'Ekvatora yakın düz bazaltik mare tabanı olması, yerel eğimin <2° altında kalması, iniş radarını yanıltacak derin krater/kaya yoğunluğunun çok düşük olması ve Dünya ile kesintisiz doğrudan iletişim açısı sunması nedeniyle seçilmiştir.'
-      },
-      {
-        id: 'chandrayaan-3',
-        name: 'Chandrayaan-3 — Shiv Shakti',
-        shortTitle: 'Chandrayaan-3',
-        statusType: 'landed',
-        badgeText: '✓ Güney Kutbu 1. İniş',
-        subtitle: '69.37° G, 32.32° D • ISRO Vikram & Pragyan',
-        agencyDate: 'ISRO (Hindistan) • 23 Ağustos 2023 • 69.37° G, 32.32° D',
-        lat: -69.3730,
-        lon: 32.3190,
-        illuminationRatio: null,
-        infoLabel: 'İniş ve Görev Bilgileri',
-        infoText: 'Ay’ın güney yüksek enlemlerine (Güney Kutbu bölgesine) yapılan tarihteki ilk başarılı yumuşak iniştir. Vikram iniş aracı ve Pragyan gezgini; ChaSTE probu ile ilk kez kutup yakınındaki üst regolit sıcaklık gradyanını ölçmüş ve LIBS ile yerinde kükürt (S), alüminyum, kalsiyum ve demir varlığını doğrulamıştır.',
-        reasonLabel: 'Neden Bu Bölge Seçildi?',
-        reasonText: 'Manzinus ve Boguslawsky kraterleri arasında ~70° G yüksek enlemde bulunmasına rağmen 4,5 × 2,4 km boyutlarında, yerel eğimi <7° olan güvenli bir iniş platosu sunması ve bir tam Ay günü (~14 Dünya günü) kesintisiz Güneş enerjisi sağlaması nedeniyle seçilmiştir.'
-      },
-      {
-        id: 'im1-odysseus',
-        name: 'IM-1 Odysseus — Malapert A',
-        shortTitle: 'IM-1 Odysseus',
-        statusType: 'landed',
-        badgeText: '✓ Güney Kutbu 2. İniş',
-        subtitle: '80.13° G, 1.44° D • Güney Kutbu’na En Yakın İniş',
-        agencyDate: 'Intuitive Machines / NASA CLPS • 22 Şubat 2024 • 80.13° G, 1.44° D',
-        lat: -80.1276,
-        lon: 1.4367,
-        illuminationRatio: null,
-        infoLabel: 'İniş ve Görev Bilgileri',
-        infoText: 'NASA CLPS programı kapsamında fırlatılan Nova-C Odysseus iniş aracı; 80.13° G enlemine inerek bugüne kadar Ay’ın Güney Kutbu’na en yakın noktaya ulaşan uzay aracı ve 1972’deki Apollo 17’den bu yana ABD’nin ilk yumuşak Ay inişi olmuştur. NASA’nın 6 bilimsel yükünü yüzeye taşımıştır.',
-        reasonLabel: 'Neden Bu Bölge Seçildi?',
-        reasonText: '5 km yüksekliğindeki Malapert Massif dağ kütlesinin komşuluğunda yer alması, Dünya’nın ufuk üzerinde sürekli görünür kalarak doğrudan haberleşmeye imkân vermesi ve gelecekteki Artemis üsleri için kutup aydınlanma kuşağına giriş kapısı olması nedeniyle seçilmiştir.'
-      },
-      {
-        id: 'artemis-shackleton',
-        name: 'Artemis III — Shackleton C1 Sırtı',
-        shortTitle: 'Shackleton C1 Sırtı',
-        statusType: 'planned',
-        badgeText: '⏳ Planlanan Aday #1',
-        subtitle: '89.90° G, 0.00° D • Tam Güney Kutbu Ana Hedefi',
-        agencyDate: 'Planlanan Görev (NASA / LUNARIS) • 89.90° G, 0.00° D',
-        lat: -89.90,
-        lon: 0.00,
-        illuminationRatio: 0.921,
-        infoLabel: 'Planlanan İniş Hedefi ve Görev Profili',
-        infoText: 'Henüz fırlatılmadı; insanlığın Güney Kutbu’na yapacağı ilk iniş (Artemis III) ve LUNARIS kalıcı üs senaryomuz için belirlenen 1 numaralı hedef noktadır. 21 km çaplı ve 4,2 km derinliğindeki Shackleton Krateri’nin tam Güney Kutbu’ndan geçen yüksek aydınlanmalı sırt hattına iniş planlanmaktadır.',
-        reasonLabel: 'Neden Bu Bölgeyi Seçtik?',
-        reasonText: 'NASA LOLA/LROC verilerine göre 2 m yükseklikte yılın %85,5–%92,1’inde Güneş alır (36 m² panel ile ~45,1 kW sürekli güç). Hemen yanındaki krater tabanı kalıcı gölgededir (PSR, ~40 K) ve yaşam desteği ile hidroliz roket yakıtı için milyonlarca ton su buzu barındırır; sırt eğimi <8° güvenlik sınırındadır.'
-      },
-      {
-        id: 'lunaris-connecting-ridge',
-        name: 'LUNARIS — Connecting Ridge Üssü',
-        shortTitle: 'Connecting Ridge',
-        statusType: 'planned',
-        badgeText: '⏳ Planlanan Aday #2',
-        subtitle: '89.40° G, 137.50° B • En Yüksek Aydınlanma Sırtı',
-        agencyDate: 'Planlanan Görev (LUNARIS Üs Adayı) • 89.40° G, 137.50° B',
-        lat: -89.40,
-        lon: -137.50,
-        illuminationRatio: 0.9227,
-        infoLabel: 'Planlanan İniş Hedefi ve Görev Profili',
-        infoText: 'Henüz fırlatılmadı; Shackleton ile de Gerlache kraterlerini birbirine bağlayan sırt (Connecting Ridge) üzerinde uzun süreli otonom güç üretimi ve robotik buz sondajı için belirlediğimiz 2 numaralı stratejik hedef noktadır.',
-        reasonLabel: 'Neden Bu Bölgeyi Seçtik?',
-        reasonText: '2 m’de %92,27 ve 10 m kulede %95,65 aydınlanma ortalamasıyla tüm Ay yüzeyinde en uzun kesintisiz Güneş penceresine sahip bölgedir. İki büyük kalıcı gölgeli su buzu kraterinin (Shackleton ve de Gerlache) tam ortasında doğal bir enerji köprüsü oluşturur ve <8° eğim şartını sağlar.'
-      }
+    // Metinler dil sözlüğündendir (ucus.<id>.<alan>); burada yalnız kimlik, durum ve sayısal değerler durur.
+    const FLIGHT_DATA = [
+      { id: 'apollo-11', statusType: 'landed', lat: 0.67416, lon: 23.47314, illuminationRatio: null },
+      { id: 'chandrayaan-3', statusType: 'landed', lat: -69.3730, lon: 32.3190, illuminationRatio: null },
+      { id: 'im1-odysseus', statusType: 'landed', lat: -80.1276, lon: 1.4367, illuminationRatio: null },
+      { id: 'artemis-shackleton', statusType: 'planned', lat: -89.90, lon: 0.00, illuminationRatio: 0.921 },
+      { id: 'lunaris-connecting-ridge', statusType: 'planned', lat: -89.40, lon: -137.50, illuminationRatio: 0.9227 }
     ];
+    const SAMPLE_FLIGHTS = FLIGHT_DATA.map((ucus) => {
+      const k = (alan) => t(`ucus.${ucus.id}.${alan}`);
+      return {
+        ...ucus,
+        name: k('ad'), shortTitle: k('kisa'), badgeText: k('rozet'), subtitle: k('alt'), agencyDate: k('ajans'),
+        infoLabel: k('bilgi_etiket'), infoText: k('bilgi'), reasonLabel: k('neden_etiket'), reasonText: k('neden')
+      };
+    });
 
     let activeSampleFlight = SAMPLE_FLIGHTS[3];
     let trackedSite = { lat: activeSampleFlight.lat, lon: activeSampleFlight.lon, name: activeSampleFlight.shortTitle, illuminationRatio: activeSampleFlight.illuminationRatio };
@@ -3863,9 +2172,9 @@ html, body { height: 100%; margin: 0; }
     }
 
     function showSampleFlightInfo(flight) {
-      document.getElementById('feature-info-category').textContent = `Örnek görev · ${flight.agencyDate}`;
+      document.getElementById('feature-info-category').textContent = t('bilgi.ornek_gorev', { ajans: flight.agencyDate });
       document.getElementById('feature-info-title').textContent = flight.name;
-      document.getElementById('feature-info-coordinates').textContent = `Koordinatlar: ${flight.lat.toFixed(2)}°, ${flight.lon.toFixed(2)}°`;
+      document.getElementById('feature-info-coordinates').textContent = t('bilgi.koordinatlar', { k: `${flight.lat.toFixed(2)}°, ${flight.lon.toFixed(2)}°` });
       document.getElementById('feature-info-description').textContent = flight.infoText;
       document.getElementById('feature-info-detail-label').textContent = flight.reasonLabel;
       document.getElementById('feature-info-detail-label').hidden = false;
@@ -3875,7 +2184,7 @@ html, body { height: 100%; margin: 0; }
       document.getElementById('feature-info-source').href = flight.id === 'chandrayaan-3'
         ? 'https://www.isro.gov.in/Chandrayaan3.html'
         : 'https://science.nasa.gov/moon/missions/';
-      document.getElementById('feature-info-source').textContent = flight.id === 'chandrayaan-3' ? 'ISRO Chandrayaan-3' : 'NASA Ay görevleri';
+      document.getElementById('feature-info-source').textContent = flight.id === 'chandrayaan-3' ? 'ISRO Chandrayaan-3' : t('bilgi.kaynak_gorevler');
       document.getElementById('feature-info-panel').hidden = false;
     }
 
@@ -3893,15 +2202,15 @@ html, body { height: 100%; margin: 0; }
           .sort((a, b) => a.separation - b.separation)[0]?.entry;
       }
       const details = place || item;
-      document.getElementById('feature-info-category').textContent = details.group || 'Ay yüzeyi etiketi';
-      document.getElementById('feature-info-title').textContent = details.name || item.name || 'Ay yüzeyi noktası';
-      document.getElementById('feature-info-coordinates').textContent = `Koordinatlar: ${details.lat.toFixed(2)}° ${details.lat < 0 ? 'G' : 'K'}, ${details.lon.toFixed(2)}° ${details.lon < 0 ? 'B' : 'D'}`;
-      document.getElementById('feature-info-description').textContent = details.desc || 'Ay yüzeyindeki adlandırılmış oluşum. Haritadaki koordinat yaklaşık merkezini gösterir.';
+      document.getElementById('feature-info-category').textContent = details.group || t('bilgi.etiket_yok');
+      document.getElementById('feature-info-title').textContent = details.name || item.name || t('bilgi.nokta_yok');
+      document.getElementById('feature-info-coordinates').textContent = t('bilgi.koordinatlar', { k: konumMetni(details.lat, details.lon) });
+      document.getElementById('feature-info-description').textContent = details.desc || t('bilgi.aciklama_yok');
       document.getElementById('feature-info-detail-label').hidden = true;
       document.getElementById('feature-info-detail').hidden = true;
       document.getElementById('feature-info-parameters').hidden = details.lat > -60;
       document.getElementById('feature-info-source').href = 'https://science.nasa.gov/moon/';
-      document.getElementById('feature-info-source').textContent = 'NASA Ay kaynakları';
+      document.getElementById('feature-info-source').textContent = t('bilgi.kaynak_kaynaklar');
       document.getElementById('feature-info-panel').hidden = false;
     }
 
@@ -3930,7 +2239,7 @@ html, body { height: 100%; margin: 0; }
       sfdInfoEl.textContent = flight.infoText;
       sfdReasonLabelEl.textContent = flight.reasonLabel;
       sfdReasonEl.textContent = flight.reasonText;
-      sfdFpBtn.textContent = isFirstPersonView ? '🌍 Yörünge Görünümüne Dön' : '👨‍🚀 1. Kişi (Yüzey) Modu';
+      sfdFpBtn.textContent = t(isFirstPersonView ? 'ornek.fp_donus' : 'ornek.fp');
       sfdAlternativeBtn.hidden = flight.statusType !== 'planned';
       sfdAlternativesEl.hidden = true;
       for (const btn of sampleFlightListEl.querySelectorAll('.sample-flight-btn')) {
@@ -3942,7 +2251,7 @@ html, body { height: 100%; margin: 0; }
       activeSampleFlight = flight;
       trackedSite = { lat: flight.lat, lon: flight.lon, name: flight.shortTitle, illuminationRatio: flight.illuminationRatio };
       updateLandingSite(flight.lat, flight.lon, true);
-      document.getElementById('best-site').textContent = `${flight.shortTitle} (${Math.abs(flight.lat).toFixed(2)}° ${flight.lat >= 0 ? 'K' : 'G'}, ${Math.abs(flight.lon).toFixed(2)}° ${flight.lon >= 0 ? 'D' : 'B'})`;
+      document.getElementById('best-site').textContent = `${flight.shortTitle} (${konumMetni(flight.lat, flight.lon)})`;
       renderSampleFlightCard(flight);
       updateLivePowerStatus();
       if (shouldFly) {
@@ -3970,7 +2279,7 @@ html, body { height: 100%; margin: 0; }
       if (!activeSampleFlight) return;
       flyToLatLon(activeSampleFlight.lat, activeSampleFlight.lon, activeSampleFlight.name, 1.18);
       showSampleFlightInfo(activeSampleFlight);
-      sfdFpBtn.textContent = '👨‍🚀 1. Kişi (Yüzey) Modu';
+      sfdFpBtn.textContent = t('ornek.fp');
     });
 
     function showSampleAlternatives(flight) {
@@ -3995,34 +2304,34 @@ html, body { height: 100%; margin: 0; }
       sfdAlternativeListEl.replaceChildren();
       if (!alternatives.length) {
         const empty = document.createElement('li');
-        empty.textContent = 'Bu tarih için yeterli uzaklıkta alternatif hesaplanamadı.';
+        empty.textContent = t('alt.yok');
         sfdAlternativeListEl.appendChild(empty);
       }
       alternatives.forEach((candidate, index) => {
         const item = document.createElement('li');
         const summary = document.createElement('span');
-        summary.textContent = `${candidate.lat.toFixed(2)}°, ${candidate.lon.toFixed(2)}° · yaklaşık ${candidate.distanceFromTargetKm.toFixed(0)} km uzakta · en uzun Güneş penceresi ~${candidate.maxSunWindowDays.toFixed(1)} gün `;
+        summary.textContent = t('alt.ozet', { k: `${candidate.lat.toFixed(2)}°, ${candidate.lon.toFixed(2)}°`, km: candidate.distanceFromTargetKm.toFixed(0), gun: candidate.maxSunWindowDays.toFixed(1) });
         const goButton = document.createElement('button');
         goButton.type = 'button';
         goButton.className = 'candidate-go';
-        goButton.textContent = 'Bölgeye git';
+        goButton.textContent = t('alt.git');
         goButton.addEventListener('click', () => {
-          const alternative = { ...candidate, name: `${flight.shortTitle} alternatifi ${index + 1}` };
+          const alternative = { ...candidate, name: t('alt.ad', { ad: flight.shortTitle, n: index + 1 }) };
           trackedSite = { lat: alternative.lat, lon: alternative.lon, name: alternative.name, illuminationRatio: alternative.evidence?.illuminationAt2m ?? null };
           updateLandingSite(alternative.lat, alternative.lon, true);
           updateLivePowerStatus();
           flyToLatLon(alternative.lat, alternative.lon, alternative.name, 1.18);
-          document.getElementById('feature-info-category').textContent = `Alternatif iniş bölgesi · ${flight.shortTitle}`;
+          document.getElementById('feature-info-category').textContent = t('alt.kategori', { ad: flight.shortTitle });
           document.getElementById('feature-info-title').textContent = alternative.name;
-          document.getElementById('feature-info-coordinates').textContent = `Koordinatlar: ${alternative.lat.toFixed(2)}° G, ${alternative.lon.toFixed(2)}°`;
-          document.getElementById('feature-info-description').textContent = `Planlanan ${flight.shortTitle} hedefi yerine değerlendirilmek üzere, güney kutbu koordinat ağındaki seçenekler arasından önerildi.`;
-          document.getElementById('feature-info-detail-label').textContent = 'Öneri ölçütleri ve sınırlar';
+          document.getElementById('feature-info-coordinates').textContent = t('bilgi.koordinatlar', { k: `${alternative.lat.toFixed(2)}° ${t('yon.g')}, ${alternative.lon.toFixed(2)}°` });
+          document.getElementById('feature-info-description').textContent = t('alt.aciklama', { ad: flight.shortTitle });
+          document.getElementById('feature-info-detail-label').textContent = t('alt.detay_etiket');
           document.getElementById('feature-info-detail-label').hidden = false;
-          document.getElementById('feature-info-detail').textContent = `Planlanan hedeften yaklaşık ${alternative.distanceFromTargetKm.toFixed(0)} km uzakta. Bu tarih çevresinde tahmini en uzun kesintisiz Güneş penceresi ~${alternative.maxSunWindowDays.toFixed(1)} gün. Eğim <8° ve 100 m tampon şartları yerel DEM verisi olmadığı için doğrulanamıyor.`;
+          document.getElementById('feature-info-detail').textContent = t('alt.detay', { km: alternative.distanceFromTargetKm.toFixed(0), gun: alternative.maxSunWindowDays.toFixed(1) });
           document.getElementById('feature-info-detail').hidden = false;
           document.getElementById('feature-info-parameters').hidden = false;
           document.getElementById('feature-info-source').href = 'https://science.nasa.gov/moon/';
-          document.getElementById('feature-info-source').textContent = 'NASA Ay kaynakları';
+          document.getElementById('feature-info-source').textContent = t('bilgi.kaynak_kaynaklar');
           document.getElementById('feature-info-panel').hidden = false;
         });
         item.append(summary, goButton);
@@ -4039,7 +2348,7 @@ html, body { height: 100%; margin: 0; }
       if (!activeSampleFlight) return;
       if (isFirstPersonView) {
         flyToLatLon(activeSampleFlight.lat, activeSampleFlight.lon, activeSampleFlight.name, 1.20);
-        sfdFpBtn.textContent = '👨‍🚀 1. Kişi (Yüzey) Modu';
+        sfdFpBtn.textContent = t('ornek.fp');
       } else {
         enterFirstPersonAtCandidate({ lat: activeSampleFlight.lat, lon: activeSampleFlight.lon, name: activeSampleFlight.name });
       }
@@ -4085,15 +2394,15 @@ html, body { height: 100%; margin: 0; }
           : THREE.MathUtils.clamp(Math.sin(THREE.MathUtils.degToRad(Math.max(elevDeg, 6))), 0.18, 1.0);
         const kw = (panelMaxKw * effFactor).toFixed(1);
         powerStatus.className = 'status-badge status-ok';
-        powerStatus.textContent = `☀️ Güneş var! Paneller enerji üretiyor (~${kw} kW).`;
+        powerStatus.textContent = t('guc.var', { kw });
         if (output) {
-          output.textContent = `${site.name}: Güneş ufkun üstünde (+${Math.max(0.1, elevDeg).toFixed(1)}°). 36 m² panel anlık güç üretimi ~${kw} kW.`;
+          output.textContent = t('guc.var_ayrinti', { ad: site.name, yuk: Math.max(0.1, elevDeg).toFixed(1), kw });
         }
       } else {
         powerStatus.className = 'status-badge status-shadow';
-        powerStatus.textContent = '🌑 Güneş yok. Şimdi batarya kullanılıyor.';
+        powerStatus.textContent = t('guc.yok');
         if (output) {
-          output.textContent = `${site.name}: Bölge şu anda krater/Ay gölgesinde (Güneş ${elevDeg.toFixed(1)}°). Güneş panelleri devre dışı, batarya modunda.`;
+          output.textContent = t('guc.yok_ayrinti', { ad: site.name, yuk: elevDeg.toFixed(1) });
         }
       }
     }
@@ -4173,31 +2482,31 @@ html, body { height: 100%; margin: 0; }
       }
 
       const selected = recommendations[0] || ranked[0];
-      recommendations.forEach((c, idx) => { c.name = `Güney yarımküre adayı ${idx + 1}`; });
+      recommendations.forEach((c, idx) => { c.name = t('oneri.aday_adi', { n: idx + 1 }); });
       renderRecommendationMarkers(recommendations);
-      document.getElementById('best-site').textContent = selected.name || 'Güney yarımküre adayı';
+      document.getElementById('best-site').textContent = selected.name || t('oneri.aday');
 
-      const resultDate = missionDate.toLocaleString('tr-TR', { dateStyle: 'medium', timeStyle: 'short' });
+      const resultDate = missionDate.toLocaleString(yerel, { dateStyle: 'medium', timeStyle: 'short' });
       const panelIncidentKw = landingParameters.panelAreaM2 * landingParameters.solarFluxWm2 / 1000;
-      document.getElementById('result-scan-info').textContent = `${southHemisphereGrid.length} konum tarandı; adaylar arasında en az ${minSeparationKm} km bırakıldı.`;
+      document.getElementById('result-scan-info').textContent = t('oneri.tarama', { n: southHemisphereGrid.length, km: minSeparationKm });
       document.getElementById('result-candidate-list').replaceChildren(...recommendations.map((candidate, index) => {
         const item = document.createElement('li');
-        const illumination = candidate.evidence ? `; kaynak ortalaması %${(candidate.evidence.illuminationAt2m * 100).toFixed(2)}` : '; uzun dönem kaynak ölçümü yok';
+        const illumination = candidate.evidence ? t('oneri.kaynak_ort', { p: (candidate.evidence.illuminationAt2m * 100).toFixed(2) }) : t('oneri.kaynak_yok');
         const row = document.createElement('div');
         row.className = 'candidate-row';
         const details = document.createElement('span');
-        details.textContent = `${candidate.lat.toFixed(2)}°, ${candidate.lon.toFixed(2)}° — Güneş ~${candidate.maxSunWindowDays.toFixed(1)} gün; yükseklik ${candidate.elevation.toFixed(1)}°${illumination}`;
+        details.textContent = t('oneri.ayrinti', { k: `${candidate.lat.toFixed(2)}°, ${candidate.lon.toFixed(2)}°`, gun: candidate.maxSunWindowDays.toFixed(1), yuk: candidate.elevation.toFixed(1), kaynak: illumination });
         const actions = document.createElement('div');
         actions.className = 'candidate-actions';
         const goButton = document.createElement('button');
         goButton.type = 'button';
         goButton.className = 'candidate-go';
-        goButton.textContent = 'Git';
+        goButton.textContent = t('oneri.git');
         goButton.addEventListener('click', () => goToLandingCandidate(candidate));
         const fpButton = document.createElement('button');
         fpButton.type = 'button';
         fpButton.className = 'candidate-go';
-        fpButton.textContent = '1. kişi';
+        fpButton.textContent = t('oneri.fp');
         fpButton.addEventListener('click', () => enterFirstPersonAtCandidate(candidate));
         actions.append(goButton, fpButton);
         row.append(details, actions);
@@ -4205,19 +2514,19 @@ html, body { height: 100%; margin: 0; }
         return item;
       }));
 
-      document.getElementById('result-mission-time').textContent = `Değerlendirilen zaman: ${resultDate}`;
+      document.getElementById('result-mission-time').textContent = t('oneri.zaman', { z: resultDate });
       document.getElementById('result-site-name').textContent = selected.name;
-      document.getElementById('result-site-coordinates').textContent = `Koordinatlar: ${selected.lat.toFixed(2)}°, ${selected.lon.toFixed(2)}°`;
-      document.getElementById('result-solar-elevation').textContent = `Yaklaşık anlık Güneş yüksekliği: ${selected.elevation.toFixed(1)}°`;
+      document.getElementById('result-site-coordinates').textContent = t('bilgi.koordinatlar', { k: `${selected.lat.toFixed(2)}°, ${selected.lon.toFixed(2)}°` });
+      document.getElementById('result-solar-elevation').textContent = t('oneri.yukseklik', { yuk: selected.elevation.toFixed(1) });
       document.getElementById('result-illumination').textContent = selected.evidence
-        ? `Kaynak aydınlanma ortalaması: %${(selected.evidence.illuminationAt2m * 100).toFixed(2)}; ${landingParameters.panelAreaM2} m² panel ham güç ~${(panelIncidentKw * selected.evidence.illuminationAt2m).toFixed(1)} kW.`
-        : 'Bu bölge için belgelenmiş uzun dönem aydınlanma ortalaması yok.';
+        ? t('oneri.aydinlanma', { p: (selected.evidence.illuminationAt2m * 100).toFixed(2), alan: landingParameters.panelAreaM2, kw: (panelIncidentKw * selected.evidence.illuminationAt2m).toFixed(1) })
+        : t('oneri.aydinlanma_yok');
       document.getElementById('result-sun-check').textContent = selected.elevation > -landingParameters.sunAngularRadiusMinDeg
-        ? 'Seçilen anda Güneş ufkun üstünde.'
-        : 'Seçilen anda Güneş ufkun altında.';
-      document.getElementById('result-slope-check').textContent = `Azami eğim eşiği <${landingParameters.maxSlopeDeg}°: DEM bulunmadığından kontrol edilemiyor.`;
-      document.getElementById('result-duration-check').textContent = `En uzun Güneş penceresi ~${selected.maxSunWindowDays.toFixed(1)} gün (eşik ≥${landingParameters.minContinuousSunDays} gün).`;
-      document.getElementById('result-dem-check').textContent = `${landingParameters.demResolutionM} m DEM çözünürlüğü ayarlı.`;
+        ? t('oneri.gunes_ustte')
+        : t('oneri.gunes_altta');
+      document.getElementById('result-slope-check').textContent = t('oneri.egim', { e: landingParameters.maxSlopeDeg });
+      document.getElementById('result-duration-check').textContent = t('oneri.sure', { gun: selected.maxSunWindowDays.toFixed(1), esik: landingParameters.minContinuousSunDays });
+      document.getElementById('result-dem-check').textContent = t('oneri.dem', { m: landingParameters.demResolutionM });
       if (!activeSampleFlight) {
         trackedSite = { lat: selected.lat, lon: selected.lon, name: selected.name, illuminationRatio: selected.evidence?.illuminationAt2m ?? null };
         updateLandingSite(selected.lat, selected.lon, true);
@@ -4235,12 +2544,12 @@ html, body { height: 100%; margin: 0; }
       baseDate.setHours(baseDate.getHours() + hours);
 
       const dayCount = Math.floor(hours / 24);
-      const formattedDate = baseDate.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' });
-      const formattedTime = baseDate.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+      const formattedDate = baseDate.toLocaleDateString(yerel, { day: 'numeric', month: 'short', year: 'numeric' });
+      const formattedTime = baseDate.toLocaleTimeString(yerel, { hour: '2-digit', minute: '2-digit' });
 
-      timeLabel.textContent = `${formattedDate} - ${formattedTime} (Gün ${dayCount})`;
-      document.getElementById('selected-mission-datetime').textContent = `Öneri zamanı: ${formattedDate}, ${formattedTime}`;
-      document.getElementById('result-mission-time').textContent = `Değerlendirilen zaman: ${formattedDate}, ${formattedTime}`;
+      timeLabel.textContent = t('zaman.deger', { tarih: formattedDate, saat: formattedTime, gun: dayCount });
+      document.getElementById('selected-mission-datetime').textContent = t('zaman.oneri', { tarih: formattedDate, saat: formattedTime });
+      document.getElementById('result-mission-time').textContent = t('oneri.zaman', { z: `${formattedDate}, ${formattedTime}` });
 
       const prevMoonPos = moonPosition.clone();
       const prevMoonAngle = moonMesh.rotation.y;
@@ -4292,7 +2601,7 @@ html, body { height: 100%; margin: 0; }
     slider.addEventListener('input', (e) => updateSimulationTime(e.target.value, false, true));
     playBtn.addEventListener('click', () => {
       isPlaying = !isPlaying;
-      playBtn.textContent = isPlaying ? "Durdur ⏸" : "Oynat ❚▶";
+      playBtn.textContent = t(isPlaying ? 'zaman.durdur' : 'zaman.oynat');
     });
 
     function animateTimeline() {
@@ -4359,11 +2668,8 @@ html, body { height: 100%; margin: 0; }
 
     updateSimulationTime(slider.value, true);
     animate();
+    requestAnimationFrame(() => requestAnimationFrame(() => { document.documentElement.dataset.yukleme = 'ilk'; }));
+    loadModels();
   </script>
-
-
-
-
-  
 </body>
 </html>

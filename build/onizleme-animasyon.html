@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animasyon önizlemesi</title>
+<style>
+:root{--zemin:#05070c;--yuzey:#101319;--yuzey2:#1b1f27;--cizgi:#2b303b;--cizgi-g:#6c727e;--metin:#eceef1;--metin2:#a0a5ae;--gunes:#fbbf24;--dunya:#38bdf8;--vurgu:#d5dae2;--vurgu-u:#0a0c11;--egri:cubic-bezier(.22,.75,.2,1)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--zemin);color:var(--metin);font:16px/1.5 system-ui,sans-serif;padding:16px}
+header.ust{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto 16px}
+header.ust h1{font-size:1rem;font-weight:600}
+header.ust p{color:var(--metin2);font-size:.875rem}
+.izgara{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,560px),1fr));gap:16px;max-width:1400px;margin:0 auto}
+.yon{position:relative;overflow:hidden;border:1px solid var(--cizgi);border-radius:6px;background:var(--zemin);min-height:560px;padding:32px 24px 170px}
+.etiket{display:inline-block;font-size:.75rem;color:var(--metin2);border:1px solid var(--cizgi);border-radius:999px;padding:2px 10px;margin-bottom:24px}
+.yon h2{font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.15;font-stretch:118%;max-width:22ch}
+.giris{color:var(--metin2);margin-top:12px;max-width:46ch}
+.dugmeler{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.d{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:4px;border:1px solid var(--cizgi-g);background:transparent;color:var(--metin);font:inherit;font-size:.875rem;cursor:pointer;transition:transform .15s var(--egri),background-color .15s var(--egri)}
+.d.birincil{background:var(--vurgu);color:var(--vurgu-u);border-color:var(--vurgu)}
+.d:active{transform:translateY(1px) scale(.98)}
+.d .ok{display:inline-block;transition:transform .18s var(--egri)}
+.d:hover .ok{transform:translate(2px,-2px)}
+.d:focus-visible{outline:2px solid var(--vurgu);outline-offset:2px}
+.sayaclar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:32px}
+.sayac{border:1px solid var(--cizgi);border-radius:6px;background:var(--yuzey);padding:12px}
+.sayac b{display:block;font-size:1.6rem;font-variant-numeric:tabular-nums}
+.sayac span{font-size:.75rem;color:var(--metin2)}
+.kaynak{font-size:.75rem;color:var(--metin2);margin-top:8px}
+svg.ufuk{position:absolute;left:0;right:0;bottom:0;width:100%;height:150px}
+.not{font-size:.8rem;color:var(--metin2);margin-top:16px;max-width:60ch}
+
+/* A: sıralı beliriş, ufuk çizgisinin çizilmesi, durağan yıldızlar */
+.A .bel{opacity:0;transform:translateY(8px)}
+.A.oynat .bel{animation:bel .5s var(--egri) forwards;animation-delay:calc(var(--i)*90ms)}
+@keyframes bel{to{opacity:1;transform:none}}
+.A .cizgi-yol{stroke-dasharray:1600;stroke-dashoffset:1600}
+.A.oynat .cizgi-yol{animation:ciz .9s var(--egri) .15s forwards}
+@keyframes ciz{to{stroke-dashoffset:0}}
+.A .centik{opacity:0}
+.A.oynat .centik{animation:bel .3s var(--egri) forwards;animation-delay:calc(.6s + var(--i)*60ms)}
+
+/* B: hazır efektler (meteor, kenar ışını, spot ışığı, cam kart) */
+.B .meteor{position:absolute;top:-10px;width:2px;height:2px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px #ffffff20;transform:rotate(215deg);animation:meteor linear infinite}
+.B .meteor::before{content:"";position:absolute;top:50%;width:60px;height:1px;transform:translateY(-50%);background:linear-gradient(90deg,#c8ccd4,transparent)}
+@keyframes meteor{0%{transform:rotate(215deg) translateX(0);opacity:1}70%{opacity:1}100%{transform:rotate(215deg) translateX(-700px);opacity:0}}
+.B .spot{position:absolute;inset:-40%;background:radial-gradient(closest-side,#ffffff14,transparent 70%);transform:translate(-30%,-30%);animation:spot 2s var(--egri) .2s both;pointer-events:none}
+@keyframes spot{from{opacity:0;transform:translate(-60%,-60%) scale(.6)}to{opacity:1}}
+.B .cam{position:relative;background:#ffffff0d;backdrop-filter:blur(10px);border:1px solid #ffffff1f;box-shadow:0 8px 32px #0008}
+.B .isin{position:absolute;inset:0;border-radius:inherit;padding:1px;background:conic-gradient(from var(--a),transparent 70%,#e5e7eb 85%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:isin 4s linear infinite;pointer-events:none}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes isin{to{--a:360deg}}
+.B h2{background:linear-gradient(180deg,#fff,#9aa0aa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.B .kart3b{transition:transform .2s var(--egri);transform-style:preserve-3d}
+
+@media (prefers-reduced-motion:reduce){
+ .A .bel,.A .centik{opacity:1!important;transform:none!important;animation:none!important}
+ .A .cizgi-yol{stroke-dashoffset:0!important;animation:none!important}
+ .B .meteor,.B .isin,.B .spot{animation:none!important}
+ .B .meteor{display:none}
+}
+</style>
+</head>
+<body>
+<header class="ust">
+ <div><h1>Ana Sayfa girişi, iki yön</h1><p>Aynı içerik. Yeniden oynatmak için düğmeye basın. Sayılar parametre setinden.</p></div>
+ <button class="d" id="tekrar">Yeniden oynat</button>
+</header>
+<main class="izgara">
+ <section class="yon A" id="A">
+  <span class="etiket bel" style="--i:0">A: brifi koru</span>
+  <h2 class="bel" style="--i:1">Ay güney kutbunda nereye ve ne zaman inilir?</h2>
+  <p class="giris bel" style="--i:2">İniş noktası ve tarihini Güneş ve Dünya koşullarına göre karşılaştırın.</p>
+  <div class="dugmeler bel" style="--i:3"><button class="d birincil">Planlamaya başla <span class="ok">↗</span></button><button class="d">Rehberli tur</button></div>
+  <div class="sayaclar">
+   <div class="sayac bel" style="--i:4"><b data-say="130">0</b><span>aday saha</span></div>
+   <div class="sayac bel" style="--i:5"><b data-say="3">0</b><span>DSN istasyonu</span></div>
+   <div class="sayac bel" style="--i:6"><b data-say="3">0</b><span>direk yüksekliği</span></div>
+  </div>
+  <p class="kaynak bel" style="--i:7">Kaynak: parametre seti v2 (Wueller 2026 saha listesi, S.5, S.9).</p>
+  <p class="not bel" style="--i:8">Hareket: öğeler sırayla belirir (toplam 0,9 s), ufuk çizgisi soldan sağa çizilir, sayılar bir kez sayar. Sonra her şey durur. Yıldızlar durağan.</p>
+  <svg class="ufuk" viewBox="0 0 800 150" preserveAspectRatio="none" aria-hidden="true">
+   <g fill="#c8ccd4" opacity=".5"><circle cx="40" cy="20" r=".8"/><circle cx="180" cy="40" r="1"/><circle cx="320" cy="12" r=".7"/><circle cx="470" cy="34" r="1"/><circle cx="610" cy="18" r=".8"/><circle cx="740" cy="44" r="1"/></g>
+   <path class="cizgi-yol" d="M0 112 L60 104 L110 108 L170 90 L230 98 L290 84 L350 96 L420 80 L480 92 L540 86 L600 100 L660 88 L720 102 L800 96" fill="none" stroke="#6c727e" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+   <g stroke="#6c727e" stroke-width="1"><line class="centik" style="--i:0" x1="0" y1="140" x2="0" y2="132"/><line class="centik" style="--i:1" x1="200" y1="140" x2="200" y2="132"/><line class="centik" style="--i:2" x1="400" y1="140" x2="400" y2="132"/><line class="centik" style="--i:3" x1="600" y1="140" x2="600" y2="132"/><line class="centik" style="--i:4" x1="799" y1="140" x2="799" y2="132"/></g>
+  </svg>
+ </section>
+ <section class="yon B" id="B">
+  <div class="spot"></div>
+  <span class="etiket">B: hazır efektler</span>
+  <h2>Ay güney kutbunda nereye ve ne zaman inilir?</h2>
+  <p class="giris">İniş noktası ve tarihini Güneş ve Dünya koşullarına göre karşılaştırın.</p>
+  <div class="dugmeler"><button class="d birincil">Planlamaya başla <span class="ok">↗</span></button><button class="d">Rehberli tur</button></div>
+  <div class="sayaclar">
+   <div class="sayac cam kart3b"><span class="isin"></span><b data-say="130">0</b><span>aday saha</span></div>
+   <div class="sayac cam kart3b"><span class="isin"></span><b data-say="3">0</b><span>DSN istasyonu</span></div>
+   <div class="sayac cam kart3b"><span class="isin"></span><b data-say="3">0</b><span>direk yüksekliği</span></div>
+  </div>
+  <p class="not">Hareket: meteorlar sürekli düşer, kartların kenarında ışın sürekli döner, spot ışığı açılır, cam kartlar fareyle eğilir, başlık degrade. Bunlar ölçüt 13'ü (degrade, bulanık cam, gölge yok) ve brif ilkesi 3'ü bozar.</p>
+ </section>
+</main>
+<script>
+const az = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function say(el){const hedef=+el.dataset.say;if(az){el.textContent=hedef;return}const t0=performance.now(),s=700;
+ (function adim(t){const k=Math.min(1,(t-t0)/s),e=1-Math.pow(1-k,3);el.textContent=Math.round(hedef*e);if(k<1)requestAnimationFrame(adim)})(t0)}
+function oynat(){const A=document.getElementById('A');A.classList.remove('oynat');void A.offsetWidth;A.classList.add('oynat');
+ document.querySelectorAll('[data-say]').forEach(el=>{el.textContent='0';setTimeout(()=>say(el),az?0:400)})}
+document.getElementById('tekrar').onclick=oynat;oynat();
+const B=document.getElementById('B');
+for(let i=0;i<14;i++){const m=document.createElement('span');m.className='meteor';m.style.left=(Math.random()*110)+'%';m.style.animationDelay=(Math.random()*4)+'s';m.style.animationDuration=(2+Math.random()*6)+'s';B.prepend(m)}
+document.querySelectorAll('.kart3b').forEach(k=>{k.onmousemove=e=>{if(az)return;const r=k.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;k.style.transform=`perspective(600px) rotateX(${-y*12}deg) rotateY(${x*12}deg)`};k.onmouseleave=()=>k.style.transform=''})
+</script>
+</body>
+</html>

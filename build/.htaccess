@@ -42,6 +42,19 @@ ErrorDocument 404 /200.html
 	<If "%{REQUEST_URI} =~ m#^/sim/[^/]+\.glb$#">
 		Header set Cache-Control "public, max-age=31536000, immutable"
 	</If>
+	# Görev simülasyonu: dosya adları içerikten türemez (moon4.glb, vendor/three/...), bu yüzden immutable değil, 1 saat.
+	# Sayfa ve dil sözlükleri her seferinde ETag ile doğrulanır (no-cache); model değişince sözlük ve sayfa yeni kalır.
+	<If "%{REQUEST_URI} =~ m#^/gorev-sim/.+\.(glb|js|wasm)$#">
+		Header set Cache-Control "public, max-age=3600"
+	</If>
+	<If "%{REQUEST_URI} =~ m#^/gorev-sim/(index\.html|dil/[^/]+\.json)$#">
+		Header set Cache-Control "no-cache"
+	</If>
 	Header set X-Content-Type-Options "nosniff"
 	Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Görev simülasyonunun sayfası, Three.js modülleri (yerel kopya, sıkıştırılmamış ~2 MB) ve sözlükleri gzip ile gider; GLB zaten sıkıştırılmıştır.
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html application/javascript text/javascript application/json
 </IfModule>

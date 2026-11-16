@@ -1,1 +1,0 @@
-import"../chunks/xihTtKlq.js";import{_t as e,lt as t,ut as n}from"../chunks/CHxWu12g.js";import{t as r}from"../chunks/DVlvlxHB.js";var i=e({load:()=>a,prerender:()=>!1}),a=({params:e})=>({parsel:e.parsel});function o(e,i){n(i,!0),r(e,{get parsel(){return i.data.parsel}}),t()}export{o as component,i as universal};
